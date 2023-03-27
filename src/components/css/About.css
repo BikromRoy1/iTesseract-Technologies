@@ -1,0 +1,40 @@
+.about-bg {
+  background: linear-gradient(90deg, #59bb5f 3.62%, #4db3e6 97.87%) !important;
+}
+.vr-line::after {
+  content: "";
+  position: absolute;
+  height: 40px;
+  width: 2px;
+  background: #dab9ff;
+  transform: translateY(-50%);
+  right: -13px;
+  top: 50%;
+  margin-left: 20px;
+}
+.input-filed {
+  height: 54px;
+  background: #fff;
+  border: 1px solid #d5d5d5;
+  border-radius: 12px;
+  padding: 19px 45px 18px 20px;
+  font-size: 16px;
+  line-height: 1;
+  transition: 0.3s ease-in-out;
+  outline: none;
+  width: calc(100% - 195px);
+  margin-bottom: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.start-btn {
+  width: 195px;
+    height: 54px;
+  padding: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  opacity: .65;
+  background: linear-gradient(111.41deg, #ff0844 24.85%, #ff8b67 95.39%);
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgb(43 53 67 / 0%);
+}

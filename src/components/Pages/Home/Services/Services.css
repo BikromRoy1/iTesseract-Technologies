@@ -1,0 +1,102 @@
+.icon-box {
+  text-align: center;
+  padding: 22px 20px 22px 20px;
+  background: #fff;
+  transition: all ease-in-out 0.3s;
+  box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
+  border-radius: 6px;
+}
+.icon-box .icon {
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease-in-out 0.3s;
+  position: relative;
+}
+.icon-box .icon img {
+  height: 40px;
+  transition: 0.5s;
+  position: relative;
+}
+.icon-box .icon svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.icon-box .icon svg path {
+  transition: 0.5s;
+  fill: #f5f5f5;
+}
+.icon-box h4 {
+  font-weight: 600;
+  margin: 10px 0 15px 0;
+  font-size: 22px;
+}
+.icon-box h4 a {
+  color: #124265;
+  transition: ease-in-out 0.3s;
+}
+.icon-box p {
+  line-height: 24px;
+  font-size: 15px;
+  margin-bottom: 0;
+  color: gray;
+}
+.icon-box:hover {
+  border-color: #fff;
+  box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
+}
+.icon-box:hover h4 a {
+  color: #1bb57b;
+}
+
+/* teal color */
+.iconbox-teal img {
+  opacity: 0.7;
+}
+
+.iconbox-teal:hover .icon img {
+  opacity: 1;
+}
+.iconbox-teal:hover .icon path {
+  fill: #11dbcf;
+}
+/* read color */
+.iconbox-red i {
+  color: #ff5828;
+}
+
+.iconbox-red:hover .icon i {
+  color: #fff;
+}
+
+.iconbox-red:hover .icon path {
+  fill: #ff5828;
+}
+/* Yellow color */
+.iconbox-yellow i {
+  color: #ffbb2c;
+}
+.iconbox-yellow:hover .icon i {
+  color: #fff;
+}
+
+.iconbox-yellow:hover .icon path {
+  fill: #ffbb2c;
+}
+/* pink color */
+.iconbox-pink i {
+  color: #e80368;
+}
+
+.iconbox-pink:hover .icon i {
+  color: #fff;
+}
+
+.iconbox-pink:hover .icon path {
+  fill: #e80368;
+}

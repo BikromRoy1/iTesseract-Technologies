@@ -1,0 +1,109 @@
+import React from 'react';
+import './Banner.css';
+
+const Banner = () => {
+  return (
+    <section className='bg-[#F9F9F9]'>
+      <div className='container px-6 py-12 mx-auto'>
+        <div className='grid grid-cols-1 gap-5  xl:gap-6 md:grid-cols-2 xl:grid-cols-4'>
+          <div className='flex flex-col items-center justify-center'>
+            <div className='text-center md:text-left'>
+              <h1 className=' footer-color banner-title'>
+                প্রোগ্রামিং <span className='text-[#f5c310]'>ও</span> কোডিংয়ের
+                দুনিয়ায় আপনাকে স্বাগতম !
+              </h1>
+
+              <p className=' banner-details mt-5 text-gray-500'>
+                ৫ম শ্রেণী থেকে বিশ্ববিদ্যালয়ের শিক্ষার্থীদের জন্য স্পেশাল
+                সার্টিফিকেট কোর্স
+              </p>
+            </div>
+          </div>
+
+          <div className='flex flex-col items-center text-center'>
+            <div
+              aria-hidden='true'
+              className='mt-10 lg:mt-0 cursor-pointer relative'
+            >
+              <img
+                loading='lazy'
+                src='https://images.pexels.com/photos/2399840/pexels-photo-2399840.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                alt=''
+                className='mx-auto rounded-lg shadow-lg dark:bg-gray-500'
+              />
+              <div className='overlay'>
+                <div className='absolute bottom-14 left-5'>
+                  <p className='text-left theme-secondary-color hover:text-white eduction-title-home'>
+                    বিশ্ববিদ্যালয়ের শিক্ষার্থীদের জন্য
+                  </p>
+                  <div className='text-left'>
+                    <button
+                      className='bg-[#1bb57b] text-white font-normal px-4 hover:bg-[#f5c310] py-2 mt-3 text-sm rounded-full'
+                      type='button'
+                    >
+                      ভিজিট করুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className='flex flex-col items-center xl:mt-8 text-center'>
+            <div aria-hidden='true' className='mt-10 lg:mt-0 relative'>
+              <img
+                loading='lazy'
+                src='https://i.ibb.co/28JHQkz/Whats-App-Image-2023-03-04-at-11-24-27-AM-1.jpg'
+                alt='roobt'
+                className='mx-auto rounded-lg shadow-lg dark:bg-gray-500'
+              />
+              <div className='overlay'>
+                <div className='absolute bottom-14 left-5'>
+                  <p className='text-left theme-secondary-color hover:text-white eduction-title-home'>
+                    মাধ্যমিক শিক্ষার্থীদের জন্য
+                  </p>
+                  <div className='text-left'>
+                    <button
+                      className='bg-[#1bb57b] text-white font-normal px-4 hover:bg-[#f5c310] py-2 mt-3 text-sm rounded-full'
+                      type='button'
+                    >
+                      ভিজিট করুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className='flex flex-col items-center text-center'>
+            <div aria-hidden='true' className='mt-10 lg:mt-0 relative '>
+              <img
+                loading='lazy'
+                src='https://images.pexels.com/photos/7862494/pexels-photo-7862494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                alt=''
+                className='mx-auto rounded-lg shadow-lg bg-gray-900/40'
+              />
+              <div className='overlay'>
+                <div className='absolute bottom-14 left-5'>
+                  <p className='text-left theme-secondary-color hover:text-white eduction-title-home'>
+                    উচ্চ মাধ্যমিক শিক্ষার্থীদের জন্য
+                  </p>
+                  <div className='text-left'>
+                    <button
+                      className='bg-[#1bb57b] text-white font-normal px-4 hover:bg-[#f5c310] py-2 mt-3 text-sm rounded-full'
+                      type='button'
+                    >
+                      ভিজিট করুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Banner;

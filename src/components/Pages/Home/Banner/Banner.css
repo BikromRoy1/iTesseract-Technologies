@@ -1,0 +1,14 @@
+.banner-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: black;
+}
+.banner-details {
+  font-size: 15px;
+  line-height: 1.75rem;
+}
+.eduction-title-home {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 500;
+}

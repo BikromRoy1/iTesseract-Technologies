@@ -1,0 +1,25 @@
+.kits-box {
+  cursor: pointer;
+  /* box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1); */
+  transition: all ease-in-out 0.4s;
+  border: 1px solid #fff;
+}
+.kits-box:hover{
+  border: 1px solid #1bb57b;
+}
+.kits-box:hover {
+  transform: translateY(-10px);
+}
+.kits-title {
+  font-size: 22px;
+  margin: 0px 0 12px 0;
+}
+.kits-box:hover .kits-title {
+  color: #1bb57b;
+}
+.kits-details {
+  line-height: 24px;
+  font-size: 15px;
+  margin-bottom: 0;
+  color: gray;
+}
