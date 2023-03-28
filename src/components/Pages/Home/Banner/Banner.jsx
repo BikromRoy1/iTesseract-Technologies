@@ -1,4 +1,7 @@
 import React from 'react';
+import highSchool from '../../../../Images/teacher/website-high-school.jpg';
+import university from '../../../../Images/teacher/website-university.jpg';
+import school from '../../../../Images/teacher/school.jpg';
 import './Banner.css';
 
 const Banner = () => {
@@ -27,9 +30,9 @@ const Banner = () => {
             >
               <img
                 loading='lazy'
-                src='https://images.pexels.com/photos/2399840/pexels-photo-2399840.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                src={university}
                 alt=''
-                className='mx-auto rounded-lg shadow-lg dark:bg-gray-500'
+                className='mx-auto rounded-lg shadow-lg dark:bg-gray-500 h-[530px]'
               />
               <div className='overlay'>
                 <div className='absolute bottom-14 left-5'>
@@ -53,7 +56,7 @@ const Banner = () => {
             <div aria-hidden='true' className='mt-10 lg:mt-0 relative'>
               <img
                 loading='lazy'
-                src='https://i.ibb.co/28JHQkz/Whats-App-Image-2023-03-04-at-11-24-27-AM-1.jpg'
+                src={school}
                 alt='roobt'
                 className='mx-auto rounded-lg shadow-lg dark:bg-gray-500'
               />
@@ -79,9 +82,9 @@ const Banner = () => {
             <div aria-hidden='true' className='mt-10 lg:mt-0 relative '>
               <img
                 loading='lazy'
-                src='https://images.pexels.com/photos/7862494/pexels-photo-7862494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                src={highSchool}
                 alt=''
-                className='mx-auto rounded-lg shadow-lg bg-gray-900/40'
+                className='mx-auto rounded-lg shadow-lg bg-gray-900/40 h-[530px]'
               />
               <div className='overlay'>
                 <div className='absolute bottom-14 left-5'>
