@@ -138,7 +138,7 @@ const Header = () => {
                   <Link
                     title='সার্টিফিকেশন'
                     className='hover:text-[#1bb57b]'
-                    to='/'
+                    to='/certification'
                   >
                     <FcDecision></FcDecision> সার্টিফিকেশন
                   </Link>
@@ -330,7 +330,7 @@ const Header = () => {
                             <Link
                               title='সার্টিফিকেশন'
                               className='hover:text-[#1bb57b]'
-                              to='/'
+                              to='/certification'
                             >
                               {' '}
                               <FcDecision></FcDecision> সার্টিফিকেশন

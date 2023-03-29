@@ -4,6 +4,7 @@ import Universitybanner from '../../../../Images/university.jpg';
 import UniSkills from '../UniSkills/UniSkills';
 import UniBanner from '../UniBanner/UniBanner';
 import UniversityEduction from '../UniversityEduction/UniversityEduction';
+import SchoolTeacher from '../../School/School/SchoolTeacher/SchoolTeacher';
 
 const University = () => {
   return (
@@ -17,6 +18,7 @@ const University = () => {
       <UniSkills></UniSkills>
       <UniBanner></UniBanner>
       <UniversityEduction></UniversityEduction>
+      <SchoolTeacher></SchoolTeacher>
     </div>
   );
 };
