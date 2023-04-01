@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import ErrorPage from '../components/Common/ErrorPage/ErrorPage';
 import AboutMain from '../components/Pages/About/AboutMain/AboutMain';
+import Blogs from '../components/Pages/Blogs/Blogs/Blogs';
 import Certification from '../components/Pages/Certification/Certification';
 import ContactUS from '../components/Pages/ContactUS/ContactUS/ContactUS';
 import Home from '../components/Pages/Home/Home/Home';
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: '/certification',
         element: <Certification></Certification>,
+      },
+      {
+        path: '/blogs',
+        element: <Blogs></Blogs>,
       },
     ],
   },
