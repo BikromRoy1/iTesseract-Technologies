@@ -5,18 +5,52 @@
     "img": "https://i.ibb.co/Hx0Sk9W/Smart-Bangladesh-Campaign.jpg",
     "date": "july 23, 2022",
     "comments": "No comments",
-    "descriptionfirst": "With all the hype and vibe with the Genz generation, iTesseract technologies Ltd. has launched the “100% Scholarship Campaign – Creating Smart Bangladesh ” yesterday 22nd July 2022. As the theme describes already, the campaign is on educating the students on Fourth Industrial Revolution, STEM, Programming, Robotics and Smart System IoT. Aligned with the vision “Smart Bangladesh 2041” this campaign has focused on the perception and expectations of the Genz generation of a future Smart Bangladesh. The range of participants were from Primary, Secondary and Highschool Students. Students from Schools and Colleges like – St. Joseph Higher Secondary School and College, Viqarunnisa Noon, Mastermind, Maple Leaf International school and many others participated in this campaign with a 100% scholarship. The students were given the scholarship based on a technical viva and interviews and were divided into categories by their academic classes. Courses and outcome of this campaign:",
-    "descriptionsecond": "Yesterday the launching and orientation of the campaign was an eye opener for everyone on how much this generation is tech driven and takes massive interest in learning technology. The room was filled with such energy and vibrancy, it was as if the future of Smart Bangladesh was already in the making! The orientation session was divided into a few events – an introductory session where our CEO, COO were gelled among the youth and shared their thoughts with the bunch, there was an ice breaking session for all the students to get communicating with each other. Most prominently the main session was taken by our educators where they spoke about the importance of 4IR and 4IR skill sets that we need, emphasizing on why this campaign is based on Smart Bangladesh Theme. Besides that, the students were introduced with the robotics tools and other electrical components that were going to provide them.",
-    "imgage-details": "CEO of iTesseract technologies Ltd was present in the orientation and has shared his words of wisdom and encouragement for the participants and congratulated them for being a part of this scholarship campaign successfully. He also shared his experience from the campaign."
+    "author": "Abdul Hamid",
+    "descriptionfirst": "With all the hype and vibe with the Genz generation, iTesseract technologies Ltd. has launched the “100% Scholarship Campaign – Creating Smart Bangladesh"
   },
   {
     "cat_id": "02",
-    "name": "Microbus Cars",
-    "img": "https://images.pexels.com/photos/11139395/pexels-photo-11139395.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    "title": "Bangabandhu Global Cyber Security Awareness Award",
+    "img": "https://i.ibb.co/xHCwrqK/1658557144149.jpg",
+    "date": "July 20, 2022",
+    "author": "Abdul Hamid",
+    "comments": "No comments",
+    "descriptionfirst": "Introducing the Bangabandhu Global Cyber Security Awareness Award by Honorable ICT Minister, Zunaid Ahmed Palak Zunaid Ahmed Palak, state minister for ICT"
   },
   {
     "cat_id": "03",
-    "name": "Luxury Cars",
-    "img": "https://images.pexels.com/photos/2127037/pexels-photo-2127037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    "title": "Digital Buisness ID to be mandated for all E commerce buisness",
+    "img": "https://i.ibb.co/QMPxcJb/business-concept-with-graphic-holography.jpg",
+    "date": "July 20, 2022",
+    "author": "Abdul Hamid",
+    "comments": "No comments",
+    "descriptionfirst": "By September 28, e-commerce companies must apply for a digital company ID. Online retailers are urged to apply for a digital business ID by September"
+  },
+  {
+    "cat_id": "04",
+    "title": "Data Science for Children and platforms for Data Science",
+    "img": "https://i.ibb.co/DMfXcXd/father-sons-making-robot.jpg",
+    "date": "July 18, 2022",
+    "author": "Abdul Hamid",
+    "comments": "No comments",
+    "descriptionfirst": "Data Science for Children and platforms for Data Science:Children may enjoy engaging, game-based data science activities! Data science is pervasive in our rapidly"
+  },
+  {
+    "cat_id": "05",
+    "title": "Top 5 best kids programming companies in Bangladesh",
+    "img": "https://i.ibb.co/T0SHk9M/6j6k-jkoy-210901.jpg",
+    "date": "April 18, 2022",
+    "author": "Abdul Hamid",
+    "comments": "No comments",
+    "descriptionfirst": "Nevertheless to say Programming has become a vital part starting from tech education to tech industry, highly skilled programmers are in huge demand in the"
+  },
+  {
+    "cat_id": "06",
+    "title": "Robotics Provides Excellent Teamwork and Collaboration Opportunities",
+    "img": "https://i.ibb.co/H2gHkHc/home-made-robot-desk.jpg",
+    "date": "April 3, 2022",
+    "author": "Abdul Hamid",
+    "comments": "No comments",
+    "descriptionfirst": "Robots have always been fascinating since they can be programmed to make noise, move, light up, and even obey directions. Building one’s own robot and"
   }
 ]
