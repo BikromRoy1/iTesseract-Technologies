@@ -28,9 +28,10 @@ const BlogDetails = () => {
                 <img
                   loading='lazy'
                   src='https://i.ibb.co/H2gHkHc/home-made-robot-desk.jpg'
-                  alt='image'
+                  alt='banner'
                   class='h-full w-full object-cover object-center'
                 />
+                <img src='' alt='' />
                 <div class='absolute top-0 left-0 z-10 flex h-full w-full items-end bg-gradient-to-t hero-overlay bg-opacity-30 from-dark-700 to-transparent'>
                   <div class='flex flex-wrap items-center p-4 pb-4 sm:p-8'>
                     <div class='mb-4 mr-5 flex items-center md:mr-10'>
@@ -38,7 +39,7 @@ const BlogDetails = () => {
                         <img
                           loading='lazy'
                           src={teamAuthor}
-                          alt='image'
+                          alt='Abdul Hamid'
                           class='w-full'
                         />
                       </div>
@@ -736,7 +737,7 @@ const BlogDetails = () => {
                             <img
                               loading='lazy'
                               src={coding}
-                              alt='image'
+                              alt='Top easy IDEs'
                               class='w-full'
                             />
                           </div>
@@ -765,7 +766,7 @@ const BlogDetails = () => {
                             <img
                               loading='lazy'
                               src={coding}
-                              alt='image'
+                              alt='Best electronics'
                               class='w-full'
                             />
                           </div>
@@ -792,7 +793,7 @@ const BlogDetails = () => {
                             <img
                               loading='lazy'
                               src={coding}
-                              alt='image'
+                              alt='Abdul Hamid'
                               class='w-full'
                             />
                           </div>
@@ -819,7 +820,7 @@ const BlogDetails = () => {
                             <img
                               loading='lazy'
                               src={coding}
-                              alt='image'
+                              alt='4IR Impact on Education'
                               class='w-full'
                             />
                           </div>
@@ -848,7 +849,7 @@ const BlogDetails = () => {
                       <img
                         loading='lazy'
                         src={bannerAd}
-                        alt='image'
+                        alt='banner adds'
                         class='w-full'
                       />
                     </div>

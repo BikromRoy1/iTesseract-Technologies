@@ -2,6 +2,7 @@ import React from 'react';
 import Title from '../../../Common/Title/Title';
 // import itAbout from '../../../../Images/it.webp';
 import Robots from '../../../../Images/roobots.png';
+import CountUp from 'react-countup';
 
 const ItesseractAbout = () => {
   return (
@@ -40,7 +41,15 @@ const ItesseractAbout = () => {
                 </svg>
               </span>
 
-              <h2 class='mt-2 font-bold text-xl'>1 কোটি +</h2>
+              <h2 class='mt-2 font-bold text-xl'>
+                <CountUp
+                  start={0}
+                  end={1}
+                  duration={2.75}
+                  enableScrollSpy={true}
+                />{' '}
+                কোটি +
+              </h2>
 
               <p class='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
                 মোট শিক্ষার্থী
@@ -65,7 +74,15 @@ const ItesseractAbout = () => {
                 </svg>
               </span>
 
-              <h2 class='mt-2 font-bold text-xl'>47 লক্ষ +</h2>
+              <h2 class='mt-2 font-bold text-xl'>
+                <CountUp
+                  start={0}
+                  end={47}
+                  duration={2.75}
+                  enableScrollSpy={true}
+                />{' '}
+                লক্ষ +
+              </h2>
 
               <p class='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
                 অ্যাপ ব্যবহারকারী
@@ -90,7 +107,15 @@ const ItesseractAbout = () => {
                 </svg>
               </span>
 
-              <h2 class='mt-2 font-bold text-xl'>3,000+</h2>
+              <h2 class='mt-2 font-bold text-xl'>
+                <CountUp
+                  start={0}
+                  end={3000}
+                  duration={2.75}
+                  enableScrollSpy={true}
+                />{' '}
+                +
+              </h2>
 
               <p class='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
                 স্টাডি ম্যাটেরিয়াল
@@ -114,13 +139,21 @@ const ItesseractAbout = () => {
                 </svg>
               </span>
 
-              <h2 class='mt-2 font-bold text-xl'>24,000+</h2>
+              <h2 class='mt-2 font-bold text-xl'>
+                {' '}
+                <CountUp
+                  start={0}
+                  end={24000}
+                  duration={2.75}
+                  enableScrollSpy={true}
+                />{' '}
+                +
+              </h2>
 
               <p class='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
                 লার্নিং কন্টেন্ট
               </p>
             </div>
-
           </div>
         </div>
       </div>
