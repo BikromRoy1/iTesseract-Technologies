@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
+import blogsBanner from '../../../../Images/blogs.jpg';
 import Breadcrumb from '../../../Breadcrumb/Breadcrumb';
 import BlogCard from '../BlogCard/BlogCard';
 
@@ -25,7 +26,7 @@ const Blogs = () => {
         title='ব্লগ'
         subTitle='ব্লগ'
         slgs='/blogs'
-        img='https://i.ibb.co/kH6KHq7/768.jpg'
+        img={blogsBanner}
       ></Breadcrumb>
       <section class='pt-20 pb-10 lg:pt-[80px] lg:pb-20'>
         <div class='container mx-auto'>
