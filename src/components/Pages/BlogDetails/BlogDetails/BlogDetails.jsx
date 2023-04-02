@@ -31,7 +31,7 @@ const BlogDetails = () => {
                   alt='image'
                   class='h-full w-full object-cover object-center'
                 />
-                <div class='absolute top-0 left-0 z-10 flex h-full w-full items-end bg-gradient-to-t from-dark-700 to-transparent'>
+                <div class='absolute top-0 left-0 z-10 flex h-full w-full items-end bg-gradient-to-t hero-overlay bg-opacity-30 from-dark-700 to-transparent'>
                   <div class='flex flex-wrap items-center p-4 pb-4 sm:p-8'>
                     <div class='mb-4 mr-5 flex items-center md:mr-10'>
                       <div class='mr-4 h-10 w-10 overflow-hidden rounded-full'>
