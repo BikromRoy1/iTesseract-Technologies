@@ -23,7 +23,7 @@ const School = () => {
       <SchoolTeacher></SchoolTeacher>
       <LearningPath></LearningPath>
       <Level></Level>
-      <ContactFrom title='Registration'></ContactFrom>
+      <ContactFrom title='কোর্স সম্পর্কিত যেকোনো তথ্যের জন্য যোগাযোগ করুন'></ContactFrom>
     </div>
   );
 };

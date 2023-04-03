@@ -182,7 +182,7 @@ const BlogDetails = () => {
                     '
                     >
                       <div class='mx-auto max-w-[530px]'>
-                        <span class='mb-6 flex justify-center text-[#1bb57b]'>
+                        <span class='mb-6 flex justify-center text-[#77a191]'>
                           <svg
                             width='44'
                             height='26'
