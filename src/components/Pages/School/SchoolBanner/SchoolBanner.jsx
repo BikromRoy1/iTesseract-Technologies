@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import playingimage from '../../../../Images/playing-banner.jpg';
 
 const SchoolBanner = () => {
@@ -21,9 +22,11 @@ const SchoolBanner = () => {
             ল্যাবে আরাম থেকে অধ্যয়ন করতে পারেন। 99% এরও বেশি শিক্ষার্থী এই
             কোর্সের বিষয়বস্তু এবং ফলাফলকে সুপার হিসেবে রেট দেয়
           </p>
-          <button className='px-8 py-3 font-semibold rounded dark:bg-[#ffc107] dark:text-white'>
-            নিবন্ধন করুন
-          </button>
+          <Link to='/registration'>
+            <button className='px-8 py-3 font-semibold rounded dark:bg-[#ffc107] dark:text-white'>
+              নিবন্ধন করুন
+            </button>
+          </Link>
         </div>
       </div>
     </div>

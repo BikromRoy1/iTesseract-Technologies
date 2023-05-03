@@ -5,6 +5,7 @@ import ItesseractAbout from "../ItesseractAbout/ItesseractAbout";
 import Kits from "../Kits/Kits";
 import Partner from "../Partner/Partner";
 import Subscribe from "../Subscribe/Subscribe";
+import Testimonial from "../Testimonial/Testimonial";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Partner></Partner>
       <Contact></Contact>
       <Kits></Kits>
+      <Testimonial></Testimonial>
       <ItesseractAbout></ItesseractAbout>
       <Subscribe></Subscribe>
     </div>

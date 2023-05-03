@@ -6,7 +6,7 @@ import 'boxicons';
 
 const Services = () => {
   return (
-    <section className=''>
+    <section className='background-color'>
       <div className='container px-6 py-8 mx-auto'>
         <Title
           title='এক নজরে'

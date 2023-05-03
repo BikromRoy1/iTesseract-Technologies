@@ -30,13 +30,13 @@ const Banner = () => {
             >
               <img
                 loading='lazy'
-                src={university}
+                src='https://i.ibb.co/bF54byC/website-university-3.jpg'
                 alt=''
                 className='mx-auto rounded-lg shadow-lg dark:bg-gray-500 h-[530px]'
               />
               <div className='overlay'>
                 <div className='absolute bottom-14 left-5'>
-                  <p className='text-left theme-secondary-color hover:text-white eduction-title-home'>
+                  <p className='text-left text-white hover:text-white eduction-title-home'>
                     বিশ্ববিদ্যালয়ের শিক্ষার্থীদের জন্য
                   </p>
                   <div className='text-left'>
@@ -62,7 +62,7 @@ const Banner = () => {
               />
               <div className='overlay'>
                 <div className='absolute bottom-14 left-5'>
-                  <p className='text-left theme-secondary-color hover:text-white eduction-title-home'>
+                  <p className='text-left text-white hover:text-white eduction-title-home'>
                     মাধ্যমিক শিক্ষার্থীদের জন্য
                   </p>
                   <div className='text-left'>
@@ -82,13 +82,13 @@ const Banner = () => {
             <div aria-hidden='true' className='mt-10 lg:mt-0 relative '>
               <img
                 loading='lazy'
-                src={highSchool}
+                src='https://i.ibb.co/vzRT4kR/website-high-school.jpg'
                 alt=''
                 className='mx-auto rounded-lg shadow-lg bg-gray-900/40 h-[530px]'
               />
               <div className='overlay'>
                 <div className='absolute bottom-14 left-5'>
-                  <p className='text-left theme-secondary-color hover:text-white eduction-title-home'>
+                  <p className='text-left text-white hover:text-white eduction-title-home'>
                     উচ্চ মাধ্যমিক শিক্ষার্থীদের জন্য
                   </p>
                   <div className='text-left'>

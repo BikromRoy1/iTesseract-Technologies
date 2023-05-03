@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import playingimage from '../../../../Images/univerBanner.jpg';
 
 const UniBanner = () => {
@@ -21,9 +22,11 @@ const UniBanner = () => {
             সার্টিফিকেট প্রোগ্রাম। 99% এরও বেশি শিক্ষার্থী এই কোর্সের বিষয়বস্তু
             এবং ফলাফলকে সুপার হিসেবে রেট দেয়
           </p>
-          <button className='px-8 py-3 font-semibold rounded dark:bg-[#ffc107] dark:text-white'>
-            নিবন্ধন করুন
-          </button>
+          <Link to='/registration'>
+            <button className='px-8 py-3 font-semibold rounded dark:bg-[#ffc107] dark:text-white'>
+              নিবন্ধন করুন
+            </button>
+          </Link>
         </div>
       </div>
     </div>

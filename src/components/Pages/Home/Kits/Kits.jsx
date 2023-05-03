@@ -31,7 +31,7 @@ const Kits = () => {
   ];
 
   return (
-    <section className='background-color'>
+    <section className=''>
       <div className='container px-6 py-10 mx-auto'>
         <Title
           title='প্রশিক্ষণের নিজস্ব'

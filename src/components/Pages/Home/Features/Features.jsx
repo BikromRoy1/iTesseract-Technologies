@@ -96,7 +96,7 @@ const Features = () => {
           </div>
         </div>
       </section>
-      <Testimonial></Testimonial>
+     
     </div>
   );
 };
