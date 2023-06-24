@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Title from '../../../Common/Title/Title';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -13,6 +14,24 @@ import { Pagination, Autoplay } from 'swiper';
 import TestimonialCard from './TestimonialCard';
 
 const Testimonial = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://itesseract.com.bd/master/api/v1/testimonials'
+        );
+        setData(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  console.log(data.data);
+
   return (
     <>
       <section className='testimonial-bg bg-gray-100'>
