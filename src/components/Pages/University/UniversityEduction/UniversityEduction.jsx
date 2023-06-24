@@ -30,7 +30,7 @@ const UniversityEduction = () => {
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0'>
             <div>
               <div className='bg-white font-semibold text-center rounded-1xl border shadow-lg p-10'>
-                <div className='mb-5 flex justify-center items-center w-32 h-32 rounded-full border border-[#1bb57b] shadow-lg mx-auto'>
+                <div className='mb-5 flex justify-center items-center w-32 h-32 rounded-full border-[3px] border-[#1bb57b] shadow-lg mx-auto'>
                   <img
                     loading='lazy'
                     className='w-20 h-20 object-contain'
@@ -50,7 +50,7 @@ const UniversityEduction = () => {
             </div>
             <div>
               <div className='bg-white font-semibold text-center rounded-1xl border shadow-lg p-10'>
-                <div className='mb-5 flex justify-center items-center w-32 h-32 rounded-full border border-[#1bb57b] shadow-lg mx-auto'>
+                <div className='mb-5 flex justify-center items-center w-32 h-32 rounded-full border-[3px] border-[#1bb57b] shadow-lg mx-auto'>
                   <img
                     loading='lazy'
                     className='w-20 h-20 object-contain'
@@ -70,7 +70,7 @@ const UniversityEduction = () => {
             </div>
             <div>
               <div className='bg-white font-semibold text-center rounded-1xl border shadow-lg p-10'>
-                <div className='mb-5 flex justify-center items-center w-32 h-32 rounded-full border border-[#1bb57b] shadow-lg mx-auto'>
+                <div className='mb-5 flex justify-center items-center w-32 h-32 rounded-full border-[3px] border-[#1bb57b] shadow-lg mx-auto'>
                   <img
                     loading='lazy'
                     className='w-20 h-20 object-contain'
@@ -90,7 +90,7 @@ const UniversityEduction = () => {
             </div>
             <div>
               <div className='bg-white font-semibold text-center rounded-1xl border shadow-lg p-10'>
-                <div className='mb-5 flex justify-center items-center w-32 h-32 rounded-full border border-[#1bb57b] shadow-lg mx-auto'>
+                <div className='mb-5 flex justify-center items-center w-32 h-32 rounded-full border-[3px] border-[#1bb57b] shadow-lg mx-auto'>
                   <img
                     loading='lazy'
                     className='w-20 h-20 object-contain'
@@ -110,7 +110,7 @@ const UniversityEduction = () => {
             </div>
             <div>
               <div className='bg-white font-semibold text-center rounded-1xl border shadow-lg p-10'>
-                <div className='mb-5 flex justify-center items-center w-32 h-32 rounded-full border border-[#1bb57b] shadow-lg mx-auto'>
+                <div className='mb-5 flex justify-center items-center w-32 h-32 rounded-full border-[3px] border-[#1bb57b] shadow-lg mx-auto'>
                   <img
                     loading='lazy'
                     className='w-20 h-20 object-contain'
@@ -132,7 +132,7 @@ const UniversityEduction = () => {
             </div>
             <div>
               <div className='bg-white font-semibold text-center rounded-1xl border shadow-lg p-10'>
-                <div className='mb-5 flex justify-center items-center w-32 h-32 rounded-full border border-[#1bb57b] shadow-lg mx-auto'>
+                <div className='mb-5 flex justify-center items-center w-32 h-32 rounded-full border-[3px] border-[#1bb57b] shadow-lg mx-auto'>
                   <img
                     loading='lazy'
                     className='w-20 h-20 object-contain'

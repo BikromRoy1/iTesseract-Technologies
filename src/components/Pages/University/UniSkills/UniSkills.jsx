@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Robotics from '../../../../Images/icons/skillicon2.png';
-import science from '../../../../Images/icons/skillicon3.png';
-import artificial from '../../../../Images/icons/ai.png';
+import { Link } from 'react-router-dom';
 
 const UniSkills = () => {
+  // https://itesseract.com.bd/master/api/v1/university-courses
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://itesseract.com.bd/master/api/v1/university-courses'
+        );
+        setData(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const universityCourses = data.data;
+
+  console.log(universityCourses);
+
   return (
     <div>
       <section className='py-14'>
@@ -12,10 +34,11 @@ const UniSkills = () => {
             <p className='text-lg text-[#1bb57b] uppercase'>
               বিশ্ববিদ্যালয় কোর্স
             </p>
-
             <a
               href='#'
               className='block mt-4 text-2xl font-semibold text-[#124265] hover:underline '
+              target='_blank'
+              rel='noopener noreferrer'
             >
               কোর্স দক্ষতা আপনি পাবেন
             </a>
@@ -32,67 +55,28 @@ const UniSkills = () => {
       <section className='pb-14'>
         <div className='container px-6 mx-auto'>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0'>
-            <div>
-              <div className='bg-white font-semibold text-center rounded-1xl border shadow-lg p-10'>
-                <div className='mb-5 flex justify-center items-center w-32 h-32 rounded-full border border-[#1bb57b] shadow-lg mx-auto'>
-                  <img
-                    loading='lazy'
-                    className='w-20 h-20 object-contain'
-                    src={Robotics}
-                    alt='Robotics'
-                  />
+            {universityCourses?.map((item) => (
+              <div key={item?.id}>
+                <div className='bg-white font-semibold text-center rounded-1xl border shadow-lg p-10'>
+                  <div className='mb-5 flex justify-center items-center w-32 h-32 rounded-full border-[3px]  border-[#1bb57b] shadow-lg mx-auto'>
+                    <img
+                      loading='lazy'
+                      className='w-20 h-20 object-contain'
+                      src={`https://itesseract.com.bd/master/` + item.image}
+                      alt='Robotics'
+                    />
+                  </div>
+                  <h1 className='text-xl text-[#124265]'>
+                    <Link href='#' target='_blank' rel='noopener noreferrer'>
+                      {item?.title}
+                    </Link>
+                  </h1>
+                  <p className='text-sm text-gray-400 mt-4'>
+                    {item?.description}
+                  </p>
                 </div>
-                <h1 className='text-xl text-[#124265]'>
-                  {' '}
-                  রোবোটিক্স এবং আই.ও.টি
-                </h1>
-                <p className='text-sm text-gray-400 mt-4'>
-                  {' '}
-                  রোবোটিক্স এবং আইওটি প্রযুক্তির বিকাশ iedu এবং iHero ব্যবহারের
-                  মাধ্যমে অন্বেষণ করা হচ্ছে, যা শিক্ষার্থীদের কীভাবে আসন্ন
-                  প্রযুক্তি তৈরি করতে হয় তা শেখায়।
-                </p>
               </div>
-            </div>
-            <div>
-              <div className='bg-white font-semibold text-center rounded-1xl border shadow-lg p-10'>
-                <div className='mb-5 flex justify-center items-center w-32 h-32 rounded-full border border-[#1bb57b] shadow-lg mx-auto'>
-                  <img
-                    loading='lazy'
-                    className='w-20 h-20 object-contain'
-                    src={science}
-                    alt='science'
-                  />
-                </div>
-                <h1 className='text-xl text-[#124265]'> ডেটা সায়েন্স</h1>
-                <p className='text-sm text-gray-400 mt-4'>
-                  {' '}
-                  ডেটা সায়েন্স হল বিশ্বের সবচেয়ে জনপ্রিয় এবং দ্রুতগতিতে
-                  বৃদ্ধি করছে বিশ্বব্যাপী প্রযুক্তি। পাইথন প্রোগ্রামিং ভাষা এবং
-                  iHero হার্ডওয়্যার সরঞ্জাম ব্যবহার করে একটি ডেটা সায়েন্স
-                  মাস্টার হয়ে উঠুন।
-                </p>
-              </div>
-            </div>
-            <div>
-              <div className='bg-white font-semibold text-center rounded-1xl border shadow-lg p-10'>
-                <div className='mb-5 flex justify-center items-center w-32 h-32 rounded-full border border-[#1bb57b] shadow-lg mx-auto'>
-                  <img
-                    loading='lazy'
-                    className='w-20 h-20 object-contain'
-                    src={artificial}
-                    alt='artificial'
-                  />
-                </div>
-                <h1 className='text-xl text-[#124265]'> কৃত্রিম বুদ্ধিমত্তা</h1>
-                <p className='text-sm text-gray-400 mt-4'>
-                  {' '}
-                  শিশুদের জন্য কৃত্রিম বুদ্ধিমত্তার বেশ কয়েকটি সুবিধার মধ্যে
-                  একটি হল সমস্যা সমাধানের ক্ষমতা উন্নত করা এবং মুখ শনাক্তকরণ
-                  প্রক্রিয়া সম্পর্কে আরও ভাল বোঝা এবং জানা
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

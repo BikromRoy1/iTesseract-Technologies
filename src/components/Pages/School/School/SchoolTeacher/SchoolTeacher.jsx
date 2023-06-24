@@ -37,7 +37,7 @@ const SchoolTeacher = () => {
                   <a
                     href='#'
                     className='block text-xl font-bold text-gray-800 '
-                    tabindex='0'
+                    tabIndex='0'
                     role='link'
                   >
                     তাসনিম জামান
