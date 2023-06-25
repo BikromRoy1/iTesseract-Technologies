@@ -1,35 +1,25 @@
-import React from "react";
-import "./AdBoard.css";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import './AdBoard.css';
 
 const AdBoard = () => {
+  const [data, setData] = useState([]);
 
-  const teamMembers = [
-    {
-      id: "01",
-      name: "Sazzad Hossain, Ph.D.",
-      img: `https://i.ibb.co/rw8YvVV/sazzad-sir.jpg`,
-      title: "Chief Advisor",
-    },
-    {
-      id: "02",
-      name: "Professor Vincent Chang, PhD",
-      img: "https://i.ibb.co/m5YYBNM/Professor-Vincent-Chang.jpg",
-      title: "Vice Chancellor",
-    },
-    {
-      id: "03",
-      name: "Dr. Lafifa Jamal",
-      img: "https://i.ibb.co/Wv8M1r9/Dr-Lafifa-Jamal.jpg",
-      title: "Professor",
-    },
-    {
-      id: "04",
-      name: "Prof. DR. DIP NANDI",
-      img: "https://i.ibb.co/KsTjYYB/director-dip.png",
-      title: "Professor",
-    },
-  ];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://itesseract.com.bd/master/api/v1/adviser-team'
+        );
+        setData(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
 
+  const teamMembers = data.data;
 
   return (
     <div className='Ad_Boarder_bg'>
@@ -43,32 +33,35 @@ const AdBoard = () => {
           </p>
         </div>
         <div className='py-6'>
-          <section className=''>
+          <div className=''>
             <div className='container px-6 mx-auto'>
               <div className='grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-10 md:grid-cols-2 xl:grid-cols-4'>
-                {teamMembers?.map((teamMember, index) => (
-                  <>
-                    <div key={teamMember.id} className='space-y-3'>
-                      <div className='cursor-pointer'>
-                        <img
-                          loading='lazy'
-                          className='rounded-lg hover:-translate-y-2 duration-200 ease-in-out shadow-lg w-full object-cover'
-                          src={teamMember.img}
-                          alt=''
-                        />
-                        <div className='text-center'>
-                          <h1 className='text-2xl font-bold mt-3 hover:text-[#1bb57b]'>
-                            {teamMember?.name}
-                          </h1>
-                          <p className='text-gray-400'>{teamMember?.title}</p>
-                        </div>
+                {teamMembers?.map((teamMember) => (
+                  <div key={teamMember?.id} className='space-y-3'>
+                    <div className='cursor-pointer' title={teamMember?.name}>
+                      <img
+                        loading='lazy'
+                        className='rounded-lg hover:-translate-y-2 duration-200 ease-in-out shadow-lg w-full object-cover'
+                        src={
+                          `https://itesseract.com.bd/master/` +
+                          teamMember?.image
+                        }
+                        alt={teamMember?.name}
+                      />
+                      <div className='text-center'>
+                        <h1 className='text-2xl font-bold mt-3 hover:text-[#1bb57b]'>
+                          {teamMember?.name}
+                        </h1>
+                        <p className='text-gray-400'>
+                          {teamMember?.designation}
+                        </p>
                       </div>
                     </div>
-                  </>
+                  </div>
                 ))}
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
