@@ -1,24 +1,81 @@
-import React from 'react';
-import IHero from './IHero/IHero';
-import IPlay from './IPlay/IPlay';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const ProductList = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://itesseract.com.bd/master/api/v1/products'
+        );
+        setData(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const products = data.data;
+
   return (
-    <div>
-      <IPlay
-        topTitle='আইপ্লে - টুলস'
-        title='পরবর্তী প্রজন্মের জন্য ব্লক বিল্ডিং'
-        details='আইপ্লে কৃত্রিম বুদ্ধিমত্তা, ডেটা সায়েন্স, ইমেজ প্রসেসিং, সমস্যা সমাধান এবং কম্পিউটার প্রোগ্রামিং শেখানোর জন্য সবচেয়ে আধুনিক প্রযুক্তিগত অগ্রগতি। আইপ্লে প্যাকেজটি শিক্ষার্থীদের পেশাদারভাবে প্রস্তুত 4IR দক্ষতা বিকাশে সহায়তা করার জন্য অত্যাধুনিক প্রযুক্তি ব্যবহার করে।'
-        image='https://i.ibb.co/D1qcyVk/i-Play-Mockup-updated.png'
-      ></IPlay>
-      <IHero></IHero>
-      <IPlay
-        topTitle='আইএডু - টুলস'
-        title='একটি প্রোগ্রামিং শিক্ষা শুরু করার জন্য সরঞ্জাম'
-        details='আইএডু বক্স প্রোগ্রামিং ভাষা এবং রোবোটিক্স শেখার জন্য। আপনার নিজস্ব প্রকল্প তৈরি করুন যেমন একটি সকার রোবট, একটি লাইন অনুসরণকারী, বা একটি দূরত্ব পরিমাপ রোবট। নিজেকে গ্রাফিক প্রোগ্রামিং, সি প্রোগ্রামিং এবং পাইথন প্রোগ্রামিং শেখাতে দুর্দান্ত ব্যাটম্যান রোবটটি ব্যবহার করুন।'
-        image='https://i.ibb.co/xHzwQFk/i-Edu-mockup.png'
-      ></IPlay>
-    </div>
+    <section className='container px-6 mx-auto pb-14 pt-14'>
+      <div className='text-center pb-10'>
+        <p className='text-lg text-[#1bb57b] uppercase'>আমাদের প্রোডাক্টস</p>
+
+        <Link
+          to='/'
+          className='block mt-4 text-2xl font-semibold text-[#124265] hover:underline '
+        >
+          যেকোনো বিষয়ে যেকোনো কিছু শিখতে চলে যাও তোমার পছন্দের প্রোডাক্টস
+        </Link>
+      </div>
+      <div className='grid grid-cols-1 gap-5  md:grid-cols-1 xl:grid-cols-2'>
+        {products?.map((product) => (
+          <div
+            className='flex flex-col md:flex-row gap-11 py-10 px-5 bg-white rounded-md shadow-lg  border-2'
+            key={product?.id}
+          >
+            <div className='text-indigo-500 flex flex-col justify-between'>
+              <img
+                className='lg:w-[800px] lg:h-[250px]'
+                src={`https://itesseract.com.bd/master/` + product?.image}
+                alt=''
+              />
+            </div>
+            <div className='text-indigo-500'>
+              <small className='uppercase text-[#1bb57b] text-lg'>
+                {product?.name}
+              </small>
+              <h3 className=' text-[#124265] text-2xl font-semibold mt-3 mb-3 hover:underline cursor-pointer'>
+                {product?.title}
+              </h3>
+              <small className='text-gray-500 text-justify text-sm'>
+                {product?.description?.length > 10 ? (
+                  product?.description?.slice(0, 268) + '.....'
+                ) : (
+                  <p>not found</p>
+                )}
+              </small>
+
+              <div className='flex gap-0.5 mt-4'>
+                <Link to={`/${product?.id}`}>
+                  <button
+                    id='addToCartButton'
+                    className='bg-[#1bb57b] hover:bg-[#1bb57b] focus:outline-none transition text-white uppercase px-8 py-3'
+                  >
+                    Explore Now
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

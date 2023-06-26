@@ -32,6 +32,7 @@ const ContactFrom = ({ title }) => {
                         type='text'
                         placeholder='ব্যবহারকারীর নাম'
                         className='w-full input-from-contorl p-3 rounded-md bg-white text-black'
+                        required
                       />
                     </div>
                     <div className='col-span-full sm:col-span-3'>

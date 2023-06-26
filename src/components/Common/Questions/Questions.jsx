@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import faq from '../../../Images/faq.png';
 
 const Questions = () => {
@@ -9,12 +10,12 @@ const Questions = () => {
         <div className='container px-6 py-10 mx-auto'>
           <div className='mt-8 lg:-mx-6 lg:flex lg:items-center'>
             <div className='w-full lg:mx-6 lg:w-1/2'>
-              <a
-                href='#'
+              <Link
+                to='/'
                 className='block mt-4 text-2xl font-semibold text-[#124265] hover:underline '
               >
                 আপনার সাধারণ প্রশ্নের উত্তর
-              </a>
+              </Link>
 
               <p className='mt-3 text-base  dark:text-gray-400 md:text-base'>
                 আমাদের শেখার উপকরণের মধ্যে রয়েছে বিস্তৃত শিক্ষামূলক, পেশাদার

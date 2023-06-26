@@ -7,6 +7,7 @@ import Blogs from '../components/Pages/Blogs/Blogs/Blogs';
 import Certification from '../components/Pages/Certification/Certification';
 import ContactUS from '../components/Pages/ContactUS/ContactUS/ContactUS';
 import Home from '../components/Pages/Home/Home/Home';
+import ProductDetails from '../components/Pages/Product/ProductDetails/ProductDetails';
 import ProductMain from '../components/Pages/Product/ProductMain/ProductMain';
 import School from '../components/Pages/School/School/School';
 import Team from '../components/Pages/Team/Team/Team';
@@ -44,6 +45,12 @@ const router = createBrowserRouter([
         element: <ProductMain></ProductMain>,
       },
       {
+        path: '/:id',
+        element: <ProductDetails></ProductDetails>,
+        loader: ({ params }) =>
+          fetch(`https://itesseract.com.bd/master/api/v1/product/${params.id}`),
+      },
+      {
         path: '/school',
         element: <School></School>,
       },
@@ -65,7 +72,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/registration',
-        element: <Registration></Registration>
+        element: <Registration></Registration>,
       },
     ],
   },
