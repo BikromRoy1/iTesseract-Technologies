@@ -1,10 +1,28 @@
 import React from 'react';
+import axios from 'axios';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
-import { HiPhoneIncoming } from 'react-icons/hi';
 import { FcAssistant, FcFactory } from 'react-icons/fc';
 import { BiMailSend } from 'react-icons/bi';
 
 const ContactModel = () => {
+  const [contact, setContact] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://itesseract.com.bd/master/api/v1/contact-info'
+        );
+        setContact(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <div>
       <input type='checkbox' id='my-modal-3' className='modal-toggle' />
@@ -29,24 +47,23 @@ const ContactModel = () => {
             <div className='flex items-center gap-3 mb-1'>
               <FcAssistant className='text-[#1bb57b]'></FcAssistant>
               <p className=' text-gray-500'>
-                <b>+8801550704720</b>
+                <b>{contact?.data?.phone}</b>
               </p>
             </div>
             <div className='flex items-center gap-3 mb-1'>
               <FaWhatsapp className='text-[#1bb57b]'></FaWhatsapp>
-              <p className=' text-gray-500'>+88013********</p>
+              <p className=' text-gray-500'>{contact?.data?.phone}</p>
             </div>
             <div className='flex items-center gap-3 mb-1'>
               <BiMailSend className='text-[#1bb57b]'></BiMailSend>
               <p className=' text-gray-500'>
-                <b>contact@itesseract.co</b>
+                <b>{contact?.data?.email}</b>
               </p>
             </div>
             <div className='flex items-center gap-3 mb-1'>
               <FcFactory className='text-[#1bb57b]'></FcFactory>
               <p className=' text-gray-500 font-normal text-sm'>
-                <b>151/7(5ম তলা)</b>, গুড লাক সেন্টার, গ্রীন রোড,{' '}
-                <b>ঢাকা 1205</b>
+                <b> {contact?.data?.address}</b>
               </p>
             </div>
             <div className=' mb-1 mt-4'>

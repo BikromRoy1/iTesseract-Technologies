@@ -1,13 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Title from '../../../Common/Title/Title';
-// import itAbout from '../../../../Images/it.webp';
 import Robots from '../../../../Images/roobots.png';
 import CountUp from 'react-countup';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 const ItesseractAbout = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://itesseract.com.bd/master/api/v1/counters'
+        );
+        setData(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const studentNumber = data?.data?.student;
+  const appUsers = data?.data?.user;
+  const materials = data?.data?.materials;
+  const learning = data?.data?.learning_content;
+
   return (
     <section>
-      <div class='max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 mx-auto'>
+      <div className='max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 mx-auto'>
         <Title
           title='আজই জয়েন করুন'
           text='বাংলাদেশের সবচেয়ে বড় লার্নিং প্ল্যাটফর্মে
@@ -15,16 +37,19 @@ const ItesseractAbout = () => {
           details='বাংলাদেশের সবচেয়ে বড় লার্নিং প্ল্যাটফর্মে
 ।'
         ></Title>
-        <div class='grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16'>
-          <div class='mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right'>
+        <div className='grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16'>
+          <div className='mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right'>
             <img loading='lazy' src={Robots} alt='Robot' />
           </div>
 
-          <div class='grid grid-cols-2 gap-4 sm:grid-cols-2'>
-            <div class='block rounded-xl border  border-gray-200  p-4 shadow-sm hover:border-gray-300 hover:ring-1 hover:ring-gray-300 focus:outline-none focus:ring'>
-              <span class='inline-block rounded-lg bg-gray-50 p-3'>
+          <div className='grid grid-cols-2 gap-4 sm:grid-cols-2'>
+            <div
+              title='মোট শিক্ষার্থী'
+              className='block rounded-xl border  border-gray-200  p-4 shadow-sm hover:border-gray-300 hover:ring-1 hover:ring-gray-300 focus:outline-none focus:ring'
+            >
+              <span className='inline-block rounded-lg bg-gray-50 p-3'>
                 <svg
-                  class='h-6 w-6 text-[#1bb57b]'
+                  className='h-6 w-6 text-[#1bb57b]'
                   fill='none'
                   stroke='currentColor'
                   viewBox='0 0 24 24'
@@ -41,30 +66,33 @@ const ItesseractAbout = () => {
                 </svg>
               </span>
 
-              <h2 class='mt-2 font-bold text-xl'>
+              <h2 className='mt-2 font-bold text-xl'>
                 <CountUp
                   start={0}
-                  end={1}
+                  end={studentNumber}
                   duration={2.75}
                   enableScrollSpy={true}
                 />{' '}
-                কোটি +
+                হাজার +
               </h2>
 
-              <p class='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
+              <p className='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
                 মোট শিক্ষার্থী
               </p>
             </div>
 
-            <div class='block rounded-xl border border-gray-200 p-4 shadow-sm hover:border-gray-300 hover:ring-1 hover:ring-gray-300 focus:outline-none focus:ring'>
-              <span class='inline-block rounded-lg bg-gray-50 p-3'>
+            <div
+              title=' অ্যাপ ব্যবহারকারী'
+              className='block rounded-xl border border-gray-200 p-4 shadow-sm hover:border-gray-300 hover:ring-1 hover:ring-gray-300 focus:outline-none focus:ring'
+            >
+              <span className='inline-block rounded-lg bg-gray-50 p-3'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
                   viewBox='0 0 24 24'
                   strokeWidth='1.5'
                   stroke='currentColor'
-                  class='w-6 h-6 text-[#1bb57b]'
+                  className='w-6 h-6 text-[#1bb57b]'
                 >
                   <path
                     strokeLinecap='round'
@@ -74,30 +102,33 @@ const ItesseractAbout = () => {
                 </svg>
               </span>
 
-              <h2 class='mt-2 font-bold text-xl'>
+              <h2 className='mt-2 font-bold text-xl'>
                 <CountUp
                   start={0}
-                  end={47}
+                  end={appUsers}
                   duration={2.75}
                   enableScrollSpy={true}
                 />{' '}
-                লক্ষ +
+                হাজার +
               </h2>
 
-              <p class='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
+              <p className='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
                 অ্যাপ ব্যবহারকারী
               </p>
             </div>
 
-            <div class='block rounded-xl border border-gray-200 p-4 shadow-sm hover:border-gray-300 hover:ring-1 hover:ring-gray-300 focus:outline-none focus:ring'>
-              <span class='inline-block rounded-lg bg-gray-50 p-3'>
+            <div
+              title=' স্টাডি ম্যাটেরিয়াল'
+              className='block rounded-xl border border-gray-200 p-4 shadow-sm hover:border-gray-300 hover:ring-1 hover:ring-gray-300 focus:outline-none focus:ring'
+            >
+              <span className='inline-block rounded-lg bg-gray-50 p-3'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
                   viewBox='0 0 24 24'
                   strokeWidth='1.5'
                   stroke='currentColor'
-                  class='w-6 h-6 text-[#1bb57b]'
+                  className='w-6 h-6 text-[#1bb57b]'
                 >
                   <path
                     strokeLinecap='round'
@@ -107,30 +138,33 @@ const ItesseractAbout = () => {
                 </svg>
               </span>
 
-              <h2 class='mt-2 font-bold text-xl'>
+              <h2 className='mt-2 font-bold text-xl'>
                 <CountUp
                   start={0}
-                  end={3000}
+                  end={materials}
                   duration={2.75}
                   enableScrollSpy={true}
                 />{' '}
                 +
               </h2>
 
-              <p class='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
+              <p className='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
                 স্টাডি ম্যাটেরিয়াল
               </p>
             </div>
 
-            <div class='block rounded-xl border border-gray-200 p-4 shadow-sm hover:border-gray-300 hover:ring-1 hover:ring-gray-300 focus:outline-none focus:ring'>
-              <span class='inline-block rounded-lg bg-gray-50 p-3'>
+            <div
+              title='লার্নিং কন্টেন্ট'
+              className='block rounded-xl border border-gray-200 p-4 shadow-sm hover:border-gray-300 hover:ring-1 hover:ring-gray-300 focus:outline-none focus:ring'
+            >
+              <span className='inline-block rounded-lg bg-gray-50 p-3'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
                   viewBox='0 0 24 24'
                   strokeWidth='1.5'
                   stroke='currentColor'
-                  class='w-6 h-6 text-[#1bb57b]'
+                  className='w-6 h-6 text-[#1bb57b]'
                 >
                   <path
                     strokeLinecap='round'
@@ -139,18 +173,18 @@ const ItesseractAbout = () => {
                 </svg>
               </span>
 
-              <h2 class='mt-2 font-bold text-xl'>
+              <h2 className='mt-2 font-bold text-xl'>
                 {' '}
                 <CountUp
                   start={0}
-                  end={24000}
+                  end={learning}
                   duration={2.75}
                   enableScrollSpy={true}
                 />{' '}
                 +
               </h2>
 
-              <p class='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
+              <p className='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
                 লার্নিং কন্টেন্ট
               </p>
             </div>

@@ -1,23 +1,52 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../../css/Root.css';
+import axios from 'axios';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import ContactModel from '../../ContactModel/ContactModel';
+import { useState } from 'react';
 
 const TopHeader = () => {
+  const [socials, setSocials] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://itesseract.com.bd/master/api/v1/social-info'
+        );
+        setSocials(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const socialLinks = socials.data;
+
+
   return (
     <div>
       <div className='theme-primary-color-bg py-2'>
         <div className='container px-6 mx-auto'>
           <div className='flex items-center justify-between'>
             <div className='flex items-center gap-3'>
-              <a target='_blank' href='https://www.facebook.com/itesseractltd'>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href={socialLinks?.facebook}
+              >
                 <FaFacebook
                   className='cursor-pointer'
                   size='18'
                   color='#ffffff'
                 ></FaFacebook>
               </a>
-              <a target='_blank' href='https://twitter.com/itesseractltd'>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href={socialLinks?.twitter}
+              >
                 <FaTwitter
                   className='cursor-pointer'
                   size='18'
@@ -26,7 +55,8 @@ const TopHeader = () => {
               </a>
               <a
                 target='_blank'
-                href='https://www.instagram.com/itesseractltd/'
+                rel='noopener noreferrer'
+                href={socialLinks?.instagram}
               >
                 <FaInstagram
                   className='cursor-pointer'
@@ -34,11 +64,17 @@ const TopHeader = () => {
                   color='#ffffff'
                 ></FaInstagram>
               </a>
-              <FaLinkedin
-                className='cursor-pointer'
-                size='18'
-                color='#ffffff'
-              ></FaLinkedin>
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href={socialLinks?.linkedin}
+              >
+                <FaLinkedin
+                  className='cursor-pointer'
+                  size='18'
+                  color='#ffffff'
+                ></FaLinkedin>
+              </a>
             </div>
             <div className='flex items-center flex-wrap gap-3'>
               <p className='text-font hidden md:block text-white'>

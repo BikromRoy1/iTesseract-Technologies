@@ -5,8 +5,27 @@ import timeTabel from '../../../Images/icons/timetable.png';
 import email from '../../../Images/icons/email.png';
 import { Link } from 'react-router-dom';
 import logo from '../../../Images/main-logo.svg';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 const Footers = () => {
+  const [contact, setContact] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://itesseract.com.bd/master/api/v1/contact-info'
+        );
+        setContact(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <section>
       <footer className='p-6  dark:text-gray-100 footer-area'>
@@ -28,9 +47,7 @@ const Footers = () => {
                   </div>
                 </Link>
                 <p className='text-font text-sm footer-color2 font-semibold'>
-                  151/7, গুড লাক সেন্টার (৫ম) তলা, গ্রীণ রোড়, পান্থপথ সিগন্যাল{' '}
-                  <br className='hidden md:block' />
-                  (হামদর্দ কলেজের পাশের বিল্ডিং) ঢাকা - 1205
+                  {contact?.data?.address}
                 </p>
               </div>
               <Link className='mb-2' to=''>
@@ -39,7 +56,9 @@ const Footers = () => {
                     <img src={call} alt='call' />
                   </div>
                   <p className='text-base footer-color2 font-semibold'>
-                    <a href='tel:+8801745610020'> +8801550704720</a>
+                    <a href={`tel:${contact?.data?.phone}`}>
+                      {contact?.data?.phone}
+                    </a>
                   </p>
                 </div>
               </Link>
@@ -59,7 +78,7 @@ const Footers = () => {
                     <img src={email} alt='email' />
                   </div>
                   <p className='text-base footer-color2 font-semibold'>
-                    Email: info@itesseract.com
+                    Email: {contact?.data?.email}
                   </p>
                 </div>
               </Link>
@@ -93,9 +112,6 @@ const Footers = () => {
                 <Link to='/about'>~ আমাদের সম্পর্কে</Link>
               </h2>
               <h2>
-                <Link to='/blog'>~ ব্লগ</Link>
-              </h2>
-              <h2>
                 <Link to='/team'>~ টিম</Link>
               </h2>
               <h2>
@@ -106,6 +122,9 @@ const Footers = () => {
               </h2>
               <h2>
                 <Link to=''>~ প্রাইভেসী পলিসি - ব্যবহারকারী</Link>
+              </h2>
+              <h2>
+                <Link to=''>~ ফেরত এবং বাতিলকরণ</Link>
               </h2>
             </div>
           </div>

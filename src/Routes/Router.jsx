@@ -67,8 +67,10 @@ const router = createBrowserRouter([
         element: <Blogs></Blogs>,
       },
       {
-        path: '/blogDetails',
+        path: '/blog/:id',
         element: <BlogDetails></BlogDetails>,
+        loader: ({ params }) =>
+          fetch(`https://itesseract.com.bd/master/api/v1/blog/${params.id}`),
       },
       {
         path: '/registration',

@@ -72,7 +72,7 @@ const Testimonial = () => {
           >
             {testimonialData?.map((item) => (
               <SwiperSlide key={item?.id}>
-                <div class='testimonial-item' title={item?.name}>
+                <div className='testimonial-item' title={item?.name}>
                   <p>
                     <FaQuoteLeft className='inline-block quote-icon-left' />
                     {item?.body}
@@ -81,7 +81,7 @@ const Testimonial = () => {
                   <img
                     loading='lazy'
                     src={`https://itesseract.com.bd/master/` + item?.image}
-                    class='testimonial-img'
+                    className='testimonial-img'
                     alt={item?.name}
                   />
                   <h3>{item?.name}</h3>

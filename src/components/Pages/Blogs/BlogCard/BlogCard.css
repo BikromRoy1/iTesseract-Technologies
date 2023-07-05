@@ -10,7 +10,7 @@
 }
 .single-blog-grid .blog-img img {
   width: 100%;
-  height: 280px;
+  height: 250px;
   transition: all 0.3s ease;
 }
 .single-blog-grid:hover .blog-img img {
@@ -18,7 +18,7 @@
   transform: scale(1.1);
 }
 .single-blog-grid .blog-content {
-  padding: 35px;
+  padding: 25px;
 }
 .single-blog-grid .blog-content .meta-info {
   margin-bottom: 20px;
@@ -38,10 +38,10 @@
 }
 .single-blog-grid .blog-content h4 {
   display: block;
-  line-height: 28px;
+  line-height: 22px;
 }
 .single-blog-grid .blog-content h4 a {
-  font-size: 19px;
+  font-size: 18px;
   color: #101130;
   font-weight: 700;
   display: inline-block;
@@ -53,12 +53,12 @@
   color: #1bb57b;
 }
 .single-blog-grid .blog-content p {
-  display: block;
-  margin-top: 20px;
+  margin-top: 15px;
+  font-size: 14px;
 }
 .single-blog-grid .blog-content .more-btn {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 15px;
   color: #888;
   font-weight: 500;
   transition: all 0.4s ease;

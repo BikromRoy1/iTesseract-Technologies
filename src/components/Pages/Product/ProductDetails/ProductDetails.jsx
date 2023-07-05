@@ -27,7 +27,7 @@ const ProductDetails = () => {
             <img
               className=''
               src={`https://itesseract.com.bd/master/` + singleProduct?.image}
-              alt=''
+              alt={singleProduct?.name}
             />
           </div>
           <div className='text-indigo-500'>

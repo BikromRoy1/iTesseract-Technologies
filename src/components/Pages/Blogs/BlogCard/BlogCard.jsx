@@ -3,20 +3,46 @@ import { Link } from 'react-router-dom';
 import './BlogCard.css';
 
 const BlogCard = ({ blog }) => {
-  const { cat_id, title, img, date, comments, author, descriptionfirst } = blog;
+  const { id, title, image, created_at,  body, category } = blog;
+
+  const createdAt = created_at;
+  const date = new Date(createdAt);
+
+  // Get the individual components of the date
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1; // January is 0, so we add 1
+  const day = date.getDate();
+
+  // Create the formatted date string
+  const formattedDate = `${year}-${month < 10 ? '0' + month : month}-${
+    day < 10 ? '0' + day : day
+    }`;
+  
+    function removeHTMLTags(htmlString) {
+      const parser = new DOMParser();
+      const parsedDocument = parser.parseFromString(htmlString, 'text/html');
+      return parsedDocument.body.textContent || '';
+    }
+
+    const plainText = removeHTMLTags(body);
 
   return (
     <div>
       {' '}
-      <div class='single-blog-grid'>
-        <div class='blog-img'>
-          <Link to='/blogDetails'>
-            <img className='object-cover' loading='lazy' src={img} alt='' />
+      <div className='single-blog-grid'>
+        <div className='blog-img'>
+          <Link to={`/blog/${id}`}>
+            <img
+              className='object-cover'
+              loading='lazy'
+              src={`https://itesseract.com.bd/master/` + image}
+              alt={title}
+            />
           </Link>
         </div>
-        <div class='blog-content'>
-          <div class='meta-info'>
-            <Link class='date' to='/blogDetails'>
+        <div className='blog-content'>
+          <div className='meta-info'>
+            <Link className='date' to={`/blog/${id}`}>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 fill='none'
@@ -31,31 +57,43 @@ const BlogCard = ({ blog }) => {
                   d='M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z'
                 />
               </svg>
-              {date}
+              {formattedDate}
             </Link>
-            <Link class='author' to='/blogDetails'>
+            <Link className='author' to={`/blog/${id}`}>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 fill='none'
                 viewBox='0 0 24 24'
-                strokeWidth={1.5}
+                stroke-width='1.5'
                 stroke='currentColor'
                 className='w-6 h-6 watch'
               >
                 <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  d='M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  d='M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z'
+                />
+                <path
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  d='M6 6h.008v.008H6V6z'
                 />
               </svg>
-              {author}
+
+              {category?.name}
             </Link>
           </div>
           <h4>
-            <Link to='/blogDetails'>{title}</Link>
+            <Link to={`/blog/${id}`}>{title}</Link>
           </h4>
-          <p>{descriptionfirst}</p>
-          <Link to='/blogDetails' class='more-btn'>
+          <p className='text-justify'>
+            {plainText?.length > 10 ? (
+              plainText?.slice(0, 180) + ' .....'
+            ) : (
+              <p>not found</p>
+            )}
+          </p>
+          <Link to={`/blog/${id}`} className='more-btn'>
             Read Blog{' '}
             <svg
               xmlns='http://www.w3.org/2000/svg'

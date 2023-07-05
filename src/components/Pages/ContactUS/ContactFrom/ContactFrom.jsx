@@ -10,10 +10,10 @@ const ContactFrom = ({ title }) => {
           {title}
         </h1>
       </div>
-      <section class='bg-white'>
-        <div class='container px-6 py-10 mx-auto lg:py-2'>
-          <div class='lg:flex items-center'>
-            <div class='lg:w-1/2'>
+      <section className='bg-white'>
+        <div className='container px-6 py-10 mx-auto lg:py-2'>
+          <div className='lg:flex items-center'>
+            <div className='lg:w-1/2'>
               <img
                 loading='lazy'
                 className='sm:w-full lg:w-[500px]'
@@ -22,7 +22,7 @@ const ContactFrom = ({ title }) => {
               />
             </div>
 
-            <div class='mt-8 lg:w-1/2 lg:mt-0'>
+            <div className='mt-8 lg:w-1/2 lg:mt-0'>
               <form className='container flex flex-col mx-auto space-y-12'>
                 <fieldset className='grid grid-cols-6 gap-6 '>
                   <div className='grid grid-cols-6 gap-4 col-span-full lg:col-span-12'>
