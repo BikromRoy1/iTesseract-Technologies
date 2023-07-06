@@ -1,8 +1,5 @@
 import React from 'react';
-import sazzad_sir1 from '../../../../Images/team/shape 1-01.png';
-import sazzad_sir2 from '../../../../Images/team/shape 1-02.png';
 import sazzad_sir3 from '../../../../Images/team/shape 03-update.png';
-import Title from '../../../Common/Title/Title';
 
 const Contact = () => {
   return (
