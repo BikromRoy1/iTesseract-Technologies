@@ -1,6 +1,33 @@
+import { data } from 'autoprefixer';
+import axios from 'axios';
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const Subscribe = () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const email = form.email.value;
+
+    try {
+      const response = await axios.post(
+        `https://itesseract.com.bd/master/api/v1/subscriber/store?email=${email}`
+      );
+      console.log(response.data);
+      toast.success('ধন্যবাদ আমাদের সদস্য হওয়ার জন্য !', {
+        autoClose: 2000,
+      });
+      form.reset();
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      form.reset();
+      toast.warning('আপনি আমাদের অলরেডি সদস্য হিসেবে আছেন !', {
+        autoClose: 2000,
+      });
+    }
+  };
+
   return (
     <section className='bg-gray-50'>
       <div className='p-8 md:p-12 lg:px-16 lg:py-20'>
@@ -11,14 +38,16 @@ const Subscribe = () => {
         </div>
 
         <div className='mx-auto mt-8 max-w-xl'>
-          <form action='#' className='sm:flex sm:gap-4'>
+          <form onSubmit={handleSubmit} className='sm:flex sm:gap-4'>
             <div className='sm:flex-1'>
               <label htmlFor='email' className='sr-only'>
                 Email
               </label>
 
               <input
+                name='email'
                 type='email'
+                required
                 placeholder='Email address'
                 className='w-full rounded-md border-gray-200 bg-white p-3 text-gray-700 shadow-sm transition focus:border-white focus:outline-none focus:ring focus:ring-yellow-400'
               />

@@ -1,6 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import ErrorPage from '../components/Common/ErrorPage/ErrorPage';
+import Policy from '../components/Common/Policy/Policy';
 import Registration from '../components/Common/Registration/Registration';
+import Terms from '../components/Common/Terms/Terms';
 import AboutMain from '../components/Pages/About/AboutMain/AboutMain';
 import BlogDetails from '../components/Pages/BlogDetails/BlogDetails/BlogDetails';
 import Blogs from '../components/Pages/Blogs/Blogs/Blogs';
@@ -75,6 +77,14 @@ const router = createBrowserRouter([
       {
         path: '/registration',
         element: <Registration></Registration>,
+      },
+      {
+        path: '/terms',
+        element: <Terms></Terms>,
+      },
+      {
+        path: '/policy',
+        element: <Policy></Policy>
       },
     ],
   },

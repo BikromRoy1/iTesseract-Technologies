@@ -1,14 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 import { Pagination, Autoplay } from 'swiper';
-import sazzadSir from '../../../../Images/team/sazzad-sir.jpg';
-import AbdulhamidSir from '../../../../Images/team/abdulhamid.png';
 import TestimonialCard from './ClientTestimonial.css';
+import axios from 'axios';
 
 const ClientTestimonial = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://itesseract.com.bd/master/api/v1/parent-testimonials'
+        );
+        setData(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const testimonialData = data.data;
+
+  console.log(testimonialData);
+
   return (
     <>
       <div className='bg-[#F1F3F6]'>
@@ -52,46 +71,25 @@ const ClientTestimonial = () => {
               modules={[Pagination, Autoplay]}
               className='mySwiper'
             >
-              <SwiperSlide>
-                <div class='client-item'>
-                  <p>
-                    <FaQuoteLeft className='inline-block quote-icon-left' />
-                    "এটি রোবোটিক্স এবং কোডিং শেখার জন্য একটি চমৎকার প্ল্যাটফর্ম।
-                    একটি অনলাইন কোডিং ক্লাস শেষ করার পরে, আমার বাচ্চারা বেশ ভাল
-                    করছে। রোবটের সাহায্যে, আমার মেয়ে এখন ছোটখাটো সমস্যা সমাধান
-                    করতে সক্ষম।"
-                    <FaQuoteRight className='inline-block quote-icon-right' />
-                  </p>
-                  <img
-                    loading='lazy'
-                    src={sazzadSir}
-                    class='client-img'
-                    alt=''
-                  />
-                  <h3>সাজ্জাদ হোসেন, পিএইচডি,</h3>
-                  <h4>ছাত্র অভিভাবক</h4>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div class='client-item'>
-                  <p>
-                    <FaQuoteLeft className='inline-block quote-icon-left' />
-                    "আইটেসারেক্ট টেকনোলিজস টিম প্রদর্শন করে যে শিশুদের জন্য
-                    প্রযুক্তি সম্পর্কে শেখা কতটা সহজ। তাদের কাজের মান খুবই
-                    অসাধারণ। আমি বিশ্বাস করি তাদের পণ্য এবং পরিষেবা বিশ্বের
-                    EdTech ব্যবসার মধ্যে অন্যতম সেরা হবে”
-                    <FaQuoteRight className='inline-block quote-icon-right' />
-                  </p>
-                  <img
-                    loading='lazy'
-                    src={AbdulhamidSir}
-                    class='client-img'
-                    alt=''
-                  />
-                  <h3>আব্দুল হামিদ</h3>
-                  <h4>ছাত্র অভিভাবক</h4>
-                </div>
-              </SwiperSlide>
+              {testimonialData?.map((item) => (
+                <SwiperSlide key={item?.id}>
+                  <div class='client-item'>
+                    <p>
+                      <FaQuoteLeft className='inline-block quote-icon-left' />"
+                      {item?.body}”
+                      <FaQuoteRight className='inline-block quote-icon-right' />
+                    </p>
+                    <img
+                      loading='lazy'
+                      src={`https://itesseract.com.bd/master/` + item?.image}
+                      class='client-img'
+                      alt={item?.name}
+                    />
+                    <h3>{item?.name}</h3>
+                    <h4>{item?.designation}</h4>
+                  </div>
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
         </section>

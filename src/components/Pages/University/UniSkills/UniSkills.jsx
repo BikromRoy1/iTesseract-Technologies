@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Robotics from '../../../../Images/icons/skillicon2.png';
+
 import { Link } from 'react-router-dom';
 
 const UniSkills = () => {
@@ -23,8 +23,6 @@ const UniSkills = () => {
   }, []);
 
   const universityCourses = data.data;
-
-  console.log(universityCourses);
 
   return (
     <div>

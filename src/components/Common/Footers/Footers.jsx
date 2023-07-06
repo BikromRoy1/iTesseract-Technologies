@@ -57,7 +57,7 @@ const Footers = () => {
                   </div>
                   <p className='text-base footer-color2 font-semibold'>
                     <a href={`tel:${contact?.data?.phone}`}>
-                      {contact?.data?.phone}
+                      <b>Phone: </b> {contact?.data?.phone}
                     </a>
                   </p>
                 </div>
@@ -68,7 +68,7 @@ const Footers = () => {
                     <img src={timeTabel} alt='timetable' />
                   </div>
                   <p className='text-base footer-color2 font-semibold'>
-                    Response hours: 24/7
+                    <b>Response hours:</b> 24/7
                   </p>
                 </div>
               </Link>
@@ -78,7 +78,7 @@ const Footers = () => {
                     <img src={email} alt='email' />
                   </div>
                   <p className='text-base footer-color2 font-semibold'>
-                    Email: {contact?.data?.email}
+                    <b>Email:</b> {contact?.data?.email}
                   </p>
                 </div>
               </Link>
@@ -115,41 +115,21 @@ const Footers = () => {
                 <Link to='/team'>~ টিম</Link>
               </h2>
               <h2>
-                <Link to=''>~ কমিউনিটি পার্টনার</Link>
-              </h2>
-              <h2>
-                <Link to=''>~ টার্মস & কন্ডিশনস - ব্যবহারকারী</Link>
-              </h2>
-              <h2>
-                <Link to=''>~ প্রাইভেসী পলিসি - ব্যবহারকারী</Link>
-              </h2>
-              <h2>
-                <Link to=''>~ ফেরত এবং বাতিলকরণ</Link>
+                <Link to='/'>~ কমিউনিটি পার্টনার</Link>
               </h2>
             </div>
           </div>
           <div className='flex flex-col space-y-4'>
-            <h2 className='font-medium footer-color'>
-              সর্বশেষ কোর্সের সাথে আপ টু ডেট থাকুন
+            <h2 className=' text-base font-semibold md:text-xl md:font-bold text-base font-semibold md:text-xl md:font-bold footer-color'>
+              শর্তাবলী
             </h2>
-            <div className=''>
-              <fieldset className=' dark:text-gray-100'>
-                <div className='flex'>
-                  <input
-                    type='email'
-                    name='email'
-                    id='email'
-                    placeholder='Email'
-                    className=' p-4 text-right border sm:text-sm rounded-l-md focus:ring-inset dark:border-gray-700 dark:text-black dark:bg-white focus:ring-violet-400'
-                  />
-                  <button
-                    type='button'
-                    className=' px-4 p-4 sm:text-sm rounded-r-md footer-color-bg cursor-pointer'
-                  >
-                    Send
-                  </button>
-                </div>
-              </fieldset>
+            <div className='flex flex-col space-y-2 text-sm footer-color2 font-semibold'>
+              <h2>
+                <Link to='/terms'>~ টার্মস & কন্ডিশনস - ব্যবহারকারী</Link>
+              </h2>
+              <h2>
+                <Link to='/policy'>~ প্রাইভেসী পলিসি - ব্যবহারকারী</Link>
+              </h2>
             </div>
           </div>
         </div>

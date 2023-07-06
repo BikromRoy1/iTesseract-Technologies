@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import blogDetai from '../../../../Images/blogDetails.jpg';
-import coding from '../../../../Images/coding.jpg';
-import bannerAd from '../../../../Images/bannder-ad.png';
 import teamAuthor from '../../../../Images/team/abdulhamid.png';
 import Breadcrumb from '../../../Breadcrumb/Breadcrumb';
 import axios from 'axios';

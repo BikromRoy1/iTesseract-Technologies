@@ -22,7 +22,7 @@ const Partner = () => {
   const partnerImages = data.data;
 
   return (
-    <section className='bg-white '>
+    <section id='partner' className='bg-white '>
       <div className='container p-6 mx-auto space-y-6 text-center lg:p-8 lg:space-y-8'>
         <div className='flex flex-wrap justify-center items-center lg:justify-between'>
           <h2 className='font-bold text-2xl footer-color'>
