@@ -73,7 +73,7 @@ const ItesseractAbout = () => {
                   duration={2.75}
                   enableScrollSpy={true}
                 />{' '}
-                হাজার +
+                +
               </h2>
 
               <p className='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
@@ -109,7 +109,7 @@ const ItesseractAbout = () => {
                   duration={2.75}
                   enableScrollSpy={true}
                 />{' '}
-                হাজার +
+                +
               </h2>
 
               <p className='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
