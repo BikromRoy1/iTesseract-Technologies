@@ -6,7 +6,7 @@ import level02 from '../../../../Images/level02.jpg';
 import playing from '../../../../Images/playing-banner.jpg';
 import university from '../../../../Images/university.jpg';
 import level05 from '../../../../Images/coding.jpg';
-import level06 from '../../../../Images/univerBanner.jpg';
+import level06 from '../../../../Images/kid-with-robots-2.jpg';
 import graph from '../../../../Images/icons/graph.svg';
 import cour from '../../../../Images/icons/courseiCon.png';
 import './Level.css';

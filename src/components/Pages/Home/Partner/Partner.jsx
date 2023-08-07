@@ -4,6 +4,7 @@ import './Partner.css';
 
 const Partner = () => {
   const [data, setData] = useState([]);
+   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -11,8 +12,10 @@ const Partner = () => {
           'https://itesseract.com.bd/master/api/v1/partners'
         );
         setData(response.data);
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
+        setLoading(false);
       }
     };
 
@@ -31,19 +34,29 @@ const Partner = () => {
 
           {/* Render the data */}
 
-          {partnerImages?.map((item) => (
-            <div key={item?.id}>
-              <a href={item?.link} target='_blank' rel='noopener noreferrer'>
-                <img
-                  loading='lazy'
-                  title={item?.title}
-                  className='mx-10 my-3 md:mx-12 lg:m-0 partner-logo'
-                  src={`https://itesseract.com.bd/master/` + item?.image}
-                  alt={item?.title}
-                />
-              </a>
-            </div>
-          ))}
+          {loading ? (
+            <p>Loading data...</p>
+          ) : (
+            <>
+              {partnerImages?.map((item) => (
+                <div key={item?.id}>
+                  <a
+                    href={item?.link}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <img
+                      loading='lazy'
+                      title={item?.title}
+                      className='mx-10 my-3 md:mx-12 lg:m-0 partner-logo'
+                      src={`https://itesseract.com.bd/master/` + item?.image}
+                      alt={item?.title}
+                    />
+                  </a>
+                </div>
+              ))}
+            </>
+          )}
         </div>
       </div>
     </section>

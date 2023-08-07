@@ -1,11 +1,12 @@
 import React from 'react';
+import twoGirls from '../../../../../Images/12part.png';
 
 const LearningPath = () => {
   return (
     <div
       className='hero h-[420px] text-center object-cover'
       style={{
-        backgroundImage: `url(https://i.ibb.co/R40PK61/two-young-girls-using-electronic-parts-build-drone.jpg)`,
+        backgroundImage: `url(${twoGirls})`,
       }}
     >
       <div className='hero-overlay bg-opacity-70'></div>

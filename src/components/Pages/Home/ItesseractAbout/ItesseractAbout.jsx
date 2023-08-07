@@ -22,10 +22,12 @@ const ItesseractAbout = () => {
     fetchData();
   }, []);
 
-  const studentNumber = data?.data?.student;
-  const appUsers = data?.data?.user;
-  const materials = data?.data?.materials;
-  const learning = data?.data?.learning_content;
+  const startValue = 0;
+
+  const studentNumber = parseInt(data?.data?.student);
+  const appUsers = parseInt(data?.data?.user);
+  const materials = parseInt(data?.data?.materials);
+  const learning = parseInt(data?.data?.learning_content);
 
   return (
     <section>
@@ -68,7 +70,7 @@ const ItesseractAbout = () => {
 
               <h2 className='mt-2 font-bold text-xl'>
                 <CountUp
-                  start={0}
+                  start={startValue}
                   end={studentNumber}
                   duration={2.75}
                   enableScrollSpy={true}
@@ -104,7 +106,7 @@ const ItesseractAbout = () => {
 
               <h2 className='mt-2 font-bold text-xl'>
                 <CountUp
-                  start={0}
+                  start={startValue}
                   end={appUsers}
                   duration={2.75}
                   enableScrollSpy={true}
@@ -140,7 +142,7 @@ const ItesseractAbout = () => {
 
               <h2 className='mt-2 font-bold text-xl'>
                 <CountUp
-                  start={0}
+                  start={startValue}
                   end={materials}
                   duration={2.75}
                   enableScrollSpy={true}
@@ -176,7 +178,7 @@ const ItesseractAbout = () => {
               <h2 className='mt-2 font-bold text-xl'>
                 {' '}
                 <CountUp
-                  start={0}
+                  start={startValue}
                   end={learning}
                   duration={2.75}
                   enableScrollSpy={true}
