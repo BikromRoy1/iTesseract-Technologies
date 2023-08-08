@@ -22,7 +22,7 @@ const GetCertificate = () => {
 
             <div class='mt-4 md:mt-8'>
               <Link
-                to='/contact'
+                to='/registration'
                 class='inline-block rounded bg-[#1bb57b] px-12 py-3 text-sm font-medium text-white transition hover:bg-emerald-700 focus:outline-none focus:ring focus:ring-yellow-400'
               >
                 ভর্তি হোন এখনি

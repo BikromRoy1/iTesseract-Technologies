@@ -29,7 +29,7 @@ const BlogCard = ({ blog }) => {
   return (
     <div>
       {' '}
-      <div className='single-blog-grid'>
+      <div className='single-blog-grid container'>
         <div className='blog-img'>
           <Link to={`/blog/${id}`}>
             <img

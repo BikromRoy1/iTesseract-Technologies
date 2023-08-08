@@ -4,7 +4,6 @@ import './Skill.css';
 import { Link } from 'react-router-dom';
 
 const Skill = () => {
-  // https://itesseract.com.bd/master/api/v1/school-courses
   const [data, setData] = useState([]);
 
   useEffect(() => {

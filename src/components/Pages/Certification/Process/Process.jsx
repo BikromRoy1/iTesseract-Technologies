@@ -9,7 +9,7 @@ import Gamification from '../../../../Images/icons/Gamification.png';
 const Process = () => {
   return (
     <div>
-      <section className='py-14'>
+      <section className='py-10'>
         <div className='container mx-auto'>
           <div className='text-center lg:w-[710px] mx-auto w-full'>
             <a

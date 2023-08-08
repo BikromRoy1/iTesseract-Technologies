@@ -25,9 +25,6 @@ const Blogs = () => {
 
   const blogsData = blogData.data;
 
-  // const limitedData = blogsData.slice(0, 3);
-
-  // console.log(limitedData);
 
   return (
     <div>
@@ -37,7 +34,7 @@ const Blogs = () => {
         slgs='/blogs'
         img={blogsBanner}
       ></Breadcrumb>
-      <section className='pt-10 pb-10 lg:pt-[50px] lg:pb-20'>
+      <section className='pt-10 pb-10 lg:pt-[50px] lg:pb-20 p-6'>
         <div className='container mx-auto'>
           <div className='text-center pb-10'>
             <p className='text-lg text-[#1bb57b] uppercase'>ব্লগ পোস্ট</p>
@@ -49,7 +46,7 @@ const Blogs = () => {
               সর্বশেষ ব্লগ পোস্ট গুলো দেখুন
             </Link>
           </div>
-          <div className='grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-5 lg:grid-cols-4'>
+          <div className='grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-5 lg:grid-cols-4 container'>
             {blogsData?.map((blog) => (
               <BlogCard key={blog.id} blog={blog}></BlogCard>
             ))}

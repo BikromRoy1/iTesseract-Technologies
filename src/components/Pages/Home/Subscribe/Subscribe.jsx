@@ -14,7 +14,7 @@ const Subscribe = () => {
       const response = await axios.post(
         `https://itesseract.com.bd/master/api/v1/subscriber/store?email=${email}`
       );
-      console.log(response.data);
+
       toast.success('ধন্যবাদ আমাদের সদস্য হওয়ার জন্য !', {
         autoClose: 2000,
       });

@@ -2,6 +2,7 @@ import React from 'react';
 import certificationBanner from '../../../Images/certifucation.jpg';
 import Breadcrumb from '../../Breadcrumb/Breadcrumb';
 import Questions from '../../Common/Questions/Questions';
+import CerCourse from './CerCourse/CerCourse';
 import GetCertificate from './GetCertificate/GetCertificate';
 import Process from './Process/Process';
 
@@ -14,6 +15,7 @@ const Certification = () => {
         slgs='/certification'
         img={certificationBanner}
       ></Breadcrumb>
+      <CerCourse></CerCourse>
       <GetCertificate></GetCertificate>
       <Process></Process>
       <Questions></Questions>

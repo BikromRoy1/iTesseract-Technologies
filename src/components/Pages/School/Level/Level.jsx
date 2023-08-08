@@ -1,14 +1,13 @@
 import React from 'react';
-import LevelOne from './LevelOne';
-import clock from '../../../../Images/icons/clock.svg';
-import level01 from '../../../../Images/level-01.jpg';
-import level02 from '../../../../Images/level02.jpg';
-import playing from '../../../../Images/playing-banner.jpg';
-import university from '../../../../Images/university.jpg';
-import level05 from '../../../../Images/coding.jpg';
-import level06 from '../../../../Images/kid-with-robots-2.jpg';
-import graph from '../../../../Images/icons/graph.svg';
-import cour from '../../../../Images/icons/courseiCon.png';
+import clock from '../../../../Images/icons/Bangla_Goddo.png';
+import graph from '../../../../Images/icons/sub_WeeklyExam.png';
+import cour from '../../../../Images/icons/ICT.png';
+import service01 from '../../../../Images/services-1.png';
+import service02 from '../../../../Images/services-2.png';
+import service03 from '../../../../Images/services-3.png';
+import service04 from '../../../../Images/services-4.png';
+import service05 from '../../../../Images/services-5.png';
+import service06 from '../../../../Images/services-6.png';
 import './Level.css';
 
 const Level = () => {
@@ -40,12 +39,14 @@ const Level = () => {
                 <div class='col-span-9'>
                   <div class='level-slot-info'>
                     <a href=''>
-                      <img
-                        loading='lazy'
-                        class='level-slot-student img-fluid'
-                        src={level01}
-                        alt='কম্পিউটার প্রোগ্রামিং ফান্ডামেন্টাল'
-                      />
+                      <div className='level-icons-image'>
+                        <img
+                          loading='lazy'
+                          class='level-slot-student img-fluid'
+                          src={service01}
+                          alt='কম্পিউটার প্রোগ্রামিং ফান্ডামেন্টাল'
+                        />
+                      </div>
                     </a>
                     <div class='level-slot-info-content'>
                       <h3>কোর্সঃ কম্পিউটার প্রোগ্রামিং ফান্ডামেন্টাল</h3>
@@ -56,19 +57,38 @@ const Level = () => {
                         সাহায্যে গেম ডেভেলপমেন্ট করতে সক্ষম হবে।
                       </p>
                       <div className='flex items-center gap-3 mb-2'>
-                        <img src={clock} alt='' />
+                        <img
+                          width='33px'
+                          loading='lazy'
+                          height='33px'
+                          src={clock}
+                          alt='পাঠ'
+                        />
+
                         <h2 className='text-gray-500'>
                           12টি পাঠ, 8টি প্রজেক্টস, 4টি কাজ
                         </h2>
                       </div>
                       <div className='flex items-center gap-3 mb-2'>
-                        <img width='23px' src={cour} alt='' />
+                        <img
+                          width='33px'
+                          height='33px'
+                          loading='lazy'
+                          src={cour}
+                          alt='বয়স'
+                        />
                         <h2 className='text-gray-500'>
                           বয়স 6 এবং তার বেশি, যারা আগ্রহী
                         </h2>
                       </div>
                       <div className='flex items-center gap-3 mb-2'>
-                        <img width='23px' src={graph} alt='' />
+                        <img
+                          width='33px'
+                          height='33px'
+                          loading='lazy'
+                          src={graph}
+                          alt='দক্ষতাগুলি'
+                        />
                         <h2 className='text-gray-500'>
                           আপনি যে দক্ষতাগুলি পান: কোডিং, লজিক, গেম ডেভেলপমেন্ট,
                           স্ক্র্যাচ, প্রোগ্রামিং বেসিক
@@ -97,7 +117,7 @@ const Level = () => {
                       <img
                         loading='lazy'
                         class='level-slot-student img-fluid'
-                        src={level02}
+                        src={service02}
                         alt='মোবাইল অ্যাপ্লিকেশন'
                       />
                     </a>
@@ -111,20 +131,38 @@ const Level = () => {
                         পোর্টফোলিও তৈরি করতে হয়।
                       </p>
                       <div className='flex items-center gap-3 mb-2'>
-                        <img src={clock} alt='' />
+                        <img
+                          width='33px'
+                          loading='lazy'
+                          height='33px'
+                          src={clock}
+                          alt='পাঠ'
+                        />
                         <h2 className='text-gray-500'>
                           12টি পাঠ, 8টি প্রজেক্টস, 4টি কাজ
                         </h2>
                       </div>
                       <div className='flex items-center gap-3 mb-2'>
-                        <img width='23px' src={cour} alt='' />
+                        <img
+                          width='33px'
+                          height='33px'
+                          loading='lazy'
+                          src={cour}
+                          alt='বয়স'
+                        />
                         <h2 className='text-gray-500'>
                           12 বছর বা তার বেশি বয়সী এবং সেই ছাত্রদেরও যাদের লেভেল
                           1 এর পূর্বশর্ত রয়েছে
                         </h2>
                       </div>
                       <div className='flex items-center gap-3 mb-2'>
-                        <img width='23px' src={graph} alt='' />
+                        <img
+                          width='33px'
+                          height='33px'
+                          loading='lazy'
+                          src={graph}
+                          alt='দক্ষতাগুলি'
+                        />
                         <h2 className='text-gray-500'>
                           আপনি যে দক্ষতাগুলি পাবেন: HTML, CSS, মোবাইল
                           অ্যাপ্লিকেশন, ওয়েবসাইট ডেভেলপমেন্ট।
@@ -153,7 +191,7 @@ const Level = () => {
                       <img
                         loading='lazy'
                         class='level-slot-student img-fluid'
-                        src={playing}
+                        src={service03}
                         alt='রোবোটিক্স এবং এমবেডেড সিস্টেম'
                       />
                     </a>
@@ -167,19 +205,37 @@ const Level = () => {
                         শেখানোর জন্য ডিজাইন করা হয়েছে।
                       </p>
                       <div className='flex items-center gap-3 mb-2'>
-                        <img src={clock} alt='' />
+                        <img
+                          width='33px'
+                          loading='lazy'
+                          height='33px'
+                          src={clock}
+                          alt='পাঠ'
+                        />
                         <h2 className='text-gray-500'>
                           12টি পাঠ, 6টি প্রজেক্টস, 4টি কাজ
                         </h2>
                       </div>
                       <div className='flex items-center gap-3 mb-2'>
-                        <img width='23px' src={cour} alt='' />
+                        <img
+                          width='33px'
+                          height='33px'
+                          loading='lazy'
+                          src={cour}
+                          alt='বয়স'
+                        />
                         <h2 className='text-gray-500'>
                           বয়স 6 এবং তার বেশি, যারা আগ্রহী
                         </h2>
                       </div>
                       <div className='flex items-center gap-3 mb-2'>
-                        <img width='23px' src={graph} alt='' />
+                        <img
+                          width='33px'
+                          height='33px'
+                          loading='lazy'
+                          src={graph}
+                          alt='দক্ষতাগুলি'
+                        />
                         <h2 className='text-gray-500'>
                           আপনি যে দক্ষতাগুলি পান: কোডিং, লজিক, গেম ডেভেলপমেন্ট,
                           স্ক্র্যাচ, প্রোগ্রামিং বেসিক
@@ -208,7 +264,7 @@ const Level = () => {
                       <img
                         loading='lazy'
                         class='level-slot-student img-fluid'
-                        src={university}
+                        src={service05}
                         alt='পাইথন প্রোগ্রামিং'
                       />
                     </a>
@@ -223,19 +279,37 @@ const Level = () => {
                         ধারণা তৈরি করতে এটি ব্যবহার করতে
                       </p>
                       <div className='flex items-center gap-3 mb-2'>
-                        <img src={clock} alt='' />
+                        <img
+                          width='33px'
+                          loading='lazy'
+                          height='33px'
+                          src={clock}
+                          alt='পাঠ'
+                        />
                         <h2 className='text-gray-500'>
                           12টি পাঠ, 4টি প্রজেক্টস, 4টি কাজ
                         </h2>
                       </div>
                       <div className='flex items-center gap-3 mb-2'>
-                        <img width='23px' src={cour} alt='' />
+                        <img
+                          width='33px'
+                          height='33px'
+                          loading='lazy'
+                          src={cour}
+                          alt='বয়স'
+                        />
                         <h2 className='text-gray-500'>
                           যে কেউ লেভেল 4 থেকে শুরু করতে চান, শুরু করতে পারেন।
                         </h2>
                       </div>
                       <div className='flex items-center gap-3 mb-2'>
-                        <img width='23px' src={graph} alt='' />
+                        <img
+                          width='33px'
+                          height='33px'
+                          loading='lazy'
+                          src={graph}
+                          alt='দক্ষতাগুলি'
+                        />
                         <h2 className='text-gray-500'>
                           আপনি যে দক্ষতাগুলি পান: পাইথন, গেম ডেভেলপমেন্ট, ডেটা
                           সায়েন্স বেসিক।
@@ -264,7 +338,7 @@ const Level = () => {
                       <img
                         loading='lazy'
                         class='level-slot-student img-fluid'
-                        src={level05}
+                        src={service04}
                         alt='আইওটি'
                       />
                     </a>
@@ -278,19 +352,37 @@ const Level = () => {
                         শিখবে।
                       </p>
                       <div className='flex items-center gap-3 mb-2'>
-                        <img src={clock} alt='' />
+                        <img
+                          width='33px'
+                          loading='lazy'
+                          height='33px'
+                          src={clock}
+                          alt='পাঠ'
+                        />
                         <h2 className='text-gray-500'>
                           12টি পাঠ, 10টি প্রজেক্টস, 4টি কাজ
                         </h2>
                       </div>
                       <div className='flex items-center gap-3 mb-2'>
-                        <img width='23px' src={cour} alt='' />
+                        <img
+                          width='33px'
+                          height='33px'
+                          loading='lazy'
+                          src={cour}
+                          alt='বয়স'
+                        />
                         <h2 className='text-gray-500'>
                           পূর্বের স্তরে জ্ঞান সঙ্গে যে কেউ.
                         </h2>
                       </div>
                       <div className='flex items-center gap-3 mb-2'>
-                        <img width='23px' src={graph} alt='' />
+                        <img
+                          width='33px'
+                          height='33px'
+                          loading='lazy'
+                          src={graph}
+                          alt='দক্ষতাগুলি'
+                        />
                         <h2 className='text-gray-500'>
                           আপনি যে দক্ষতাগুলি পান: IoT, স্মার্ট সিস্টেম ডিজাইন,
                           ডেটা সায়েন্স।
@@ -315,11 +407,11 @@ const Level = () => {
                 </div>
                 <div class='col-span-9'>
                   <div class='level-slot-info'>
-                    <a href=''>
+                    <a href='#'>
                       <img
                         loading='lazy'
                         class='level-slot-student img-fluid'
-                        src={level06}
+                        src={service06}
                         alt='রোবোটিক্স ভিশন'
                       />
                     </a>
@@ -331,19 +423,37 @@ const Level = () => {
                         পর্যন্ত গাইড করবেন।
                       </p>
                       <div className='flex items-center gap-3 mb-2'>
-                        <img src={clock} alt='' />
+                        <img
+                          width='33px'
+                          loading='lazy'
+                          height='33px'
+                          src={clock}
+                          alt='পাঠ'
+                        />
                         <h2 className='text-gray-500'>
                           12টি পাঠ, 2টি প্রজেক্টস, 4টি কাজ
                         </h2>
                       </div>
                       <div className='flex items-center gap-3 mb-2'>
-                        <img width='23px' src={cour} alt='' />
+                        <img
+                          width='33px'
+                          height='33px'
+                          loading='lazy'
+                          src={cour}
+                          alt='বয়স'
+                        />
                         <h2 className='text-gray-500'>
                           পূর্বের স্তরে জ্ঞান সঙ্গে যে কেউ.
                         </h2>
                       </div>
                       <div className='flex items-center gap-3 mb-2'>
-                        <img width='23px' src={graph} alt='' />
+                        <img
+                          width='33px'
+                          height='33px'
+                          src={graph}
+                          alt='দক্ষতাগুলি'
+                          loading='lazy'
+                        />
                         <h2 className='text-gray-500'>
                           আপনি যে দক্ষতাগুলি পান: এআই, রোবোটিক্স, চিত্র
                           প্রক্রিয়াকরণ

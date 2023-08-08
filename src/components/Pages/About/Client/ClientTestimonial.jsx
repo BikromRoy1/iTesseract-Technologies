@@ -26,8 +26,6 @@ const ClientTestimonial = () => {
 
   const testimonialData = data.data;
 
-  console.log(testimonialData);
-
   return (
     <>
       <div className='bg-[#F1F3F6]'>

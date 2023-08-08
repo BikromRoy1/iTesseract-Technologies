@@ -24,8 +24,6 @@ const Contactinfo = ({ title, details }) => {
     fetchData();
   }, []);
 
-  console.log(contact.data);
-
   return (
     <div className='bg-gray-100'>
       <div className='text-center pt-12'>

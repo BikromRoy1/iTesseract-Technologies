@@ -23,7 +23,7 @@ const SchoolBanner = () => {
             কোর্সের বিষয়বস্তু এবং ফলাফলকে সুপার হিসেবে রেট দেয়
           </p>
           <Link to='/registration'>
-            <button className='px-8 py-3 font-semibold rounded dark:bg-[#ffc107] dark:text-white'>
+            <button className='px-8 py-3 font-semibold rounded bg-[#ffc107] text-white'>
               নিবন্ধন করুন
             </button>
           </Link>

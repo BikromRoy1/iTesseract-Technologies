@@ -40,7 +40,6 @@ const Registration = () => {
       const response = await axios.post(
         `https://itesseract.com.bd/master/api/v1/enroll/store?name=${studentName}&phone=${studentPhone}&email=${studentEmail}&address=${studentAddress}&course_id=${courseName}&level=`
       );
-      console.log(response.data);
       toast.success(' ভর্তির  আবেদন জন্য ধন্যবাদ !', {
         autoClose: 2000,
       });
@@ -163,7 +162,7 @@ const Registration = () => {
                       <div className='text-center'>
                         <button
                           type='submit'
-                          className='w-full px-8 py-3 font-semibold rounded-md dark:bg-[#1bb57b] dark:text-white'
+                          className='w-full px-8 py-3 font-semibold rounded-md bg-[#1bb57b] text-white'
                         >
                           সাবমিট শিক্ষার্থীর ইনফরমেশন
                         </button>

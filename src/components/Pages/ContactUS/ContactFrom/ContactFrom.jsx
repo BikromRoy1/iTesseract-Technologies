@@ -18,7 +18,6 @@ const ContactFrom = ({ title }) => {
       const response = await axios.post(
         `https://itesseract.com.bd/master/api/v1/message/store?name=${userName}&phone=${phone}&email=${email}&subject=${subject}&details=${message}`
       );
-      console.log(response.data);
       toast.success('যোগাযোগ করা জন্য ধন্যবাদ !', {
         autoClose: 2000,
       });
@@ -133,7 +132,7 @@ const ContactFrom = ({ title }) => {
                       <div className='text-center'>
                         <button
                           type='submit'
-                          className='w-full px-8 py-3 font-semibold rounded-md dark:bg-[#1bb57b] dark:text-white'
+                          className='w-full px-8 py-3 font-semibold rounded-md bg-[#1bb57b] text-white'
                         >
                           Send A Message
                         </button>

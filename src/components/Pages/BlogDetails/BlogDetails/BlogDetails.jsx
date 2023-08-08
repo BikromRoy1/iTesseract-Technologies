@@ -8,7 +8,6 @@ import axios from 'axios';
 const BlogDetails = () => {
   const post = useLoaderData();
   const singlePost = post.data;
-  console.log(singlePost);
 
   const createdAt = singlePost?.created_at;
   const date = new Date(createdAt);
@@ -59,7 +58,7 @@ const BlogDetails = () => {
         img={blogDetai}
       ></Breadcrumb>
       {/* <!-- ====== Blog Details Section Start --> */}
-      <section className='pt-20 pb-10 lg:pt-[120px] lg:pb-20'>
+      <section className='pt-20 pb-10 lg:pt-[120px] lg:pb-20 p-6'>
         <div className='container mx-auto'>
           <div className='-mx-4 flex flex-wrap justify-center'>
             <div className='w-full px-4'>

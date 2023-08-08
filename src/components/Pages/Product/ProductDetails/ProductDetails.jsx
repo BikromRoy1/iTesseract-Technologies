@@ -7,7 +7,6 @@ import ContactFrom from '../../ContactUS/ContactFrom/ContactFrom';
 const ProductDetails = () => {
   const product = useLoaderData();
   const singleProduct = product.data;
-  console.log(singleProduct);
   return (
     <section>
       <Breadcrumb

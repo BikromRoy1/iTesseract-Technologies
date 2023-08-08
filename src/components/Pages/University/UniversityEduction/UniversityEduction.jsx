@@ -1,10 +1,10 @@
 import React from 'react';
-import gameing from '../../../../Images/icons/gaming.png';
+import gameing from '../../../../Images/icons/Gamification.png';
 import project from '../../../../Images/icons/Project.png';
 import projects from '../../../../Images/icons/projects.png';
 import teacher from '../../../../Images/icons/teacher.png';
 import skills from '../../../../Images/icons/skill.png';
-import homeWorks from '../../../../Images/icons/home-work.png';
+import homeWorks from '../../../../Images/icons/courseiCon.png';
 
 const UniversityEduction = () => {
   return (
