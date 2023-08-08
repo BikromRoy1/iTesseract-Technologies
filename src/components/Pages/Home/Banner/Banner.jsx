@@ -3,6 +3,7 @@ import highSchool from '../../../../Images/teacher/website-high-school.jpg';
 import university from '../../../../Images/teacher/website-university.jpg';
 import school from '../../../../Images/teacher/school.jpg';
 import './Banner.css';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
   return (
@@ -40,12 +41,14 @@ const Banner = () => {
                     বিশ্ববিদ্যালয়ের শিক্ষার্থীদের জন্য
                   </p>
                   <div className='text-left'>
-                    <button
-                      className='bg-[#1bb57b] text-white font-normal px-4 hover:bg-[#f5c310] py-2 mt-3 text-sm rounded-full'
-                      type='button'
-                    >
-                      ভিজিট করুন
-                    </button>
+                    <Link to='/university'>
+                      <button
+                        className='bg-[#1bb57b] text-white font-normal px-4 hover:bg-[#f5c310] py-2 mt-3 text-sm rounded-full'
+                        type='button'
+                      >
+                        ভিজিট করুন
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -66,12 +69,14 @@ const Banner = () => {
                     মাধ্যমিক শিক্ষার্থীদের জন্য
                   </p>
                   <div className='text-left'>
-                    <button
-                      className='bg-[#1bb57b] text-white font-normal px-4 hover:bg-[#f5c310] py-2 mt-3 text-sm rounded-full'
-                      type='button'
-                    >
-                      ভিজিট করুন
-                    </button>
+                    <Link to='/school'>
+                      <button
+                        className='bg-[#1bb57b] text-white font-normal px-4 hover:bg-[#f5c310] py-2 mt-3 text-sm rounded-full'
+                        type='button'
+                      >
+                        ভিজিট করুন
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -92,12 +97,14 @@ const Banner = () => {
                     উচ্চ মাধ্যমিক শিক্ষার্থীদের জন্য
                   </p>
                   <div className='text-left'>
-                    <button
-                      className='bg-[#1bb57b] text-white font-normal px-4 hover:bg-[#f5c310] py-2 mt-3 text-sm rounded-full'
-                      type='button'
-                    >
-                      ভিজিট করুন
-                    </button>
+                    <Link to='/certification'>
+                      <button
+                        className='bg-[#1bb57b] text-white font-normal px-4 hover:bg-[#f5c310] py-2 mt-3 text-sm rounded-full'
+                        type='button'
+                      >
+                        ভিজিট করুন
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
