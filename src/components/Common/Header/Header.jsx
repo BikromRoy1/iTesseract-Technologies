@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../../../Images/main-logo.svg';
 import { FaAngleDown } from 'react-icons/fa';
 import { FcDecision, FcGraduationCap } from 'react-icons/fc';
+import { Link } from 'react-router-dom';
+import logo from '../../../Images/main-logo.svg';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
