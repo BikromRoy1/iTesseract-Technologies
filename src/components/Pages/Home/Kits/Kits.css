@@ -4,7 +4,7 @@
   transition: all ease-in-out 0.4s;
   border: 1px solid #fff;
 }
-.kits-box:hover{
+.kits-box:hover {
   border: 1px solid #1bb57b;
 }
 .kits-box:hover {
@@ -22,4 +22,29 @@
   font-size: 15px;
   margin-bottom: 0;
   color: gray;
+}
+
+/* Card new design */
+.course-card {
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  height: 100%;
+}
+.course-card .course-card-img {
+  position: relative;
+}
+.course-card .course-card-img img {
+  border-radius: 10px 10px 0px 0px;
+  height: 100%;
+  width: 100%;
+}
+.course-card .thumbnail-content {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 2;
+}
+.course-card .course-card-body {
+  padding: 25px 15px;
 }

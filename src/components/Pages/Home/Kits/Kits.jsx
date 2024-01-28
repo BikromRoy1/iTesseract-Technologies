@@ -1,9 +1,11 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import courseOne from '../../../../Images/course-01.jpg';
+import courseTwo from '../../../../Images/course-02.jpg';
 import Title from '../../../Common/Title/Title';
 import Services from '../Services/Services';
 import './Kits.css';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
 
 const Kits = () => {
   const [data, setData] = useState([]);
@@ -34,6 +36,68 @@ const Kits = () => {
           details='বাংলাদেশে প্রথম আমরাই তিনটি ধাপে নিজস্ব রোবটিক্স টুলস দিয়ে প্রশিক্ষণ দিচ্ছে আইটেসারেক্ট
 ।'
         ></Title>
+
+        <div className='grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3'>
+          <div className='single-card'>
+            <div className='course-card'>
+              <div className='course-card-img'>
+                <img src={courseOne} loading='lazy' alt='university' />
+                <div className='thumbnail-content'>
+                  <span className='bg-[#ffbb2c] text-white rounded-[2px] inline-block px-[12px] font-semibold text-[15px] leading-[26px] m-[5px]'>
+                    18% OFF
+                  </span>
+                </div>
+              </div>
+              <div className='course-card-body'>
+                <div className='price-list'>
+                  <h3 className='current-price'>৳৩৪৭০০</h3>
+                  <span className='old-price'>
+                    <del>৳২০০</del>
+                  </span>
+                </div>
+                <h4 className='font-semibold text-[#124265] capitalize kits-title'>
+                  আইপ্লে - বিশ্ববিদ্যালয় টুলস
+                </h4>
+                <Link to='/'>এখান থেকে শিখুন ➜</Link>
+              </div>
+            </div>
+          </div>
+          <div className='single-card'>
+            <div className='course-card'>
+              <div className='course-card-img'>
+                <img src={courseTwo} loading='lazy' alt='university' />
+                <div className='thumbnail-content '>
+                  <span className='bg-[#ffbb2c] text-white rounded-[2px] inline-block px-[12px] font-semibold text-[15px] leading-[26px] m-[5px]'>
+                    18% OFF
+                  </span>
+                </div>
+              </div>
+              <div className='course-card-body'>
+                <h4 className='font-semibold text-[#124265] capitalize kits-title'>
+                  আইহিরো - উচ্চ মাধ্যমিক টুলস
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div className='single-card'>
+            <div className='course-card'>
+              <div className='course-card-img'>
+                <img src={courseOne} loading='lazy' alt='university' />
+                <div className='thumbnail-content'>
+                  <span className='bg-[#ffbb2c] text-white rounded-[2px] inline-block px-[12px] font-semibold text-[15px] leading-[26px] m-[5px]'>
+                    {' '}
+                    18% OFF
+                  </span>
+                </div>
+              </div>
+              <div className='course-card-body'>
+                <h4 className='font-semibold text-[#124265] capitalize kits-title'>
+                  আইএডু - মাধ্যমিক টুলস
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div className='grid  grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3'>
           {products?.map((product) => (
