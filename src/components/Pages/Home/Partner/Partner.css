@@ -2,3 +2,10 @@
   width: 150px;
   object-fit: fill;
 }
+#partner {
+  /* background: #006d77; */
+  background-image: url(https://i.ibb.co/M1j9W1d/activities-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}

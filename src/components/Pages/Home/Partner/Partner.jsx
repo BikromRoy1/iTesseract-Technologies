@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import './Partner.css';
 
 const Partner = () => {
   const [data, setData] = useState([]);
-   const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -25,15 +25,12 @@ const Partner = () => {
   const partnerImages = data.data;
 
   return (
-    <section id='partner' className='bg-white '>
+    <section id='partner' className='bg-white'>
       <div className='container p-6 mx-auto space-y-6 text-center lg:p-8 lg:space-y-8'>
-        <div className='flex flex-wrap justify-center items-center lg:justify-between'>
-          <h2 className='font-bold text-2xl footer-color'>
-            আমাদের পার্টনার সমূহঃ
-          </h2>
-
-          {/* Render the data */}
-
+        <h2 className='font-bold text-primary-color mb-5 text-xl text-center tracking-[0.20000000298023224px]'>
+          আমাদের অন্যান্য পার্টনার প্রতিষ্ঠানসমূহ
+        </h2>
+        <div className='flex flex-wrap justify-center items-center lg:justify-evenly'>
           {loading ? (
             <p>Loading data...</p>
           ) : (
@@ -59,6 +56,28 @@ const Partner = () => {
           )}
         </div>
       </div>
+      {/* <div class='mt-8 rounded-xl bg-[#121220] p-6 md:mt-20 md:px-14'>
+        <p class='mb-6 text-xl text-center text-gray-400'>
+          দেশের সেরা প্রতিষ্ঠানগুলো নিচ্ছে আমাদের কর্পোরেট স্কিলস ডেভেলপমেন্ট
+          প্রোগ্রাম
+        </p>
+        <div class='mb-4 overflow-x-auto scrollbar-hide'>
+          <div class='flex min-w-[800px] flex-nowrap justify-between opacity-30'></div>
+        </div>
+        <div class='text-center text-gray-400'>
+          আরও জানতে{' '}
+          <a
+            href='mailto:corporate@10minuteschool.com'
+            class='underline text-green'
+          >
+            ইমেইল করুন
+          </a>{' '}
+          অথবা{' '}
+          <a href='tel:01844601475' class='underline text-green'>
+            কল করুন
+          </a>
+        </div>
+      </div> */}
     </section>
   );
 };
