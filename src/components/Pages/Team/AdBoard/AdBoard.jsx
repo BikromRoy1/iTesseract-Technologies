@@ -26,7 +26,7 @@ const AdBoard = () => {
       <div className='py-16'>
         <div className='text-center '>
           <h1 className='text-[#1bb57b] font-semibold mb-4 md:text-4xl text-3xl'>
-            উপদেষ্টা পর্ষদ
+            আমাদের উপদেষ্টা পর্ষদ
           </h1>
           <p className='text-gray-400'>
             আইটেসারেক্ট টেকনোলিজস স্কোয়াড একটি বহুমুখী পেশাদার দল।

@@ -26,7 +26,7 @@ const MangTeam = () => {
       <div className='py-16'>
         <div className='text-center '>
           <h1 className='text-[#1bb57b] font-semibold mb-4 md:text-4xl text-3xl'>
-            ম্যানেজমেন্ট টীম
+            আমাদের ম্যানেজমেন্ট টীম
           </h1>
           <p className='text-gray-400'>
             আইটেসারেক্ট টেকনোলিজস ম্যানেজমেন্ট টীম
