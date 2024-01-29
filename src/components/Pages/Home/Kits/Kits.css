@@ -26,8 +26,8 @@
 
 /* Card new design */
 .course-card {
-  background: #fff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  background: #f5f5f5;
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06); */
   border-radius: 10px;
   height: 100%;
 }
@@ -46,5 +46,9 @@
   z-index: 2;
 }
 .course-card .course-card-body {
-  padding: 25px 15px;
+  padding: 25px 20px;
+}
+.kits-title-2 {
+  font-size: 24px;
+  margin: 0px 0 10px 0;
 }
