@@ -1,7 +1,7 @@
-import { data } from 'autoprefixer';
 import axios from 'axios';
 import React from 'react';
 import { toast } from 'react-toastify';
+import './Subscribe.css';
 
 const Subscribe = () => {
   const handleSubmit = async (event) => {
