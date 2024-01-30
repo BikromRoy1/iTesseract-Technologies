@@ -1,6 +1,10 @@
 import axios from 'axios';
 import React from 'react';
 import { toast } from 'react-toastify';
+import shapes04 from '../../../../Images/icons/shape-08.png';
+import shapes02 from '../../../../Images/icons/shape-09.png';
+import shapes01 from '../../../../Images/icons/shape-10.png';
+import shapes03 from '../../../../Images/icons/shape-13.png';
 import './Subscribe.css';
 
 const Subscribe = () => {
@@ -29,11 +33,13 @@ const Subscribe = () => {
   };
 
   return (
-    <section className='bg-gray-50'>
-      <div className='p-8 md:p-12 lg:px-16 lg:py-20'>
+    <section id='subscribe-home' className='bg-gray-50 '>
+      <div className='p-8 md:p-12 lg:px-16 subscribe-content container mx-auto'>
         <div className='mx-auto max-w-lg text-center'>
           <h2 className='text-2xl font-bold text-gray-900 md:text-3xl'>
-            সর্বশেষ নিউজ & আপডেট পেতে আমাদের নোটিফিকেশনে সাবস্ক্রাইব করুন।
+            সর্বশেষ নিউজ &{' '}
+            <span className='primary-color'>আপডেট পেতে আমাদের</span> নোটিফিকেশনে
+            সাবস্ক্রাইব করুন।
           </h2>
         </div>
 
@@ -75,6 +81,21 @@ const Subscribe = () => {
               </svg>
             </button>
           </form>
+        </div>
+        {/* Shapes */}
+        <div className='md:block hidden'>
+          <div className='shapes-01'>
+            <img src={shapes01} loading='lazy' alt='shapes' />
+          </div>
+          <div className='shapes-02'>
+            <img src={shapes02} loading='lazy' alt='shapes' />
+          </div>
+          <div className='shapes-03'>
+            <img src={shapes04} loading='lazy' alt='shapes' />
+          </div>
+          <div className='shapes-04'>
+            <img src={shapes03} loading='lazy' alt='shapes' />
+          </div>
         </div>
       </div>
     </section>
