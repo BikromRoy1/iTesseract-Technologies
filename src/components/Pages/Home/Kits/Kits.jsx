@@ -111,7 +111,7 @@ const Kits = () => {
                         <svg
                           stroke='currentColor'
                           fill='currentColor'
-                          stroke-width='0'
+                          strokeWidth='0'
                           viewBox='0 0 512 512'
                           height='18'
                           width='18'
@@ -119,9 +119,9 @@ const Kits = () => {
                         >
                           <path
                             fill='none'
-                            stroke-linecap='round'
-                            stroke-linejoin='round'
-                            stroke-width='48'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                            strokeWidth='48'
                             d='M268 112l144 144-144 144m124-144H100'
                           ></path>
                         </svg>
@@ -200,7 +200,7 @@ const Kits = () => {
                         <svg
                           stroke='currentColor'
                           fill='currentColor'
-                          stroke-width='0'
+                          strokeWidth='0'
                           viewBox='0 0 512 512'
                           height='18'
                           width='18'
@@ -208,9 +208,9 @@ const Kits = () => {
                         >
                           <path
                             fill='none'
-                            stroke-linecap='round'
-                            stroke-linejoin='round'
-                            stroke-width='48'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                            strokeWidth='48'
                             d='M268 112l144 144-144 144m124-144H100'
                           ></path>
                         </svg>
@@ -290,7 +290,7 @@ const Kits = () => {
                         <svg
                           stroke='currentColor'
                           fill='currentColor'
-                          stroke-width='0'
+                          strokeWidth='0'
                           viewBox='0 0 512 512'
                           height='18'
                           width='18'
@@ -298,9 +298,9 @@ const Kits = () => {
                         >
                           <path
                             fill='none'
-                            stroke-linecap='round'
-                            stroke-linejoin='round'
-                            stroke-width='48'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                            strokeWidth='48'
                             d='M268 112l144 144-144 144m124-144H100'
                           ></path>
                         </svg>

@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import Title from '../../../Common/Title/Title';
-import Robots from '../../../../Images/roobots.png';
-import CountUp from 'react-countup';
-import { useEffect } from 'react';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import CountUp from 'react-countup';
+import Robots from '../../../../Images/roobots.png';
+import Title from '../../../Common/Title/Title';
 
 const ItesseractAbout = () => {
   const [data, setData] = useState([]);
@@ -30,7 +29,7 @@ const ItesseractAbout = () => {
   const learning = parseInt(data?.data?.learning_content);
 
   return (
-    <section>
+    <section className='bg-gray-100'>
       <div className='max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 mx-auto'>
         <Title
           title='আজই জয়েন করুন'

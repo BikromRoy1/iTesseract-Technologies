@@ -35,14 +35,7 @@ const Subscribe = () => {
   return (
     <section id='subscribe-home' className='bg-gray-50 '>
       <div className='p-8 md:p-12 lg:px-16 subscribe-content container mx-auto'>
-        {/* <div className='mx-auto max-w-lg text-center'>
-          <h2 className='text-2xl font-bold text-gray-900 md:text-3xl'>
-            সর্বশেষ নিউজ &{' '}
-            <span className='primary-color'>আপডেট পেতে আমাদের</span> নোটিফিকেশনে
-            সাবস্ক্রাইব করুন।
-          </h2>
-        </div> */}
-        <div class='section-header'>
+        <div className='section-header'>
           <h2>
             সর্বশেষ নিউজ &{' '}
             <span className='title-gradient'>আপডেট পেতে আমাদের</span>{' '}

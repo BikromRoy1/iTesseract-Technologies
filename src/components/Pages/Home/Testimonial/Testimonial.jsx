@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Title from '../../../Common/Title/Title';
+import React, { useEffect, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import './Testimonial.css';
-import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 
 // import required modules
-import { Pagination, Autoplay } from 'swiper';
+import { Autoplay, Pagination } from 'swiper';
 
 const Testimonial = () => {
   const [data, setData] = useState([]);
@@ -33,17 +32,16 @@ const Testimonial = () => {
 
   return (
     <>
-      <section className='testimonial-bg bg-gray-100'>
+      <section className='testimonial-bg'>
         <div className=' pt-14 pb-6 container mx-auto '>
-          <Title
-            title='কি বলছেন আমাদের প্রাক্তন শিক্ষার্থীবৃন্দ
-'
-            text=' ও অভিভাবকবৃন্দ?
-'
-            details='আমাদের প্রশিক্ষণ নিয়ে আমাদের অনেক শিক্ষার্থী আয়ত্ব করেছেন স্টেম শিক্ষা। চলুন জেনে নেই কি বলছেন তারা। 
-
-।'
-          ></Title>
+          <div className='section-header'>
+            <h2>
+              কি বলছেন আমাদের প্রাক্তন{' '}
+              <span className='title-gradient'>
+                শিক্ষার্থীবৃন্দ ও অভিভাবকবৃন্দ ?
+              </span>{' '}
+            </h2>
+          </div>
 
           <Swiper
             breakpoints={{
@@ -52,8 +50,8 @@ const Testimonial = () => {
                 spaceBetween: 10,
               },
               1080: {
-                slidesPerView: 2,
-                spaceBetween: 30,
+                slidesPerView: 3,
+                spaceBetween: 15,
               },
             }}
             spaceBetween={30}
@@ -90,6 +88,13 @@ const Testimonial = () => {
               </SwiperSlide>
             ))}
           </Swiper>
+        </div>
+        <div className='map-shapes'>
+          <img
+            src='https://i.ibb.co/HVrwX4j/map-shape-3.png'
+            loading='lazy'
+            alt='maps'
+          />
         </div>
       </section>
     </>

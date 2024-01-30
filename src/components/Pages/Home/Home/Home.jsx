@@ -16,8 +16,8 @@ const Home = () => {
       <Partner></Partner>
       <Contact></Contact>
       <Kits></Kits>
-      <Testimonial></Testimonial>
       <ItesseractAbout></ItesseractAbout>
+      <Testimonial></Testimonial>
       <Subscribe></Subscribe>
     </div>
   );

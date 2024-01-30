@@ -56,24 +56,24 @@ const Partner = () => {
           )}
         </div>
       </div>
-      {/* <div class='mt-8 rounded-xl bg-[#121220] p-6 md:mt-20 md:px-14'>
-        <p class='mb-6 text-xl text-center text-gray-400'>
+      {/* <div className='mt-8 rounded-xl bg-[#121220] p-6 md:mt-20 md:px-14'>
+        <p className='mb-6 text-xl text-center text-gray-400'>
           দেশের সেরা প্রতিষ্ঠানগুলো নিচ্ছে আমাদের কর্পোরেট স্কিলস ডেভেলপমেন্ট
           প্রোগ্রাম
         </p>
-        <div class='mb-4 overflow-x-auto scrollbar-hide'>
-          <div class='flex min-w-[800px] flex-nowrap justify-between opacity-30'></div>
+        <div className='mb-4 overflow-x-auto scrollbar-hide'>
+          <div className='flex min-w-[800px] flex-nowrap justify-between opacity-30'></div>
         </div>
-        <div class='text-center text-gray-400'>
+        <div className='text-center text-gray-400'>
           আরও জানতে{' '}
           <a
             href='mailto:corporate@10minuteschool.com'
-            class='underline text-green'
+            className='underline text-green'
           >
             ইমেইল করুন
           </a>{' '}
           অথবা{' '}
-          <a href='tel:01844601475' class='underline text-green'>
+          <a href='tel:01844601475' className='underline text-green'>
             কল করুন
           </a>
         </div>
