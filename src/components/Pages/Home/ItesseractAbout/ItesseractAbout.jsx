@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
 import Robots from '../../../../Images/roobots.png';
-import Title from '../../../Common/Title/Title';
+import './ItesseractAbout.css';
 
 const ItesseractAbout = () => {
   const [data, setData] = useState([]);
@@ -29,15 +29,17 @@ const ItesseractAbout = () => {
   const learning = parseInt(data?.data?.learning_content);
 
   return (
-    <section className='bg-gray-100'>
+    <section className='bg-[#f7f5f2]'>
       <div className='max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 mx-auto'>
-        <Title
-          title='আজই জয়েন করুন'
-          text='বাংলাদেশের সবচেয়ে বড় লার্নিং প্ল্যাটফর্মে
-'
-          details='বাংলাদেশের সবচেয়ে বড় লার্নিং প্ল্যাটফর্মে
-।'
-        ></Title>
+        <div className='section-header'>
+          <h2>
+            আজই জয়েন করুন{' '}
+            <span className='title-gradient'>
+              বাংলাদেশের সবচেয়ে বড় লার্নিং প্ল্যাটফর্মে
+            </span>{' '}
+          </h2>
+        </div>
+
         <div className='grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16'>
           <div className='mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right'>
             <img loading='lazy' src={Robots} alt='Robot' />
@@ -46,9 +48,9 @@ const ItesseractAbout = () => {
           <div className='grid grid-cols-2 gap-4 sm:grid-cols-2'>
             <div
               title='মোট শিক্ষার্থী'
-              className='block rounded-xl border  border-gray-200  p-4 shadow-sm hover:border-gray-300 hover:ring-1 hover:ring-gray-300 focus:outline-none focus:ring'
+              className='block rounded-xl count-card  p-4 shadow-sm hover:border-[#1bb57b] hover:ring-1 hover:ring-[#1bb57b] focus:outline-none focus:ring'
             >
-              <span className='inline-block rounded-lg bg-gray-50 p-3'>
+              <span className='inline-block rounded-lg bg-[rgba(26,182,157,.1)] p-3'>
                 <svg
                   className='h-6 w-6 text-[#1bb57b]'
                   fill='none'
@@ -67,7 +69,7 @@ const ItesseractAbout = () => {
                 </svg>
               </span>
 
-              <h2 className='mt-2 font-bold text-xl'>
+              <h2 className='mt-2 font-bold leading-[26px] text-[30px] text-[#1bb57b]'>
                 <CountUp
                   start={startValue}
                   end={studentNumber}
@@ -77,16 +79,16 @@ const ItesseractAbout = () => {
                 +
               </h2>
 
-              <p className='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
+              <p className='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600 font-medium'>
                 মোট শিক্ষার্থী
               </p>
             </div>
 
             <div
               title=' অ্যাপ ব্যবহারকারী'
-              className='block rounded-xl border border-gray-200 p-4 shadow-sm hover:border-gray-300 hover:ring-1 hover:ring-gray-300 focus:outline-none focus:ring'
+              className='block rounded-xl count-card  p-4 shadow-sm hover:border-[#ee4a62] hover:ring-1 hover:ring-[#ee4a62] focus:outline-none focus:ring'
             >
-              <span className='inline-block rounded-lg bg-gray-50 p-3'>
+              <span className='inline-block rounded-lg bg-[rgba(26,182,157,.1)] p-3'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -103,7 +105,7 @@ const ItesseractAbout = () => {
                 </svg>
               </span>
 
-              <h2 className='mt-2 font-bold text-xl'>
+              <h2 className='mt-2 font-bold leading-[26px] text-[30px] text-[#ee4a62]'>
                 <CountUp
                   start={startValue}
                   end={appUsers}
@@ -113,16 +115,16 @@ const ItesseractAbout = () => {
                 +
               </h2>
 
-              <p className='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
+              <p className='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600 font-medium'>
                 অ্যাপ ব্যবহারকারী
               </p>
             </div>
 
             <div
               title=' স্টাডি ম্যাটেরিয়াল'
-              className='block rounded-xl border border-gray-200 p-4 shadow-sm hover:border-gray-300 hover:ring-1 hover:ring-gray-300 focus:outline-none focus:ring'
+              className='block rounded-xl count-card  p-4 shadow-sm hover:border-[#f8941f] hover:ring-1 hover:ring-[#f8941f] focus:outline-none focus:ring'
             >
-              <span className='inline-block rounded-lg bg-gray-50 p-3'>
+              <span className='inline-block rounded-lg bg-[rgba(26,182,157,.1)] p-3'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -139,26 +141,26 @@ const ItesseractAbout = () => {
                 </svg>
               </span>
 
-              <h2 className='mt-2 font-bold text-xl'>
+              <h2 className='mt-2 font-bold leading-[26px] text-[30px] text-[#f8941f]'>
                 <CountUp
                   start={startValue}
                   end={materials}
                   duration={2.75}
                   enableScrollSpy={true}
-                />{' '}
+                />
                 +
               </h2>
 
-              <p className='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
+              <p className='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600 font-medium'>
                 স্টাডি ম্যাটেরিয়াল
               </p>
             </div>
 
             <div
               title='লার্নিং কন্টেন্ট'
-              className='block rounded-xl border border-gray-200 p-4 shadow-sm hover:border-gray-300 hover:ring-1 hover:ring-gray-300 focus:outline-none focus:ring'
+              className='block rounded-xl count-card  p-4 shadow-sm hover:border-[#8e56ff] hover:ring-1 hover:ring-[#8e56ff] focus:outline-none focus:ring'
             >
-              <span className='inline-block rounded-lg bg-gray-50 p-3'>
+              <span className='inline-block rounded-lg bg-[rgba(26,182,157,.1)] p-3'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -174,18 +176,18 @@ const ItesseractAbout = () => {
                 </svg>
               </span>
 
-              <h2 className='mt-2 font-bold text-xl'>
+              <h2 className='mt-2 font-bold leading-[26px] text-[30px] text-[#8e56ff]'>
                 {' '}
                 <CountUp
                   start={startValue}
                   end={learning}
                   duration={2.75}
                   enableScrollSpy={true}
-                />{' '}
+                />
                 +
               </h2>
 
-              <p className='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600'>
+              <p className='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600 font-medium'>
                 লার্নিং কন্টেন্ট
               </p>
             </div>
