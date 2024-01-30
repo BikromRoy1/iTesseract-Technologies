@@ -45,3 +45,49 @@ code {
 .text-secondary-color {
   color: var(--text-secondary-color);
 }
+/*--------------------------------------------------------------
+# Section Title
+--------------------------------------------------------------*/
+
+.section-header {
+  text-align: center;
+  padding-bottom: 40px;
+}
+.section-header h2 {
+  font-family: var(--Bangla-font);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 51px;
+  position: relative;
+  color: var(--text-primary-color);
+  margin: 0 auto 0 auto;
+}
+
+.section-header p {
+  margin: 0 auto 0 auto;
+  font-family: var(--Bangla-font);
+  color: var(--text-secondary-color);
+  line-height: 26px;
+  letter-spacing: 0.20000000298023224px;
+  font-size: 16px;
+}
+
+@media (min-width: 1199px) {
+  .section-header p {
+    max-width: 60%;
+  }
+  .section-header h2 {
+    max-width: 50%;
+  }
+}
+.title-gradient {
+  background-color: #fff;
+  background-image: linear-gradient(45deg, #1bb57b, #07bc0c);
+  background-size: 100%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  -moz-background-clip: text;
+  -moz-text-fill-color: rgba(0, 0, 0, 0);
+}
