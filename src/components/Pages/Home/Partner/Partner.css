@@ -1,6 +1,6 @@
 .partner-logo {
-  width: 150px;
-  object-fit: fill;
+  width: 155px;
+  /* object-fit: fill; */
 }
 #partner {
   /* background: #006d77; */
@@ -8,4 +8,22 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+}
+
+.proud-partners-images {
+  background-color: #FFFFFF;
+  border-style: solid;
+  border-width: 0;
+  border-color: #edeff2;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.05);
+  margin: 1px;
+  padding: 10px 50px;
+  height: 140px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 4px solid transparent;
 }

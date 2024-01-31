@@ -27,17 +27,18 @@ const Partner = () => {
   return (
     <section id='partner' className='bg-white'>
       <div className='container p-6 mx-auto space-y-6 text-center lg:p-8 lg:space-y-8'>
-        <h2 className='font-bold text-primary-color mb-5 text-xl text-center tracking-[0.20000000298023224px]'>
+        <h2 className='font-bold text-primary-color mb-3 text-xl text-center tracking-[0.20000000298023224px]'>
           আমাদের অন্যান্য পার্টনার প্রতিষ্ঠানসমূহ
         </h2>
-        <div className='flex flex-wrap justify-center items-center lg:justify-evenly'>
+        <div className='flex flex-wrap justify-center items-center lg:justify-center'>
           {loading ? (
             <p>Loading data...</p>
           ) : (
             <>
               {partnerImages?.map((item) => (
-                <div key={item?.id}>
+                <div className='' key={item?.id}>
                   <a
+                    className='proud-partners-images'
                     href={item?.link}
                     target='_blank'
                     rel='noopener noreferrer'

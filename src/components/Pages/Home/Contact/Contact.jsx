@@ -3,7 +3,7 @@ import sazzad_sir3 from '../../../../Images/team/shape 03-update.png';
 
 const Contact = () => {
   return (
-    <section className='bg-[#F6F9FF]'>
+    <section className='bg-[#F0F4F5]'>
       <div className='mx-auto container  py-4'>
         <section className='rounded-lg p-6'>
           <div className='grid grid-cols-1 gap-12 sm:grid-cols-3 sm:items-center'>
