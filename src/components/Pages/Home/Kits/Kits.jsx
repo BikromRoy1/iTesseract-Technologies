@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 import courseOne from '../../../../Images/course-01.jpg';
 import courseTwo from '../../../../Images/course-02.jpg';
 import student from '../../../../Images/teacher/student-02.png';
-import Title from '../../../Common/Title/Title';
 import Services from '../Services/Services';
 import './Kits.css';
 
@@ -34,15 +33,18 @@ const Kits = () => {
   return (
     <section className=''>
       <div className='container px-6 py-10 mx-auto'>
-        <Title
-          title='প্রশিক্ষণের নিজস্ব'
-          text='রোবটিক্স টুলস
-'
-          details='বাংলাদেশে প্রথম আমরাই তিনটি ধাপে নিজস্ব রোবটিক্স টুলস দিয়ে প্রশিক্ষণ দিচ্ছে আইটেসারেক্ট
-।'
-        ></Title>
+        <div className='section-header'>
+          <h2>
+            প্রশিক্ষণের নিজস্ব{' '}
+            <span className='title-gradient'>রোবটিক্স টুলস</span>
+          </h2>
+          <p>
+            বাংলাদেশে প্রথম আমরাই তিনটি ধাপে নিজস্ব রোবটিক্স টুলস দিয়ে প্রশিক্ষণ
+            দিচ্ছে আইটেসারেক্ট
+          </p>
+        </div>
 
-        <div className='grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3'>
+        <div className='grid grid-cols-1 gap-8  xl:gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3'>
           <div className='single-card'>
             <div className='course-card'>
               <div className='course-card-img'>

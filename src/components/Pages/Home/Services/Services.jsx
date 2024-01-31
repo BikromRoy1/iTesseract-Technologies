@@ -1,21 +1,25 @@
+import 'boxicons';
 import React from 'react';
-import Title from '../../../Common/Title/Title';
 import Features from '../Features/Features';
 import './Services.css';
-import 'boxicons';
 
 const Services = () => {
   return (
     <section className='background-color'>
       <div className='container px-6 py-8 mx-auto'>
-        <Title
-          title='এক নজরে'
-          text=' আইটেসারেক্টের সেবা'
-          details='প্রতিনিয়ত রিচার্সের মাধ্যমে শিশুদের থেকে শুরু করে বিশ্ববিদ্যালয় পর্যন্ত সব শিক্ষায় আমাদের আধুনিক সিলেবাস, সার্টিফিকেশ্ন ও এডুকেশন সিস্টেমে পরিবর্তন আনতে যাচ্ছি
-'
-        ></Title>
+        <div className='section-header'>
+          <h2>
+            এক নজরে
+            <span className='title-gradient'> আইটেসারেক্টের সেবা</span>
+          </h2>
+          <p>
+            প্রতিনিয়ত রিচার্সের মাধ্যমে শিশুদের থেকে শুরু করে বিশ্ববিদ্যালয়
+            পর্যন্ত সব শিক্ষায় আমাদের আধুনিক সিলেবাস, সার্টিফিকেশ্ন ও এডুকেশন
+            সিস্টেমে পরিবর্তন আনতে যাচ্ছি
+          </p>
+        </div>
 
-        <div className='grid grid-cols-1 gap-8 mt-7 xl:mt-12 xl:gap-7 lg:grid-cols-4 md:grid-cols-2 xl:grid-cols-4'>
+        <div className='grid grid-cols-1 gap-8  xl:gap-7 lg:grid-cols-4 md:grid-cols-2 xl:grid-cols-4'>
           <div className='icon-box iconbox-yellow'>
             <div className='icon'>
               <svg

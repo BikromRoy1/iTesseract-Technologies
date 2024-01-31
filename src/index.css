@@ -55,9 +55,9 @@ code {
 }
 .section-header h2 {
   font-family: var(--Bangla-font);
-  font-size: 38px;
-  font-weight: 700;
-  line-height: 51px;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 38px;
   position: relative;
   color: var(--text-primary-color);
   margin: 0 auto 0 auto;
@@ -78,6 +78,9 @@ code {
   }
   .section-header h2 {
     max-width: 50%;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 51px;
   }
 }
 .title-gradient {

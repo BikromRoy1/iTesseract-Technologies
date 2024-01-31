@@ -30,7 +30,7 @@ const Partner = () => {
         <h2 className='font-bold text-primary-color mb-3 text-xl text-center tracking-[0.20000000298023224px]'>
           আমাদের অন্যান্য পার্টনার প্রতিষ্ঠানসমূহ
         </h2>
-        <div className='flex flex-wrap justify-center items-center lg:justify-center'>
+        <div className='flex flex-wrap justify-center items-center lg:justify-center gap-2'>
           {loading ? (
             <p>Loading data...</p>
           ) : (

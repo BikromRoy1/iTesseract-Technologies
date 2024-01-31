@@ -23,10 +23,7 @@ const Features = () => {
             <div className='max-w-xl pl-0 lg:pl-4 py-12 lg:max-w-5xl lg:w-1/2'>
               <h2 className='text-3xl font-extrabold mb-7'>
                 <span className='theme-primary-color'>কিভাবে আমাদের </span>
-                <span className='theme-secondary-color'>
-                  {' '}
-                  সাথে যুক্ত হবেন ?
-                </span>
+                <span className='title-gradient'> সাথে যুক্ত হবেন ?</span>
               </h2>
               <div className='flex'>
                 <div className='flex-shrink-0'>
@@ -96,7 +93,6 @@ const Features = () => {
           </div>
         </div>
       </section>
-     
     </div>
   );
 };

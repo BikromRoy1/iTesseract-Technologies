@@ -11,7 +11,7 @@
 }
 
 .proud-partners-images {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-style: solid;
   border-width: 0;
   border-color: #edeff2;
@@ -26,4 +26,5 @@
   position: relative;
   transition: all 0.3s ease-in-out;
   border-bottom: 4px solid transparent;
+  border-radius: 10px;
 }
