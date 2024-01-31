@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
+import shape04 from '../../../../Images/icons/shape-04.png';
+import shape02 from '../../../../Images/icons/shape-05.png';
 import Robots from '../../../../Images/roobots.png';
 import './ItesseractAbout.css';
 
@@ -21,15 +23,16 @@ const ItesseractAbout = () => {
     fetchData();
   }, []);
 
-  const startValue = 0;
+  let startValue = 0;
 
-  const studentNumber = parseInt(data?.data?.student);
-  const appUsers = parseInt(data?.data?.user);
-  const materials = parseInt(data?.data?.materials);
-  const learning = parseInt(data?.data?.learning_content);
+  // Ensure data is available and values are valid numbers
+  const studentNumber = parseInt(data?.data?.student) || 0;
+  const appUsers = parseInt(data?.data?.user) || 0;
+  const materials = parseInt(data?.data?.materials) || 0;
+  const learning = parseInt(data?.data?.learning_content) || 0;
 
   return (
-    <section className='bg-[#f7f5f2]'>
+    <section className='bg-[#f7f5f2] about-me'>
       <div className='max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 mx-auto'>
         <div className='section-header'>
           <h2>
@@ -40,7 +43,7 @@ const ItesseractAbout = () => {
           </h2>
         </div>
 
-        <div className='grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16'>
+        <div className='grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16 about-card'>
           <div className='mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right'>
             <img loading='lazy' src={Robots} alt='Robot' />
           </div>
@@ -116,7 +119,7 @@ const ItesseractAbout = () => {
               </h2>
 
               <p className='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600 font-medium'>
-                অ্যাপ ব্যবহারকারী
+                সফল শিক্ষার্থী
               </p>
             </div>
 
@@ -190,6 +193,14 @@ const ItesseractAbout = () => {
               <p className='hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600 font-medium'>
                 লার্নিং কন্টেন্ট
               </p>
+            </div>
+          </div>
+          <div className='shape-group'>
+            <div className='shape02'>
+              <img src={shape02} loading='lazy' alt='shape' />
+            </div>
+            <div className='shape04'>
+              <img src={shape04} loading='lazy' alt='shape' />
             </div>
           </div>
         </div>

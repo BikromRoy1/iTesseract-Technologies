@@ -89,13 +89,6 @@ const Testimonial = () => {
             ))}
           </Swiper>
         </div>
-        <div className='map-shapes'>
-          <img
-            src='https://i.ibb.co/HVrwX4j/map-shape-3.png'
-            loading='lazy'
-            alt='maps'
-          />
-        </div>
       </section>
     </>
   );

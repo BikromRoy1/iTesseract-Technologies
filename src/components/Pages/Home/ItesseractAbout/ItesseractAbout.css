@@ -2,3 +2,24 @@
   background-color: #fff;
   box-shadow: 0 30px 70px 0 rgba(16, 12, 47, 0.08);
 }
+.about-me {
+  padding: 20px 0px;
+}
+.about-card {
+  position: relative;
+  z-index: 1;
+}
+.shape04 {
+  transform: translateX(-16.2667px) translateY(-2.56667px) translateZ(0px);
+  position: absolute;
+  bottom: -60px;
+  right: -90px;
+  z-index: -1;
+}
+.shape02 {
+  transform: translateX(18.2667px) translateY(7.65px) translateZ(0px);
+  bottom: -63px;
+  right: 30px;
+  position: absolute;
+  z-index: -1;
+}
