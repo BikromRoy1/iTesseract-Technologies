@@ -18,11 +18,11 @@ const School = () => {
         img={SchoolBannerimages}
       ></Breadcrumb>
 
-      <Skill></Skill>
-      <SchoolBanner></SchoolBanner>
-      <SchoolTeacher></SchoolTeacher>
-      <LearningPath></LearningPath>
       <Level></Level>
+      <SchoolBanner></SchoolBanner>
+      <Skill></Skill>
+      <LearningPath></LearningPath>
+      <SchoolTeacher></SchoolTeacher>
       <ContactFrom title='কোর্স সম্পর্কিত যেকোনো তথ্যের জন্য যোগাযোগ করুন'></ContactFrom>
     </div>
   );

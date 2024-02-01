@@ -1,7 +1,7 @@
 import React from 'react';
 import clock from '../../../../Images/icons/Bangla_Goddo.png';
-import graph from '../../../../Images/icons/sub_WeeklyExam.png';
 import cour from '../../../../Images/icons/ICT.png';
+import graph from '../../../../Images/icons/sub_WeeklyExam.png';
 import service01 from '../../../../Images/services-1.png';
 import service02 from '../../../../Images/services-2.png';
 import service03 from '../../../../Images/services-3.png';
@@ -14,17 +14,14 @@ const Level = () => {
   return (
     <div>
       <section className='py-14'>
-        <div className='text-center lg:w-[710px] mx-auto w-full pb-10'>
-          <p className='text-lg text-[#1bb57b] uppercase'>কোর্স লেভেল সমূহ </p>
-
-          <a
-            href='#'
-            className='block mt-4 text-2xl font-semibold text-[#124265] hover:underline '
-          >
-            প্রতিটি স্তরে ০৬ টি পাঠ আছে
-          </a>
-        </div>
         <div className='container mx-auto'>
+          <div className='section-header'>
+            <h4>কোর্স লেভেল সমূহ</h4>
+            <h2>
+              প্রতিটি স্তরে
+              <span className='title-gradient'> ০৬ টি পাঠ আছে</span>
+            </h2>
+          </div>
           <div class=''>
             <div class='level-listing'>
               <div class='grid lg:grid-cols-12 gap-0 grid-cols-1'>

@@ -53,6 +53,13 @@ code {
   text-align: center;
   padding-bottom: 40px;
 }
+.section-header h4 {
+  font-family: var(--Bangla-font);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
 .section-header h2 {
   font-family: var(--Bangla-font);
   font-size: 26px;
