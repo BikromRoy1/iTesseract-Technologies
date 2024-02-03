@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import shapes11 from '../../../../Images/icons/vector-shape11.png';
 import './Partner.css';
 
 const Partner = () => {
@@ -26,7 +27,7 @@ const Partner = () => {
 
   return (
     <section id='partner' className='bg-white'>
-      <div className='container p-6 mx-auto text-center'>
+      <div className='container p-6 mx-auto text-center z-50'>
         <div className='section-header'>
           <h4>আমাদের সহ-প্রতিষ্ঠান</h4>
           <h2>
@@ -61,6 +62,9 @@ const Partner = () => {
             </>
           )}
         </div>
+      </div>
+      <div className='vector-shape11 hidden lg:block'>
+        <img src={shapes11} loading='lazy' alt='shapes' />
       </div>
     </section>
   );
