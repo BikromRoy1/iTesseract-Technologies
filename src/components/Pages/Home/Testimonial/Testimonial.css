@@ -81,8 +81,13 @@
 }
 .testimonial-bg {
   background: #fff;
-  position: relative;
+
   overflow: hidden;
+
+  padding: 40px 0px;
+}
+.testimonial-container {
+  position: relative;
   z-index: 1;
 }
 .testimonial-bg .map-shapes {
@@ -92,4 +97,24 @@
   transform: translateX(-50%);
   opacity: 1;
   z-index: -1;
+}
+.testimonial-bg .shape-image {
+  position: absolute;
+  z-index: -1;
+}
+.testimonial-bg .shape-image-4 {
+  bottom: -25px;
+  right: -218px;
+}
+.testimonial-bg .shape-image-3 {
+  bottom: 16px;
+  left: -46px;
+}
+.testimonial-bg .shape-image-2 {
+  right: -150px;
+  top: 32px;
+}
+.testimonial-bg .shape-image-1 {
+  left: -61px;
+  top: 69px;
 }

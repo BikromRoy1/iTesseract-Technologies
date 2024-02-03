@@ -195,7 +195,7 @@ const ItesseractAbout = () => {
               </p>
             </div>
           </div>
-          <div className='shape-group'>
+          <div className='shape-group hidden lg:block'>
             <div className='shape02'>
               <img src={shape02} loading='lazy' alt='shape' />
             </div>

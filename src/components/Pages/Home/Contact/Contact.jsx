@@ -1,9 +1,10 @@
 import React from 'react';
 import sazzad_sir3 from '../../../../Images/team/shape 03-update.png';
+import './Contact.css';
 
 const Contact = () => {
   return (
-    <section className='bg-[#F0F4F5]'>
+    <section id='message' className='bg-[#F0F4F5]'>
       <div className='mx-auto container  py-4'>
         <section className='rounded-lg p-6'>
           <div className='grid grid-cols-1 gap-12 sm:grid-cols-3 sm:items-center'>
@@ -24,7 +25,7 @@ const Contact = () => {
 
               <cite className='mt-8 inline-flex items-center not-italic'>
                 <span className='hidden h-px w-6 bg-gray-400 sm:inline-block'></span>
-                <p className='text-sm uppercase text-gray-500 sm:ml-3'>
+                <p className='text-sm uppercase title-gradient sm:ml-3'>
                   <strong>Sazzad Hossain, Ph.D</strong>, Chief Advisor.
                 </p>
               </cite>

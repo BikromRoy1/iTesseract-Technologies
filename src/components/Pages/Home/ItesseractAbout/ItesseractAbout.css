@@ -4,6 +4,7 @@
 }
 .about-me {
   padding: 20px 0px;
+  overflow: hidden;
 }
 .about-card {
   position: relative;

@@ -26,11 +26,16 @@ const Partner = () => {
 
   return (
     <section id='partner' className='bg-white'>
-      <div className='container p-6 mx-auto space-y-6 text-center lg:p-8 lg:space-y-8'>
-        <h2 className='font-bold text-primary-color mb-3 text-xl text-center tracking-[0.20000000298023224px]'>
-          আমাদের অন্যান্য পার্টনার প্রতিষ্ঠানসমূহ
-        </h2>
-        <div className='flex flex-wrap justify-center items-center lg:justify-center gap-2'>
+      <div className='container p-6 mx-auto text-center'>
+        <div className='section-header'>
+          <h4>আমাদের সহ-প্রতিষ্ঠান</h4>
+          <h2>
+            আমাদের অন্যান্য
+            <span className='title-gradient'> পার্টনার প্রতিষ্ঠানসমূহ</span>
+          </h2>
+        </div>
+
+        <div className='flex flex-wrap justify-center items-center lg:justify-center gap-4'>
           {loading ? (
             <p>Loading data...</p>
           ) : (
@@ -57,28 +62,6 @@ const Partner = () => {
           )}
         </div>
       </div>
-      {/* <div className='mt-8 rounded-xl bg-[#121220] p-6 md:mt-20 md:px-14'>
-        <p className='mb-6 text-xl text-center text-gray-400'>
-          দেশের সেরা প্রতিষ্ঠানগুলো নিচ্ছে আমাদের কর্পোরেট স্কিলস ডেভেলপমেন্ট
-          প্রোগ্রাম
-        </p>
-        <div className='mb-4 overflow-x-auto scrollbar-hide'>
-          <div className='flex min-w-[800px] flex-nowrap justify-between opacity-30'></div>
-        </div>
-        <div className='text-center text-gray-400'>
-          আরও জানতে{' '}
-          <a
-            href='mailto:corporate@10minuteschool.com'
-            className='underline text-green'
-          >
-            ইমেইল করুন
-          </a>{' '}
-          অথবা{' '}
-          <a href='tel:01844601475' className='underline text-green'>
-            কল করুন
-          </a>
-        </div>
-      </div> */}
     </section>
   );
 };

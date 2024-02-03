@@ -3,23 +3,23 @@
   /* object-fit: fill; */
 }
 #partner {
-  /* background: #006d77; */
-  background-image: url(https://i.ibb.co/M1j9W1d/activities-bg.jpg);
+  background: #fff;
+  /* background-image: url(https://i.ibb.co/M1j9W1d/activities-bg.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  padding: 40px 0px;
 }
 
 .proud-partners-images {
-  background-color: #f7f7f7;
-  /* background-color: #ffffff; */
+  background-color: rgba(26, 182, 157, 0.07);
   border-style: solid;
   border-width: 0;
   border-color: #edeff2;
-  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.05); */
   margin: 1px;
   padding: 10px 50px;
-  height: 140px;
+  height: 130px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -28,4 +28,10 @@
   transition: all 0.3s ease-in-out;
   border-bottom: 4px solid transparent;
   border-radius: 10px;
+  filter: grayscale(100%);
+  transition: all;
+  transition-duration: 0.4s;
+}
+.proud-partners-images:hover {
+  filter: grayscale(0%);
 }

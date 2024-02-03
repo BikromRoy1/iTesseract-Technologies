@@ -1,5 +1,4 @@
 import React from 'react';
-import Banner from '../Banner/Banner';
 import NewBanner from '../Banner/NewBanner';
 import Contact from '../Contact/Contact';
 import ItesseractAbout from '../ItesseractAbout/ItesseractAbout';
@@ -13,12 +12,13 @@ const Home = () => {
     <div>
       {/* <Banner></Banner> */}
       <NewBanner></NewBanner>
-      <Partner></Partner>
+
       <Contact></Contact>
       <Kits></Kits>
       <ItesseractAbout></ItesseractAbout>
       <Testimonial></Testimonial>
       <Subscribe></Subscribe>
+      <Partner></Partner>
     </div>
   );
 };
