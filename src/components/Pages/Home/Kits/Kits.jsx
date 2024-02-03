@@ -31,7 +31,7 @@ const Kits = () => {
   const products = data.data;
 
   return (
-    <section className=''>
+    <section className='kits-course'>
       <div className='container px-6 py-10 mx-auto'>
         <div className='section-header'>
           <h2>

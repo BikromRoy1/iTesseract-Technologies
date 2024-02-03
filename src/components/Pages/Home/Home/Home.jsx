@@ -12,7 +12,6 @@ const Home = () => {
     <div>
       {/* <Banner></Banner> */}
       <NewBanner></NewBanner>
-
       <Contact></Contact>
       <Kits></Kits>
       <ItesseractAbout></ItesseractAbout>

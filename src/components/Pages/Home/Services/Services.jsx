@@ -5,7 +5,7 @@ import './Services.css';
 
 const Services = () => {
   return (
-    <section className='background-color'>
+    <section id='service' className='background-color'>
       <div className='container px-6 py-8 mx-auto'>
         <div className='section-header'>
           <h2>
