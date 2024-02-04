@@ -165,7 +165,7 @@ const Kits = () => {
                   <div className='flex items-center gap-2'>
                     <MdOutlineTimer className='text-[#1bb57b] w-5 h-5' />
                     <h4 className='font-semibold text-primary-color'>
-                      25h 56m 20s
+                      5h 56m 20s
                     </h4>
                   </div>
                   <div className='flex items-center gap-2'>
@@ -177,7 +177,7 @@ const Kits = () => {
                   <div className='flex items-center gap-2'>
                     <IoDocumentTextOutline className='text-[#9333ea] w-5 h-5' />
                     <h4 className='font-semibold text-primary-color'>
-                      20 Tests
+                      6 Tests
                     </h4>
                   </div>
                 </div>
@@ -261,13 +261,13 @@ const Kits = () => {
                   <div className='flex items-center gap-2'>
                     <FiUsers className='text-[#4AB2FD] w-5 h-5' />
                     <h4 className='font-semibold text-primary-color'>
-                      1200 Students
+                      120 Students
                     </h4>
                   </div>
                   <div className='flex items-center gap-2'>
                     <IoDocumentTextOutline className='text-[#9333ea] w-5 h-5' />
                     <h4 className='font-semibold text-primary-color'>
-                      12 Tests
+                      9 Tests
                     </h4>
                   </div>
                 </div>

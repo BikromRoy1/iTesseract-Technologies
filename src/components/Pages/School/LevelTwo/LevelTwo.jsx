@@ -1,5 +1,8 @@
 import React from 'react';
 import course01 from '../../../../Images/course-01.jpg';
+import levelOne from '../../../../Images/icons/apps-line.svg';
+import levelThree from '../../../../Images/icons/board.svg';
+import levelTwo from '../../../../Images/icons/draft-line.svg';
 import './LevelTwo.css';
 
 const LevelTwo = () => {
@@ -23,7 +26,7 @@ const LevelTwo = () => {
               <div className='md:flex'>
                 <div className='md:flex-shrink-0'>
                   <img
-                    className='h-full w-full object-cover md:w-56 level-image'
+                    className='h-full w-full object-cover md:w-60 level-image'
                     loading='lazy'
                     src={course01}
                     alt='Level-image'
@@ -42,6 +45,30 @@ const LevelTwo = () => {
                     খুব সহজ গ্রাফিকাল প্রোগ্রামিং এর সাহায্যে গেম ডেভেলপমেন্ট
                     করতে সক্ষম হবে।
                   </p>
+                  <div className='level-content flex items-center gap-5'>
+                    <div className='level-content-item flex items-center gap-2'>
+                      <img
+                        className='w-[18px] h-[18px]'
+                        src={levelOne}
+                        loading='lazy'
+                        alt='icons'
+                      />
+                      <h5 className='text-[#FDBE42] font-semibold text-base'>12টি পাঠ</h5>
+                    </div>
+                    <div className='level-content-item flex items-center gap-2'>
+                      <img
+                        className='w-[18px] h-[18px]'
+                        src={levelTwo}
+                        loading='lazy'
+                        alt='icons'
+                      />
+                      <h5>8টি প্রজেক্টস</h5>
+                    </div>
+                    <div className='level-content-item flex items-center gap-2'>
+                      <img src={levelThree} loading='lazy' alt='icons' />
+                      <h5>4টি কাজ</h5>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
