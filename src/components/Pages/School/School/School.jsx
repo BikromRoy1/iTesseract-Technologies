@@ -1,9 +1,10 @@
 import React from 'react';
+import SchoolBannerimages from '../../../../Images/school-banner.jpg';
 import Breadcrumb from '../../../Breadcrumb/Breadcrumb';
 import ContactFrom from '../../ContactUS/ContactFrom/ContactFrom';
 import Level from '../Level/Level';
+import LevelTwo from '../LevelTwo/LevelTwo';
 import SchoolBanner from '../SchoolBanner/SchoolBanner';
-import SchoolBannerimages from '../../../../Images/school-banner.jpg';
 import Skill from '../Skill/Skill';
 import LearningPath from './LearningPath/LearningPath';
 import SchoolTeacher from './SchoolTeacher/SchoolTeacher';
@@ -18,6 +19,8 @@ const School = () => {
         img={SchoolBannerimages}
       ></Breadcrumb>
 
+      <LevelTwo></LevelTwo>
+      
       <Level></Level>
       <SchoolBanner></SchoolBanner>
       <Skill></Skill>
