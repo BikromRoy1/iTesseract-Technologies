@@ -3,6 +3,16 @@ import onlineEducation from '../../../../Images/icons/online-education.png';
 import './Skill.css';
 
 const SkillTwo = () => {
+  const skills = [
+    {
+      skill_id: '01',
+      skillsIcons: onlineEducation,
+      tittle: '  আর্টিফিশিয়াল ইন্টেলিজেন্স',
+      Description:
+        'শিশুদের জন্য কৃত্রিম বুদ্ধিমত্তার বেশ কয়েকটি সুবিধার মধ্যে একটি হল সমস্যা সমাধানের ক্ষমতা উন্নত করা এবং মুখ শনাক্তকরণ প্রক্রিয়া সম্পর্কে আরও ভাল বোঝা এবং জানা',
+    },
+  ];
+
   return (
     <section className='py-14'>
       <div className='container p-6 mx-auto'>
@@ -19,27 +29,29 @@ const SkillTwo = () => {
           </p>
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3'>
-          <div className='skill-items-card'>
-            <div className='skill-image mb-[13px]'>
-              <img
-                width='80'
-                height='80'
-                src={onlineEducation}
-                loading='lazy'
-                alt='icons'
-              />
+          {skills.map(() => (
+            <div className='skill-items-card'>
+              <div className='skill-image mb-[13px]'>
+                <img
+                  width='80'
+                  height='80'
+                  src={onlineEducation}
+                  loading='lazy'
+                  alt='icons'
+                />
+              </div>
+              <div className='skills-body'>
+                <h4 className='text-[20px] font-semibold mt-[16px] mb-[15px] tracking-[0.20000000298023224px] leading-[26px]'>
+                  আর্টিফিশিয়াল ইন্টেলিজেন্স
+                </h4>
+                <p className='text-[16px] tracking-[0.20000000298023224px] leading-[24px] text-gray-500'>
+                  শিশুদের জন্য কৃত্রিম বুদ্ধিমত্তার বেশ কয়েকটি সুবিধার মধ্যে
+                  একটি হল সমস্যা সমাধানের ক্ষমতা উন্নত করা এবং মুখ শনাক্তকরণ
+                  প্রক্রিয়া সম্পর্কে আরও ভাল বোঝা এবং জানা
+                </p>
+              </div>
             </div>
-            <div className='skills-body'>
-              <h4 className='text-[20px] font-semibold mt-[16px] mb-[15px] tracking-[0.20000000298023224px] leading-[26px]'>
-                আর্টিফিশিয়াল ইন্টেলিজেন্স
-              </h4>
-              <p className='text-[16px] tracking-[0.20000000298023224px] leading-[24px] text-gray-500'>
-                শিশুদের জন্য কৃত্রিম বুদ্ধিমত্তার বেশ কয়েকটি সুবিধার মধ্যে একটি
-                হল সমস্যা সমাধানের ক্ষমতা উন্নত করা এবং মুখ শনাক্তকরণ প্রক্রিয়া
-                সম্পর্কে আরও ভাল বোঝা এবং জানা
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
