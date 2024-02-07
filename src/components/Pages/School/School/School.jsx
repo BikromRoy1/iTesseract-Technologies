@@ -8,6 +8,7 @@ import SchoolBanner from '../SchoolBanner/SchoolBanner';
 import Skill from '../Skill/Skill';
 import LearningPath from './LearningPath/LearningPath';
 import SchoolTeacher from './SchoolTeacher/SchoolTeacher';
+import SkillTwo from '../Skill/SkillTwo';
 
 const School = () => {
   return (
@@ -23,6 +24,7 @@ const School = () => {
       
       {/* <Level></Level> */}
       <SchoolBanner></SchoolBanner>
+      <SkillTwo></SkillTwo>
       <Skill></Skill>
       <LearningPath></LearningPath>
       <SchoolTeacher></SchoolTeacher>
