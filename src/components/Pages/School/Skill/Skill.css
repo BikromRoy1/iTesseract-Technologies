@@ -1,0 +1,9 @@
+.skill-items-card {
+  padding: 40px 40px 40px 40px;
+  box-shadow: 0px 0px 30px 0px
+    rgba(28.99999999999999, 165.99999999999997, 119.99999999999989, 0.2);
+  border-color: #e8f6f1;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-radius: 20px 20px 20px 20px;
+}
