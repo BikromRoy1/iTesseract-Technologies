@@ -21,7 +21,7 @@ const School = () => {
 
       <LevelTwo></LevelTwo>
       
-      <Level></Level>
+      {/* <Level></Level> */}
       <SchoolBanner></SchoolBanner>
       <Skill></Skill>
       <LearningPath></LearningPath>
