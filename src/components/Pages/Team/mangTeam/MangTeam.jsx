@@ -22,54 +22,44 @@ const MangTeam = () => {
   const teamMembers = data.data;
 
   return (
-    <div className='mangment_Boarder_bg'>
-      <div className='py-16'>
-        <div className='text-center '>
-          <h1 className='text-[#1bb57b] font-semibold mb-4 md:text-4xl text-3xl'>
-            আমাদের ম্যানেজমেন্ট টীম
-          </h1>
-          <p className='text-gray-400'>
-            আইটেসারেক্ট টেকনোলিজস ম্যানেজমেন্ট টীম
-          </p>
+    <section className='bg-white py-16'>
+      <div className='container p-6 mx-auto'>
+        <div className='section-header'>
+          <h2>
+            আমাদের
+            <span className='title-gradient'> ম্যানেজমেন্ট টীম</span>
+          </h2>
+          <p>আইটেসারেক্ট টেকনোলিজস ম্যানেজমেন্ট টীম</p>
         </div>
-        <div className='py-6'>
-          <section className=''>
-            <div className='container px-6 mx-auto'>
-              <div className='grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-10 md:grid-cols-2 xl:grid-cols-4'>
-                {teamMembers?.map((teamMember) => (
-                  <div key={teamMember.id} className='space-y-3'>
-                    <div
-                      className='w-full bg-white rounded-lg p-8 flex flex-col justify-center cursor-pointer items-center border-[1px] border-[#E5E7EB]'
-                      title={teamMember?.name}
-                    >
-                      <div className='mb-5'>
-                        <img
-                          loading='lazy'
-                          className='object-center object-cover rounded-full h-40 w-40'
-                          src={
-                            `https://itesseract.com.bd/master/` +
-                            teamMember?.image
-                          }
-                          alt={teamMember?.name}
-                        />
-                      </div>
-                      <div className='text-center'>
-                        <h1 className='text-[18px] font-bold hover:text-[#1bb57b]'>
-                          {teamMember?.name}
-                        </h1>
-                        <p className='text-gray-400'>
-                          {teamMember?.designation}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+        <div className='grid grid-cols-1 gap-5 xl:gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4'>
+          {teamMembers?.map((teamMember) => (
+            <div key={teamMember?.id} className='space-y-2'>
+              <div
+                className='w-full bg-white rounded-lg p-6 flex flex-col justify-center cursor-pointer items-center border-[1px] border-[#E5E7EB]'
+                title={teamMember?.name}
+              >
+                <div className='mb-5'>
+                  <img
+                    loading='lazy'
+                    className='object-center object-cover rounded-full h-40 w-40'
+                    src={
+                      `https://itesseract.com.bd/master/` + teamMember?.image
+                    }
+                    alt={teamMember?.name}
+                  />
+                </div>
+                <div className='text-center'>
+                  <h1 className='text-[17px] font-bold hover:text-[#1bb57b]'>
+                    {teamMember?.name}
+                  </h1>
+                  <p className='text-gray-400'>{teamMember?.designation}</p>
+                </div>
               </div>
             </div>
-          </section>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -25,7 +25,7 @@ const School = () => {
       {/* <Level></Level> */}
       <SchoolBanner></SchoolBanner>
       <SkillTwo></SkillTwo>
-      <Skill></Skill>
+      {/* <Skill></Skill> */}
       <LearningPath></LearningPath>
       <SchoolTeacher></SchoolTeacher>
       <ContactFrom title='কোর্স সম্পর্কিত যেকোনো তথ্যের জন্য যোগাযোগ করুন'></ContactFrom>
