@@ -1,9 +1,10 @@
 import React from 'react';
+import DetailsBanner from './DetailsBanner/DetailsBanner';
 
 const CourseDetails = () => {
   return (
     <div>
-      <h2>This CourseDetails</h2>
+      <DetailsBanner></DetailsBanner>
     </div>
   );
 };
