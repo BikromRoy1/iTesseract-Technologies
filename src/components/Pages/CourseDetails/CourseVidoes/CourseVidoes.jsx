@@ -1,9 +1,11 @@
 import React from 'react';
 
 const CourseVidoes = () => {
-    return <div>
-      <h3>Hello</h3>
-  </div>;
+    return (
+      <section id='videosCurriculum'>
+        <div className=' p-6 container mx-auto'></div>
+      </section>
+    );
 };
 
 export default CourseVidoes;
