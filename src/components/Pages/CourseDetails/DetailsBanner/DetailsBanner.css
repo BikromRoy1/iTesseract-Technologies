@@ -1,0 +1,14 @@
+#topBanner {
+  background: #f5f7f9;
+  padding: 50px 0px;
+}
+
+#topBanner .title {
+  line-height: 39px;
+  letter-spacing: 0.20000000298023224px;
+}
+#topBanner .subtitle {
+  line-height: 27px;
+  letter-spacing: 0.20000000298023224px;
+  margin-bottom: 16px;
+}
