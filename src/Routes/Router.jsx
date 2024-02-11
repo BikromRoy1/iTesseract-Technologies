@@ -15,6 +15,7 @@ import School from '../components/Pages/School/School/School';
 import Team from '../components/Pages/Team/Team/Team';
 import University from '../components/Pages/University/University/University';
 import Main from '../Layout/Main';
+import CourseDetails from '../components/Pages/CourseDetails/CourseDetails';
 
 const router = createBrowserRouter([
   {
@@ -85,6 +86,10 @@ const router = createBrowserRouter([
       {
         path: '/policy',
         element: <Policy></Policy>
+      },
+      {
+        path: '/courseDetails',
+        element: <CourseDetails></CourseDetails>
       },
     ],
   },
