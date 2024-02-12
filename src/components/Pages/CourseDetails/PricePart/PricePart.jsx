@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaStopwatch } from 'react-icons/fa';
 import playIcons from '../../../../Images/icons/play_icon_2 1.svg';
 import './PricePart.css';
 
@@ -23,6 +24,23 @@ const PricePart = () => {
               alt='playIcons'
             />
           </a>
+        </div>
+      </div>
+      <div className='price-card-body pt-[13px]'>
+        <div>
+          <div class='flex items-center'>
+            <h3 class='mb-0 main-price font-bold'>৳150</h3>
+            <span class='second-price text-gray-500'>
+              <del>৳350</del>
+            </span>
+            <span class='badge bg-[#FD7E14] border-none mb-0 font-semibold'>
+              60% off
+            </span>
+          </div>
+          <div class='mb-0 flex items-center gap-1 md:gap-2 text-[#D83549]'>
+            <FaStopwatch className='text-[#D83549]' width='16' height='16' />{' '}
+            <span className='font-semibold'>5 days left at this price</span>
+          </div>
         </div>
       </div>
     </div>

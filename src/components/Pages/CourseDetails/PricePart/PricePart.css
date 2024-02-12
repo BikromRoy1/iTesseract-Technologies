@@ -10,3 +10,12 @@
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
+.main-price {
+  font-size: 1.875rem;
+  margin-right: 0.5rem;
+  letter-spacing: 0.20000000298023224px;
+}
+.second-price {
+  margin-right: 0.5rem;
+  letter-spacing: 0.20000000298023224px;
+}
