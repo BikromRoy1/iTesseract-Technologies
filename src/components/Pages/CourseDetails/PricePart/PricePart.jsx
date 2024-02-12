@@ -42,6 +42,11 @@ const PricePart = () => {
             <span className='font-semibold'>5 days left at this price</span>
           </div>
         </div>
+        <div class='mt-4'>
+          <button class='btn-buy mb-0 rounded-md bg-[#1CAB55] p-3 whitespace-nowrap text-base font-semibold text-white md:w-full  '>
+            কোর্সটি কিনুন
+          </button>
+        </div>
       </div>
     </div>
   );
