@@ -1,0 +1,12 @@
+.price-card {
+  background: #ffffff;
+  box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+  padding: 15px;
+  border-radius: 6px;
+}
+.playing-icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}

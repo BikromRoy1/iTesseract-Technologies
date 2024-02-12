@@ -1,4 +1,5 @@
 import React from 'react';
+import PricePart from '../PricePart/PricePart';
 import Videos from '../Videos/Videos';
 
 const CourseVidoes = () => {
@@ -10,16 +11,7 @@ const CourseVidoes = () => {
             <Videos></Videos>
           </div>
           <div className=' w-full md:mb-10 md:max-w-[400px] mx-md:order-1'>
-            <h2>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias ex
-              enim placeat recusandae error porro id nobis laudantium, eius
-              eligendi ipsum tempora modi odio facere illo quisquam ratione
-              accusamus? Consectetur, voluptates? Quasi molestias nihil sequi
-              possimus velit, eaque omnis earum vero, excepturi aspernatur
-              dolore perspiciatis? Perferendis ratione iste aliquid nobis vel
-              qui ipsam provident. Atque soluta excepturi nostrum minus
-              perferendis deleniti amet hic!
-            </h2>
+            <PricePart></PricePart>
           </div>
         </div>
       </div>
