@@ -3,8 +3,8 @@ import './TagLine.css';
 
 const TagLine = () => {
   return (
-    <div>
-      <h3>This is Tag Lines</h3>
+    <div className='TagLine-card'>
+      <h3>আপনি যে দক্ষতাগুলি পাবেন</h3>
     </div>
   );
 };

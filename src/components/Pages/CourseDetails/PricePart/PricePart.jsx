@@ -5,7 +5,7 @@ import './PricePart.css';
 
 const PricePart = () => {
   return (
-    <div className='price-card'>
+    <div className='price-card mb-[1.6rem]'>
       <div className='course-videos relative'>
         <a href='https://www.youtube.com/watch?v=ISs7r8SNjl4'>
           <img

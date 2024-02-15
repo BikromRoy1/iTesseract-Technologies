@@ -1,5 +1,6 @@
 import React from 'react';
 import PricePart from '../PricePart/PricePart';
+import TagLine from '../TagLine/TagLine';
 import Videos from '../Videos/Videos';
 
 const CourseVidoes = () => {
@@ -10,8 +11,9 @@ const CourseVidoes = () => {
           <div className='md:max-w-[calc(100%_-_448px)] mx-md:order-2'>
             <Videos></Videos>
           </div>
-          <div className=' w-full md:mb-10 md:max-w-[400px] mx-md:order-1'>
+          <div className='w-full md:mb-10 md:max-w-[400px] mx-md:order-1'>
             <PricePart></PricePart>
+            <TagLine></TagLine>
           </div>
         </div>
       </div>
