@@ -4,3 +4,27 @@
   padding: 15px;
   border-radius: 6px;
 }
+.TagLine h5 {
+  letter-spacing: 0.20000000298023224px;
+  padding: 0.52em 0.593em;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  font-size: 0.8125em;
+  margin-bottom: 2px;
+  display: inline-block;
+  text-transform: uppercase;
+  margin-right: 6px !important;
+  white-space: nowrap;
+  line-height: 0.75;
+}
+.tag-color01 {
+  background-color: #e7e7ff;
+  color: #696cff;
+}
+.TagLine-card h3 {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700;
+  letter-spacing: 0.20000000298023224px;
+  padding-bottom: 13px;
+}
