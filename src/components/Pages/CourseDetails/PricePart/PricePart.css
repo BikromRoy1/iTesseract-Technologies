@@ -3,6 +3,7 @@
   box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
   padding: 15px;
   border-radius: 6px;
+  border-top: 2px solid #ffbb2c;
 }
 .playing-icons {
   position: absolute;
