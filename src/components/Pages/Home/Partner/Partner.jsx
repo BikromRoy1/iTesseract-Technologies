@@ -63,9 +63,9 @@ const Partner = () => {
           )}
         </div>
       </div>
-      <div className='vector-shape11 hidden lg:block'>
+      {/* <div className='vector-shape11 hidden lg:block'>
         <img src={shapes11} loading='lazy' alt='shapes' />
-      </div>
+      </div> */}
     </section>
   );
 };
