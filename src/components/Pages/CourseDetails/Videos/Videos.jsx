@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaLock } from 'react-icons/fa';
 import './Videos.css';
 
 const Videos = () => {
@@ -8,7 +9,7 @@ const Videos = () => {
         <h3 className='w-full'>কোর্সের পাঠ্যক্রম</h3>
       </div>
       <div className='videos-timing'>
-        <ul className='flex pb-3'>
+        <ul className='flex pb-3 flex-wrap items-center'>
           <li className='mr-[30px] text-[#7b7b8a] text-[17px] font-medium'>
             {' '}
             বিগিনার লেভেল
@@ -31,11 +32,11 @@ const Videos = () => {
 
       <div className='videos-module'>
         <details
-          className='group rounded-lg   [&_summary::-webkit-details-marker]:hidden mb-[1rem]'
+          className='group rounded-lg [&_summary::-webkit-details-marker]:hidden mb-[1rem]'
           open
         >
           <summary className='flex items-center justify-between cursor-pointer bg-[#F5F7F9] py-[1rem] px-[1.25rem] rounded-[6px]'>
-            <h2 className='font-bold text-[#124265] videos-class-title'>
+            <h2 className='font-bold text-[#124265] videos-class-title text-[14px] sm:text-[14px] md:text-[16px]'>
               মোবাইল অ্যাপ্লিকেশন এবং ওয়েবসাইট বিকাশের ভূমিকা{' '}
               <span className='font-medium text-[#7b7b8a]'>(3 Lectures)</span>
             </h2>
@@ -74,8 +75,8 @@ const Videos = () => {
           </summary>
 
           <div className='mt-[1rem] pl-[1rem] pt-[0.2rem] pr-[0.5rem] pb-[0.5rem]'>
-            <div className='flex justify-between items-center'>
-              <div className='relative flex items-center videos-name-main'>
+            <div className='flex justify-between items-center flex-wrap'>
+              <div className='relative flex items-center videos-name-main flex-wrap'>
                 <a href='#' className='btn-danger-soft mb-0'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -104,7 +105,7 @@ const Videos = () => {
 
             <div className='flex justify-between items-center'>
               <div className='relative flex items-center videos-name-main'>
-                <a href='#' className='btn-danger-soft mb-0'>
+                <a href='#' className='btn-danger-soft mb-0 flex-wrap'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='23'
@@ -116,7 +117,7 @@ const Videos = () => {
                     <path d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393' />
                   </svg>
                 </a>
-                <span className='videos-name inline-block truncate ml-2 mb-0 text-base font-normal w-100 sm:w-200 md:w-400 cursor-pointer'>
+                <span className='videos-name inline-block truncate ml-2 mb-0 text-base font-normal w-[100px] sm:w-[200px] md:w-[400px] cursor-pointer'>
                   {' '}
                   Staying on the Sales Tightrope{' '}
                   <span className='badge bg-[#1CAB55] border-none text-[14px] font-medium whitespace-nowrap text-white  ml-1'>
@@ -126,6 +127,35 @@ const Videos = () => {
               </div>
               <p className='mb-0 text-[#7b7b8a] text-[16px] font-semibold'>
                 15m 10s
+              </p>
+            </div>
+
+            <hr className='hr-style my-[1rem] text-[#9a9ea4]' />
+
+            <div className='flex justify-between items-center  flex-wrap'>
+              <div className='relative flex items-center videos-name-main flex-wrap'>
+                <a href='#' class='btn-danger-soft mb-0'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='23'
+                    height='23'
+                    fill='currentColor'
+                    class='bi bi-play-fill play-icons mr-0 pl-[3px]'
+                    viewBox='0 0 16 16'
+                  >
+                    <path d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393' />
+                  </svg>
+                </a>
+                <span className='inline-block truncate ml-2 mb-0 text-base font-normal w-[100px] sm:w-[200px] md:w-[400px] cursor-pointer'>
+                  First Impressions and Body Language{' '}
+                  <span className='badge bg-[#FD7E14] border-none text-[14px] font-medium whitespace-nowrap text-white  ml-1 capitalize'>
+                    <FaLock className='w-[13px] h-[13px] mr-[3px]' />
+                    premium
+                  </span>
+                </span>
+              </div>
+              <p className='mb-0 text-[#7b7b8a] text-[16px] font-semibold'>
+                18m 10s
               </p>
             </div>
 
@@ -145,19 +175,23 @@ const Videos = () => {
                     <path d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393' />
                   </svg>
                 </a>
-                <span className='inline-block truncate ml-2 mb-0 text-base font-normal w-100 sm:w-200 md:w-400 cursor-pointer'>
-                  First Impressions and Body Language
+                <span className='inline-block truncate ml-2 mb-0 text-base font-normal w-[100px] sm:w-[200px] md:w-[400px] cursor-pointer'>
+                  Scratch Programming Basic
+                  <span className='badge bg-[#FD7E14] border-none text-[14px] font-medium whitespace-nowrap text-white  ml-1 capitalize'>
+                    <FaLock className='w-[13px] h-[13px] mr-[3px]' />
+                    premium
+                  </span>
                 </span>
               </div>
               <p className='mb-0 text-[#7b7b8a] text-[16px] font-semibold'>
-                18m 10s
+                25m 10s
               </p>
             </div>
           </div>
         </details>
         <details className='group rounded-lg   [&_summary::-webkit-details-marker]:hidden mb-[1rem]'>
           <summary className='flex items-center justify-between cursor-pointer bg-[#F5F7F9] py-[1rem] px-[1.25rem] rounded-[6px]'>
-            <h2 className='font-medium text-gray-900'>
+            <h2 className='font-bold text-[#124265] videos-class-title text-[14px] sm:text-[14px] md:text-[16px]'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
               numquam.
               <span className='font-medium text-[#7b7b8a]'> (10 Lectures)</span>
