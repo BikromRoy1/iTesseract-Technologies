@@ -22,3 +22,23 @@
   line-height: normal;
   letter-spacing: 0.20000000298023224px;
 }
+.btn-danger-soft {
+  height: 32px;
+  width: 32px;
+  line-height: 30px;
+  background-color: rgba(214, 41, 62, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.play-icons {
+  color: #d6293e;
+}
+
+
+.hr-style {
+    border: 0;
+    border-top: 1px solid;
+    opacity: 0.25;
+}
