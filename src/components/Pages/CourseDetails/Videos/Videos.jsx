@@ -19,8 +19,6 @@ const Videos = () => {
         </ul>
       </div>
 
-      
-
       <div className='videos-module'>
         <details
           className='group rounded-lg [&_summary::-webkit-details-marker]:hidden mb-[1rem]'
@@ -80,7 +78,7 @@ const Videos = () => {
                     <path d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393' />
                   </svg>
                 </a>
-                <span className='inline-block truncate ml-2 mb-0 text-base font-normal w-100 sm:w-200 md:w-400 cursor-pointer'>
+                <span className='inline-block truncate ml-2 mb-0 text-base font-normal w-[100px] sm:w-[200px] md:w-[400px] cursor-pointer'>
                   Introduction{' '}
                   <span className='badge bg-[#1CAB55] border-none text-[14px] font-medium whitespace-nowrap text-white  ml-1'>
                     ফ্রি
@@ -235,7 +233,7 @@ const Videos = () => {
                     <path d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393' />
                   </svg>
                 </a>
-                <span className='inline-block truncate ml-2 mb-0 text-base font-normal w-100 sm:w-200 md:w-400 cursor-pointer'>
+                <span className='inline-block truncate ml-2 mb-0 text-base font-normal w-[100px] sm:w-[200px] md:w-[400px] cursor-pointer'>
                   Game development using blocks{' '}
                   <span className='badge bg-[#FD7E14] border-none text-[14px] font-medium whitespace-nowrap text-white  ml-1 capitalize'>
                     <FaLock className='w-[13px] h-[13px] mr-[3px]' />
