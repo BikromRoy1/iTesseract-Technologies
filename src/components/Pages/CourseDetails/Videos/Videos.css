@@ -22,6 +22,7 @@
   line-height: normal;
   letter-spacing: 0.20000000298023224px;
 }
+
 .btn-danger-soft {
   height: 32px;
   width: 32px;
@@ -35,10 +36,21 @@
 .play-icons {
   color: #d6293e;
 }
-
+.btn-danger-soft:hover {
+  background-color: #d6293e;
+}
+.btn-danger-soft:hover .play-icons {
+  color: #fff;
+}
+.videos-name-main:hover .btn-danger-soft {
+  background-color: #d6293e;
+}
+.videos-name-main:hover .play-icons {
+  color: #fff;
+}
 
 .hr-style {
-    border: 0;
-    border-top: 1px solid;
-    opacity: 0.25;
+  border: 0;
+  border-top: 1px solid;
+  opacity: 0.25;
 }

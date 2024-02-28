@@ -74,76 +74,82 @@ const Videos = () => {
           </summary>
 
           <div className='mt-[1rem] pl-[1rem] pt-[0.2rem] pr-[0.5rem] pb-[0.5rem]'>
-            <div class='flex justify-between items-center'>
-              <div class='relative flex items-center'>
-                <a href='#' class='btn-danger-soft mb-0'>
+            <div className='flex justify-between items-center'>
+              <div className='relative flex items-center videos-name-main'>
+                <a href='#' className='btn-danger-soft mb-0'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='23'
                     height='23'
                     fill='currentColor'
-                    class='bi bi-play-fill text-[#d6293e] mr-0 pl-[3px]'
+                    className='bi bi-play-fill play-icons mr-0 pl-[3px]'
                     viewBox='0 0 16 16'
                   >
                     <path d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393' />
                   </svg>
                 </a>
-                <span class='inline-block truncate ml-2 mb-0 text-base font-normal w-100 sm:w-200 md:w-400'>
-                  Introduction
+                <span className='inline-block truncate ml-2 mb-0 text-base font-normal w-100 sm:w-200 md:w-400 cursor-pointer'>
+                  Introduction{' '}
+                  <span className='badge bg-[#1CAB55] border-none text-[14px] font-medium whitespace-nowrap text-white  ml-1'>
+                    ফ্রি
+                  </span>
                 </span>
               </div>
-              <p class='mb-0 text-[#7b7b8a] text-[16px] font-semibold'>
+              <p className='mb-0 text-[#7b7b8a] text-[16px] font-semibold'>
                 2m 10s
               </p>
             </div>
 
             <hr className='hr-style my-[1rem] text-[#9a9ea4]' />
 
-            <div class='flex justify-between items-center'>
-              <div class='relative flex items-center'>
-                <a href='#' class='btn-danger-soft mb-0'>
+            <div className='flex justify-between items-center'>
+              <div className='relative flex items-center videos-name-main'>
+                <a href='#' className='btn-danger-soft mb-0'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='23'
                     height='23'
                     fill='currentColor'
-                    class='bi bi-play-fill text-[#d6293e] mr-0 pl-[3px]'
+                    className='bi bi-play-fill play-icons mr-0 pl-[3px]'
                     viewBox='0 0 16 16'
                   >
                     <path d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393' />
                   </svg>
                 </a>
-                <span class='inline-block truncate ml-2 mb-0 text-base font-normal w-100 sm:w-200 md:w-400'>
+                <span className='videos-name inline-block truncate ml-2 mb-0 text-base font-normal w-100 sm:w-200 md:w-400 cursor-pointer'>
                   {' '}
-                  Staying on the Sales Tightrope
+                  Staying on the Sales Tightrope{' '}
+                  <span className='badge bg-[#1CAB55] border-none text-[14px] font-medium whitespace-nowrap text-white  ml-1'>
+                    ফ্রি
+                  </span>
                 </span>
               </div>
-              <p class='mb-0 text-[#7b7b8a] text-[16px] font-semibold'>
+              <p className='mb-0 text-[#7b7b8a] text-[16px] font-semibold'>
                 15m 10s
               </p>
             </div>
 
             <hr className='hr-style my-[1rem] text-[#9a9ea4]' />
 
-            <div class='flex justify-between items-center'>
-              <div class='relative flex items-center'>
+            <div className='flex justify-between items-center '>
+              <div className='relative flex items-center videos-name-main'>
                 <a href='#' class='btn-danger-soft mb-0'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='23'
                     height='23'
                     fill='currentColor'
-                    class='bi bi-play-fill text-[#d6293e] mr-0 pl-[3px]'
+                    class='bi bi-play-fill play-icons mr-0 pl-[3px]'
                     viewBox='0 0 16 16'
                   >
                     <path d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393' />
                   </svg>
                 </a>
-                <span class='inline-block truncate ml-2 mb-0 text-base font-normal w-100 sm:w-200 md:w-400'>
+                <span className='inline-block truncate ml-2 mb-0 text-base font-normal w-100 sm:w-200 md:w-400 cursor-pointer'>
                   First Impressions and Body Language
                 </span>
               </div>
-              <p class='mb-0 text-[#7b7b8a] text-[16px] font-semibold'>
+              <p className='mb-0 text-[#7b7b8a] text-[16px] font-semibold'>
                 18m 10s
               </p>
             </div>
