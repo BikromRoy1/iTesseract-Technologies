@@ -16,6 +16,7 @@ import Team from '../components/Pages/Team/Team/Team';
 import University from '../components/Pages/University/University/University';
 import Main from '../Layout/Main';
 import CourseDetails from '../components/Pages/CourseDetails/CourseDetails';
+import VideosPlaying from '../components/Pages/CourseDetails/videosPlaying/VideosPlaying.jsx';
 
 const router = createBrowserRouter([
   {
@@ -90,6 +91,10 @@ const router = createBrowserRouter([
       {
         path: '/courseDetails',
         element: <CourseDetails></CourseDetails>
+      },
+      {
+        path: '/videosPlay',
+        element: <VideosPlaying></VideosPlaying>
       },
     ],
   },

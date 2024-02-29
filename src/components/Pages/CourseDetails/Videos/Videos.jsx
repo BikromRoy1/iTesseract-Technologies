@@ -89,7 +89,10 @@ const Videos = () => {
               <p className='mb-0 text-[#7b7b8a] text-[16px] font-semibold flex items-center gap-2'>
                 2m 10s
                 <span>
-                  <Link className='flex items-center gap-1 badge' to='/'>
+                  <Link
+                    className='flex items-center gap-1 badge'
+                    to='/videosPlay'
+                  >
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
                       width='19'
@@ -134,7 +137,10 @@ const Videos = () => {
               <p className='mb-0 text-[#7b7b8a] text-[16px] font-semibold flex items-center gap-2'>
                 15m 10s{' '}
                 <span>
-                  <Link className='flex items-center gap-1 badge' to='/'>
+                  <Link
+                    className='flex items-center gap-1 badge'
+                    to='/videosPlay'
+                  >
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
                       width='19'
