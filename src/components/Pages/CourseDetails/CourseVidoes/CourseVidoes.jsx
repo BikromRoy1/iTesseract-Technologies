@@ -1,18 +1,90 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CourseDescription from '../CourseDescription/CourseDescription';
 import Material from '../Material/Material';
 import PricePart from '../PricePart/PricePart';
 import TagLine from '../TagLine/TagLine';
 import Videos from '../Videos/Videos';
+import './CourseVidoes.css';
 
 const CourseVidoes = () => {
+  const [openTab, setOpenTab] = useState(1);
   return (
     <section id='videosCurriculum'>
       <div className=' p-6 container mx-auto'>
         <div className='flex flex-col gap-4 md:flex-row md:gap-12 md:pt-10'>
           <div className='md:max-w-[calc(100%_-_448px)] mx-md:order-2'>
-            <CourseDescription></CourseDescription>
-            <Videos></Videos>
+            <div className='flex items-center gap-[12px] justify-start flex-nowrap mb-[40px]'>
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpenTab(1);
+                }}
+                data-toggle='tab'
+                href='#link1'
+                role='tablist'
+              >
+                <button
+                  className={
+                    openTab === 1
+                      ? 'text-[#fff] bg-[#1BB57B] button-shadow font-semibold leading-[1] text-[16px] border-none rounded-[30px] py-[14px] px-[30px]'
+                      : 'text-[#6D6C80] bg-[#E6E9EF] font-semibold leading-[1] text-[16px] border-none rounded-[30px] py-[14px] px-[30px]'
+                  }
+                >
+                  কোর্সের ওভারভিউ
+                </button>
+              </a>
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpenTab(2);
+                }}
+                data-toggle='tab'
+                href='#link2'
+                role='tablist'
+              >
+                <button
+                  className={
+                    openTab === 2
+                      ? 'text-[#fff] bg-[#1BB57B] button-shadow font-semibold leading-[1] text-[16px] border-none rounded-[30px] py-[14px] px-[30px]'
+                      : 'text-[#6D6C80] bg-[#E6E9EF] font-semibold leading-[1] text-[16px] border-none rounded-[30px] py-[14px] px-[30px]'
+                  }
+                >
+                  কোর্সের পাঠ্যক্রম
+                </button>
+              </a>
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpenTab(3);
+                }}
+                data-toggle='tab'
+                href='#link3'
+                role='tablist'
+              >
+                <button
+                  className={
+                    openTab === 3
+                      ? 'text-[#fff] bg-[#1BB57B] button-shadow font-semibold leading-[1] text-[16px] border-none rounded-[30px] py-[14px] px-[30px]'
+                      : 'text-[#6D6C80] bg-[#E6E9EF] font-semibold leading-[1] text-[16px] border-none rounded-[30px] py-[14px] px-[30px]'
+                  }
+                >
+                  রিভিউ
+                </button>
+              </a>
+            </div>
+
+            <div id='link1' className={openTab === 1 ? 'block' : 'hidden'}>
+              <CourseDescription></CourseDescription>
+            </div>
+            <div id='link2' className={openTab === 2 ? 'block' : 'hidden'}>
+              <Videos></Videos>
+            </div>
+            <div id='link3' className={openTab === 3 ? 'block' : 'hidden'}>
+              <p>
+                Search Engine Optimization Essentials for Web
+                Developers.Graphics Designing Essentials for Web Developers
+              </p>
+            </div>
           </div>
           <div className='w-full md:mb-10 md:max-w-[400px] mx-md:order-1'>
             <PricePart></PricePart>
