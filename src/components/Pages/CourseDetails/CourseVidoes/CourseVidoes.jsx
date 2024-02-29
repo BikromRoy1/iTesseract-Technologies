@@ -80,9 +80,13 @@ const CourseVidoes = () => {
               <Videos></Videos>
             </div>
             <div id='link3' className={openTab === 3 ? 'block' : 'hidden'}>
-              <p>
-                Search Engine Optimization Essentials for Web
-                Developers.Graphics Designing Essentials for Web Developers
+              <p className='text-[16px] leading-[26px] text-gray-500 pb-4'>
+                হায়ার স্টাডি কিংবা ক্যারিয়ারের সাফল্যের জন্য ম্যাথ শেখাটা যতটা
+                জরুরি, ম্যাথ শেখাটা ঠিক ততোটাই বোরিং। অনেকের কাছে ম্যাথ তো
+                রীতিমতো আতঙ্কের নাম। অথচ ম্যাথকে বলা হয় মাদার অব সায়েন্স। অন্য
+                সাবজেক্টে ভালো করতেও ম্যাথের বেসিক পাকাপোক্ত করা আবশ্যক। শিশুদের
+                ব্রেইন ডেভেলপমেন্ট, চিন্তার দক্ষতা আর দ্রুত সমস্যা সমাধান করতে
+                শেখায় ম্যাথ। তাই ম্যাথ শেখার বিকল্প নেই।
               </p>
             </div>
           </div>

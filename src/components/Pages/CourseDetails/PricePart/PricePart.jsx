@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaStopwatch } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import playIcons from '../../../../Images/icons/play_icon_2 1.svg';
 import './PricePart.css';
 
@@ -7,23 +8,29 @@ const PricePart = () => {
   return (
     <div className='price-card mb-[1.6rem]'>
       <div className='course-videos relative'>
-        <a href='https://www.youtube.com/watch?v=ISs7r8SNjl4'>
+        <Link
+          href='https://www.youtube.com/watch?v=ISs7r8SNjl4'
+          class='glightbox'
+        >
           <img
             src='https://img.youtube.com/vi/ISs7r8SNjl4/maxresdefault.jpg'
             class='w-full h-full rounded-[6px]'
             alt='course-Banner'
             loading='lazy'
           />
-        </a>
+        </Link>
         <div className='playing-icons'>
-          <a href='https://www.youtube.com/watch?v=ISs7r8SNjl4'>
+          <Link
+            to='https://www.youtube.com/watch?v=ISs7r8SNjl4'
+            class='glightbox'
+          >
             <img
               className='w-[70px] h-[70px]'
               src={playIcons}
               loading='lazy'
               alt='playIcons'
             />
-          </a>
+          </Link>
         </div>
       </div>
       <div className='price-card-body pt-[13px]'>
