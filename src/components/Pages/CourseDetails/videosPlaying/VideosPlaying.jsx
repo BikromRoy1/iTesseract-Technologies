@@ -1,11 +1,49 @@
-import 'plyr/dist/plyr.css'; // Import Plyr styles
-import React from 'react';
+import React, { useState } from 'react';
 import { FaLock } from 'react-icons/fa';
-import parrot from '../../../../Images/parrot.mp4';
+import animal from '../../../../Images/vidoes/animal.mp4';
+import bird from '../../../../Images/vidoes/bird.mp4';
+import parrot from '../../../../Images/vidoes/parrot.mp4';
+import production from '../../../../Images/vidoes/production.mp4';
 import './VideosPlaying.css';
-import 'plyr/dist/plyr.css'; // Import Plyr styles
-import Plyr from 'plyr';
-const videosPlaying = () => {
+
+const VideosPlaying = () => {
+  const videoData = [
+    {
+      id: 1,
+      title: 'Introduction',
+      source: parrot,
+      duration: '2m 10s',
+      isPremium: false,
+    },
+    {
+      id: 2,
+      title: 'Staying on the Sales Tightrope',
+      source: animal,
+      duration: '15m 10s',
+      isPremium: false,
+    },
+    {
+      id: 3,
+      title: 'First Impressions and Body Language',
+      source: production,
+      duration: '18m 10s',
+      isPremium: true,
+    },
+    {
+      id: 4,
+      title: 'Scratch Programming Basic',
+      source: bird,
+      duration: '25m 10s',
+      isPremium: true,
+    },
+    // Add more video data as needed
+  ];
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+
+  const changeVideoSource = (newIndex) => {
+    setCurrentVideoIndex(newIndex);
+  };
+
   return (
     <section className='videosPlaying-section'>
       <div className='container mx-auto p-6'>
@@ -16,25 +54,23 @@ const videosPlaying = () => {
             </h4>
             <video
               controls
+              autoPlay
               width='100%'
               height='400px'
-              src={parrot}
+              src={videoData[currentVideoIndex].source}
               typeof='mp4'
             ></video>
-            <video playsinline controls>
-              <source src={parrot} type='video/mp4' />
-              Your browser does not support the video tag.
-            </video>
+
             <h3 className='font-semibold  text-[16px] md:text-[22px] leading-[28px] pt-[20px]'>
               Video: ঘরে বসে ফ্রিল্যান্সিং করে আসলেই কি টাকা কামানো যায়? আর কত
               টাকা?
             </h3>
           </div>
           <div>
-            <div class='bg-slate-600'>
+            <div class='bg-slate-600 px-4 py-7 rounded-md'>
               <div className='videos-module'>
                 <details
-                  className='group rounded-lg [&_summary::-webkit-details-marker]:hidden mb-[1rem]'
+                  className='group rounded-lg [&_summary::-webkit-details-marker]:hidden mb-[1rem] bg-[#F5F7F9]'
                   open
                 >
                   <summary className='flex items-center justify-between cursor-pointer bg-[#F5F7F9] py-[1rem] px-[1.25rem] rounded-[6px]'>
@@ -79,9 +115,59 @@ const videosPlaying = () => {
                   </summary>
 
                   <div className='mt-[1rem] pl-[1rem] pt-[0.2rem] pr-[0.5rem] pb-[0.5rem]'>
+                    {videoData.map((data) => (
+                      <div key={data.id}>
+                        <div className='flex justify-between items-center flex-wrap'>
+                          <div className='relative flex items-center videos-name-main flex-wrap'>
+                            <a
+                              href='#'
+                              onClick={() => changeVideoSource(data.id - 1)}
+                              className='btn-danger-soft mb-0'
+                            >
+                              <svg
+                                xmlns='http://www.w3.org/2000/svg'
+                                width='23'
+                                height='23'
+                                fill='currentColor'
+                                className='bi bi-play-fill play-icons mr-0 pl-[3px]'
+                                viewBox='0 0 16 16'
+                              >
+                                <path d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393' />
+                              </svg>
+                            </a>
+                            <span className='inline-block truncate ml-2 mb-0 text-base font-normal w-[100px] sm:w-[200px] md:w-[400px] cursor-pointer'>
+                              <a
+                                href='#'
+                                onClick={() => changeVideoSource(data.id - 1)}
+                              >
+                                {data.title}{' '}
+                              </a>
+                              {data.isPremium ? (
+                                <span className='badge bg-[#FD7E14] border-none text-[14px] font-medium whitespace-nowrap text-white  ml-1 capitalize'>
+                                  <FaLock className='w-[13px] h-[13px] mr-[3px]' />
+                                  premium
+                                </span>
+                              ) : (
+                                <span className='badge bg-[#1CAB55] border-none text-[14px] font-medium whitespace-nowrap text-white  ml-1'>
+                                  ফ্রি
+                                </span>
+                              )}
+                            </span>
+                          </div>
+                          <p className='mb-0 text-[#7b7b8a] text-[16px] font-semibold flex items-center gap-2'>
+                            {data.duration}
+                          </p>
+                        </div>
+                        <hr className='hr-style my-[1rem] text-[#9a9ea4]' />
+                      </div>
+                    ))}
                     <div className='flex justify-between items-center flex-wrap'>
                       <div className='relative flex items-center videos-name-main flex-wrap'>
-                        <a href='#' className='btn-danger-soft mb-0'>
+                        <a
+                          href='#'
+                          onClick={() => changeVideoSource(parrot)}
+                          className='btn-danger-soft mb-0'
+                        >
                           <svg
                             xmlns='http://www.w3.org/2000/svg'
                             width='23'
@@ -193,7 +279,7 @@ const videosPlaying = () => {
                     </div>
                   </div>
                 </details>
-                <details className='group rounded-lg   [&_summary::-webkit-details-marker]:hidden mb-[1rem]'>
+                <details className='group rounded-lg   [&_summary::-webkit-details-marker]:hidden mb-[1rem] bg-[#F5F7F9]'>
                   <summary className='flex items-center justify-between cursor-pointer bg-[#F5F7F9] py-[1rem] px-[1.25rem] rounded-[6px]'>
                     <h2 className='font-bold text-[#124265] videos-class-title text-[14px] sm:text-[14px] md:text-[16px]'>
                       ক্লাস 01: স্ক্র্যাচ প্রোগ্রামিং এর বেসিক
@@ -362,4 +448,4 @@ const videosPlaying = () => {
   );
 };
 
-export default videosPlaying;
+export default VideosPlaying;
