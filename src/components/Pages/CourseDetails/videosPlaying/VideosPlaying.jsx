@@ -1,8 +1,10 @@
+import 'plyr/dist/plyr.css'; // Import Plyr styles
 import React from 'react';
 import { FaLock } from 'react-icons/fa';
 import parrot from '../../../../Images/parrot.mp4';
 import './VideosPlaying.css';
-
+import 'plyr/dist/plyr.css'; // Import Plyr styles
+import Plyr from 'plyr';
 const videosPlaying = () => {
   return (
     <section className='videosPlaying-section'>
@@ -19,6 +21,10 @@ const videosPlaying = () => {
               src={parrot}
               typeof='mp4'
             ></video>
+            <video playsinline controls>
+              <source src={parrot} type='video/mp4' />
+              Your browser does not support the video tag.
+            </video>
             <h3 className='font-semibold  text-[16px] md:text-[22px] leading-[28px] pt-[20px]'>
               Video: ঘরে বসে ফ্রিল্যান্সিং করে আসলেই কি টাকা কামানো যায়? আর কত
               টাকা?

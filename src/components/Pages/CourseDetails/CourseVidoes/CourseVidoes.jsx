@@ -11,7 +11,7 @@ const CourseVidoes = () => {
   return (
     <section id='videosCurriculum'>
       <div className=' p-6 container mx-auto'>
-        <div className='flex flex-col gap-4 md:flex-row md:gap-12 md:pt-10'>
+        <div className='flex flex-col gap-4 md:flex-row md:gap-12'>
           <div className='md:max-w-[calc(100%_-_448px)] mx-md:order-2'>
             <div className='flex items-center gap-[12px] justify-start flex-nowrap mb-[40px]'>
               <a
@@ -26,8 +26,8 @@ const CourseVidoes = () => {
                 <button
                   className={
                     openTab === 1
-                      ? 'text-[#fff] bg-[#1BB57B] button-shadow font-semibold leading-[1] text-[16px] border-none rounded-[30px] py-[14px] px-[30px]'
-                      : 'text-[#6D6C80] bg-[#E6E9EF] font-semibold leading-[1] text-[16px] border-none rounded-[30px] py-[14px] px-[30px]'
+                      ? 'text-[#fff] bg-[#1BB57B] button-shadow font-semibold leading-[1] text-[14px] md:text-[16px] border-none rounded-[30px] py-[10px] px-[13px] sm:py-[10px] sm:px-[13px] md:py-[14px] md:px-[30px]'
+                      : 'text-[#6D6C80] bg-[#E6E9EF] font-semibold leading-[1] text-[14px] md:text-[16px] border-none rounded-[30px] py-[10px] px-[13px] sm:py-[10px] sm:px-[13px] md:py-[14px] md:px-[30px]'
                   }
                 >
                   কোর্সের ওভারভিউ
@@ -45,8 +45,8 @@ const CourseVidoes = () => {
                 <button
                   className={
                     openTab === 2
-                      ? 'text-[#fff] bg-[#1BB57B] button-shadow font-semibold leading-[1] text-[16px] border-none rounded-[30px] py-[14px] px-[30px]'
-                      : 'text-[#6D6C80] bg-[#E6E9EF] font-semibold leading-[1] text-[16px] border-none rounded-[30px] py-[14px] px-[30px]'
+                      ? 'text-[#fff] bg-[#1BB57B] button-shadow font-semibold leading-[1] text-[14px] md:text-[16px] border-none rounded-[30px] py-[10px] px-[13px] sm:py-[10px] sm:px-[13px] md:py-[14px] md:px-[30px]'
+                      : 'text-[#6D6C80] bg-[#E6E9EF] font-semibold leading-[1] text-[16px] border-none rounded-[30px] py-[10px] px-[13px] sm:py-[10px] sm:px-[13px] md:py-[14px] md:px-[30px]'
                   }
                 >
                   কোর্সের পাঠ্যক্রম
@@ -64,8 +64,8 @@ const CourseVidoes = () => {
                 <button
                   className={
                     openTab === 3
-                      ? 'text-[#fff] bg-[#1BB57B] button-shadow font-semibold leading-[1] text-[16px] border-none rounded-[30px] py-[14px] px-[30px]'
-                      : 'text-[#6D6C80] bg-[#E6E9EF] font-semibold leading-[1] text-[16px] border-none rounded-[30px] py-[14px] px-[30px]'
+                      ? 'text-[#fff] bg-[#1BB57B] button-shadow font-semibold leading-[1] text-[14px] md:text-[16px] border-none rounded-[30px] py-[10px] px-[13px] sm:py-[10px] sm:px-[13px] md:py-[14px] md:px-[30px]'
+                      : 'text-[#6D6C80] bg-[#E6E9EF] font-semibold leading-[1] text-[16px] border-none rounded-[30px] py-[10px] px-[13px] sm:py-[10px] sm:px-[13px] md:py-[14px] md:px-[30px]'
                   }
                 >
                   রিভিউ
