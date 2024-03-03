@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { FaLock } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import Call from '../../../../Images/vidoes/Call-of-Duty.mp4';
 import animal from '../../../../Images/vidoes/animal.mp4';
 import bird from '../../../../Images/vidoes/bird.mp4';
 import parrot from '../../../../Images/vidoes/parrot.mp4';
@@ -36,6 +38,13 @@ const VideosPlaying = () => {
       duration: '25m 10s',
       isPremium: true,
     },
+    {
+      id: 5,
+      title: 'Install and Overview',
+      source: Call,
+      duration: '25m 10s',
+      isPremium: true,
+    },
     // Add more video data as needed
   ];
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
@@ -69,9 +78,32 @@ const VideosPlaying = () => {
       <div className='container mx-auto p-6'>
         <div class='grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-5'>
           <div class=''>
-            <h4 className='font-bold text-[#124265] text-[16px] md:text-[22px] leading-[28px] pb-[20px]'>
-              মোবাইল অ্যাপ্লিকেশন ও ওয়েবসাইট ডেভেলপমেন্ট
-            </h4>
+            <div className='flex items-center gap-2 lg:gap-4 pb-[20px]'>
+              <button className='hidden md:block'>
+                <Link
+                  to='/courseDetails'
+                  className='bg-[#FFBB2C] flex items-center gap-1 uppercase px-4 py-2 rounded-md font-medium text-[15px]'
+                >
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='16'
+                    height='16'
+                    fill='currentColor'
+                    class='bi bi-arrow-left'
+                    viewBox='0 0 16 16'
+                  >
+                    <path
+                      fillRule='evenodd'
+                      d='M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8'
+                    />
+                  </svg>
+                  পেছনে যাই
+                </Link>
+              </button>
+              <h4 className='font-bold text-[#124265] text-[16px] md:text-[20px] leading-[28px] '>
+                মোবাইল অ্যাপ্লিকেশন ও ওয়েবসাইট ডেভেলপমেন্ট
+              </h4>
+            </div>
             <video
               ref={videoRef}
               controls
@@ -135,7 +167,7 @@ const VideosPlaying = () => {
                     </span>
                   </summary>
 
-                  <div className='mt-[1rem] pl-[1rem] pt-[0.2rem] pr-[0.5rem] pb-[0.5rem]'>
+                  <div className='mt-[1rem] pl-[1rem] pt-[0.2rem] pr-[0.5rem] pb-[0.7rem]'>
                     {videoData.map((data, index) => (
                       <div key={data.id}>
                         <div className='flex justify-between items-center flex-wrap'>
