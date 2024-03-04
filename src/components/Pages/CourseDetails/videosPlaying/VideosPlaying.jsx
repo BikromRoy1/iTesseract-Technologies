@@ -1,3 +1,9 @@
+import { MediaPlayer, MediaProvider } from '@vidstack/react';
+import {
+  DefaultVideoLayout,
+  defaultLayoutIcons,
+} from '@vidstack/react/player/layouts/default';
+
 import React, { useRef, useState } from 'react';
 import { FaLock } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -82,7 +88,7 @@ const VideosPlaying = () => {
               <button className='hidden md:block'>
                 <Link
                   to='/courseDetails'
-                  className='bg-[#FFBB2C] flex items-center gap-1 uppercase px-4 py-2 rounded-md font-medium text-[15px]'
+                  className='bg-[#FFBB2C] flex items-center gap-1 uppercase px-4 py-2 rounded-md font-semibold text-[15px]'
                 >
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -104,7 +110,7 @@ const VideosPlaying = () => {
                 মোবাইল অ্যাপ্লিকেশন ও ওয়েবসাইট ডেভেলপমেন্ট
               </h4>
             </div>
-            <video
+            {/* <video
               ref={videoRef}
               controls
               autoPlay
@@ -113,7 +119,26 @@ const VideosPlaying = () => {
               src={videoData[currentVideoIndex].source}
               typeof='mp4'
               onLoadedMetadata={handleLoadedMetadata}
-            ></video>
+            ></video> */}
+
+            <MediaPlayer
+              autoplay
+              crossorigin
+              playsinline
+              width='100%'
+              height='420px'
+              ref={videoRef}
+              title='Sprite Fight'
+              onLoadedMetadata={handleLoadedMetadata}
+              src={videoData[currentVideoIndex].source}
+            >
+              <MediaProvider />
+
+              <DefaultVideoLayout
+                thumbnails='https://image.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/storyboard.vtt'
+                icons={defaultLayoutIcons}
+              />
+            </MediaPlayer>
 
             <h3 className='font-semibold  text-[16px] md:text-[22px] leading-[28px] pt-[20px]'>
               Video: {activeVideoTitle} - Duration: {videoDuration}
@@ -122,15 +147,23 @@ const VideosPlaying = () => {
           <div>
             <div class='bg-slate-600 px-4 py-7 rounded-md'>
               <div className='videos-module'>
+                <div className='Course-Content flex items-center justify-between pb-4'>
+                  <h4 className='font-semibold text-[16px] md:text-[22px] text-gray-300'>
+                    Course Content
+                  </h4>
+                  <h5 className='font-semibold text-[16px] md:text-[22px] text-[#07bc0c]'>
+                    {videoData.length + 4} Lessons (8h 15m)
+                  </h5>
+                </div>
                 <details
                   className='group rounded-lg [&_summary::-webkit-details-marker]:hidden mb-[1rem] bg-[#F5F7F9]'
                   open
                 >
                   <summary className='flex items-center justify-between cursor-pointer bg-[#F5F7F9] py-[1rem] px-[1.25rem] rounded-[6px]'>
                     <h2 className='font-bold text-[#124265] videos-class-title text-[14px] sm:text-[14px] md:text-[16px]'>
-                      মোবাইল অ্যাপ্লিকেশন এবং ওয়েবসাইট বিকাশের ভূমিকা{' '}
+                      ক্লাস 01:মোবাইল অ্যাপ্লিকেশন এবং ওয়েবসাইট বিকাশের ভূমিকা{' '}
                       <span className='font-medium text-[#7b7b8a]'>
-                        (3 Lectures)
+                        ({videoData.length} Lectures)
                       </span>
                     </h2>
 
@@ -226,7 +259,7 @@ const VideosPlaying = () => {
                 <details className='group rounded-lg   [&_summary::-webkit-details-marker]:hidden mb-[1rem] bg-[#F5F7F9]'>
                   <summary className='flex items-center justify-between cursor-pointer bg-[#F5F7F9] py-[1rem] px-[1.25rem] rounded-[6px]'>
                     <h2 className='font-bold text-[#124265] videos-class-title text-[14px] sm:text-[14px] md:text-[16px]'>
-                      ক্লাস 01: স্ক্র্যাচ প্রোগ্রামিং এর বেসিক
+                      ক্লাস 02: স্ক্র্যাচ প্রোগ্রামিং এর বেসিক
                       <span className='font-medium text-[#7b7b8a]'>
                         {' '}
                         (06 Lectures)

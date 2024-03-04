@@ -5,7 +5,7 @@ import './DetailsBanner.css';
 
 const DetailsBanner = () => {
   return (
-    <section id='topBanner'>
+    <section id='topBanner' className='z-10'>
       <div className=' container p-6 mx-auto'>
         <article>
           <h2 className=' lg:max-w-2xl w-full  font-bold mb-3 text-[#124265] capitalize text-xl md:text-2xl  lg:text-[31px] title'>

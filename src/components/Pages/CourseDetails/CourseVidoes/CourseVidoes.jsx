@@ -52,7 +52,7 @@ const CourseVidoes = () => {
                   কোর্সের পাঠ্যক্রম
                 </button>
               </a>
-              <a
+              {/* <a
                 onClick={(e) => {
                   e.preventDefault();
                   setOpenTab(3);
@@ -70,7 +70,7 @@ const CourseVidoes = () => {
                 >
                   রিভিউ
                 </button>
-              </a>
+              </a> */}
             </div>
 
             <div id='link1' className={openTab === 1 ? 'block' : 'hidden'}>
@@ -79,7 +79,7 @@ const CourseVidoes = () => {
             <div id='link2' className={openTab === 2 ? 'block' : 'hidden'}>
               <Videos></Videos>
             </div>
-            <div id='link3' className={openTab === 3 ? 'block' : 'hidden'}>
+            {/* <div id='link3' className={openTab === 3 ? 'block' : 'hidden'}>
               <p className='text-[16px] leading-[26px] text-gray-500 pb-4'>
                 হায়ার স্টাডি কিংবা ক্যারিয়ারের সাফল্যের জন্য ম্যাথ শেখাটা যতটা
                 জরুরি, ম্যাথ শেখাটা ঠিক ততোটাই বোরিং। অনেকের কাছে ম্যাথ তো
@@ -88,9 +88,9 @@ const CourseVidoes = () => {
                 ব্রেইন ডেভেলপমেন্ট, চিন্তার দক্ষতা আর দ্রুত সমস্যা সমাধান করতে
                 শেখায় ম্যাথ। তাই ম্যাথ শেখার বিকল্প নেই।
               </p>
-            </div>
+            </div> */}
           </div>
-          <div className='w-full md:mb-10 md:max-w-[400px] mx-md:order-1'>
+          <div className='w-full md:mb-10 md:max-w-[400px] mx-md:order-1 -mt-0 lg:-mt-[200px] z-20'>
             <PricePart></PricePart>
             <Material></Material>
             <TagLine></TagLine>

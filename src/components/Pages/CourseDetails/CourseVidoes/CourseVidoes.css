@@ -1,6 +1,6 @@
 #videosCurriculum {
   padding: 50px 0px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .button-shadow {
   box-shadow: 4px 6px 0px 0px #050071;
