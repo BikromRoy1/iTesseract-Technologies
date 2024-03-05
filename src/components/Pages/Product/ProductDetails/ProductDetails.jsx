@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
-import Breadcrumb from '../../../Breadcrumb/Breadcrumb';
+import { useLoaderData } from 'react-router-dom';
 import ProductBanner from '../../../../Images/prouct-page.jpg';
+import Breadcrumb from '../../../Breadcrumb/Breadcrumb';
 import ContactFrom from '../../ContactUS/ContactFrom/ContactFrom';
 
 const ProductDetails = () => {
@@ -16,11 +16,10 @@ const ProductDetails = () => {
         img={ProductBanner}
       ></Breadcrumb>
       <div className='container mx-auto mt-10 mb-10 '>
-        <div className='text-center  pb-10'>
-          <h1 className='text-[#ffc107] font-semibold  md:text-4xl text-3xl'>
-            {singleProduct?.name}
-          </h1>
+        <div className='section-header'>
+          <h2 className='title-gradient'>{singleProduct?.name}</h2>
         </div>
+
         <div className='flex flex-col md:flex-row gap-11 py-10 px-5 bg-white rounded-md border-[#1bb57b]  border-2'>
           <div className='text-indigo-500 flex flex-col justify-between'>
             <img
