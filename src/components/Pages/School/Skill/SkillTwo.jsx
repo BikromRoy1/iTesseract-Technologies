@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import onlineEducation from '../../../../Images/icons/online-education.png';
 import './Skill.css';
 
 const SkillTwo = () => {
@@ -21,8 +20,6 @@ const SkillTwo = () => {
   }, []);
 
   const schoolCourseData = data.data;
-
-  
 
   return (
     <section className='py-14'>

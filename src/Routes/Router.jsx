@@ -49,7 +49,7 @@ const router = createBrowserRouter([
         element: <ProductMain></ProductMain>,
       },
       {
-        path: '/:id',
+        path: '/product/:id',
         element: <ProductDetails></ProductDetails>,
         loader: ({ params }) =>
           fetch(`https://itesseract.com.bd/master/api/v1/product/${params.id}`),
@@ -86,15 +86,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/policy',
-        element: <Policy></Policy>
+        element: <Policy></Policy>,
       },
       {
         path: '/courseDetails',
-        element: <CourseDetails></CourseDetails>
+        element: <CourseDetails></CourseDetails>,
       },
       {
         path: '/videosPlay',
-        element: <VideosPlaying></VideosPlaying>
+        element: <VideosPlaying></VideosPlaying>,
       },
     ],
   },

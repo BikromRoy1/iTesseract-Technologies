@@ -62,7 +62,7 @@ const ProductList = () => {
               </small>
 
               <div className='flex gap-0.5 mt-4'>
-                <Link to={`/${product?.id}`}>
+                <Link to={`/product/${product?.id}`}>
                   <button
                     id='addToCartButton'
                     className='bg-[#1bb57b] hover:bg-[#1bb57b] focus:outline-none transition text-white uppercase px-8 py-3'
