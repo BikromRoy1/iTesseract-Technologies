@@ -1,7 +1,8 @@
 import axios from 'axios';
+import Lottie from 'lottie-react';
 import React from 'react';
 import { toast } from 'react-toastify';
-import contactAnimation from '../../../../Images/contact.gif';
+import animationContact from '../../../../Images/contact.json';
 import './ContactFrom.css';
 
 const ContactFrom = ({ title, subTitle }) => {
@@ -34,17 +35,15 @@ const ContactFrom = ({ title, subTitle }) => {
     <section className='bg-white contact-from'>
       <div className='container p-6 mx-auto'>
         <div className='section-header'>
-          <h4>{ subTitle}</h4>
+          <h4>{subTitle}</h4>
           <h2 className='title-gradient'>{title}</h2>
         </div>
         <div className='lg:flex items-center'>
           <div className='lg:w-1/2'>
-            <img
-              loading='lazy'
+            <Lottie
               className='sm:w-full lg:w-[500px]'
-              src={contactAnimation}
-              alt='contact-animation'
-            />
+              animationData={animationContact}
+            ></Lottie>
           </div>
 
           <div className='mt-8 lg:w-1/2 lg:mt-0'>

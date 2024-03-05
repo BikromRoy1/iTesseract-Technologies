@@ -1,12 +1,11 @@
-import React from 'react';
+import axios from 'axios';
+import Lottie from 'lottie-react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import animationContact from '../../../Images/contact.json';
 import Registrationbanner from '../../../Images/registion.jpg';
 import Breadcrumb from '../../Breadcrumb/Breadcrumb';
-import contactAnimation from '../../../Images/contact.gif';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import axios from 'axios';
-import { toast } from 'react-toastify';
 
 const Registration = () => {
   const [data, setData] = useState([]);
@@ -79,14 +78,13 @@ const Registration = () => {
       </div>
       <section className='bg-white'>
         <div className='container px-6 py-10 mx-auto lg:py-2'>
+          
           <div className='lg:flex items-center'>
             <div className='lg:w-1/2 pb-4'>
-              <img
-                loading='lazy'
+              <Lottie
                 className='sm:w-full lg:w-[500px]'
-                src={contactAnimation}
-                alt='contact-animation'
-              />
+                animationData={animationContact}
+              ></Lottie>
             </div>
 
             <div className='mt-8 lg:w-1/2 lg:mt-0'>
