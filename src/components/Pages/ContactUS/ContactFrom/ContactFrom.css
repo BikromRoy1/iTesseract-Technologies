@@ -1,4 +1,8 @@
-.input-from-contorl{
-    border: 1px solid gray;
-    outline: gray;
+.input-from-contorl {
+  border: 1px solid gray;
+  outline: gray;
+}
+.contact-from {
+  padding-top: 50px;
+  padding-bottom: 10px;
 }
