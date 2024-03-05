@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const ProductList = () => {
@@ -23,16 +23,17 @@ const ProductList = () => {
 
   return (
     <section className='container px-6 mx-auto pb-14 pt-14'>
-      <div className='text-center pb-10'>
-        <p className='text-lg text-[#1bb57b] uppercase'>আমাদের প্রোডাক্টস</p>
-
-        <Link
-          to='/'
-          className='block mt-4 text-2xl font-semibold text-[#124265] hover:underline '
-        >
-          যেকোনো বিষয়ে যেকোনো কিছু শিখতে চলে যাও তোমার পছন্দের প্রোডাক্টস
-        </Link>
+      <div className='section-header'>
+        <h4>আমাদের প্রোডাক্টস</h4>
+        <h2>
+          {' '}
+          যেকোনো বিষয়ে যেকোনো কিছু শিখতে{' '}
+          <span className='title-gradient'>
+            চলে যাও তোমার পছন্দের প্রোডাক্টস
+          </span>
+        </h2>
       </div>
+
       <div className='grid grid-cols-1 gap-5  md:grid-cols-1 xl:grid-cols-2'>
         {products?.map((product) => (
           <div
@@ -65,7 +66,7 @@ const ProductList = () => {
                 <Link to={`/product/${product?.id}`}>
                   <button
                     id='addToCartButton'
-                    className='bg-[#1bb57b] hover:bg-[#1bb57b] focus:outline-none transition text-white uppercase px-8 py-3'
+                    className='bg-[#1bb57b] hover:bg-[#1bb57b] rounded-md focus:outline-none transition text-white uppercase px-8 py-3'
                   >
                     Explore Now
                   </button>
