@@ -19,6 +19,14 @@ const Videos = () => {
           </li>
         </ul>
       </div>
+      <div className='pb-4'>
+        <p className='text-[#7b7b8a]'>
+          আপনার সন্তানের স্মার্টফোন এডিকশন এখন আর আপনার মাথাব্যথার কারণ হবে না।
+          কারণ সারাদিন মোবাইলে গেম না খেলে ও নিজেই গেম বানাবে এখন। কোডিং শেখা ওর
+          কাছে একদমই বোরিং মনে হবে না কারণ আপনার সন্তান এবার প্রোগ্রামিং এর এ টু
+          জেড শিখবে খেলতে খেলতে।
+        </p>
+      </div>
 
       <div className='videos-module'>
         <details
@@ -26,8 +34,10 @@ const Videos = () => {
           open
         >
           <summary className='flex items-center justify-between cursor-pointer bg-[#F5F7F9] py-[1rem] px-[1.25rem] rounded-[6px]'>
-            <h2 className='font-bold text-[#124265] videos-class-title text-[14px] sm:text-[14px] md:text-[16px]'>
-              মোবাইল অ্যাপ্লিকেশন এবং ওয়েবসাইট বিকাশের ভূমিকা{' '}
+            <h2
+              className={`font-bold text-[#124265] videos-class-title text-[14px] sm:text-[14px] md:text-[16px]`}
+            >
+              ক্লাস 01: মোবাইল অ্যাপ্লিকেশন এবং ওয়েবসাইট বিকাশের ভূমিকা{' '}
               <span className='font-medium text-[#7b7b8a]'>(3 Lectures)</span>
             </h2>
 
@@ -220,7 +230,7 @@ const Videos = () => {
         <details className='group rounded-lg   [&_summary::-webkit-details-marker]:hidden mb-[1rem]'>
           <summary className='flex items-center justify-between cursor-pointer bg-[#F5F7F9] py-[1rem] px-[1.25rem] rounded-[6px]'>
             <h2 className='font-bold text-[#124265] videos-class-title text-[14px] sm:text-[14px] md:text-[16px]'>
-              ক্লাস 01: স্ক্র্যাচ প্রোগ্রামিং এর বেসিক
+              ক্লাস 02: স্ক্র্যাচ প্রোগ্রামিং এর বেসিক
               <span className='font-medium text-[#7b7b8a]'> (06 Lectures)</span>
             </h2>
 
