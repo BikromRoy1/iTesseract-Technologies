@@ -32,16 +32,13 @@ const ClientTestimonial = () => {
         <section className='container mx-auto '>
           <div className=' pt-10 pb-6'>
             <div className='text-center'>
-              <p className='text-lg text-[#1bb57b] uppercase'>
+              <p className='text-lg title-gradient uppercase'>
                 আমাদের পর্যালোচনা
               </p>
 
-              <a
-                href='#'
-                className='block mt-4 text-2xl font-semibold text-[#124265] hover:underline '
-              >
+              <h1 className='block mt-4 text-2xl font-semibold text-[#124265]'>
                 কেন আমরাই শিক্ষার্থী ও অভিভাবকগণের প্রথম পছন্দ?
-              </a>
+              </h1>
             </div>
 
             <Swiper
@@ -80,7 +77,7 @@ const ClientTestimonial = () => {
                     <img
                       loading='lazy'
                       src={`https://itesseract.com.bd/master/` + item?.image}
-                      class='client-img'
+                      className='client-img'
                       alt={item?.name}
                     />
                     <h3>{item?.name}</h3>
