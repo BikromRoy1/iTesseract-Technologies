@@ -1,8 +1,8 @@
 import React from 'react';
-import about from '../../../../Images/About.jpg';
 import aboutbaby from '../../../../Images/About-baby.png';
-import ternative from '../../../../Images/icons/alternative.png';
+import about from '../../../../Images/About.jpg';
 import ai from '../../../../Images/icons/ai.png';
+import ternative from '../../../../Images/icons/alternative.png';
 import Breadcrumb from '../../../Breadcrumb/Breadcrumb';
 
 const AboutUs = () => {
@@ -25,16 +25,13 @@ const AboutUs = () => {
             />
 
             <div className='mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 '>
-              <p className='text-lg text-[#1bb57b] uppercase'>
+              <p className='text-lg title-gradient uppercase'>
                 আমাদের সম্পর্কে
               </p>
 
-              <a
-                href='#'
-                className='block mt-4 text-2xl font-semibold text-[#124265] hover:underline '
-              >
+              <h1 className='block mt-4 text-2xl font-semibold text-[#124265]'>
                 আমরা 10 বছর ধরে টেক এরিয়াতে সমৃদ্ধ হয়েছি
-              </a>
+              </h1>
 
               <p className='mt-3 text-base  dark:text-gray-400 md:text-base mb-4'>
                 আইটেসারেক্ট টেকনোলিজস হল একটি উদ্ভাবনী কেন্দ্র যা শিক্ষা
@@ -45,9 +42,9 @@ const AboutUs = () => {
                 জীবনকে প্রভাবিত এবং ক্ষমতায়নের ধারণার উপর দৃষ্টি নিবদ্ধ করে।
               </p>
               <hr />
-              <div class='mt-5 grid grid-cols-1 gap-8 md:mt-5 md:grid-cols-2 md:gap-12 lg:grid-cols-2'>
-                <div class='flex items-start gap-4'>
-                  <span class='shrink-0 rounded-lg bg-[#ffc107a3] p-3'>
+              <div className='mt-5 grid grid-cols-1 gap-8 md:mt-5 md:grid-cols-2 md:gap-12 lg:grid-cols-2'>
+                <div className='flex items-start gap-4'>
+                  <span className='shrink-0 rounded-lg bg-[#ffc107a3] p-3'>
                     <img
                       className='w-7 h-7'
                       loading='lazy'
@@ -57,11 +54,11 @@ const AboutUs = () => {
                   </span>
 
                   <div>
-                    <h2 class='text-lg font-bold text-[#124265]'>
+                    <h2 className='text-lg font-bold text-[#124265]'>
                       দক্ষতা সেবা প্রদান |{' '}
                     </h2>
 
-                    <p class='mt-1 text-sm text-gray-400'>
+                    <p className='mt-1 text-sm text-gray-400'>
                       আমাদের কোম্পানি দক্ষতা সেবা প্রদানে উপরে নির্ভর করে। আমরা
                       আমাদের ক্লায়েন্টদের প্রয়োজনীয় সেবা সর্বদা সম্ভব সহজে
                       এবং সুবিধাজনকভাবে প্রদান করতে সমর্থ।
@@ -69,17 +66,17 @@ const AboutUs = () => {
                   </div>
                 </div>
 
-                <div class='flex items-start gap-4'>
-                  <span class='shrink-0 rounded-lg bg-[#ffc107a3] p-3'>
+                <div className='flex items-start gap-4'>
+                  <span className='shrink-0 rounded-lg bg-[#ffc107a3] p-3'>
                     <img className='w-7 h-7' src={ai} alt='ai' loading='lazy' />
                   </span>
 
                   <div>
-                    <h2 class='text-lg font-bold text-[#124265]'>
+                    <h2 className='text-lg font-bold text-[#124265]'>
                       ছাত্রদের জন্য জরুরী সহায়তা
                     </h2>
 
-                    <p class='mt-1 text-sm text-gray-400'>
+                    <p className='mt-1 text-sm text-gray-400'>
                       ছাত্রদের প্রশিক্ষণ এবং শিক্ষার জন্য জরুরী সহায়তা সরবরাহ
                       করা প্রয়োজন। এটি তাদের পেশাদারী জীবনে প্রভাব ফেলবে এবং
                       সমাজের উন্নয়নের একটি গুরুত্বপূর্ণ অংশ।
