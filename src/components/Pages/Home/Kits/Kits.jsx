@@ -108,7 +108,7 @@ const Kits = () => {
                   </div>
                   <div>
                     <Link to='/courseDetails'>
-                      <button className='theme-primary-color-bg font-semibold px-3 py-1 text-white rounded-md flex items-center gap-1'>
+                      <button className='custom-button text-[15px] font-semibold px-[16px] py-[5px] text-white rounded-md flex items-center gap-1'>
                         এখান থেকে শিখুন{' '}
                         <svg
                           stroke='currentColor'
@@ -197,7 +197,7 @@ const Kits = () => {
                   </div>
                   <div>
                     <Link to='/courseDetails'>
-                      <button className='theme-primary-color-bg font-semibold px-3 py-1 text-white rounded-md flex items-center gap-1'>
+                      <button className='custom-button text-[15px] font-semibold px-[16px] py-[5px] text-white rounded-md flex items-center gap-1'>
                         এখান থেকে শিখুন{' '}
                         <svg
                           stroke='currentColor'
@@ -287,7 +287,7 @@ const Kits = () => {
                   </div>
                   <div>
                     <Link to='/courseDetails'>
-                      <button className='theme-primary-color-bg font-semibold px-3 py-1 text-white rounded-md flex items-center gap-1'>
+                      <button className='custom-button text-[15px] font-semibold px-[16px] py-[5px] text-white rounded-md flex items-center gap-1'>
                         এখান থেকে শিখুন{' '}
                         <svg
                           stroke='currentColor'
