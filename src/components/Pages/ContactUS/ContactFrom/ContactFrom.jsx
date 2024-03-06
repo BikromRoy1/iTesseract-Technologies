@@ -126,7 +126,7 @@ const ContactFrom = ({ title, subTitle }) => {
                     <div className='text-center'>
                       <button
                         type='submit'
-                        className='w-full px-8 py-3 font-semibold rounded-md bg-[#1bb57b] text-white'
+                        className='w-full px-8 py-3 font-semibold rounded-md custom-button text-white'
                       >
                         Send A Message
                       </button>
