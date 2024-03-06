@@ -66,9 +66,22 @@ const ProductList = () => {
                 <Link to={`/product/${product?.id}`}>
                   <button
                     id='addToCartButton'
-                    className='bg-[#1bb57b] hover:bg-[#1bb57b] rounded-md focus:outline-none transition text-white uppercase px-8 py-3'
+                    className='custom-button rounded-md focus:outline-none transition text-white px-6 py-[10px] flex items-center gap-2'
                   >
                     Explore Now
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      width='16'
+                      height='16'
+                      fill='currentColor'
+                      class='bi bi-arrow-right'
+                      viewBox='0 0 16 16'
+                    >
+                      <path
+                        fill-rule='evenodd'
+                        d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8'
+                      />
+                    </svg>
                   </button>
                 </Link>
               </div>
