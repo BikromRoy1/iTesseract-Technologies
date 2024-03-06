@@ -138,6 +138,7 @@ const VideosPlaying = () => {
                 thumbnails='https://image.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/storyboard.vtt'
                 icons={defaultLayoutIcons}
               />
+             
             </MediaPlayer>
 
             <h3 className='font-semibold  text-[16px] md:text-[22px] leading-[28px] pt-[20px]'>
