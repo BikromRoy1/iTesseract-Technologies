@@ -101,3 +101,36 @@ code {
   -moz-background-clip: text;
   -moz-text-fill-color: rgba(0, 0, 0, 0);
 }
+
+/*--------------------------------------------------------------
+# Custom button design
+--------------------------------------------------------------*/
+.custom-button {
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  -webkit-clip-path: polygon(
+    0 0,
+    0 0,
+    100% 0,
+    100% 0,
+    100% calc(100% - 15px),
+    calc(100% - 15px) 100%,
+    15px 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 0,
+    0 0,
+    100% 0,
+    100% 0,
+    100% calc(100% - 15px),
+    calc(100% - 15px) 100%,
+    15px 100%,
+    0 100%
+  );
+  /* background-image: linear-gradient(90deg, #1bb57b, #07bc0c); */
+  background-image: linear-gradient(90deg, #8BC34A, #07bc0c);
+  border: 0 solid;
+  overflow: hidden;
+  cursor: pointer;
+}
