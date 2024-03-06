@@ -61,9 +61,9 @@ const Subscribe = () => {
 
             <button
               type='submit'
-              className='group mt-4 flex w-full items-center justify-center gap-2 rounded-md custom-button px-5 py-3 text-white transition focus:outline-none focus:ring focus:ring-yellow-400 sm:mt-0 sm:w-auto'
+              className='group mt-4 flex w-full items-center justify-center gap-2  rounded-md custom-button px-[27px] py-[11px] text-white transition focus:outline-none focus:ring focus:ring-yellow-400 sm:mt-0 sm:w-auto'
             >
-              <span className='text-sm font-medium'> সাবস্ক্রাইব </span>
+              <span className='text-[17px] font-medium'> সাবস্ক্রাইব </span>
 
               <svg
                 className='h-5 w-5'
