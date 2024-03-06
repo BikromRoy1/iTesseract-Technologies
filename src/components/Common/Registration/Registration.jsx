@@ -155,9 +155,10 @@ const Registration = () => {
                       <div className='text-center'>
                         <button
                           type='submit'
-                          className='w-full px-8 py-3 font-semibold rounded-md bg-[#1bb57b] text-white'
+                          className='w-full px-8 py-3 font-semibold rounded-md custom-button text-white'
                         >
-                          সাবমিট শিক্ষার্থীর ইনফরমেশন
+                          সাবমিট শিক্ষার্থীর ইনফরমেশন{' '}
+                         
                         </button>
                       </div>
                     </div>
