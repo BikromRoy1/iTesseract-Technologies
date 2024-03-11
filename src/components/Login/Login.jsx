@@ -135,7 +135,7 @@ const Login = () => {
           <div className='flex items-center justify-center gap-2 mt-4'>
             <span className='text-white'>You don't have an account?</span>
             <Link
-              to='/'
+              to='/UserRegistration'
               className='title-gradient underline text-base font-semibold'
             >
               Registration

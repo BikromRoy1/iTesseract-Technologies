@@ -18,6 +18,7 @@ import ProductMain from '../components/Pages/Product/ProductMain/ProductMain';
 import School from '../components/Pages/School/School/School';
 import Team from '../components/Pages/Team/Team/Team';
 import University from '../components/Pages/University/University/University';
+import UserRegistration from '../components/UserRegistration/UserRegistration.jsx';
 
 const router = createBrowserRouter([
   {
@@ -100,6 +101,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login></Login>,
+      },
+      {
+        path: '/UserRegistration',
+        element: <UserRegistration></UserRegistration>,
       },
     ],
   },
