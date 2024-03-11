@@ -5,6 +5,22 @@ import mainLogo from '../../Images/main-logo.svg';
 import './UserRegistration.css';
 
 const UserRegistration = () => {
+    
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const number = form.number.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    form.reset();
+
+    console.log(
+      `user Name: ${name},  student Number: ${number}, Email Address: ${email}, Student Password: ${password}`
+    );
+  };
+
   return (
     <section id='loginBanner' className='py-20'>
       <div className='flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-6xl'>
@@ -42,7 +58,7 @@ const UserRegistration = () => {
             আপনাকে রেজিস্ট্রেশন পৃষ্ঠায় স্বাগতম!
           </p>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className='mt-4'>
               <label
                 className='block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200'
@@ -85,7 +101,7 @@ const UserRegistration = () => {
               <input
                 placeholder='শিক্ষার্থীর ইমেইল '
                 id='LoggingEmailAddress'
-                name='loginEmail'
+                name='email'
                 className='block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300'
                 type='email'
                 required
@@ -105,10 +121,11 @@ const UserRegistration = () => {
               <input
                 placeholder='পাসওয়ার্ড'
                 id='loggingPassword'
-                name='loginPassword'
+                name='password'
                 className='block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300'
                 type='password'
                 required
+                autoComplete='on'
               />
             </div>
 
