@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import roundedLogo from '../../Images/Round-logo.png';
 import loginSVG from '../../Images/icons/login.png';
 import mainLogo from '../../Images/main-logo.svg';
 import './Login.css';
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.target;
@@ -14,6 +16,8 @@ const Login = () => {
 
     form.reset();
     console.log(userLogin, userPassword);
+
+    navigate('/');
   };
 
   return (
@@ -40,7 +44,7 @@ const Login = () => {
           </div>
         </div>
 
-        <div className='w-full px-6 py-8 md:px-8 lg:w-1/2 background-color'>
+        <div className='w-full px-6 py-8 md:px-8 lg:w-1/2 login-background-color'>
           <div className='flex justify-center mx-auto'>
             <img
               className='w-[60px] h-15 sm:h-8 md:w-auto'

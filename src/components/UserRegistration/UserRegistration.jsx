@@ -45,7 +45,7 @@ const UserRegistration = () => {
           </div>
         </div>
 
-        <div className='w-full px-6 py-8 md:px-8 lg:w-1/2 background-color'>
+        <div className='w-full px-6 py-8 md:px-8 lg:w-1/2 login-background-color'>
           <div className='flex justify-center mx-auto'>
             <img
               className='w-[60px] h-15 sm:h-8 md:w-auto'

@@ -18,7 +18,7 @@
   left: 0;
   right: 0;
 }
-.background-color {
+.login-background-color {
   /* background-image: linear-gradient(25deg, #075942, #346b40, #517e3c, #4CAF50); */
   background-image: linear-gradient(25deg, #052541, #1b4b4b, #247554, #24a15b);
 }

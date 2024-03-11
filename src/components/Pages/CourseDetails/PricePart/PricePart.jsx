@@ -55,6 +55,11 @@ const PricePart = () => {
               কোর্সটি কিনুন
             </button>
           </Link>
+          <Link to='/UserRegistration'>
+            <button class='btn-buy mb-0 mt-2 rounded-md bg-[#FFBB2C] p-3 whitespace-nowrap text-base font-semibold text-[#124265] md:w-full  '>
+              কোর্সের জন্য রেজিস্ট্রেশন করুন
+            </button>
+          </Link>
         </div>
       </div>
     </div>
