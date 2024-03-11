@@ -1,12 +1,12 @@
 #loginBanner {
-  background-image: url('https://i.ibb.co/yqsVvTZ/326167505-6601992026493896-4092280892618927687-n.jpg');
+  background-image: url('../../Images/login-banner.png');
   width: 100%;
   height: 100%;
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-   z-index: 1;
+  z-index: 1;
 }
 #loginBanner::before {
   content: '';
@@ -17,4 +17,8 @@
   bottom: 0;
   left: 0;
   right: 0;
+}
+.background-color {
+  /* background-image: linear-gradient(25deg, #075942, #346b40, #517e3c, #4CAF50); */
+  background-image: linear-gradient(25deg, #052541, #1b4b4b, #247554, #24a15b);
 }
