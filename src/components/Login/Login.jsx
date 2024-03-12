@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import roundedLogo from '../../Images/Round-logo.png';
 import loginSVG from '../../Images/icons/login.png';
 import mainLogo from '../../Images/main-logo.svg';
@@ -15,6 +16,9 @@ const Login = () => {
     const userPassword = form.loginPassword.value;
 
     form.reset();
+    toast.success('User Created Successfully.', {
+      autoClose: 2000,
+    });
     console.log(userLogin, userPassword);
 
     navigate('/');
