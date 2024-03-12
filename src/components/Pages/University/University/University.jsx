@@ -10,14 +10,14 @@ const University = () => {
   return (
     <div>
       <Breadcrumb
-        title='বিশ্ববিদ্যালয় কোর্স'
-        subTitle='বিশ্ববিদ্যালয় কোর্স'
+        title='লাইভ কোর্স'
+        subTitle='লাইভ কোর্স'
         slgs='/university'
         img={Universitybanner}
       ></Breadcrumb>
       <UniSkills></UniSkills>
       <UniBanner></UniBanner>
-      <UniversityEduction></UniversityEduction>
+      {/* <UniversityEduction></UniversityEduction> */}
       <SchoolTeacher></SchoolTeacher>
     </div>
   );

@@ -23,7 +23,7 @@ const UniBanner = () => {
             এবং ফলাফলকে সুপার হিসেবে রেট দেয়
           </p>
           <Link to='/registration'>
-            <button className='px-8 py-3 font-semibold rounded bg-[#ffc107] text-white'>
+            <button className='px-8 py-3 font-semibold rounded text-white custom-button'>
               নিবন্ধন করুন
             </button>
           </Link>

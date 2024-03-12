@@ -17,7 +17,7 @@ const LevelTwo = () => {
       course: 'কম্পিউটার প্রোগ্রামিং ফান্ডামেন্টাল',
       courseBanner: course01,
       price: '৩৪,৭০০',
-      courseOutput: 'Online',
+      courseOutput: 'Offline',
       modules: {
         number_of_lessons: 12,
         number_of_projects: 8,
@@ -59,7 +59,7 @@ const LevelTwo = () => {
       course: 'পাইথন প্রোগ্রামিং এবং ডেটা সায়েন্স',
       courseBanner: course02,
       price: '৫০,০০০',
-      courseOutput: 'Online',
+      courseOutput: 'Offline',
       modules: {
         number_of_lessons: 12,
         number_of_projects: 4,
@@ -73,7 +73,7 @@ const LevelTwo = () => {
       course: 'আইওটি এবং ডেটা সায়েন্স',
       courseBanner: course02,
       price: '২৬,০০০',
-      courseOutput: 'Online',
+      courseOutput: 'Offline',
       modules: {
         number_of_lessons: 12,
         number_of_projects: 10,
