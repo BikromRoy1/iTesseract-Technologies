@@ -7,7 +7,7 @@ import logo from '../../../Images/main-logo.svg';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const UserEmail = 'bikromroy2001@gmail.com';
+  let userEmail = 'bikromroy2001@gmail.com';
 
   return (
     <div className='px-4 py-5 bg-white mx-auto sm:max-w-full md:max-w-full lg:max-w-screen md:px-24 lg:px-14 sticky top-0 z-50'>
@@ -169,7 +169,7 @@ const Header = () => {
               যোগাযোগ
             </Link>
           </li>
-          {UserEmail && UserEmail ? (
+          {userEmail ? (
             <li>
               <div className='dropdown dropdown-end'>
                 <div
@@ -198,7 +198,14 @@ const Header = () => {
               </div>
             </li>
           ) : (
-            ''
+            <Link
+              to='/login'
+              aria-label='login '
+              title='login'
+              className=' bg-[#1bb57b] px-4 py-1 rounded-md font-medium tracking-wide text-white transition-colors whitespace-nowrap duration-200'
+            >
+              লগ-ইন
+            </Link>
           )}
         </ul>
         <div className='lg:hidden'>
