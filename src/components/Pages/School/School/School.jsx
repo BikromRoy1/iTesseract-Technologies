@@ -14,14 +14,14 @@ const School = () => {
   return (
     <div>
       <Breadcrumb
-        title='মাধ্যমিক কোর্স '
-        subTitle='মাধ্যমিক কোর্স '
+        title='রেকর্ডেড কোর্স '
+        subTitle='রেকর্ডেড কোর্স '
         slgs='/school'
         img={SchoolBannerimages}
       ></Breadcrumb>
 
       <LevelTwo></LevelTwo>
-      
+
       {/* <Level></Level> */}
       <SchoolBanner></SchoolBanner>
       <SkillTwo></SkillTwo>
