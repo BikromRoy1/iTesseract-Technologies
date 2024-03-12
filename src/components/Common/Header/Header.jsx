@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import liveCourse from '../../../Images/icons/live-course.png';
+import profile from '../../../Images/icons/profile.png';
 import recordCourse from '../../../Images/icons/record-courses.png';
 import logout from '../../../Images/icons/signout.png';
 import logo from '../../../Images/main-logo.svg';
@@ -167,7 +168,13 @@ const Header = () => {
                 >
                   <li>
                     <Link to='/dashboard' className=''>
-                      <img width={22} height={22} src={logout} alt='' />
+                      <img
+                        width={22}
+                        height={22}
+                        src={profile}
+                        alt='profile-icons'
+                        loading='lazy'
+                      />
                       প্রোফাইল
                     </Link>
                   </li>
