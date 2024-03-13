@@ -101,7 +101,12 @@ code {
   -moz-background-clip: text;
   -moz-text-fill-color: rgba(0, 0, 0, 0);
 }
-
+.header-shadow{
+  box-shadow: 0 2px 15px rgba(25,119,204,.1);
+}
+.ds-shadow{
+   box-shadow: 0 2px 15px rgba(25,119,204,.1) !important;
+}
 /*--------------------------------------------------------------
 # Custom button design
 --------------------------------------------------------------*/

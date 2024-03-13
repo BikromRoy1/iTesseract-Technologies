@@ -5,6 +5,7 @@ import ErrorPage from '../components/Common/ErrorPage/ErrorPage';
 import Policy from '../components/Common/Policy/Policy';
 import Registration from '../components/Common/Registration/Registration';
 import Terms from '../components/Common/Terms/Terms';
+import DBHeader from '../components/Dashboard/DBHeader/DBHeader.jsx';
 import Login from '../components/Login/Login.jsx';
 import AboutMain from '../components/Pages/About/AboutMain/AboutMain';
 import BlogDetails from '../components/Pages/BlogDetails/BlogDetails/BlogDetails';
@@ -113,6 +114,12 @@ const router = createBrowserRouter([
     path: '/dashboard',
     element: <DashboardLayout></DashboardLayout>,
     errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: '/dashboard',
+        element: <DBHeader></DBHeader>,
+      },
+    ],
   },
 ]);
 

@@ -17,7 +17,7 @@ const Header = () => {
   };
 
   return (
-    <div className='px-4 py-5 bg-white mx-auto sm:max-w-full md:max-w-full lg:max-w-screen md:px-24 lg:px-14 sticky top-0 z-50'>
+    <div className='px-4 py-5 bg-white mx-auto sm:max-w-full md:max-w-full lg:max-w-screen md:px-24 lg:px-14 sticky top-0 z-50 header-shadow'>
       <div className='relative flex items-center justify-between'>
         <Link
           to='/'
