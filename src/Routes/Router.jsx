@@ -1,4 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
+import DashboardLayout from '../Layout/DashboardLayout.jsx';
 import Main from '../Layout/Main';
 import ErrorPage from '../components/Common/ErrorPage/ErrorPage';
 import Policy from '../components/Common/Policy/Policy';
@@ -107,6 +108,11 @@ const router = createBrowserRouter([
         element: <UserRegistration></UserRegistration>,
       },
     ],
+  },
+  {
+    path: '/dashboard',
+    element: <DashboardLayout></DashboardLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
   },
 ]);
 
