@@ -101,11 +101,11 @@ code {
   -moz-background-clip: text;
   -moz-text-fill-color: rgba(0, 0, 0, 0);
 }
-.header-shadow{
-  box-shadow: 0 2px 15px rgba(25,119,204,.1);
+.header-shadow {
+  box-shadow: 0 2px 15px rgba(25, 119, 204, 0.1);
 }
-.ds-shadow{
-   box-shadow: 0 2px 15px rgba(25,119,204,.1) !important;
+.ds-shadow {
+  box-shadow: 0 2px 15px rgba(25, 119, 204, 0.1) !important;
 }
 /*--------------------------------------------------------------
 # Custom button design
@@ -134,8 +134,29 @@ code {
     0 100%
   );
   /* background-image: linear-gradient(90deg, #1bb57b, #07bc0c); */
-  background-image: linear-gradient(90deg, #8BC34A, #07bc0c);
+  background-image: linear-gradient(90deg, #8bc34a, #07bc0c);
   border: 0 solid;
   overflow: hidden;
   cursor: pointer;
+}
+/* dashboard section */
+.dashboard-section {
+  padding: 2rem;
+  overflow: hidden;
+}
+.dashboard-box {
+  background: #fff;
+  border-radius: 0.5rem;
+  position: relative;
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+.welcome-box {
+  /* background: linear-gradient(180deg,rgba(187,196,245,.6),rgba(183,193,244,.6) 48.44%,rgba(175,184,239,.6) 71.87%,rgba(172,182,237,.6)); */
+  background: linear-gradient(
+    180deg,
+    rgb(187 245 201 / 60%),
+    rgb(187 244 183 / 60%) 48.44%,
+    rgb(175 239 178 / 60%) 71.87%,
+    rgb(178 237 172 / 60%)
+  );
 }
