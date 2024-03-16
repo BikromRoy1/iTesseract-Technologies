@@ -1,10 +1,8 @@
 import {
   Calendar,
-  Flag,
   Home,
-  Layers,
   LayoutDashboard,
-  LifeBuoy,
+  LogOut,
   Settings,
   StickyNote,
 } from 'lucide-react';
@@ -27,7 +25,7 @@ const DashboardLayout = () => {
           type='checkbox'
           className='drawer-toggle'
         />
-        <div className='drawer-content'>
+        <div className='drawer-content bg-[#F5F9FC]'>
           <Outlet></Outlet>
         </div>
         <div className='drawer-side'>
@@ -35,22 +33,30 @@ const DashboardLayout = () => {
 
           <div className='flex'>
             <Sidebar>
-              <SidebarItem icon={<Home size={20} />} text='হোম' active alert />
+              <SidebarItem
+                to='/dashboard'
+                icon={<Home size={20} />}
+                text='হোম'
+                active
+                alert
+              />
               <SidebarItem
                 icon={<LayoutDashboard size={20} />}
-                text='Dashboard'
+                text='ড্যাশবোর্ড'
               />
               <SidebarItem
                 icon={<StickyNote size={20} />}
-                text='Projects'
+                text='আমার কোর্স'
                 alert
               />
-              <SidebarItem icon={<Calendar size={20} />} text='Calendar' />
-              <SidebarItem icon={<Layers size={20} />} text='Tasks' />
-              <SidebarItem icon={<Flag size={20} />} text='Reporting' />
+              <SidebarItem icon={<Calendar size={20} />} text='লাইভ ক্লাস' />
               <hr className='my-3' />
-              <SidebarItem icon={<Settings size={20} />} text='Settings' />
-              <SidebarItem icon={<LifeBuoy size={20} />} text='Logout' />
+              <SidebarItem
+                to='/dashboard/profile'
+                icon={<Settings size={20} />}
+                text='প্রোফাইল'
+              />
+              <SidebarItem icon={<LogOut size={20} />} text='লগ-আউট' />
             </Sidebar>
           </div>
         </div>

@@ -6,6 +6,7 @@ import Policy from '../components/Common/Policy/Policy';
 import Registration from '../components/Common/Registration/Registration';
 import Terms from '../components/Common/Terms/Terms';
 import DBHeader from '../components/Dashboard/DBHeader/DBHeader.jsx';
+import Profile from '../components/Dashboard/Profile/Profile.jsx';
 import Login from '../components/Login/Login.jsx';
 import AboutMain from '../components/Pages/About/AboutMain/AboutMain';
 import BlogDetails from '../components/Pages/BlogDetails/BlogDetails/BlogDetails';
@@ -118,6 +119,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard',
         element: <DBHeader></DBHeader>,
+      },
+      {
+        path: '/dashboard/profile',
+        element: <Profile></Profile>,
       },
     ],
   },
