@@ -1,0 +1,32 @@
+.box-header {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  border-bottom-width: 1px;
+  border-bottom-color: rgb(243 243 243);
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-weight: 500;
+}
+
+.box-title {
+  margin-inline-end: auto;
+  font-size: 17px;
+  font-weight: 700;
+  color: #181c32;
+}
+
+.box-title::before {
+  content: '';
+  position: absolute;
+  top: 0.15rem;
+  inset-inline-start: -0.65rem;
+  height: 1rem;
+  width: 0.2rem;
+  border-radius: 0.5rem;
+  background: #1bb57b;
+}

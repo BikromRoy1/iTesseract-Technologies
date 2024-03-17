@@ -63,7 +63,6 @@ export default function Sidebar({ children }) {
 }
 
 export function SidebarItem({ icon, text, active, alert, to }) {
-  
   const { expanded } = useContext(SidebarContext);
   return (
     <Link to={to}>
