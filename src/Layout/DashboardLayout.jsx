@@ -37,7 +37,6 @@ const DashboardLayout = () => {
                 to='/dashboard'
                 icon={<Home size={20} />}
                 text='হোম'
-                active
                 alert
               />
               <SidebarItem
@@ -53,6 +52,7 @@ const DashboardLayout = () => {
               <hr className='my-3' />
               <SidebarItem
                 to='/dashboard/profile'
+                active
                 icon={<Settings size={20} />}
                 text='প্রোফাইল'
               />
