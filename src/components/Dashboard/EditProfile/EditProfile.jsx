@@ -117,14 +117,15 @@ const EditProfile = () => {
                   class='mb-2 font-semibold inline-block text-[#a1a5b7]'
                   for='name'
                 >
-                  ইমেইল
+                  জন্ম তারিখ
+                  <span className='text-[#f76a78]'>*</span>
                 </label>
                 <input
-                  type='text'
+                  type='date'
                   name='name'
                   class='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
                   id='name'
-                  value={email}
+                  placeholder='আপনার জন্ম তারিখ নির্বাচন করুন'
                 />
               </div>
             </div>
