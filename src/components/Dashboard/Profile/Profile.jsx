@@ -3,17 +3,37 @@ import { BiChevronsRight } from 'react-icons/bi';
 import profile from '../../../Images/team/abdulhamid.png';
 import ProfileInformation from './ProfileInformation';
 
+import evening from '../../../Images/icons/Evening.png';
+import afternoon from '../../../Images/icons/afternoon.png';
+import morning from '../../../Images/icons/morning.png';
+
 const Profile = () => {
+  const morningIcons = morning;
+  const afternoonIcons = afternoon;
+  const eveningIcons = evening;
+
   const getGreeting = () => {
     const hour = new Date().getHours();
     if (hour >= 5 && hour < 12) {
-      return 'Good Morning';
+      return {
+        message: 'Good Morning',
+        icon: morningIcons,
+      };
     } else if (hour >= 12 && hour < 18) {
-      return 'Good Afternoon';
+      return {
+        message: 'Good Afternoon',
+        icon: afternoonIcons,
+      };
     } else {
-      return 'Good Evening';
+      return {
+        message: 'Good Evening',
+        icon: eveningIcons,
+      };
     }
   };
+
+  const greeting = getGreeting();
+
   const UserName = 'Mohammad Abdul Hamid';
 
   // Split the name string into an array of words
@@ -79,7 +99,7 @@ const Profile = () => {
             <div className='flex items-center gap-4 lg:gap-8 justify-between flex-wrap'>
               <div className=''>
                 <h2 className='mb-[3px] font-medium text-[#2b2a3f] text-[16px] md:text-[2rem]'>
-                  {getGreeting()},{' '}
+                  {greeting.message},{' '}
                   <span className='font-bold'>{lastWord}!</span>
                 </h2>
                 <p>Here’s what happening with your store today</p>
@@ -87,8 +107,9 @@ const Profile = () => {
               <div className=''>
                 <div className='mt-[15px] md:mt-0 pr-0 md:pr-6'>
                   <img
-                    src='https://i.ibb.co/J2fJcyh/welcome1-1814fce0.png'
+                    src={greeting.icon}
                     alt='icons'
+                    width={150}
                     loading='lazy'
                   />
                 </div>
