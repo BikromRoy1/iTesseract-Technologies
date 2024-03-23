@@ -36,7 +36,6 @@ const DashboardLayout = () => {
                 to='/dashboard'
                 icon={<LayoutDashboard size={20} />}
                 text='ড্যাশবোর্ড'
-                alert
               />
               <SidebarItem
                 to='/dashboard/my-courses'
@@ -52,7 +51,6 @@ const DashboardLayout = () => {
               <hr className='my-3' />
               <SidebarItem
                 to='/dashboard/profile'
-                active
                 icon={<Settings size={20} />}
                 text='প্রোফাইল'
               />
