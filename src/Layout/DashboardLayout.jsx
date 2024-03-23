@@ -44,6 +44,7 @@ const DashboardLayout = () => {
                 text='আমার কোর্স'
               />
               <SidebarItem
+                to='/dashboard/live-class'
                 icon={<Calendar size={20} />}
                 text='লাইভ ক্লাস'
                 alert

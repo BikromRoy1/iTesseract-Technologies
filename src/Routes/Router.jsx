@@ -24,6 +24,7 @@ import School from '../components/Pages/School/School/School';
 import Team from '../components/Pages/Team/Team/Team';
 import University from '../components/Pages/University/University/University';
 import UserRegistration from '../components/UserRegistration/UserRegistration.jsx';
+import MyLiveClass from '../components/Dashboard/MyLiveClass/MyLiveClass.jsx';
 
 const router = createBrowserRouter([
   {
@@ -133,6 +134,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/my-courses',
         element: <DBMyCourse></DBMyCourse>,
+      },
+      {
+        path: '/dashboard/live-class',
+        element: <MyLiveClass></MyLiveClass>,
       },
     ],
   },
