@@ -43,8 +43,7 @@ const DBHeader = () => {
                 </span>
                 <h2 className='mb-[2px] text-[20px] md:text-[30px] text-white font-semibold tracking-wider'>
                   {' '}
-                  Welcome Back,{' '}
-                  <span className='font-bold'>Angela Carter!</span>
+                  Welcome Back, <span className='font-bold'>Abdul Hamid!</span>
                 </h2>
                 <p className='text-[#cfcfd8] text-base'>
                   See What’s happening with your courses and students.
