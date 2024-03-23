@@ -83,7 +83,7 @@ export function SidebarItem({ icon, text, active, alert, to }) {
         </span>
         {alert && (
           <div
-            className={`absolute right-2 w-2 h-2 rounded bg-indigo-400 ${
+            className={`absolute right-2 w-2 h-2 rounded bg-green-400 ${
               expanded ? '' : 'top-2'
             }`}
           ></div>

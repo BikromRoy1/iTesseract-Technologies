@@ -1,6 +1,5 @@
 import {
   Calendar,
-  Home,
   LayoutDashboard,
   LogOut,
   Settings,
@@ -35,20 +34,16 @@ const DashboardLayout = () => {
             <Sidebar>
               <SidebarItem
                 to='/dashboard'
-                icon={<Home size={20} />}
-                text='হোম'
-                alert
-              />
-              <SidebarItem
                 icon={<LayoutDashboard size={20} />}
                 text='ড্যাশবোর্ড'
-              />
-              <SidebarItem
-                icon={<StickyNote size={20} />}
-                text='আমার কোর্স'
                 alert
               />
-              <SidebarItem icon={<Calendar size={20} />} text='লাইভ ক্লাস' />
+              <SidebarItem icon={<StickyNote size={20} />} text='আমার কোর্স' />
+              <SidebarItem
+                icon={<Calendar size={20} />}
+                text='লাইভ ক্লাস'
+                alert
+              />
               <hr className='my-3' />
               <SidebarItem
                 to='/dashboard/profile'
