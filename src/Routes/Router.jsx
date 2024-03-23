@@ -5,6 +5,7 @@ import ErrorPage from '../components/Common/ErrorPage/ErrorPage';
 import Policy from '../components/Common/Policy/Policy';
 import Registration from '../components/Common/Registration/Registration';
 import Terms from '../components/Common/Terms/Terms';
+import DBMyCourse from '../components/Dashboard/DBCourse/DBMyCourse.jsx';
 import DBHeader from '../components/Dashboard/DBHeader/DBHeader.jsx';
 import EditProfile from '../components/Dashboard/EditProfile/EditProfile.jsx';
 import Profile from '../components/Dashboard/Profile/Profile.jsx';
@@ -128,6 +129,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/profile/edit',
         element: <EditProfile></EditProfile>,
+      },
+      {
+        path: '/dashboard/my-courses',
+        element: <DBMyCourse></DBMyCourse>,
       },
     ],
   },

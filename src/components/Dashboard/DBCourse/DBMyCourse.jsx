@@ -1,7 +1,7 @@
 import React from 'react';
 
-const DBCourse = () => {
+const DBMyCourse = () => {
   return <div>DBCourse</div>;
 };
 
-export default DBCourse;
+export default DBMyCourse;
