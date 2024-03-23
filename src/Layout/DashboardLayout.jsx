@@ -38,7 +38,11 @@ const DashboardLayout = () => {
                 text='ড্যাশবোর্ড'
                 alert
               />
-              <SidebarItem icon={<StickyNote size={20} />} text='আমার কোর্স' />
+              <SidebarItem
+                to='/dashboard/my-courses'
+                icon={<StickyNote size={20} />}
+                text='আমার কোর্স'
+              />
               <SidebarItem
                 icon={<Calendar size={20} />}
                 text='লাইভ ক্লাস'
