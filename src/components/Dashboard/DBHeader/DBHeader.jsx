@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { BiChevronsRight } from 'react-icons/bi';
 import welcome from '../../../Images/icons/welcome.png';
 import './DBHeader.css';
 
@@ -23,6 +24,16 @@ const DBHeader = () => {
   return (
     <section className='pl-0 md:pl-7 mb-[25px]'>
       <div className='p-6'>
+        <div className='page-header flex justify-between items-center pb-[1.25rem]'>
+          <h4 className='text-[1.125rem] font-semibold'> ড্যাশবোর্ড</h4>
+          <ol className='flex items-center gap-2'>
+            <li className='flex items-center gap-2'>
+              <span className='text-[#1BB57B] font-medium'>ড্যাশবোর্ড</span>{' '}
+              <BiChevronsRight className='text-[#8c9097]' />
+            </li>
+            <li className='text-[15px] font-medium'>ওভারভিউ</li>
+          </ol>
+        </div>
         <div className='welcome'>
           <div className='pl-[15px] pr-[15px] lg:pl-[40px] lg:pr-[40px] '>
             <div class='grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8'>
