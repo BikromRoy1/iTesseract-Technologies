@@ -1,5 +1,5 @@
 import {
-  Calendar,
+  Video,
   LayoutDashboard,
   LogOut,
   Settings,
@@ -44,7 +44,7 @@ const DashboardLayout = () => {
               />
               <SidebarItem
                 to='/dashboard/live-class'
-                icon={<Calendar size={20} />}
+                icon={<Video size={20} />}
                 text='লাইভ ক্লাস'
                 alert
               />
