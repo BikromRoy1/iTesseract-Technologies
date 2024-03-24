@@ -1,4 +1,5 @@
 import React from 'react';
+import Assignment from './Assignment';
 import Score from './Score';
 
 const Analytics = () => {
@@ -18,7 +19,9 @@ const Analytics = () => {
             <div class='box-header'>
               <div class='box-title relative '>অ্যাসাইনমেন্ট অ্যানালিটিক্স</div>
             </div>
-            <div className='p-[1.25rem]'></div>
+            <div className='p-[1.25rem]'>
+              <Assignment />
+            </div>
           </div>
         </div>
       </div>
