@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BiChevronsRight } from 'react-icons/bi';
 import welcome from '../../../Images/icons/welcome.png';
+import Analytics from '../Analytics/Analytics';
 import './DBHeader.css';
 
 const DBHeader = () => {
@@ -22,7 +23,7 @@ const DBHeader = () => {
   };
 
   return (
-    <section className='pl-0 md:pl-7 mb-[25px]'>
+    <section className='pl-0 md:pl-7'>
       <div className='p-6'>
         <div className='page-header flex justify-between items-center pb-[1.25rem]'>
           <h4 className='text-[1.125rem] font-semibold'> ড্যাশবোর্ড</h4>
@@ -98,6 +99,7 @@ const DBHeader = () => {
           </div>
         </div>
       </div>
+      <Analytics />
     </section>
   );
 };

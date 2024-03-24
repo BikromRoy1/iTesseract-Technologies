@@ -10,6 +10,7 @@
     "axios": "^1.4.0",
     "boxicons": "^2.1.4",
     "daisyui": "^2.49.0",
+    "echarts-for-react": "^3.0.2",
     "glightbox": "^3.2.0",
     "lottie-react": "^2.4.0",
     "lucide-react": "^0.356.0",
