@@ -1,6 +1,7 @@
 import React from 'react';
 import course01 from '../../../Images/course-01.jpg';
 import course02 from '../../../Images/course-02.jpg';
+import { Link } from 'react-router-dom';
 
 const DBMyCourse = () => {
   const courses = [
@@ -38,9 +39,11 @@ const DBMyCourse = () => {
                   <h2 className='font-semibold mb-3 text-[16px] md:text-[18px] lg:text-[20px]'>
                     {course.course}
                   </h2>
-                  <button className='btn-buy mb-0 rounded-md bg-[#1CAB55] p-3 whitespace-nowrap text-base font-semibold text-white md:w-full  '>
-                    এগিয়ে যাই
-                  </button>
+                  <Link to='/dashboard/my-courses/mycoursevidoes'>
+                    <button className='btn-buy mb-0 rounded-md bg-[#1CAB55] p-3 whitespace-nowrap text-base font-semibold text-white md:w-full  '>
+                      কোর্স এগিয়ে যাই
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}

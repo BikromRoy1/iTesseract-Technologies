@@ -7,7 +7,9 @@ import Registration from '../components/Common/Registration/Registration';
 import Terms from '../components/Common/Terms/Terms';
 import DBMyCourse from '../components/Dashboard/DBCourse/DBMyCourse.jsx';
 import DBHeader from '../components/Dashboard/DBHeader/DBHeader.jsx';
+import DBVideos from '../components/Dashboard/DBVideos/DBVideos.jsx';
 import EditProfile from '../components/Dashboard/EditProfile/EditProfile.jsx';
+import MyLiveClass from '../components/Dashboard/MyLiveClass/MyLiveClass.jsx';
 import Profile from '../components/Dashboard/Profile/Profile.jsx';
 import Login from '../components/Login/Login.jsx';
 import AboutMain from '../components/Pages/About/AboutMain/AboutMain';
@@ -24,7 +26,6 @@ import School from '../components/Pages/School/School/School';
 import Team from '../components/Pages/Team/Team/Team';
 import University from '../components/Pages/University/University/University';
 import UserRegistration from '../components/UserRegistration/UserRegistration.jsx';
-import MyLiveClass from '../components/Dashboard/MyLiveClass/MyLiveClass.jsx';
 
 const router = createBrowserRouter([
   {
@@ -134,6 +135,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/my-courses',
         element: <DBMyCourse></DBMyCourse>,
+      },
+      {
+        path: '/dashboard/my-courses/mycoursevidoes',
+        element: <DBVideos></DBVideos>,
       },
       {
         path: '/dashboard/live-class',
