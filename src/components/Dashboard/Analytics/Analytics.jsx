@@ -18,7 +18,7 @@ const Analytics = () => {
           <div className='min-h-[250px] dashboard-box lg:col-span-2'>
             <div className='box-header'>
               <div className='box-title relative '>
-                অ্যাসাইনমেন্ট অ্যানালিটিক্স
+                অধ্যয়নের অগ্রগতি
               </div>
             </div>
             <div className='p-[1.25rem] pt-2'>

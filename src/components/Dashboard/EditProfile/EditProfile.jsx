@@ -15,18 +15,9 @@ const EditProfile = () => {
 
   console.log(selectedImage);
 
-  let name = 'Bikrom Roy';
-  let fatherName = 'Bipul Roy';
-  let motherName = 'Sebika Roy';
   let email = 'email@example.com';
   let number = '01795-188538';
-  let Gender = 'Male';
-  let BirthDay = '14 March, 2002';
-  let location = 'Bagerhat-বাগেরহাট';
-  let school = 'ATKHALI SECONDARY SCHOOL';
-  let Class = 'Higher Secondary Certificate';
-  let Religion = 'Hindu';
-  let address = 'Dhaka, Bangladesh';
+
   return (
     <section className='dashboard-section'>
       <div className='dashboard-box mt-[1.5rem] '>

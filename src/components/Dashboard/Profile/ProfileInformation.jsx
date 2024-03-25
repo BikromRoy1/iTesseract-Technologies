@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import './ProfileInformation.css';
 
 const ProfileInformation = () => {
-  let name = 'Bikrom Roy';
-  let fatherName = 'Bipul Roy';
-  let motherName = 'Sebika Roy';
+  let name = 'Mohammad Abdul Hamid';
+  let fatherName = 'Mohammad Eliyas';
+  let motherName = 'Rabiya Begum';
   let email = 'email@example.com';
   let number = '01795-188538';
   let Gender = 'Male';
@@ -13,7 +13,7 @@ const ProfileInformation = () => {
   let location = 'Bagerhat-বাগেরহাট';
   let school = 'ATKHALI SECONDARY SCHOOL';
   let Class = 'Higher Secondary Certificate';
-  let Religion = 'Hindu';
+  let Religion = 'Islam';
   let address = 'Dhaka, Bangladesh';
 
   return (

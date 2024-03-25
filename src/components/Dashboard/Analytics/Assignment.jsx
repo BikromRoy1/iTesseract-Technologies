@@ -16,7 +16,7 @@ const Assignment = () => {
       },
     },
     legend: {
-      data: ['Line 1', 'Line 2', 'Line 3', 'Line 4', 'Line 5'],
+      data: ['Current', 'Previous', 'Line 4', 'Line 5'],
     },
     toolbox: {
       feature: {
@@ -43,7 +43,7 @@ const Assignment = () => {
     ],
     series: [
       {
-        name: 'Line 1',
+        name: 'Current',
         type: 'line',
         stack: 'Total',
         smooth: true,
@@ -70,7 +70,7 @@ const Assignment = () => {
         data: [140, 232, 101, 264, 90, 340, 250],
       },
       {
-        name: 'Line 2',
+        name: 'Previous',
         type: 'line',
         stack: 'Total',
         smooth: true,
