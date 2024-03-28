@@ -108,7 +108,7 @@ const Videos = () => {
                       width='19'
                       height='19'
                       fill='currentColor'
-                      class='bi bi-eye'
+                      className='bi bi-eye'
                       viewBox='0 0 16 16'
                     >
                       <path d='M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z' />
@@ -156,7 +156,7 @@ const Videos = () => {
                       width='19'
                       height='19'
                       fill='currentColor'
-                      class='bi bi-eye'
+                      className='bi bi-eye'
                       viewBox='0 0 16 16'
                     >
                       <path d='M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z' />
@@ -172,13 +172,13 @@ const Videos = () => {
 
             <div className='flex justify-between items-center  flex-wrap'>
               <div className='relative flex items-center videos-name-main flex-wrap'>
-                <a href='#' class='btn-danger-soft mb-0'>
+                <a href='#' className='btn-danger-soft mb-0'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='23'
                     height='23'
                     fill='currentColor'
-                    class='bi bi-play-fill play-icons mr-0 pl-[3px]'
+                    className='bi bi-play-fill play-icons mr-0 pl-[3px]'
                     viewBox='0 0 16 16'
                   >
                     <path d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393' />
@@ -201,13 +201,13 @@ const Videos = () => {
 
             <div className='flex justify-between items-center '>
               <div className='relative flex items-center videos-name-main'>
-                <a href='#' class='btn-danger-soft mb-0'>
+                <a href='#' className='btn-danger-soft mb-0'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='23'
                     height='23'
                     fill='currentColor'
-                    class='bi bi-play-fill play-icons mr-0 pl-[3px]'
+                    className='bi bi-play-fill play-icons mr-0 pl-[3px]'
                     viewBox='0 0 16 16'
                   >
                     <path d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393' />
@@ -329,13 +329,13 @@ const Videos = () => {
 
             <div className='flex justify-between items-center  flex-wrap'>
               <div className='relative flex items-center videos-name-main flex-wrap'>
-                <a href='#' class='btn-danger-soft mb-0'>
+                <a href='#' className='btn-danger-soft mb-0'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='23'
                     height='23'
                     fill='currentColor'
-                    class='bi bi-play-fill play-icons mr-0 pl-[3px]'
+                    className='bi bi-play-fill play-icons mr-0 pl-[3px]'
                     viewBox='0 0 16 16'
                   >
                     <path d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393' />
@@ -358,13 +358,13 @@ const Videos = () => {
 
             <div className='flex justify-between items-center '>
               <div className='relative flex items-center videos-name-main'>
-                <a href='#' class='btn-danger-soft mb-0'>
+                <a href='#' className='btn-danger-soft mb-0'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='23'
                     height='23'
                     fill='currentColor'
-                    class='bi bi-play-fill play-icons mr-0 pl-[3px]'
+                    className='bi bi-play-fill play-icons mr-0 pl-[3px]'
                     viewBox='0 0 16 16'
                   >
                     <path d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393' />

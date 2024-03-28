@@ -22,30 +22,30 @@ const Level = () => {
               <span className='title-gradient'> ০৬ টি পাঠ আছে</span>
             </h2>
           </div>
-          <div class=''>
-            <div class='level-listing'>
-              <div class='grid lg:grid-cols-12 gap-0 grid-cols-1'>
-                <div class='col-span-3'>
-                  <div class='level-slot-class'>
+          <div className=''>
+            <div className='level-listing'>
+              <div className='grid lg:grid-cols-12 gap-0 grid-cols-1'>
+                <div className='col-span-3'>
+                  <div className='level-slot-class'>
                     <span>
                       <span className='uppercase'>লেভেল - 01</span> <br />
                       24 ঘন্টা
                     </span>
                   </div>
                 </div>
-                <div class='col-span-9'>
-                  <div class='level-slot-info'>
+                <div className='col-span-9'>
+                  <div className='level-slot-info'>
                     <a href=''>
                       <div className='level-icons-image'>
                         <img
                           loading='lazy'
-                          class='level-slot-student img-fluid'
+                          className='level-slot-student img-fluid'
                           src={service01}
                           alt='কম্পিউটার প্রোগ্রামিং ফান্ডামেন্টাল'
                         />
                       </div>
                     </a>
-                    <div class='level-slot-info-content'>
+                    <div className='level-slot-info-content'>
                       <h3>কোর্সঃ কম্পিউটার প্রোগ্রামিং ফান্ডামেন্টাল</h3>
                       <p>
                         শিক্ষার্থীদের মৌলিক যুক্তিবিদ্যা, কোডিং বোঝা এবং
@@ -97,28 +97,28 @@ const Level = () => {
               </div>
             </div>
           </div>
-          <div class=''>
-            <div class='level-listing'>
-              <div class='grid lg:grid-cols-12 gap-0 grid-cols-1'>
-                <div class='col-span-3'>
-                  <div class='level-slot-class2'>
+          <div className=''>
+            <div className='level-listing'>
+              <div className='grid lg:grid-cols-12 gap-0 grid-cols-1'>
+                <div className='col-span-3'>
+                  <div className='level-slot-class2'>
                     <span>
                       <span className='uppercase'>লেভেল - 02</span> <br />
                       24 ঘন্টা
                     </span>
                   </div>
                 </div>
-                <div class='col-span-9'>
-                  <div class='level-slot-info'>
+                <div className='col-span-9'>
+                  <div className='level-slot-info'>
                     <a href=''>
                       <img
                         loading='lazy'
-                        class='level-slot-student img-fluid'
+                        className='level-slot-student img-fluid'
                         src={service02}
                         alt='মোবাইল অ্যাপ্লিকেশন'
                       />
                     </a>
-                    <div class='level-slot-info-content'>
+                    <div className='level-slot-info-content'>
                       <h3>
                         কোর্স: মোবাইল অ্যাপ্লিকেশন ও ওয়েবসাইট ডেভেলপমেন্ট
                       </h3>
@@ -171,28 +171,28 @@ const Level = () => {
               </div>
             </div>
           </div>
-          <div class=''>
-            <div class='level-listing'>
-              <div class='grid lg:grid-cols-12 gap-0 grid-cols-1'>
-                <div class='col-span-3'>
-                  <div class='level-slot-class'>
+          <div className=''>
+            <div className='level-listing'>
+              <div className='grid lg:grid-cols-12 gap-0 grid-cols-1'>
+                <div className='col-span-3'>
+                  <div className='level-slot-class'>
                     <span>
                       <span className='uppercase'>লেভেল - 03</span> <br />
                       24 ঘন্টা
                     </span>
                   </div>
                 </div>
-                <div class='col-span-9'>
-                  <div class='level-slot-info'>
+                <div className='col-span-9'>
+                  <div className='level-slot-info'>
                     <a href=''>
                       <img
                         loading='lazy'
-                        class='level-slot-student img-fluid'
+                        className='level-slot-student img-fluid'
                         src={service03}
                         alt='রোবোটিক্স এবং এমবেডেড সিস্টেম'
                       />
                     </a>
-                    <div class='level-slot-info-content'>
+                    <div className='level-slot-info-content'>
                       <h3>কোর্স: রোবোটিক্স এবং এমবেডেড সিস্টেম</h3>
                       <p>
                         লেভেল 3 রোবোটিক্স এবং এমবেডেড সিস্টেম চালু করার জন্য
@@ -244,28 +244,28 @@ const Level = () => {
               </div>
             </div>
           </div>
-          <div class=''>
-            <div class='level-listing'>
-              <div class='grid lg:grid-cols-12 gap-0 grid-cols-1'>
-                <div class='col-span-3'>
-                  <div class='level-slot-class2'>
+          <div className=''>
+            <div className='level-listing'>
+              <div className='grid lg:grid-cols-12 gap-0 grid-cols-1'>
+                <div className='col-span-3'>
+                  <div className='level-slot-class2'>
                     <span>
                       <span className='uppercase'>লেভেল - 04</span> <br />
                       24 ঘন্টা
                     </span>
                   </div>
                 </div>
-                <div class='col-span-9'>
-                  <div class='level-slot-info'>
+                <div className='col-span-9'>
+                  <div className='level-slot-info'>
                     <a href=''>
                       <img
                         loading='lazy'
-                        class='level-slot-student img-fluid'
+                        className='level-slot-student img-fluid'
                         src={service05}
                         alt='পাইথন প্রোগ্রামিং'
                       />
                     </a>
-                    <div class='level-slot-info-content'>
+                    <div className='level-slot-info-content'>
                       <h3>কোর্স: পাইথন প্রোগ্রামিং এবং ডেটা সায়েন্স</h3>
                       <p>
                         আমরা পাইথনের একটি ভূমিকা এবং ডেটা সায়েন্সের সাহায্যে
@@ -318,28 +318,28 @@ const Level = () => {
               </div>
             </div>
           </div>
-          <div class=''>
-            <div class='level-listing'>
-              <div class='grid lg:grid-cols-12 gap-0 grid-cols-1'>
-                <div class='col-span-3'>
-                  <div class='level-slot-class'>
+          <div className=''>
+            <div className='level-listing'>
+              <div className='grid lg:grid-cols-12 gap-0 grid-cols-1'>
+                <div className='col-span-3'>
+                  <div className='level-slot-class'>
                     <span>
                       <span className='uppercase'>লেভেল - 05</span> <br />
                       24 ঘন্টা
                     </span>
                   </div>
                 </div>
-                <div class='col-span-9'>
-                  <div class='level-slot-info'>
+                <div className='col-span-9'>
+                  <div className='level-slot-info'>
                     <a href=''>
                       <img
                         loading='lazy'
-                        class='level-slot-student img-fluid'
+                        className='level-slot-student img-fluid'
                         src={service04}
                         alt='আইওটি'
                       />
                     </a>
-                    <div class='level-slot-info-content'>
+                    <div className='level-slot-info-content'>
                       <h3>কোর্স: আইওটি এবং ডেটা সায়েন্স</h3>
                       <p>
                         প্রত্যেকেই ইন্টারনেট অফ থিংসের কথা শুনেছে যা মাইক্রোচিপ
@@ -391,28 +391,28 @@ const Level = () => {
               </div>
             </div>
           </div>
-          <div class=''>
-            <div class='level-listing'>
-              <div class='grid lg:grid-cols-12 gap-0 grid-cols-1'>
-                <div class='col-span-3'>
-                  <div class='level-slot-class2'>
+          <div className=''>
+            <div className='level-listing'>
+              <div className='grid lg:grid-cols-12 gap-0 grid-cols-1'>
+                <div className='col-span-3'>
+                  <div className='level-slot-class2'>
                     <span>
                       <span className='uppercase'>লেভেল - 06</span> <br />
                       24 ঘন্টা
                     </span>
                   </div>
                 </div>
-                <div class='col-span-9'>
-                  <div class='level-slot-info'>
+                <div className='col-span-9'>
+                  <div className='level-slot-info'>
                     <a href='#'>
                       <img
                         loading='lazy'
-                        class='level-slot-student img-fluid'
+                        className='level-slot-student img-fluid'
                         src={service06}
                         alt='রোবোটিক্স ভিশন'
                       />
                     </a>
-                    <div class='level-slot-info-content'>
+                    <div className='level-slot-info-content'>
                       <h3>কোর্স: এআই এবং রোবোটিক্স ভিশন</h3>
                       <p>
                         শিক্ষার্থীরা AI এর সাহায্যে তাদের রোবোটিক্স ডিজাইন করবে।

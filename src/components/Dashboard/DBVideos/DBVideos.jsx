@@ -112,7 +112,7 @@ const DBVideos = () => {
               </h3>
             </div>
             <div>
-              <div class='bg-slate-600 px-4 py-6 rounded-md'>
+              <div className='bg-slate-600 px-4 py-6 rounded-md'>
                 <div className='videos-module'>
                   <div className='Course-Content flex items-center justify-between pb-4'>
                     <h4 className='font-semibold text-[16px] md:text-[22px] text-gray-300'>

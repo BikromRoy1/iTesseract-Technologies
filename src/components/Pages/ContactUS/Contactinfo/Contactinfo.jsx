@@ -30,21 +30,21 @@ const Contactinfo = ({ title, details, subTitle }) => {
           <p>{details}</p>
         </div>
         <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
-          <div class='info-item  flex flex-col justify-center items-center'>
+          <div className='info-item  flex flex-col justify-center items-center'>
             <div className='contact-icons'>
               <BiMapAlt className='' size='24px' color='#ffc107'></BiMapAlt>
             </div>
             <h3>আমাদের ঠিকানা</h3>
             <p className='text-base font-medium'>{contact?.data?.address}</p>
           </div>
-          <div class='info-item  flex flex-col justify-center items-center'>
+          <div className='info-item  flex flex-col justify-center items-center'>
             <div className='contact-icons'>
               <FaPhoneAlt className='' size='24px' color='#ffc107'></FaPhoneAlt>
             </div>
             <h3>আমাদের কল করুন</h3>
             <p className='text-base font-medium'>{contact?.data?.phone}</p>
           </div>
-          <div class='info-item  flex flex-col justify-center items-center'>
+          <div className='info-item  flex flex-col justify-center items-center'>
             <div className='contact-icons'>
               <BiEnvelope className='' size='24px' color='#ffc107'></BiEnvelope>
             </div>

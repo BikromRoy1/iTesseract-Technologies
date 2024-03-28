@@ -68,7 +68,7 @@ const ClientTestimonial = () => {
             >
               {testimonialData?.map((item) => (
                 <SwiperSlide key={item?.id}>
-                  <div class='client-item'>
+                  <div className='client-item'>
                     <p>
                       <FaQuoteLeft className='inline-block quote-icon-left' />"
                       {item?.body}”

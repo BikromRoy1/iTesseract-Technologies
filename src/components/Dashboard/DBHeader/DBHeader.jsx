@@ -37,8 +37,8 @@ const DBHeader = () => {
         </div>
         <div className='welcome'>
           <div className='pl-[15px] pr-[15px] lg:pl-[40px] lg:pr-[40px] '>
-            <div class='grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8'>
-              <div class='content'>
+            <div className='grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8'>
+              <div className='content'>
                 <span className='mb-[5px] text-[#cccce1] font-bold pt-3 md:pt-10 block tracking-wide text-sm lg:text-lg'>
                   {formatDate(currentDate)}
                 </span>
@@ -92,7 +92,7 @@ const DBHeader = () => {
                   </div>
                 </div>
               </div>
-              <div class='mt-[15px] md:mt-0 text-center lg:text-end'>
+              <div className='mt-[15px] md:mt-0 text-center lg:text-end'>
                 <img src={welcome} loading='lazy' alt='welcome' />
               </div>
             </div>

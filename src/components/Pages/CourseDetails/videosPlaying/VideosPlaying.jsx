@@ -82,8 +82,8 @@ const VideosPlaying = () => {
   return (
     <section className='videosPlaying-section'>
       <div className='container mx-auto p-6'>
-        <div class='grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-5'>
-          <div class=''>
+        <div className='grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-5'>
+          <div className=''>
             <div className='flex items-center gap-2 lg:gap-4 pb-[20px]'>
               <button className='hidden md:block'>
                 <Link
@@ -95,7 +95,7 @@ const VideosPlaying = () => {
                     width='16'
                     height='16'
                     fill='currentColor'
-                    class='bi bi-arrow-left'
+                    className='bi bi-arrow-left'
                     viewBox='0 0 16 16'
                   >
                     <path
@@ -138,7 +138,6 @@ const VideosPlaying = () => {
                 thumbnails='https://image.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/storyboard.vtt'
                 icons={defaultLayoutIcons}
               />
-             
             </MediaPlayer>
 
             <h3 className='font-semibold  text-[16px] md:text-[22px] leading-[28px] pt-[20px]'>
@@ -362,13 +361,13 @@ const VideosPlaying = () => {
 
                     <div className='flex justify-between items-center  flex-wrap'>
                       <div className='relative flex items-center videos-name-main flex-wrap'>
-                        <a href='#' class='btn-danger-soft mb-0'>
+                        <a href='#' className='btn-danger-soft mb-0'>
                           <svg
                             xmlns='http://www.w3.org/2000/svg'
                             width='23'
                             height='23'
                             fill='currentColor'
-                            class='bi bi-play-fill play-icons mr-0 pl-[3px]'
+                            className='bi bi-play-fill play-icons mr-0 pl-[3px]'
                             viewBox='0 0 16 16'
                           >
                             <path d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393' />
@@ -391,13 +390,13 @@ const VideosPlaying = () => {
 
                     <div className='flex justify-between items-center '>
                       <div className='relative flex items-center videos-name-main'>
-                        <a href='#' class='btn-danger-soft mb-0'>
+                        <a href='#' className='btn-danger-soft mb-0'>
                           <svg
                             xmlns='http://www.w3.org/2000/svg'
                             width='23'
                             height='23'
                             fill='currentColor'
-                            class='bi bi-play-fill play-icons mr-0 pl-[3px]'
+                            className='bi bi-play-fill play-icons mr-0 pl-[3px]'
                             viewBox='0 0 16 16'
                           >
                             <path d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393' />

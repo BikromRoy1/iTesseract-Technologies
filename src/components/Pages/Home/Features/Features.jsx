@@ -1,9 +1,8 @@
 import React from 'react';
-import image from '../../../../Images/img.PNG';
 import computer from '../../../../Images/icons/computer.png';
-import web from '../../../../Images/icons/web-development.png';
 import dimploma from '../../../../Images/icons/diploma.png';
-import Testimonial from '../Testimonial/Testimonial';
+import web from '../../../../Images/icons/web-development.png';
+import image from '../../../../Images/img.PNG';
 
 const Features = () => {
   return (
@@ -31,6 +30,7 @@ const Features = () => {
                     <img
                       className='h-7 w-7'
                       src={computer}
+                      loading='lazy'
                       alt='ফ্রী ক্লাসে যুক্ত হোন'
                     />
                   </div>

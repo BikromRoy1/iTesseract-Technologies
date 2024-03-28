@@ -50,12 +50,12 @@ const EditProfile = () => {
                   type='file'
                   name='cover'
                   id='cover'
-                  class='sr-only'
+                  className='sr-only'
                   onChange={handleImageChange} // Call the event handler on change
                 ></input>
                 <span>
                   <svg
-                    class='fill-current'
+                    className='fill-current'
                     width='14'
                     height='14'
                     viewBox='0 0 14 14'
@@ -295,51 +295,51 @@ const EditProfile = () => {
             <div className='mb-[16px]'>
               <div>
                 <label
-                  class='mb-2 font-semibold inline-block text-[#a1a5b7]'
+                  className='mb-2 font-semibold inline-block text-[#a1a5b7]'
                   for='name'
                 >
                   লিঙ্গ
                   <span className='text-[#f76a78]'>*</span>
                 </label>
-                <div class='flex items-center space-x-6'>
-                  <div class='flex items-center'>
+                <div className='flex items-center space-x-6'>
+                  <div className='flex items-center'>
                     <input
                       type='radio'
                       name='radio1'
                       id='radioButton1'
-                      class='h-5 w-5'
+                      className='h-5 w-5'
                     />
                     <label
                       for='radioButton1'
-                      class='pl-3 text-base font-medium text-[#07074D]'
+                      className='pl-3 text-base font-medium text-[#07074D]'
                     >
                       Male
                     </label>
                   </div>
-                  <div class='flex items-center'>
+                  <div className='flex items-center'>
                     <input
                       type='radio'
                       name='radio1'
                       id='radioButton2'
-                      class='h-5 w-5'
+                      className='h-5 w-5'
                     />
                     <label
                       for='radioButton2'
-                      class='pl-3 text-base font-medium text-[#07074D]'
+                      className='pl-3 text-base font-medium text-[#07074D]'
                     >
                       Female
                     </label>
                   </div>
-                  <div class='flex items-center'>
+                  <div className='flex items-center'>
                     <input
                       type='radio'
                       name='radio1'
                       id='radioButton3'
-                      class='h-5 w-5'
+                      className='h-5 w-5'
                     />
                     <label
                       for='radioButton3'
-                      class='pl-3 text-base font-medium text-[#07074D]'
+                      className='pl-3 text-base font-medium text-[#07074D]'
                     >
                       Other
                     </label>
