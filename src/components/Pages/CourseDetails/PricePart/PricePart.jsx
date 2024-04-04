@@ -2,35 +2,30 @@ import React from 'react';
 import { FaStopwatch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import playIcons from '../../../../Images/icons/play_icon_2 1.svg';
+import VideosModal from '../VideosModal/VideosModal';
 import './PricePart.css';
 
 const PricePart = () => {
   return (
     <div className='price-card mb-[1.6rem]'>
       <div className='course-videos relative'>
-        <Link
-          href='https://www.youtube.com/watch?v=ISs7r8SNjl4'
-          className='glightbox'
-        >
+        <label className='glightbox'>
           <img
             src='https://img.youtube.com/vi/ISs7r8SNjl4/maxresdefault.jpg'
             className='w-full h-full rounded-[6px]'
             alt='course-Banner'
             loading='lazy'
           />
-        </Link>
+        </label>
         <div className='playing-icons'>
-          <Link
-            to='https://www.youtube.com/watch?v=ISs7r8SNjl4'
-            className='glightbox'
-          >
+          <label htmlFor='my-modal-videos' className='glightbox cursor-pointer'>
             <img
               className='w-[70px] h-[70px]'
               src={playIcons}
               loading='lazy'
               alt='playIcons'
             />
-          </Link>
+          </label>
         </div>
       </div>
       <div className='price-card-body pt-[13px]'>
@@ -62,6 +57,7 @@ const PricePart = () => {
           </Link>
         </div>
       </div>
+      <VideosModal />
     </div>
   );
 };
