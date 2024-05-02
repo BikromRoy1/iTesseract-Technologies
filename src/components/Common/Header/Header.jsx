@@ -70,7 +70,7 @@ const Header = () => {
           </li>
           <li>
             <Link
-              to='/school'
+              to='/recorded'
               aria-label='Courses '
               title='কোর্স সমূহ '
               className='font-medium dropdown dropdown-hover tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
@@ -87,7 +87,7 @@ const Header = () => {
                   <Link
                     title='মাধ্যমিক'
                     className='hover:text-[#1bb57b]'
-                    to='/school'
+                    to='/recorded'
                   >
                     <img
                       width={24}
@@ -103,7 +103,7 @@ const Header = () => {
                   <Link
                     title='বিশ্ববিদ্যালয়'
                     className='hover:text-[#1bb57b]'
-                    to='/university'
+                    to='/live'
                   >
                     <img
                       width={24}
@@ -115,15 +115,6 @@ const Header = () => {
                     লাইভ কোর্স
                   </Link>
                 </li>
-                {/* <li>
-                  <Link
-                    title='সার্টিফিকেশন'
-                    className='hover:text-[#1bb57b]'
-                    to='/certification'
-                  >
-                    <FcDecision></FcDecision> সার্টিফিকেশন
-                  </Link>
-                </li> */}
               </ul>
             </Link>
           </li>
@@ -308,7 +299,7 @@ const Header = () => {
                             <Link
                               title='মাধ্যমিক'
                               className='hover:text-[#1bb57b]'
-                              to='/school'
+                              to='/recorded'
                             >
                               <img
                                 width={24}
@@ -324,7 +315,7 @@ const Header = () => {
                             <Link
                               title='বিশ্ববিদ্যালয়'
                               className='hover:text-[#1bb57b]'
-                              to='/university'
+                              to='/live'
                             >
                               <img
                                 width={24}
@@ -336,16 +327,6 @@ const Header = () => {
                               লাইভ কোর্স
                             </Link>
                           </li>
-                          {/* <li>
-                            <Link
-                              title='সার্টিফিকেশন'
-                              className='hover:text-[#1bb57b]'
-                              to='/certification'
-                            >
-                              {' '}
-                              <FcDecision></FcDecision> সার্টিফিকেশন
-                            </Link>
-                          </li> */}
                         </ul>
                       </Link>
                     </li>

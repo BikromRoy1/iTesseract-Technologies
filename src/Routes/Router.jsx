@@ -15,16 +15,15 @@ import Login from '../components/Login/Login.jsx';
 import AboutMain from '../components/Pages/About/AboutMain/AboutMain';
 import BlogDetails from '../components/Pages/BlogDetails/BlogDetails/BlogDetails';
 import Blogs from '../components/Pages/Blogs/Blogs/Blogs';
-import Certification from '../components/Pages/Certification/Certification';
 import ContactUS from '../components/Pages/ContactUS/ContactUS/ContactUS';
 import CourseDetails from '../components/Pages/CourseDetails/CourseDetails';
 import VideosPlaying from '../components/Pages/CourseDetails/videosPlaying/VideosPlaying.jsx';
 import Home from '../components/Pages/Home/Home/Home';
+import LiveCourse from '../components/Pages/LiveCourse/LiveCourse';
 import ProductDetails from '../components/Pages/Product/ProductDetails/ProductDetails';
 import ProductMain from '../components/Pages/Product/ProductMain/ProductMain';
-import School from '../components/Pages/School/School/School';
+import RecordCourse from '../components/Pages/RecordedCourse/RecordCourse';
 import Team from '../components/Pages/Team/Team/Team';
-import University from '../components/Pages/University/University/University';
 import UserRegistration from '../components/UserRegistration/UserRegistration.jsx';
 
 const router = createBrowserRouter([
@@ -64,17 +63,15 @@ const router = createBrowserRouter([
           fetch(`https://itesseract.com.bd/master/api/v1/product/${params.id}`),
       },
       {
-        path: '/school',
-        element: <School></School>,
+        path: '/recorded',
+        element: <RecordCourse></RecordCourse>,
       },
+
       {
-        path: '/university',
-        element: <University></University>,
+        path: '/live',
+        element: <LiveCourse></LiveCourse>,
       },
-      {
-        path: '/certification',
-        element: <Certification></Certification>,
-      },
+
       {
         path: '/blogs',
         element: <Blogs></Blogs>,

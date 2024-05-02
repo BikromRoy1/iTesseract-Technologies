@@ -1,5 +1,4 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FaWifi } from 'react-icons/fa';
 import { FiUsers } from 'react-icons/fi';
 import { IoDocumentTextOutline } from 'react-icons/io5';
@@ -8,42 +7,25 @@ import { Link } from 'react-router-dom';
 import courseOne from '../../../../Images/course-01.jpg';
 import courseTwo from '../../../../Images/course-02.jpg';
 import student from '../../../../Images/teacher/student-02.png';
-import Services from '../Services/Services';
-import './Kits.css';
+import '../../Home/Kits/Kits.css';
 
-const Kits = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          'https://itesseract.com.bd/master/api/v1/products'
-        );
-        setData(response.data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-    fetchData();
-  }, []);
-
-  const products = data.data;
-
+const UniSkills = () => {
   return (
-    <section className='kits-course'>
-      <div className='container px-6 py-10 mx-auto'>
+    <section className='pb-14 pt-[40px]'>
+      <div className='container p-6 mx-auto'>
         <div className='section-header'>
+          <h4>বিশ্ববিদ্যালয় কোর্স</h4>
           <h2>
-            প্রশিক্ষণের নিজস্ব{' '}
-            <span className='title-gradient'>রোবটিক্স টুলস</span>
+            {' '}
+            কোর্স দক্ষতা <span className='title-gradient'>আপনি পাবেন</span>
           </h2>
           <p>
-            বাংলাদেশে প্রথম আমরাই তিনটি ধাপে নিজস্ব রোবটিক্স টুলস দিয়ে প্রশিক্ষণ
-            দিচ্ছে আইটেসারেক্ট
+            অধ্যয়ন শুরু করার জন্য আপনার যা দরকার তা হল সঠিক মনের ফ্রেমে।
+            আইটেসারেক্ট টেকনোলিজস-এর একজন ছাত্র হিসাবে, আপনি অসামান্য প্রশিক্ষক
+            এবং কম্পিউটার বিজ্ঞানে দক্ষতা অর্জনের জন্য একটি সু-প্রতিষ্ঠিত
+            পাঠ্যক্রম দ্বারা পরিচালিত হবেন।
           </p>
         </div>
-
         <div className='grid grid-cols-1 gap-8  xl:gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3'>
           <div className='single-card'>
             <div className='course-card'>
@@ -315,9 +297,8 @@ const Kits = () => {
           </div>
         </div>
       </div>
-      <Services></Services>
     </section>
   );
 };
 
-export default Kits;
+export default UniSkills;

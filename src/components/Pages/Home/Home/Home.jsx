@@ -1,6 +1,6 @@
 import React from 'react';
 import NewBanner from '../Banner/NewBanner';
-import Contact from '../Contact/Contact';
+import ChiefAdvisor from '../ChiefAdvisor/ChiefAdvisor';
 import ItesseractAbout from '../ItesseractAbout/ItesseractAbout';
 import Kits from '../Kits/Kits';
 import Partner from '../Partner/Partner';
@@ -10,9 +10,8 @@ import Testimonial from '../Testimonial/Testimonial';
 const Home = () => {
   return (
     <div>
-      {/* <Banner></Banner> */}
       <NewBanner></NewBanner>
-      <Contact></Contact>
+      <ChiefAdvisor></ChiefAdvisor>
       <Kits></Kits>
       <ItesseractAbout></ItesseractAbout>
       <Testimonial></Testimonial>

@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import shapes11 from '../../../../Images/icons/vector-shape11.png';
 import './Partner.css';
 
 const Partner = () => {
@@ -63,9 +62,6 @@ const Partner = () => {
           )}
         </div>
       </div>
-      {/* <div className='vector-shape11 hidden lg:block'>
-        <img src={shapes11} loading='lazy' alt='shapes' />
-      </div> */}
     </section>
   );
 };
