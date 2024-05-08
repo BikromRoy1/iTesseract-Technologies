@@ -7,10 +7,6 @@ import './UserRegistration.css';
 const UserRegistration = () => {
   const [showPassword, setShowPassword] = useState(false);
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.target;
@@ -134,7 +130,7 @@ const UserRegistration = () => {
                     autoComplete='on'
                   />
                   <button
-                    onClick={togglePasswordVisibility}
+                    onClick={() => setShowPassword(!showPassword)}
                     type='button'
                     className='absolute right-2 bg-transparent flex items-center justify-center text-gray-700'
                   >
