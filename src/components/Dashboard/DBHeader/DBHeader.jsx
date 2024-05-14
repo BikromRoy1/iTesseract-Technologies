@@ -51,7 +51,7 @@ const DBHeader = () => {
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:grid-cols-4 lg:gap-4">
                   <div>
-                    <div className="p-[15px] mt-[15px] bg-[#f2f1f9]">
+                    <div className="p-[15px] mt-[15px] bg-[#f2f1f9] rounded-[4px]">
                       <span className="uppercase block text-[#4c4a68] text-[14px] mb-1 font-medium">
                         COURSES
                       </span>
@@ -61,7 +61,7 @@ const DBHeader = () => {
                     </div>
                   </div>
                   <div>
-                    <div className="p-[15px] mt-[15px] bg-[#f2f1f9]">
+                    <div className="p-[15px] mt-[15px] bg-[#f2f1f9] rounded-[4px]">
                       <span className="uppercase block text-[#4c4a68] text-[14px] mb-1 font-medium">
                         CERTIFICATES
                       </span>
@@ -71,7 +71,7 @@ const DBHeader = () => {
                     </div>
                   </div>
                   <div>
-                    <div className="p-[15px] mt-[15px] bg-[#f2f1f9]">
+                    <div className="p-[15px] mt-[15px] bg-[#f2f1f9] rounded-[4px]">
                       <span className="uppercase block text-[#4c4a68] text-[14px] mb-1 font-medium">
                         SCORE
                       </span>
@@ -81,7 +81,7 @@ const DBHeader = () => {
                     </div>
                   </div>
                   <div>
-                    <div className="p-[15px] mt-[15px] bg-[#f2f1f9]">
+                    <div className="p-[15px] mt-[15px] bg-[#f2f1f9] rounded-[4px]">
                       <span className="uppercase block text-[#4c4a68] text-[14px] mb-1 font-medium">
                         HRS LEARNED
                       </span>
