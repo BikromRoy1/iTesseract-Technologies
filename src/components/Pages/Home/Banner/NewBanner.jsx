@@ -1,12 +1,39 @@
+import { useEffect, useState } from 'react';
 import school from '../../../../Images/icons/uni-01.png';
 import university from '../../../../Images/icons/uni-02.png';
 import collage from '../../../../Images/icons/uni-03.png';
 
 import './Banner.css';
+import axios from 'axios';
 
 const NewBanner = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'http://10.17.20.218/itesseract/public/api/v1/slider'
+        );
+        setData(response.data);
+        
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const bannerImage = data.data;
+
   return (
-    <section id='hero' className='flex items-center justify-center'>
+    <section
+      id='hero'
+      className='flex items-center justify-center'
+      style={{
+        backgroundImage: `url('http://10.17.20.218/itesseract/public/${bannerImage?.image}')`,
+      }}
+    >
       <div className='container mx-auto px-6 container-width'>
         <div className='text-center'>
           <div>
