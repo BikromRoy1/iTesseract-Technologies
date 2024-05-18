@@ -3,18 +3,38 @@ import { BsExclamationOctagonFill } from 'react-icons/bs';
 import { FaGlobe, FaSignal, FaUserGraduate } from 'react-icons/fa';
 import './DetailsBanner.css';
 
-const DetailsBanner = () => {
+const DetailsBanner = ({ HeaderCourse }) => {
+  const {
+    course_name,
+    course_message,
+    language,
+    updated_at,
+    difficulty,
+    enroll_student,
+  } = HeaderCourse.course;
+
+  // Create a new Date object
+  const date = new Date(updated_at);
+
+  // Options for formatting the date
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+
+  // Convert to a human-readable date string
+  const formattedDate = date.toLocaleDateString('en-US', options);
+
   return (
     <section id='topBanner' className='z-10'>
       <div className=' container p-6 mx-auto'>
         <article>
           <h2 className=' lg:max-w-2xl w-full  font-bold mb-3 text-[#124265] capitalize text-xl md:text-2xl  lg:text-[31px] title'>
-            মোবাইল অ্যাপ্লিকেশন ও ওয়েবসাইট ডেভেলপমেন্ট
+            {course_name}
           </h2>
           <p className='lg:max-w-3xl w-full text-[17px] font-normal  text-gray-500 subtitle'>
-            শিক্ষার্থীদের মৌলিক যুক্তিবিদ্যা, কোডিং বোঝা এবং প্রোগ্রামিং ভাষার
-            মৌলিক বিষয়গুলির সাথে পরিচিত করা হবে। বিট বিট করে তারা খুব সহজ
-            গ্রাফিকাল প্রোগ্রামিং এর সাহায্যে গেম ডেভেলপমেন্ট করতে সক্ষম হবে।
+            {course_message}
           </p>
 
           <ul className='flex flex-wrap justify-start gap-3 md:gap-4'>
@@ -37,11 +57,13 @@ const DetailsBanner = () => {
                 width='18'
                 height='18'
               />{' '}
-              <span className='font-semibold'>12k ভর্তি হয়েছে</span>
+              <span className='font-semibold'>
+                {enroll_student} ভর্তি হয়েছে
+              </span>
             </li>
             <li className='flex items-center gap-1 md:gap-2'>
               <FaSignal width='18' height='18' className='text-success' />
-              <span className='font-semibold'>লেভেল - 01</span>
+              <span className='font-semibold'>লেভেল - 0{difficulty}</span>
             </li>
             <li className='flex items-center gap-1 md:gap-2'>
               <BsExclamationOctagonFill
@@ -50,12 +72,13 @@ const DetailsBanner = () => {
                 className='text-[#D6293E]'
               />
               <span className='font-semibold'>
-                সর্বশেষ আপডেট <span className='font-bold'>০১/২০২৪</span>
+                সর্বশেষ আপডেট-{' '}
+                <span className='font-bold'>{formattedDate}</span>
               </span>
             </li>
             <li className='flex items-center gap-1 md:gap-2'>
               <FaGlobe width='18' height='18' className='text-[#17A2B8]' />
-              <span className='font-semibold'>বাংলা</span>
+              <span className='font-semibold'>{language}</span>
             </li>
           </ul>
         </article>

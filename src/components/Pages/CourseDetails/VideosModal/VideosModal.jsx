@@ -1,6 +1,6 @@
 import React from 'react';
 
-const VideosModal = () => {
+const VideosModal = ({ promotional_video }) => {
   return (
     <div>
       <input type='checkbox' id='my-modal-videos' className='modal-toggle' />
@@ -21,7 +21,7 @@ const VideosModal = () => {
             <iframe
               width='100%'
               height='240px'
-              src='https://www.youtube-nocookie.com/embed/ISs7r8SNjl4?si=nnPoQjuQUx5HQU8K'
+              src={promotional_video}
               title='YouTube video player'
               frameborder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'

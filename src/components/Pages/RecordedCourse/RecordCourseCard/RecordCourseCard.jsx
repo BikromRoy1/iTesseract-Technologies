@@ -25,7 +25,9 @@ const LevelTwo = () => {
     fetchData();
   }, []);
 
-  const onlineCourses = data.data;
+  const oflineCourses = data.data;
+
+  console.log(oflineCourses);
 
   function formatNumberToBangla(number) {
     const banglaDigits = {
@@ -64,7 +66,7 @@ const LevelTwo = () => {
         </div>
 
         <div className='flex items-center gap-[12px] justify-center flex-wrap mb-[30px]'>
-          {onlineCourses?.map((tabItem, index) => (
+          {oflineCourses?.map((tabItem, index) => (
             <a
               key={tabItem.id}
               onClick={(e) => {
@@ -88,13 +90,13 @@ const LevelTwo = () => {
           ))}
         </div>
 
-        {onlineCourses?.map((item, index) => (
+        {oflineCourses?.map((item, index) => (
           <div
             id={item?.name}
             className={openTab === index ? 'block' : 'hidden'}
           >
             <div className='grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 p-6'>
-              {item?.courses?.map((course) => (
+              {item?.offline_courses?.map((course) => (
                 <div key={course?.id} className='Level-items'>
                   <div className='bottom-shapes'>
                     <div className='shapes-raps'></div>

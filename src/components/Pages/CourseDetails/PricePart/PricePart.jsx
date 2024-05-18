@@ -5,13 +5,76 @@ import playIcons from '../../../../Images/icons/play_icon_2 1.svg';
 import VideosModal from '../VideosModal/VideosModal';
 import './PricePart.css';
 
-const PricePart = () => {
+const PricePart = ({ mainCourse }) => {
+  const {
+    promotional_video,
+    price,
+    discount_price,
+    discount,
+    offer_date,
+    course_skill,
+  } = mainCourse.course;
+
+  // Your YouTube embed URL
+  const url = promotional_video;
+
+  // Extract the part after 'embed/' and before the question mark
+  const extractVideoId = (embedUrl) => {
+    const embedPart = embedUrl.split('embed/')[1];
+    if (embedPart) {
+      return embedPart.split('?')[0];
+    }
+    return null;
+  };
+
+  const videoId = extractVideoId(url);
+
+  function formatNumberToBangla(number) {
+    const banglaDigits = {
+      0: '০',
+      1: '১',
+      2: '২',
+      3: '৩',
+      4: '৪',
+      5: '৫',
+      6: '৬',
+      7: '৭',
+      8: '৮',
+      9: '৯',
+    };
+
+    // Convert number to string and replace digits with Bangla digits
+    const banglaNumber = number
+      .toString()
+      .replace(/\d/g, (digit) => banglaDigits[digit]);
+
+    // Add commas for formatting
+    return banglaNumber.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  // Target offer date
+  const offerDateStr = offer_date;
+
+  // Convert the offer date string to a Date object
+  const offerDate = new Date(offerDateStr);
+
+  // Get the current date
+  const currentDate = new Date();
+
+  // Calculate the difference in milliseconds between the offer date and the current date
+  const timeDiff = offerDate.getTime() - currentDate.getTime();
+
+  // Convert the difference from milliseconds to days
+  const daysUntilOffer = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
+  console.log(course_skill);
+
   return (
     <div className='price-card mb-[1.6rem]'>
       <div className='course-videos relative'>
         <label className='glightbox'>
           <img
-            src='https://img.youtube.com/vi/ISs7r8SNjl4/maxresdefault.jpg'
+            src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
             className='w-full h-full rounded-[6px]'
             alt='course-Banner'
             loading='lazy'
@@ -31,17 +94,23 @@ const PricePart = () => {
       <div className='price-card-body pt-[13px]'>
         <div>
           <div className='flex items-center'>
-            <h3 className='mb-0 main-price font-bold'>৳150</h3>
+            <h3 className='mb-0 main-price font-bold'>
+              ৳ {formatNumberToBangla(price?.toLocaleString('en-US'))}
+            </h3>
             <span className='second-price text-gray-500'>
-              <del>৳350</del>
+              <del>
+                ৳{formatNumberToBangla(discount_price?.toLocaleString('en-US'))}
+              </del>
             </span>
             <span className='badge bg-[#FD7E14] border-none mb-0 font-semibold'>
-              60% off
+              {discount}% off
             </span>
           </div>
           <div className='mb-0 flex items-center gap-1 md:gap-2 text-[#D83549]'>
             <FaStopwatch className='text-[#D83549]' width='16' height='16' />{' '}
-            <span className='font-semibold'>5 days left at this price</span>
+            <span className='font-semibold'>
+              {daysUntilOffer} days left at this price
+            </span>
           </div>
         </div>
         <div className='mt-4'>
@@ -57,7 +126,7 @@ const PricePart = () => {
           </Link>
         </div>
       </div>
-      <VideosModal />
+      <VideosModal promotional_video={promotional_video} />
     </div>
   );
 };

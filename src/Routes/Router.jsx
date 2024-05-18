@@ -95,8 +95,12 @@ const router = createBrowserRouter([
         element: <Policy></Policy>,
       },
       {
-        path: '/courseDetails',
+        path: '/course/:id',
         element: <CourseDetails></CourseDetails>,
+        loader: ({ params }) =>
+          fetch(
+            `http://10.17.20.218/itesseract/public/api/v1/course/${params?.id}`
+          ),
       },
       {
         path: '/videosPlay',

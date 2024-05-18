@@ -6,7 +6,7 @@ import TagLine from '../TagLine/TagLine';
 import Videos from '../Videos/Videos';
 import './CourseVidoes.css';
 
-const CourseVidoes = () => {
+const CourseVidoes = ({ mainCourse }) => {
   const [openTab, setOpenTab] = useState(1);
   return (
     <section id='videosCurriculum'>
@@ -91,7 +91,7 @@ const CourseVidoes = () => {
             </div> */}
           </div>
           <div className='w-full md:mb-10 md:max-w-[400px] mx-md:order-1 -mt-0 lg:-mt-[240px] z-20'>
-            <PricePart></PricePart>
+            <PricePart mainCourse={mainCourse}></PricePart>
             <Material></Material>
             <TagLine></TagLine>
           </div>
