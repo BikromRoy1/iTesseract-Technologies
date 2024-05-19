@@ -172,7 +172,7 @@ const UniSkills = () => {
                           </div>
                         </div>
                         <div>
-                          <Link to='/courseDetails'>
+                          <Link to={`/course/${course?.id}`}>
                             <button className='custom-button text-[15px] font-semibold px-[16px] py-[5px] text-white rounded-md flex items-center gap-1'>
                               এখান থেকে শিখুন{' '}
                               <svg
