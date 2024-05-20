@@ -74,7 +74,7 @@ const CourseVidoes = ({ mainCourse }) => {
             </div>
 
             <div id='link1' className={openTab === 1 ? 'block' : 'hidden'}>
-              <CourseDescription></CourseDescription>
+              <CourseDescription mainCourse={mainCourse}></CourseDescription>
             </div>
             <div id='link2' className={openTab === 2 ? 'block' : 'hidden'}>
               <Videos></Videos>
@@ -92,8 +92,8 @@ const CourseVidoes = ({ mainCourse }) => {
           </div>
           <div className='w-full md:mb-10 md:max-w-[400px] mx-md:order-1 -mt-0 lg:-mt-[240px] z-20'>
             <PricePart mainCourse={mainCourse}></PricePart>
-            <Material></Material>
-            <TagLine></TagLine>
+            <Material mainCourse={mainCourse}></Material>
+            <TagLine mainCourse={mainCourse}></TagLine>
           </div>
         </div>
       </div>

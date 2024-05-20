@@ -27,8 +27,6 @@ const LevelTwo = () => {
 
   const oflineCourses = data.data;
 
-  console.log(oflineCourses);
-
   function formatNumberToBangla(number) {
     const banglaDigits = {
       0: '০',
@@ -184,7 +182,7 @@ const LevelTwo = () => {
                             </div>
                           </div>
                           <div>
-                            <Link to='/courseDetails'>
+                            <Link to={`/course/${course?.id}`}>
                               <button className='custom-button font-semibold px-[17px] py-[5px] text-white rounded-md flex items-center gap-1'>
                                 বিস্তারিত{' '}
                                 <svg

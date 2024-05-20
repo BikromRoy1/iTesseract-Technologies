@@ -6,14 +6,8 @@ import VideosModal from '../VideosModal/VideosModal';
 import './PricePart.css';
 
 const PricePart = ({ mainCourse }) => {
-  const {
-    promotional_video,
-    price,
-    discount_price,
-    discount,
-    offer_date,
-    course_skill,
-  } = mainCourse.course;
+  const { promotional_video, price, discount_price, discount, offer_date } =
+    mainCourse.course;
 
   // Your YouTube embed URL
   const url = promotional_video;
@@ -66,8 +60,6 @@ const PricePart = ({ mainCourse }) => {
 
   // Convert the difference from milliseconds to days
   const daysUntilOffer = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-
-  console.log(course_skill);
 
   return (
     <div className='price-card mb-[1.6rem]'>
