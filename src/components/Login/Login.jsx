@@ -21,7 +21,7 @@ const Login = () => {
     });
     console.log(userLogin, userPassword);
 
-    navigate('/');
+    // navigate('/');
   };
 
   return (
@@ -75,7 +75,7 @@ const Login = () => {
             </div>
 
             <span className='w-5/6 px-1 md:px-4 py-3 font-bold text-center'>
-              মোবাইল নাম্বার/ ইমেইল দিয়ে লগইন করুন
+              ইমেইল দিয়ে লগইন করুন
             </span>
           </a>
 
@@ -100,7 +100,7 @@ const Login = () => {
                 Email Address
               </label>
               <input
-                placeholder='মোবাইল নাম্বার/ ইমেইল '
+                placeholder='ইমেইল '
                 id='LoggingEmailAddress'
                 name='loginEmail'
                 className='block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300'

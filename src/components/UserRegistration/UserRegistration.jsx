@@ -1,11 +1,16 @@
+import axios from 'axios';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import roundedLogo from '../../Images/Round-logo.png';
 import mainLogo from '../../Images/main-logo.svg';
 import './UserRegistration.css';
 
 const UserRegistration = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [isSubmitting, setSubmitting] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -15,11 +20,38 @@ const UserRegistration = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    form.reset();
+    if (name === '' || number === '' || email === '' || password === '') {
+      toast.warning('Please fill in all fields !', {
+        autoClose: 2000,
+      });
+    }
 
-    console.log(
-      `user Name: ${name},  student Number: ${number}, Email Address: ${email}, Student Password: ${password}`
-    );
+    setSubmitting(true);
+
+    try {
+      const result = await axios.post(
+        `http://10.17.20.218/itesseract/public/api/v1/register?name=${name}&email=${email}&phone=${number}&password=${password}`
+      );
+      toast.success('Successfully Created a User!', {
+        autoClose: 2000,
+      });
+      navigate('/login');
+      form.reset();
+    } catch (error) {
+      // Check if there's a specific error message from the response
+      if (
+        error.response &&
+        error.response.data &&
+        error.response.data.message
+      ) {
+        toast.error(`Details: ${error.response.data.message}`);
+      } else {
+        // If no specific error message, show the generic error message
+        toast.error(`Error: ${error.message}`);
+      }
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -136,7 +168,7 @@ const UserRegistration = () => {
                   >
                     {!showPassword ? (
                       <svg
-                        className='w-5 h-5'
+                        className='w-5 h-5 text-[#4caf50]'
                         fill='none'
                         stroke='currentColor'
                         viewBox='0 0 24 24'
@@ -151,7 +183,7 @@ const UserRegistration = () => {
                       </svg>
                     ) : (
                       <svg
-                        className='w-5 h-5'
+                        className='w-5 h-5 text-[#4caf50]'
                         fill='none'
                         stroke='currentColor'
                         viewBox='0 0 24 24'
