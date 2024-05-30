@@ -44,7 +44,7 @@ const UserRegistration = () => {
         error.response.data &&
         error.response.data.message
       ) {
-        toast.error(`Details: ${error.response.data.message}`);
+        toast.warning(`The email has already been taken.`);
       } else {
         // If no specific error message, show the generic error message
         toast.error(`Error: ${error.message}`);

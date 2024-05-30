@@ -3,8 +3,8 @@ import school from '../../../../Images/icons/uni-01.png';
 import university from '../../../../Images/icons/uni-02.png';
 import collage from '../../../../Images/icons/uni-03.png';
 
-import './Banner.css';
 import axios from 'axios';
+import './Banner.css';
 
 const NewBanner = () => {
   const [data, setData] = useState([]);
@@ -16,7 +16,6 @@ const NewBanner = () => {
           'http://10.17.20.218/itesseract/public/api/v1/slider'
         );
         setData(response.data);
-        
       } catch (error) {
         console.error('Error fetching data:', error);
       }
