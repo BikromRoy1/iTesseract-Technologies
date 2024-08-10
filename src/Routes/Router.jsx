@@ -99,7 +99,7 @@ const router = createBrowserRouter([
         element: <CourseDetails></CourseDetails>,
         loader: ({ params }) =>
           fetch(
-            `http://10.17.20.218/itesseract/public/api/v1/course/${params?.id}`
+            `https://apps.piit.us/new/itesseract/api/v1/course/${params?.id}`
           ),
       },
       {

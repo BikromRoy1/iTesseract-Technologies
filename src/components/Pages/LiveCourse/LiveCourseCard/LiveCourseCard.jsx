@@ -8,15 +8,15 @@ import { Link } from 'react-router-dom';
 import '../../Home/Kits/Kits.css';
 
 const UniSkills = () => {
+  const courseUrl = 'https://apps.piit.us/new/itesseract';
+
   const [openTab, setOpenTab] = useState(0);
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          'http://10.17.20.218/itesseract/public/api/v1/online-courses'
-        );
+        const response = await axios.get(`${courseUrl}/api/v1/online-courses`);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -26,8 +26,6 @@ const UniSkills = () => {
   }, []);
 
   const onlineCourses = data.data;
-
-  console.log(onlineCourses);
 
   function formatNumberToBangla(number) {
     const banglaDigits = {
@@ -107,7 +105,7 @@ const UniSkills = () => {
                   <div className='course-card'>
                     <div className='course-card-img'>
                       <img
-                        src={`http://10.17.20.218/itesseract/public/${course?.image}`}
+                        src={`${courseUrl}/${course?.image}`}
                         loading='lazy'
                         alt='university'
                       />
@@ -160,7 +158,7 @@ const UniSkills = () => {
                       <div className='flex items-center justify-between'>
                         <div className='flex items-center gap-2'>
                           <img
-                            src={`http://10.17.20.218/itesseract/public/${course?.trainer?.image}`}
+                            src={`${courseUrl}/${course?.trainer?.image}`}
                             className='rounded-full w-10 h-10'
                             loading='lazy'
                             alt={course?.trainer?.name}

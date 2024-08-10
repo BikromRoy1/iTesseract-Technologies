@@ -138,7 +138,7 @@ const Header = () => {
               যোগাযোগ
             </Link>
           </li>
-          {userEmail === "bikromroy2001@gmail.com" ? (
+          {/* {userEmail === "bikromroy2001@gmail.com" ? (
             <li>
               <div className="dropdown dropdown-end">
                 <div
@@ -195,7 +195,7 @@ const Header = () => {
             >
               লগ-ইন
             </Link>
-          )}
+          )} */}
         </ul>
         <div className="lg:hidden">
           <button

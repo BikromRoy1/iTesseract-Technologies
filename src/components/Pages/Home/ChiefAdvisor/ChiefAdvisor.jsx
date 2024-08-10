@@ -1,5 +1,5 @@
 import React from 'react';
-import sazzad_sir3 from '../../../../Images/sazzad-sir.png';
+import sazzad_sir3 from '../../../../Images/hamid.png';
 import './ChiefAdvisor.css';
 
 const ChiefAdvisor = () => {
@@ -27,7 +27,8 @@ const ChiefAdvisor = () => {
               <cite className='mt-8 inline-flex items-center not-italic'>
                 <span className='hidden h-px w-6 bg-gray-400 sm:inline-block'></span>
                 <p className='text-sm uppercase title-gradient sm:ml-3'>
-                  <strong>Sazzad Hossain, Ph.D</strong>, Chief Advisor.
+                  <strong>Mohammad Abdul Hamid</strong>, Chief Executive
+                  Officer.
                 </p>
               </cite>
             </blockquote>

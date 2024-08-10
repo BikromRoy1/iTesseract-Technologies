@@ -9,14 +9,14 @@ import Services from '../Services/Services';
 import './Kits.css';
 
 const Kits = () => {
+  const courseUrl = 'https://apps.piit.us/new/itesseract';
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          'http://10.17.20.218/itesseract/public/api/v1/courses'
-        );
+        const response = await axios.get(`${courseUrl}/api/v1/courses`);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -67,12 +67,12 @@ const Kits = () => {
         </div>
 
         <div className='grid grid-cols-1 gap-8  xl:gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3'>
-          {courses?.map((item) => (
+          {courses?.slice(0, 3)?.map((item) => (
             <div key={item.id} className='single-card'>
               <div className='course-card'>
                 <div className='course-card-img'>
                   <img
-                    src={`http://10.17.20.218/itesseract/public/${item?.image}`}
+                    src={`${courseUrl}/${item?.image}`}
                     loading='lazy'
                     alt={item?.course_name}
                   />
@@ -125,7 +125,7 @@ const Kits = () => {
                   <div className='flex items-center justify-between'>
                     <div className='flex items-center gap-2'>
                       <img
-                        src={`http://10.17.20.218/itesseract/public/${item?.trainer?.image}`}
+                        src={`${courseUrl}/${item?.trainer?.image}`}
                         className='rounded-full w-10 h-10'
                         loading='lazy'
                         alt={item?.trainer?.name}

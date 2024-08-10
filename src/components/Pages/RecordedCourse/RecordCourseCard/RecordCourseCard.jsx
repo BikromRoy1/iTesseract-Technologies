@@ -8,15 +8,15 @@ import levelTwo from '../../../../Images/icons/draft-line.svg';
 import './RecordCourseCard.css';
 
 const LevelTwo = () => {
+  const courseUrl = 'https://apps.piit.us/new/itesseract';
+
   const [openTab, setOpenTab] = useState(0);
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          'http://10.17.20.218/itesseract/public/api/v1/offline-courses'
-        );
+        const response = await axios.get(`${courseUrl}/api/v1/offline-courses`);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -105,7 +105,7 @@ const LevelTwo = () => {
                         <img
                           className='h-full w-full object-cover level-image'
                           loading='lazy'
-                          src={`http://10.17.20.218/itesseract/public/${course?.image}`}
+                          src={`${courseUrl}/${course?.image}`}
                           alt=''
                         />
                         <div className='thumbnail-content absolute left-3 top-3 z-10'>
@@ -170,7 +170,7 @@ const LevelTwo = () => {
                         <div className='flex items-center justify-between'>
                           <div className='flex items-center gap-2'>
                             <img
-                              src={`http://10.17.20.218/itesseract/public/${course?.trainer?.image}`}
+                              src={`${courseUrl}/${course?.trainer?.image}`}
                               className='rounded-full w-10 h-10'
                               loading='lazy'
                               alt={course?.trainer?.name}

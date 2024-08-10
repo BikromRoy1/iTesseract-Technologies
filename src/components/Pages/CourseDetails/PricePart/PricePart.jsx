@@ -106,12 +106,12 @@ const PricePart = ({ mainCourse }) => {
           </div>
         </div>
         <div className='mt-4'>
-          <Link to='/login'>
+          <Link to='/registration'>
             <button className='btn-buy mb-0 rounded-md bg-[#1CAB55] p-3 whitespace-nowrap text-base font-semibold text-white md:w-full  '>
               কোর্সটি কিনুন
             </button>
           </Link>
-          <Link to='/UserRegistration'>
+          <Link to='/registration'>
             <button className='btn-buy mb-0 mt-2 rounded-md bg-[#FFBB2C] p-3 whitespace-nowrap text-base font-semibold text-[#124265] md:w-full  '>
               কোর্সের জন্য রেজিস্ট্রেশন করুন
             </button>

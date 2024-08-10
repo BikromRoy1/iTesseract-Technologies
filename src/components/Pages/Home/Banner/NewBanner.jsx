@@ -7,15 +7,16 @@ import axios from 'axios';
 import './Banner.css';
 
 const NewBanner = () => {
+  const apiUrl = 'https://apps.piit.us/new/itesseract/';
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          'http://10.17.20.218/itesseract/public/api/v1/slider'
-        );
+        const response = await axios.get(`${apiUrl}api/v1/slider`);
         setData(response.data);
+        console.log(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -30,7 +31,7 @@ const NewBanner = () => {
       id='hero'
       className='flex items-center justify-center'
       style={{
-        backgroundImage: `url('http://10.17.20.218/itesseract/public/${bannerImage?.image}')`,
+        backgroundImage: `url('${apiUrl}${bannerImage?.image}')`,
       }}
     >
       <div className='container mx-auto px-6 container-width'>
