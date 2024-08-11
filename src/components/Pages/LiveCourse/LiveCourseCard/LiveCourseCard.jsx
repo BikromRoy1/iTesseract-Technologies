@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import '../../Home/Kits/Kits.css';
 
 const UniSkills = () => {
-  const courseUrl = 'https://apps.piit.us/new/itesseract';
+  const courseUrl = 'https://itesseract.com.bd/main';
 
   const [openTab, setOpenTab] = useState(0);
   const [data, setData] = useState([]);

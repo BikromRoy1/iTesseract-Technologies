@@ -9,7 +9,7 @@ import Services from '../Services/Services';
 import './Kits.css';
 
 const Kits = () => {
-  const courseUrl = 'https://apps.piit.us/new/itesseract';
+  const courseUrl = 'https://itesseract.com.bd/main';
 
   const [data, setData] = useState([]);
 

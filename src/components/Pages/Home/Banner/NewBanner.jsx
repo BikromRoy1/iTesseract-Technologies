@@ -7,7 +7,7 @@ import axios from 'axios';
 import './Banner.css';
 
 const NewBanner = () => {
-  const apiUrl = 'https://apps.piit.us/new/itesseract/';
+  const apiUrl = 'https://itesseract.com.bd/main/';
 
   const [data, setData] = useState([]);
 
