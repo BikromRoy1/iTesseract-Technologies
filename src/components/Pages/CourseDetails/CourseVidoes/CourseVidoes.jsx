@@ -33,7 +33,7 @@ const CourseVidoes = ({ mainCourse }) => {
                   কোর্সের ওভারভিউ
                 </button>
               </a>
-              {/* <a
+              <a
                 onClick={(e) => {
                   e.preventDefault();
                   setOpenTab(2);
@@ -51,7 +51,7 @@ const CourseVidoes = ({ mainCourse }) => {
                 >
                   কোর্সের পাঠ্যক্রম
                 </button>
-              </a> */}
+              </a>
               {/* <a
                 onClick={(e) => {
                   e.preventDefault();
@@ -76,9 +76,9 @@ const CourseVidoes = ({ mainCourse }) => {
             <div id='link1' className={openTab === 1 ? 'block' : 'hidden'}>
               <CourseDescription mainCourse={mainCourse}></CourseDescription>
             </div>
-            {/* <div id='link2' className={openTab === 2 ? 'block' : 'hidden'}>
-              <Videos></Videos>
-            </div> */}
+            <div id='link2' className={openTab === 2 ? 'block' : 'hidden'}>
+              <Videos mainCourse={mainCourse}></Videos>
+            </div>
             {/* <div id='link3' className={openTab === 3 ? 'block' : 'hidden'}>
               <p className='text-[16px] leading-[26px] text-gray-500 pb-4'>
                 হায়ার স্টাডি কিংবা ক্যারিয়ারের সাফল্যের জন্য ম্যাথ শেখাটা যতটা
