@@ -14,9 +14,9 @@ const PricePart = ({ mainCourse }) => {
 
   // Extract the part after 'embed/' and before the question mark
   const extractVideoId = (embedUrl) => {
-    const embedPart = embedUrl.split('embed/')[1];
+    const embedPart = embedUrl?.split('embed/')[1];
     if (embedPart) {
-      return embedPart.split('?')[0];
+      return embedPart?.split('?')[0];
     }
     return null;
   };
@@ -39,8 +39,8 @@ const PricePart = ({ mainCourse }) => {
 
     // Convert number to string and replace digits with Bangla digits
     const banglaNumber = number
-      .toString()
-      .replace(/\d/g, (digit) => banglaDigits[digit]);
+      ?.toString()
+      ?.replace(/\d/g, (digit) => banglaDigits[digit]);
 
     // Add commas for formatting
     return banglaNumber.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -87,11 +87,18 @@ const PricePart = ({ mainCourse }) => {
         <div>
           <div className='flex items-center'>
             <h3 className='mb-0 main-price font-bold'>
-              ৳ {formatNumberToBangla(price?.toLocaleString('en-US'))}
+              ৳{' '}
+              {formatNumberToBangla(
+                price ? price?.toLocaleString('en-US') : '0'
+              )}
             </h3>
+
             <span className='second-price text-gray-500'>
               <del>
-                ৳{formatNumberToBangla(discount_price?.toLocaleString('en-US'))}
+                ৳
+                {formatNumberToBangla(
+                  discount_price ? discount_price?.toLocaleString('en-US') : '0'
+                )}
               </del>
             </span>
             <span className='badge bg-[#FD7E14] border-none mb-0 font-semibold'>

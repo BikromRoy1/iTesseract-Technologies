@@ -120,7 +120,9 @@ const LevelTwo = () => {
                             <h3 className='current-price primary-color font-bold text-[22px] tracking-[0.20000000298023224px]'>
                               ৳{' '}
                               {formatNumberToBangla(
-                                course?.price?.toLocaleString('en-US')
+                                course?.price
+                                  ? course?.price.toLocaleString('en-US')
+                                  : '0'
                               )}
                             </h3>
                           </div>

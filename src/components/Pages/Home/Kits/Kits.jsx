@@ -88,7 +88,7 @@ const Kits = () => {
                       <h3 className='current-price primary-color font-bold text-[22px] tracking-[0.20000000298023224px]'>
                         ৳{' '}
                         {formatNumberToBangla(
-                          item?.price?.toLocaleString('en-US')
+                          item?.price ? item.price.toLocaleString('en-US') : '0'
                         )}
                       </h3>
                     </div>
