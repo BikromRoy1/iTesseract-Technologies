@@ -1,13 +1,15 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import blogDetai from '../../../../Images/blogDetails.jpg';
 import teamAuthor from '../../../../Images/team/abdulhamid.png';
 import Breadcrumb from '../../../Breadcrumb/Breadcrumb';
-import axios from 'axios';
 
 const BlogDetails = () => {
   const post = useLoaderData();
-  const singlePost = post.data;
+  const singlePost = post.data.blog;
+
+  console.log(singlePost);
 
   const createdAt = singlePost?.created_at;
   const date = new Date(createdAt);
@@ -37,7 +39,7 @@ const BlogDetails = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://itesseract.com.bd/master/api/v1/blogs'
+          'https://itesseract.com.bd/main/api/v1/blogs'
         );
         setBlogData(response.data);
       } catch (error) {
@@ -69,7 +71,7 @@ const BlogDetails = () => {
               >
                 <img
                   loading='lazy'
-                  src={`https://itesseract.com.bd/master/` + singlePost?.image}
+                  src={`https://itesseract.com.bd/main/` + singlePost?.image}
                   alt='banner'
                   className='h-full w-full object-cover object-center'
                 />
@@ -696,7 +698,7 @@ const BlogDetails = () => {
                                 <img
                                   loading='lazy'
                                   src={
-                                    `https://itesseract.com.bd/master/` +
+                                    `https://itesseract.com.bd/main/` +
                                     item?.image
                                   }
                                   alt='Top easy IDEs'

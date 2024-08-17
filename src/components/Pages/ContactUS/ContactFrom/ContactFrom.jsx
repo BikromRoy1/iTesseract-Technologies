@@ -17,7 +17,7 @@ const ContactFrom = ({ title, subTitle }) => {
 
     try {
       const response = await axios.post(
-        `https://itesseract.com.bd/master/api/v1/message/store?name=${userName}&phone=${phone}&email=${email}&subject=${subject}&details=${message}`
+        `https://itesseract.com.bd/main/api/v1/message/store?name=${userName}&phone=${phone}&email=${email}&subject=${subject}&details=${message}`
       );
       toast.success('যোগাযোগ করা জন্য ধন্যবাদ !', {
         autoClose: 2000,

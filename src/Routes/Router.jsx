@@ -80,7 +80,7 @@ const router = createBrowserRouter([
         path: '/blog/:id',
         element: <BlogDetails></BlogDetails>,
         loader: ({ params }) =>
-          fetch(`https://itesseract.com.bd/master/api/v1/blog/${params.id}`),
+          fetch(`https://itesseract.com.bd/main/api/v1/blog/${params.id}`),
       },
       {
         path: '/registration',

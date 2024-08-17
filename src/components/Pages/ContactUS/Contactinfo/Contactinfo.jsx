@@ -11,7 +11,7 @@ const Contactinfo = ({ title, details, subTitle }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://itesseract.com.bd/master/api/v1/contact-info'
+          'https://itesseract.com.bd/main/api/v1/contact-info'
         );
         setContact(response.data);
       } catch (error) {

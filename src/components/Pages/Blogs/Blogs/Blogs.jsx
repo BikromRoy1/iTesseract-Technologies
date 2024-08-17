@@ -11,7 +11,7 @@ const Blogs = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://itesseract.com.bd/master/api/v1/blogs'
+          'https://itesseract.com.bd/main/api/v1/blogs'
         );
         setBlogData(response.data);
       } catch (error) {

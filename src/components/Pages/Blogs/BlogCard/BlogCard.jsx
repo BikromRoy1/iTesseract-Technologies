@@ -35,7 +35,7 @@ const BlogCard = ({ blog }) => {
             <img
               className='object-cover'
               loading='lazy'
-              src={`https://itesseract.com.bd/master/` + image}
+              src={`https://itesseract.com.bd/main/` + image}
               alt={title}
             />
           </Link>
