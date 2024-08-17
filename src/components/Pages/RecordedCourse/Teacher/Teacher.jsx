@@ -9,7 +9,7 @@ const SchoolTeacher = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          ' https://itesseract.com.bd/master/api/v1/trainers'
+          ' https://itesseract.com.bd/main/api/v1/trainers'
         );
         setData(response.data);
       } catch (error) {
@@ -46,7 +46,7 @@ const SchoolTeacher = () => {
                 <img
                   className='object-cover w-full h-72'
                   loading='lazy'
-                  src={`https://itesseract.com.bd/master/` + item?.image}
+                  src={`https://itesseract.com.bd/main/` + item?.image}
                   alt={item?.name}
                 />
 

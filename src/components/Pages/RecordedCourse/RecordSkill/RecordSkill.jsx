@@ -9,7 +9,7 @@ const SkillTwo = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://itesseract.com.bd/master/api/v1/school-courses'
+          'https://itesseract.com.bd/main/api/v1/features'
         );
         setData(response.data);
       } catch (error) {
@@ -43,7 +43,7 @@ const SkillTwo = () => {
                 <img
                   width='80'
                   height='80'
-                  src={`https://itesseract.com.bd/master/` + skill?.image}
+                  src={`https://itesseract.com.bd/main/` + skill?.image}
                   loading='lazy'
                   alt={skill?.title}
                 />
