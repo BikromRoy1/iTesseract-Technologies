@@ -1,6 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import faq from '../../../Images/faq.png';
 
@@ -11,7 +10,7 @@ const Questions = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://itesseract.com.bd/master/api/v1/faq'
+          'https://itesseract.com.bd/main/api/v1/faq'
         );
         setFaqs(response.data);
       } catch (error) {

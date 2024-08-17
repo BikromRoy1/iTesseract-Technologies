@@ -9,7 +9,7 @@ const ProductList = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://itesseract.com.bd/master/api/v1/products'
+          'https://itesseract.com.bd/main/api/v1/products'
         );
         setData(response.data);
       } catch (error) {
@@ -43,7 +43,7 @@ const ProductList = () => {
             <div className='text-indigo-500 flex flex-col justify-between'>
               <img
                 className='lg:w-[800px] lg:h-[250px]'
-                src={`https://itesseract.com.bd/master/` + product?.image}
+                src={`https://itesseract.com.bd/main/` + product?.image}
                 alt=''
               />
             </div>

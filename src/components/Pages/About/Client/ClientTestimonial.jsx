@@ -10,11 +10,13 @@ import axios from 'axios';
 const ClientTestimonial = () => {
   const [data, setData] = useState([]);
 
+  const url = 'https://itesseract.com.bd/main';
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://itesseract.com.bd/master/api/v1/parent-testimonials'
+          `${url}/api/v1/parent-testimonials`
         );
         setData(response.data);
       } catch (error) {
@@ -76,7 +78,7 @@ const ClientTestimonial = () => {
                     </p>
                     <img
                       loading='lazy'
-                      src={`https://itesseract.com.bd/master/` + item?.image}
+                      src={`${url}/` + item?.image}
                       className='client-img'
                       alt={item?.name}
                     />

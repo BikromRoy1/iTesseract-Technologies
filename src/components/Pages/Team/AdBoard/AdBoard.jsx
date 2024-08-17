@@ -10,7 +10,7 @@ const AdBoard = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://itesseract.com.bd/master/api/v1/adviser-team'
+          'https://itesseract.com.bd/main/api/v1/adviser-team'
         );
         setData(response.data);
         setLoading(false);
@@ -44,7 +44,7 @@ const AdBoard = () => {
               <div className='group mb-8 rounded-xl bg-white px-5 pb-10 pt-12 shadow-testimonial dark:bg-dark dark:shadow-none'>
                 <div className='relative z-10 mx-auto mb-5 h-[130px] w-[130px]'>
                   <img
-                    src={`https://itesseract.com.bd/master/` + team?.image}
+                    src={`https://itesseract.com.bd/main/` + team?.image}
                     alt={team?.name}
                     loading='lazy'
                     className='h-[130px] w-[130px] rounded-full'

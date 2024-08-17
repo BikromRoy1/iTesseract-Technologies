@@ -24,7 +24,7 @@ const ProductDetails = () => {
           <div className='text-indigo-500 flex flex-col justify-between'>
             <img
               className=''
-              src={`https://itesseract.com.bd/master/` + singleProduct?.image}
+              src={`https://itesseract.com.bd/main/` + singleProduct?.image}
               alt={singleProduct?.name}
             />
           </div>

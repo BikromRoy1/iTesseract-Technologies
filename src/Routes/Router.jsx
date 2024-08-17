@@ -60,7 +60,7 @@ const router = createBrowserRouter([
         path: '/product/:id',
         element: <ProductDetails></ProductDetails>,
         loader: ({ params }) =>
-          fetch(`https://itesseract.com.bd/master/api/v1/product/${params.id}`),
+          fetch(`https://itesseract.com.bd/main/api/v1/product/${params.id}`),
       },
       {
         path: '/recorded',
