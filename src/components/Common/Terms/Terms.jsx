@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import Breadcrumb from '../../Breadcrumb/Breadcrumb';
-import terms from '../../../Images/Terms.jpg';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import terms from '../../../Images/Terms.jpg';
+import Breadcrumb from '../../Breadcrumb/Breadcrumb';
 
 const Terms = () => {
   const [data, setData] = useState([]);
@@ -10,7 +10,7 @@ const Terms = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://itesseract.com.bd/master/api/v1/terms-info'
+          'https://itesseract.com.bd/main/api/v1/terms-info'
         );
         setData(response.data);
       } catch (error) {

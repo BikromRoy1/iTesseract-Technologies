@@ -1,13 +1,11 @@
-import React from 'react';
-import './Footer.css';
-import call from '../../../Images/icons/customer-service.png';
-import timeTabel from '../../../Images/icons/timetable.png';
-import email from '../../../Images/icons/email.png';
-import { Link } from 'react-router-dom';
-import logo from '../../../Images/main-logo.svg';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import call from '../../../Images/icons/customer-service.png';
+import email from '../../../Images/icons/email.png';
+import timeTabel from '../../../Images/icons/timetable.png';
+import logo from '../../../Images/main-logo.svg';
+import './Footer.css';
 
 const Footers = () => {
   const [contact, setContact] = useState([]);
@@ -16,7 +14,7 @@ const Footers = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://itesseract.com.bd/master/api/v1/contact-info'
+          'https://itesseract.com.bd/main/api/v1/contact-info'
         );
         setContact(response.data);
       } catch (error) {
@@ -25,6 +23,11 @@ const Footers = () => {
     };
     fetchData();
   }, []);
+
+  // Get the Current Year
+  function getCurrentYear() {
+    return new Date().getFullYear();
+  }
 
   return (
     <section>
@@ -136,7 +139,8 @@ const Footers = () => {
       </footer>
       <div className='flex items-center justify-center py-4 text-sm theme-primary-color-bg'>
         <span className='text-white font-medium text-lg'>
-          কপিরাইট ©2023 আইটেসারেক্ট টেকনোলিজস। সর্বস্বত্ব সংরক্ষিত।
+          কপিরাইট © {getCurrentYear()} আইটেসারেক্ট টেকনোলিজস। সর্বস্বত্ব
+          সংরক্ষিত।
         </span>
       </div>
     </section>

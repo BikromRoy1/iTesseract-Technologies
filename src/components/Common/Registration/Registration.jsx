@@ -13,7 +13,7 @@ const Registration = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://itesseract.com.bd/master/api/v1/courses'
+          'https://itesseract.com.bd/main/api/v1/courses'
         );
         setData(response.data);
       } catch (error) {
@@ -24,6 +24,8 @@ const Registration = () => {
   }, []);
 
   const courses = data.data;
+
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -36,7 +38,7 @@ const Registration = () => {
 
     try {
       const response = await axios.post(
-        `https://itesseract.com.bd/master/api/v1/enroll/store?name=${studentName}&phone=${studentPhone}&email=${studentEmail}&address=${studentAddress}&course_id=${courseName}&level=`
+        `https://itesseract.com.bd/main/api/v1/enroll/store?name=${studentName}&phone=${studentPhone}&email=${studentEmail}&address=${studentAddress}&course_id=${courseName}&level=`
       );
       toast.success(' ভর্তির  আবেদন জন্য ধন্যবাদ !', {
         autoClose: 2000,
@@ -134,7 +136,7 @@ const Registration = () => {
                       >
                         {courses?.map((course) => (
                           <option key={course?.id} value={course?.id}>
-                            {`${course?.title}`}
+                            {`${course?.course_name}`}
                           </option>
                         ))}
                       </select>
@@ -158,7 +160,6 @@ const Registration = () => {
                           className='w-full px-8 py-3 font-semibold rounded-md custom-button text-white'
                         >
                           সাবমিট শিক্ষার্থীর ইনফরমেশন{' '}
-                         
                         </button>
                       </div>
                     </div>

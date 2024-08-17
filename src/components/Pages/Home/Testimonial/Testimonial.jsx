@@ -17,11 +17,13 @@ import { Autoplay, Pagination } from 'swiper';
 const Testimonial = () => {
   const [data, setData] = useState([]);
 
+  const testimonialUrl = 'https://itesseract.com.bd/main';
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://itesseract.com.bd/master/api/v1/testimonials'
+          `${testimonialUrl}/api/v1/testimonials`
         );
         setData(response.data);
       } catch (error) {
@@ -88,7 +90,7 @@ const Testimonial = () => {
                   </p>
                   <img
                     loading='lazy'
-                    src={`https://itesseract.com.bd/master/` + item?.image}
+                    src={`${testimonialUrl}/` + item?.image}
                     className='testimonial-img'
                     alt={item?.name}
                   />

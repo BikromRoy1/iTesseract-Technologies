@@ -1,34 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import Breadcrumb from '../../Breadcrumb/Breadcrumb';
-import terms from '../../../Images/Robot.jpg';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import terms from '../../../Images/Robot.jpg';
+import Breadcrumb from '../../Breadcrumb/Breadcrumb';
 
 const Policy = () => {
-    const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
 
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const response = await axios.get(
-            'https://itesseract.com.bd/master/api/v1/privacy-info'
-          );
-          setData(response.data);
-        } catch (error) {
-          console.error('Error fetching data:', error);
-        }
-      };
-      fetchData();
-    }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://itesseract.com.bd/main/api/v1/privacy-info'
+        );
+        setData(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
 
-    const policy = data?.data?.privacy_policy;
+  const policy = data?.data?.privacy_policy;
 
-    function removeHTMLTags(htmlString) {
-      const parser = new DOMParser();
-      const parsedDocument = parser.parseFromString(htmlString, 'text/html');
-      return parsedDocument.body.textContent || '';
-    }
+  function removeHTMLTags(htmlString) {
+    const parser = new DOMParser();
+    const parsedDocument = parser.parseFromString(htmlString, 'text/html');
+    return parsedDocument.body.textContent || '';
+  }
 
-    const plainText = removeHTMLTags(policy);
+  const plainText = removeHTMLTags(policy);
   return (
     <section>
       <Breadcrumb

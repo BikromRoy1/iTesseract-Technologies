@@ -5,12 +5,13 @@ import './Partner.css';
 const Partner = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const url = 'https://itesseract.com.bd/main';
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          'https://itesseract.com.bd/master/api/v1/partners'
-        );
+        const response = await axios.get(`${url}/api/v1/partners`);
         setData(response.data);
         setLoading(false);
       } catch (error) {
@@ -52,7 +53,7 @@ const Partner = () => {
                       loading='lazy'
                       title={item?.title}
                       className='mx-10 my-3 md:mx-12 lg:m-0 partner-logo'
-                      src={`https://itesseract.com.bd/master/` + item?.image}
+                      src={`${url}/` + item?.image}
                       alt={item?.title}
                     />
                   </a>

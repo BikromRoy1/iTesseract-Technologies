@@ -13,7 +13,7 @@ const ItesseractAbout = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'https://itesseract.com.bd/master/api/v1/counters'
+          'https://itesseract.com.bd/main/api/v1/counters'
         );
         setData(response.data);
       } catch (error) {
@@ -27,7 +27,7 @@ const ItesseractAbout = () => {
 
   // Ensure data is available and values are valid numbers
   const studentNumber = parseInt(data?.data?.student) || 0;
-  const appUsers = parseInt(data?.data?.user) || 0;
+  const success = parseInt(data?.data?.success) || 0;
   const materials = parseInt(data?.data?.materials) || 0;
   const learning = parseInt(data?.data?.learning_content) || 0;
 
@@ -111,7 +111,7 @@ const ItesseractAbout = () => {
               <h2 className='mt-2 font-bold leading-[26px] text-[30px] text-[#ee4a62]'>
                 <CountUp
                   start={startValue}
-                  end={appUsers}
+                  end={success}
                   duration={2.75}
                   enableScrollSpy={true}
                 />{' '}
