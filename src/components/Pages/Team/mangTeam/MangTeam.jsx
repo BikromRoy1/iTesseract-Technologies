@@ -2,15 +2,15 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './MangTeam.css';
 
+import { apiUrl } from '../../../../config/config';
+
 const MangTeam = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          'https://itesseract.com.bd/master/api/v1/management-team'
-        );
+        const response = await axios.get(`${apiUrl}/api/v1/management-team`);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -41,7 +41,7 @@ const MangTeam = () => {
               <div className='group mb-8 rounded-xl bg-white px-5 pb-10 pt-12 shadow-testimonial dark:bg-dark dark:shadow-none'>
                 <div className='relative z-10 mx-auto mb-5 h-[130px] w-[130px]'>
                   <img
-                    src={`https://itesseract.com.bd/master/` + team?.image}
+                    src={`${apiUrl}/` + team?.image}
                     alt={team?.name}
                     loading='lazy'
                     className='h-[130px] w-[130px] rounded-full'

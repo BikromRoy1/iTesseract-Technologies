@@ -4,8 +4,9 @@ import CourseVidoes from './CourseVidoes/CourseVidoes';
 import DetailsBanner from './DetailsBanner/DetailsBanner';
 
 const CourseDetails = () => {
-  const course = useLoaderData();
-  const singleCourse = course.data;
+  const courseData = useLoaderData();
+
+  const singleCourse = courseData?.data;
 
   return (
     <div>

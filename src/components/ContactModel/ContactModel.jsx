@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
+import { apiUrl } from '../../config/config';
+
 const ContactModel = () => {
   // const [contact, setContact] = useState([]);
 
@@ -9,7 +11,7 @@ const ContactModel = () => {
   //   const fetchData = async () => {
   //     try {
   //       const response = await axios.get(
-  //         'https://itesseract.com.bd/master/api/v1/contact-info'
+  //         `${apiUrl}/api/v1/contact-info`
   //       );
   //       setContact(response.data);
   //     } catch (error) {
@@ -24,9 +26,7 @@ const ContactModel = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          'https://itesseract.com.bd/main/api/v1/courses'
-        );
+        const response = await axios.get(`${apiUrl}/api/v1/courses`);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -48,7 +48,7 @@ const ContactModel = () => {
 
     try {
       const response = await axios.post(
-        `https://itesseract.com.bd/main/api/v1/enroll/store?name=${studentName}&phone=${studentPhone}&email=${studentEmail}&address=${studentAddress}&course_id=${courseName}&level=`
+        `${apiUrl}/api/v1/enroll/store?name=${studentName}&phone=${studentPhone}&email=${studentEmail}&address=${studentAddress}&course_id=${courseName}&level=`
       );
       toast.success(' ভর্তির  আবেদন জন্য ধন্যবাদ !', {
         autoClose: 2000,

@@ -3,15 +3,15 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import faq from '../../../Images/faq.png';
 
+import { apiUrl } from '../../../config/config';
+
 const Questions = () => {
   const [faqs, setFaqs] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          'https://itesseract.com.bd/main/api/v1/faq'
-        );
+        const response = await axios.get(`${apiUrl}/api/v1/faq`);
         setFaqs(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

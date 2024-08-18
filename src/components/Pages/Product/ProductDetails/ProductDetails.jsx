@@ -4,6 +4,8 @@ import ProductBanner from '../../../../Images/prouct-page.jpg';
 import Breadcrumb from '../../../Breadcrumb/Breadcrumb';
 import ContactFrom from '../../ContactUS/ContactFrom/ContactFrom';
 
+import { apiUrl } from '../../../../config/config';
+
 const ProductDetails = () => {
   const product = useLoaderData();
   const singleProduct = product.data;
@@ -24,7 +26,7 @@ const ProductDetails = () => {
           <div className='text-indigo-500 flex flex-col justify-between'>
             <img
               className=''
-              src={`https://itesseract.com.bd/main/` + singleProduct?.image}
+              src={`${apiUrl}/` + singleProduct?.image}
               alt={singleProduct?.name}
             />
           </div>

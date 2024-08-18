@@ -4,6 +4,7 @@ import { FaGlobe, FaSignal, FaUserGraduate } from 'react-icons/fa';
 import './DetailsBanner.css';
 
 const DetailsBanner = ({ HeaderCourse }) => {
+
   const {
     course_name,
     course_message,

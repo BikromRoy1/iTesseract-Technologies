@@ -2,15 +2,15 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { apiUrl } from '../../../../config/config';
+
 const ProductList = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          'https://itesseract.com.bd/main/api/v1/products'
-        );
+        const response = await axios.get(`${apiUrl}/api/v1/products`);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -43,7 +43,7 @@ const ProductList = () => {
             <div className='text-indigo-500 flex flex-col justify-between'>
               <img
                 className='lg:w-[800px] lg:h-[250px]'
-                src={`https://itesseract.com.bd/main/` + product?.image}
+                src={`${apiUrl}/` + product?.image}
                 alt=''
               />
             </div>

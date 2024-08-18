@@ -4,15 +4,15 @@ import { BiEnvelope, BiMapAlt } from 'react-icons/bi';
 import { FaPhoneAlt } from 'react-icons/fa';
 import './Contactinfo.css';
 
+import { apiUrl } from '../../../../config/config';
+
 const Contactinfo = ({ title, details, subTitle }) => {
   const [contact, setContact] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          'https://itesseract.com.bd/main/api/v1/contact-info'
-        );
+        const response = await axios.get(`${apiUrl}/api/v1/contact-info`);
         setContact(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

@@ -4,15 +4,15 @@ import blogsBanner from '../../../../Images/blogs.jpg';
 import Breadcrumb from '../../../Breadcrumb/Breadcrumb';
 import BlogCard from '../BlogCard/BlogCard';
 
+import { apiUrl } from '../../../../config/config';
+
 const Blogs = () => {
   const [blogData, setBlogData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          'https://itesseract.com.bd/main/api/v1/blogs'
-        );
+        const response = await axios.get(`${apiUrl}/api/v1/blogs`);
         setBlogData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

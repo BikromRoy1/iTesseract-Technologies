@@ -5,15 +5,15 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import ContactModel from '../../ContactModel/ContactModel';
 import { useState } from 'react';
 
+import { apiUrl } from '../../../config/config';
+
 const TopHeader = () => {
   const [socials, setSocials] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          'https://itesseract.com.bd/master/api/v1/social-info'
-        );
+        const response = await axios.get(`${apiUrl}/api/v1/social-info`);
         setSocials(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

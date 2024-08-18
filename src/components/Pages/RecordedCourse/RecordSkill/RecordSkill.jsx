@@ -2,15 +2,15 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './RecordSkill.css';
 
+import { apiUrl } from '../../../../config/config';
+
 const SkillTwo = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          'https://itesseract.com.bd/main/api/v1/features'
-        );
+        const response = await axios.get(`${apiUrl}/api/v1/features`);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -43,7 +43,7 @@ const SkillTwo = () => {
                 <img
                   width='80'
                   height='80'
-                  src={`https://itesseract.com.bd/main/` + skill?.image}
+                  src={`${apiUrl}/` + skill?.image}
                   loading='lazy'
                   alt={skill?.title}
                 />

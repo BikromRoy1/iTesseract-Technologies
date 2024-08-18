@@ -7,16 +7,16 @@ import levelThree from '../../../../Images/icons/board.svg';
 import levelTwo from '../../../../Images/icons/draft-line.svg';
 import './RecordCourseCard.css';
 
-const LevelTwo = () => {
-  const courseUrl = 'https://itesseract.com.bd/main';
+import { apiUrl } from '../../../../config/config';
 
+const LevelTwo = () => {
   const [openTab, setOpenTab] = useState(0);
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${courseUrl}/api/v1/offline-courses`);
+        const response = await axios.get(`${apiUrl}/api/v1/offline-courses`);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -105,7 +105,7 @@ const LevelTwo = () => {
                         <img
                           className='h-full w-full object-cover level-image'
                           loading='lazy'
-                          src={`${courseUrl}/${course?.image}`}
+                          src={`${apiUrl}/${course?.image}`}
                           alt=''
                         />
                         <div className='thumbnail-content absolute left-3 top-3 z-10'>
@@ -172,7 +172,7 @@ const LevelTwo = () => {
                         <div className='flex items-center justify-between'>
                           <div className='flex items-center gap-2'>
                             <img
-                              src={`${courseUrl}/${course?.trainer?.image}`}
+                              src={`${apiUrl}/${course?.trainer?.image}`}
                               className='rounded-full w-10 h-10'
                               loading='lazy'
                               alt={course?.trainer?.name}
@@ -184,7 +184,7 @@ const LevelTwo = () => {
                             </div>
                           </div>
                           <div>
-                            <Link to={`/course/${course?.id}`}>
+                            <Link to={`/course/${course?.slug}`}>
                               <button className='custom-button font-semibold px-[17px] py-[5px] text-white rounded-md flex items-center gap-1'>
                                 বিস্তারিত{' '}
                                 <svg

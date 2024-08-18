@@ -6,15 +6,15 @@ import animationContact from '../../../Images/contact.json';
 import Registrationbanner from '../../../Images/registion.jpg';
 import Breadcrumb from '../../Breadcrumb/Breadcrumb';
 
+import { apiUrl } from '../../../config/config';
+
 const Registration = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          'https://itesseract.com.bd/main/api/v1/courses'
-        );
+        const response = await axios.get(`${apiUrl}/api/v1/courses`);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -24,8 +24,6 @@ const Registration = () => {
   }, []);
 
   const courses = data.data;
-
-
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -38,7 +36,7 @@ const Registration = () => {
 
     try {
       const response = await axios.post(
-        `https://itesseract.com.bd/main/api/v1/enroll/store?name=${studentName}&phone=${studentPhone}&email=${studentEmail}&address=${studentAddress}&course_id=${courseName}&level=`
+        `${apiUrl}/api/v1/enroll/store?name=${studentName}&phone=${studentPhone}&email=${studentEmail}&address=${studentAddress}&course_id=${courseName}&level=`
       );
       toast.success(' ভর্তির  আবেদন জন্য ধন্যবাদ !', {
         autoClose: 2000,

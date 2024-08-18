@@ -225,5 +225,12 @@
   }
 }
 #global-loader {
-  background-color: #141432 !important;
+  /* background-color: #141432 !important; */
+  background-image: linear-gradient(
+    25deg,
+    #19423c,
+    #23623d,
+    #28843b,
+    #27a835
+  ) !important;
 }

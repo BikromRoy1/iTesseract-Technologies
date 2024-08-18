@@ -7,6 +7,8 @@ import shapes01 from '../../../../Images/icons/shape-10.png';
 import shapes03 from '../../../../Images/icons/shape-13.png';
 import './Subscribe.css';
 
+import { apiUrl } from '../../../../config/config';
+
 const Subscribe = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -16,7 +18,7 @@ const Subscribe = () => {
 
     try {
       const response = await axios.post(
-        `https://itesseract.com.bd/main/api/v1/subscriber/store?email=${email}`
+        `${apiUrl}/api/v1/subscriber/store?email=${email}`
       );
 
       toast.success('ধন্যবাদ আমাদের সদস্য হওয়ার জন্য !', {

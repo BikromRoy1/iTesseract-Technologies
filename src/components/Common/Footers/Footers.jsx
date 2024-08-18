@@ -7,15 +7,15 @@ import timeTabel from '../../../Images/icons/timetable.png';
 import logo from '../../../Images/main-logo.svg';
 import './Footer.css';
 
+import { apiUrl } from '../../../config/config';
+
 const Footers = () => {
   const [contact, setContact] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          'https://itesseract.com.bd/main/api/v1/contact-info'
-        );
+        const response = await axios.get(`${apiUrl}/api/v1/contact-info`);
         setContact(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

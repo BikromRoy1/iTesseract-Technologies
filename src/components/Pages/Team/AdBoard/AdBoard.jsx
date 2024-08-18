@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './AdBoard.css';
 
+import { apiUrl } from '../../../../config/config';
+
 const AdBoard = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -9,9 +11,7 @@ const AdBoard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          'https://itesseract.com.bd/main/api/v1/adviser-team'
-        );
+        const response = await axios.get(`${apiUrl}/api/v1/adviser-team`);
         setData(response.data);
         setLoading(false);
       } catch (error) {
@@ -44,7 +44,7 @@ const AdBoard = () => {
               <div className='group mb-8 rounded-xl bg-white px-5 pb-10 pt-12 shadow-testimonial dark:bg-dark dark:shadow-none'>
                 <div className='relative z-10 mx-auto mb-5 h-[130px] w-[130px]'>
                   <img
-                    src={`https://itesseract.com.bd/main/` + team?.image}
+                    src={`${apiUrl}/` + team?.image}
                     alt={team?.name}
                     loading='lazy'
                     className='h-[130px] w-[130px] rounded-full'

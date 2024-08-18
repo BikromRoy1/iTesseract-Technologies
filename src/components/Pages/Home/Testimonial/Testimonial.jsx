@@ -11,20 +11,18 @@ import shapeImage2 from '../../../../Images/icons/TS-Shape-03.png';
 import shapeImage1 from '../../../../Images/icons/TS-Shape-04.png';
 import './Testimonial.css';
 
+import { apiUrl } from '../../../../config/config';
+
 // import required modules
 import { Autoplay, Pagination } from 'swiper';
 
 const Testimonial = () => {
   const [data, setData] = useState([]);
 
-  const testimonialUrl = 'https://itesseract.com.bd/main';
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `${testimonialUrl}/api/v1/testimonials`
-        );
+        const response = await axios.get(`${apiUrl}/api/v1/testimonials`);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -90,7 +88,7 @@ const Testimonial = () => {
                   </p>
                   <img
                     loading='lazy'
-                    src={`${testimonialUrl}/` + item?.image}
+                    src={`${apiUrl}/` + item?.image}
                     className='testimonial-img'
                     alt={item?.name}
                   />

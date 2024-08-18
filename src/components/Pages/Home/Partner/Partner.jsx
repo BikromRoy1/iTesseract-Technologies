@@ -2,16 +2,16 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './Partner.css';
 
+import { apiUrl } from '../../../../config/config';
+
 const Partner = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const url = 'https://itesseract.com.bd/main';
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${url}/api/v1/partners`);
+        const response = await axios.get(`${apiUrl}/api/v1/partners`);
         setData(response.data);
         setLoading(false);
       } catch (error) {
@@ -53,7 +53,7 @@ const Partner = () => {
                       loading='lazy'
                       title={item?.title}
                       className='mx-10 my-3 md:mx-12 lg:m-0 partner-logo'
-                      src={`${url}/` + item?.image}
+                      src={`${apiUrl}/` + item?.image}
                       alt={item?.title}
                     />
                   </a>

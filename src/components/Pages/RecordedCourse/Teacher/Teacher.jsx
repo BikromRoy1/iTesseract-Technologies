@@ -2,15 +2,15 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { apiUrl } from '../../../../config/config';
+
 const SchoolTeacher = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          ' https://itesseract.com.bd/main/api/v1/trainers'
-        );
+        const response = await axios.get(`${apiUrl}/api/v1/trainers`);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -46,7 +46,7 @@ const SchoolTeacher = () => {
                 <img
                   className='object-cover w-full h-72'
                   loading='lazy'
-                  src={`https://itesseract.com.bd/main/` + item?.image}
+                  src={`${apiUrl}/` + item?.image}
                   alt={item?.name}
                 />
 

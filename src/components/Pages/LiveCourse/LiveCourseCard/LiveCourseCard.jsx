@@ -7,16 +7,16 @@ import { IoDocumentTextOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import '../../Home/Kits/Kits.css';
 
-const UniSkills = () => {
-  const courseUrl = 'https://itesseract.com.bd/main';
+import { apiUrl } from '../../../../config/config';
 
+const UniSkills = () => {
   const [openTab, setOpenTab] = useState(0);
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${courseUrl}/api/v1/online-courses`);
+        const response = await axios.get(`${apiUrl}/api/v1/online-courses`);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -107,7 +107,7 @@ const UniSkills = () => {
                   <div className='course-card'>
                     <div className='course-card-img'>
                       <img
-                        src={`${courseUrl}/${course?.image}`}
+                        src={`${apiUrl}/${course?.image}`}
                         loading='lazy'
                         alt='university'
                       />
@@ -162,7 +162,7 @@ const UniSkills = () => {
                       <div className='flex items-center justify-between'>
                         <div className='flex items-center gap-2'>
                           <img
-                            src={`${courseUrl}/${course?.trainer?.image}`}
+                            src={`${apiUrl}/${course?.trainer?.image}`}
                             className='rounded-full w-10 h-10'
                             loading='lazy'
                             alt={course?.trainer?.name}
@@ -174,7 +174,7 @@ const UniSkills = () => {
                           </div>
                         </div>
                         <div>
-                          <Link to={`/course/${course?.id}`}>
+                          <Link to={`/course/${course?.slug}`}>
                             <button className='custom-button text-[15px] font-semibold px-[16px] py-[5px] text-white rounded-md flex items-center gap-1'>
                               এখান থেকে শিখুন{' '}
                               <svg

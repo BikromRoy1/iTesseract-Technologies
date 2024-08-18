@@ -7,16 +7,16 @@ import { Pagination, Autoplay } from 'swiper';
 import TestimonialCard from './ClientTestimonial.css';
 import axios from 'axios';
 
+import { apiUrl } from '../../../../config/config';
+
 const ClientTestimonial = () => {
   const [data, setData] = useState([]);
-
-  const url = 'https://itesseract.com.bd/main';
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${url}/api/v1/parent-testimonials`
+          `${apiUrl}/api/v1/parent-testimonials`
         );
         setData(response.data);
       } catch (error) {
@@ -78,7 +78,7 @@ const ClientTestimonial = () => {
                     </p>
                     <img
                       loading='lazy'
-                      src={`${url}/` + item?.image}
+                      src={`${apiUrl}/` + item?.image}
                       className='client-img'
                       alt={item?.name}
                     />

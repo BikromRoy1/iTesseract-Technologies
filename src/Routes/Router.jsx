@@ -26,6 +26,8 @@ import RecordCourse from '../components/Pages/RecordedCourse/RecordCourse';
 import Team from '../components/Pages/Team/Team/Team';
 import UserRegistration from '../components/UserRegistration/UserRegistration.jsx';
 
+import { apiUrl } from '../config/config.js';
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -59,8 +61,7 @@ const router = createBrowserRouter([
       {
         path: '/product/:id',
         element: <ProductDetails></ProductDetails>,
-        loader: ({ params }) =>
-          fetch(`https://itesseract.com.bd/main/api/v1/product/${params.id}`),
+        loader: ({ params }) => fetch(`${apiUrl}/api/v1/product/${params.id}`),
       },
       {
         path: '/recorded',
@@ -79,8 +80,7 @@ const router = createBrowserRouter([
       {
         path: '/blog/:id',
         element: <BlogDetails></BlogDetails>,
-        loader: ({ params }) =>
-          fetch(`https://itesseract.com.bd/main/api/v1/blog/${params.id}`),
+        loader: ({ params }) => fetch(`${apiUrl}/api/v1/blog/${params.id}`),
       },
       {
         path: '/registration',
@@ -95,10 +95,10 @@ const router = createBrowserRouter([
         element: <Policy></Policy>,
       },
       {
-        path: '/course/:id',
+        path: '/course/:slug',
         element: <CourseDetails></CourseDetails>,
         loader: ({ params }) =>
-          fetch(`https://itesseract.com.bd/main/api/v1/course/${params?.id}`),
+          fetch(`${apiUrl}/api/v1/course/${params?.slug}`),
       },
       {
         path: '/videosPlay',

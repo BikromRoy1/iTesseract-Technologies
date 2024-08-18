@@ -6,15 +6,15 @@ import shape02 from '../../../../Images/icons/shape-05.png';
 import Robots from '../../../../Images/roobots.png';
 import './ItesseractAbout.css';
 
+import { apiUrl } from '../../../../config/config';
+
 const ItesseractAbout = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          'https://itesseract.com.bd/main/api/v1/counters'
-        );
+        const response = await axios.get(`${apiUrl}/api/v1/counters`);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

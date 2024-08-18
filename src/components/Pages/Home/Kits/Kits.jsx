@@ -8,15 +8,15 @@ import { Link } from 'react-router-dom';
 import Services from '../Services/Services';
 import './Kits.css';
 
-const Kits = () => {
-  const courseUrl = 'https://itesseract.com.bd/main';
+import { apiUrl } from '../../../../config/config';
 
+const Kits = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${courseUrl}/api/v1/courses`);
+        const response = await axios.get(`${apiUrl}/api/v1/courses`);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -72,7 +72,7 @@ const Kits = () => {
               <div className='course-card'>
                 <div className='course-card-img'>
                   <img
-                    src={`${courseUrl}/${item?.image}`}
+                    src={`${apiUrl}/${item?.image}`}
                     loading='lazy'
                     alt={item?.course_name}
                   />
@@ -125,7 +125,7 @@ const Kits = () => {
                   <div className='flex items-center justify-between'>
                     <div className='flex items-center gap-2'>
                       <img
-                        src={`${courseUrl}/${item?.trainer?.image}`}
+                        src={`${apiUrl}/${item?.trainer?.image}`}
                         className='rounded-full w-10 h-10'
                         loading='lazy'
                         alt={item?.trainer?.name}
@@ -138,7 +138,7 @@ const Kits = () => {
                     </div>
 
                     <div>
-                      <Link to={`/course/${item?.id}`}>
+                      <Link to={`/course/${item?.slug}`}>
                         <button className='custom-button text-[15px] font-semibold px-[16px] py-[5px] text-white rounded-md flex items-center gap-1'>
                           এখান থেকে শিখুন{' '}
                           <svg

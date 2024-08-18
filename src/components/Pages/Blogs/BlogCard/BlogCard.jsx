@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './BlogCard.css';
 
+import { apiUrl } from '../../../../config/config';
+
 const BlogCard = ({ blog }) => {
   const { id, title, image, created_at,  body, category } = blog;
 
@@ -35,7 +37,7 @@ const BlogCard = ({ blog }) => {
             <img
               className='object-cover'
               loading='lazy'
-              src={`https://itesseract.com.bd/main/` + image}
+              src={`${apiUrl}/` + image}
               alt={title}
             />
           </Link>

@@ -6,15 +6,15 @@ import collage from '../../../../Images/icons/uni-03.png';
 import axios from 'axios';
 import './Banner.css';
 
-const NewBanner = () => {
-  const apiUrl = 'https://itesseract.com.bd/main/';
+import { apiUrl } from '../../../../config/config';
 
+const NewBanner = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${apiUrl}api/v1/slider`);
+        const response = await axios.get(`${apiUrl}/api/v1/slider`);
         setData(response.data);
         console.log(response.data);
       } catch (error) {
@@ -31,7 +31,7 @@ const NewBanner = () => {
       id='hero'
       className='flex items-center justify-center'
       style={{
-        backgroundImage: `url('${apiUrl}${bannerImage?.image}')`,
+        backgroundImage: `url('${apiUrl}/${bannerImage?.image}')`,
       }}
     >
       <div className='container mx-auto px-6 container-width'>
@@ -77,15 +77,6 @@ const NewBanner = () => {
               </h4>
             </div>
           </div>
-
-          {/* <div className='text-center mx-auto flex justify-center '>
-            <img
-              src='https://i.ibb.co/5xR4Zjy/NEELOVE-WEB-967x551.png'
-              className='img-fluid animated hero-right-image  hidden md:block'
-              alt='Hero-image'
-              loading='lazy'
-            />
-          </div> */}
         </div>
       </div>
     </section>
