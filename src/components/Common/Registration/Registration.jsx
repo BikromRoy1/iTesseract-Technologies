@@ -1,12 +1,12 @@
 import axios from 'axios';
 import Lottie from 'lottie-react';
 import React, { useEffect, useState } from 'react';
-import { toast } from 'react-toastify';
 import animationContact from '../../../Images/contact.json';
 import Registrationbanner from '../../../Images/registion.jpg';
 import Breadcrumb from '../../Breadcrumb/Breadcrumb';
 
 import { apiUrl } from '../../../config/config';
+import { toast } from 'react-toastify';
 
 const Registration = () => {
   const [data, setData] = useState([]);
@@ -33,6 +33,10 @@ const Registration = () => {
     const studentPhone = form.phone.value;
     const studentAddress = form.address.value;
     const courseName = form.courseOption.value;
+    const studentClassName = form.StudentClassName.value;
+    const courseTimings = form.courseTime.value;
+    const studentSchoolName = form.studentSchoolName.value;
+
 
     try {
       const response = await axios.post(
@@ -82,13 +86,10 @@ const Registration = () => {
               ></Lottie>
             </div>
 
-            <div className='mt-8 lg:w-1/2 lg:mt-0'>
-              <span
-                to='/'
-                className='block mt-4 text-2xl font-semibold text-[#124265] hover:underline  text-center pb-4'
-              >
+            <div className='mt-8 lg:w-1/2 lg:mt-0 pb-12'>
+              <h3 className='block mt-4 text-2xl font-semibold text-[#124265]  text-center pb-4'>
                 শিক্ষার্থীর ব্যক্তিগত তথ্য
-              </span>
+              </h3>
               <form
                 onSubmit={handleSubmit}
                 className='container flex flex-col mx-auto space-y-12'
@@ -101,7 +102,18 @@ const Registration = () => {
                         type='text'
                         name='studentname'
                         placeholder='শিক্ষার্থীর নাম'
-                        className='w-full input-from-contorl p-3 rounded-md bg-white text-black'
+                        className='w-full input-from-contorl px-3 py-2 text-base rounded-md bg-white text-black '
+                        required
+                      />
+                    </div>
+
+                    <div className='col-span-full sm:col-span-3'>
+                      <input
+                        id='StudentClassName'
+                        type='text'
+                        name='StudentClassName'
+                        placeholder='ক্লাস  নাম '
+                        className='w-full input-from-contorl px-3 py-2 text-base rounded-md bg-white text-black'
                         required
                       />
                     </div>
@@ -111,7 +123,7 @@ const Registration = () => {
                         type='email'
                         name='email'
                         placeholder='শিক্ষার্থীর ইমেইল(অফসনাল)'
-                        className='w-full p-3 rounded-md input-from-contorl  text-gray-900'
+                        className='w-full px-3 py-2 text-base rounded-md input-from-contorl  text-gray-900'
                         required
                       />
                     </div>
@@ -121,7 +133,7 @@ const Registration = () => {
                         type='text'
                         name='phone'
                         placeholder='শিক্ষার্থীর নাম্বার'
-                        className='w-full p-3 rounded-md input-from-contorl text-gray-900'
+                        className='w-full px-3 py-2 text-base rounded-md input-from-contorl text-gray-900'
                         required
                       />
                     </div>
@@ -129,26 +141,69 @@ const Registration = () => {
                       <select
                         name='courseOption'
                         id='courseOption'
-                        className='w-full p-[10px] rounded-md input-from-contorl text-gray-900'
+                        className='w-full p-[9px] rounded-md input-from-contorl text-gray-900'
                         required
                       >
                         {courses?.map((course) => (
-                          <option key={course?.id} value={course?.id}>
+                          <option key={course?.id} value={course?.course_name}>
                             {`${course?.course_name}`}
                           </option>
                         ))}
                       </select>
                     </div>
+                    <div className='col-span-full sm:col-span-3'>
+                      <select
+                        name='courseTime'
+                        id='courseTime'
+                        className='w-full p-[9px] rounded-md input-from-contorl text-gray-900'
+                        required
+                      >
+                        <option selected disabled value='time-01'>
+                          সিলেক্ট ক্লাস সময়
+                        </option>
+                        <option value='09 AM - 01 PM'> 09 AM - 01 PM</option>
+                        <option value='03 PM - 06 PM'> 03 PM - 06 PM</option>
+                        <option value='06 PM - 09 PM'> 06 PM - 09 PM</option>
+                      </select>
+                    </div>
+                    <div className='col-span-full'>
+                      <input
+                        id='studentSchoolName'
+                        type='text'
+                        name='studentSchoolName'
+                        placeholder='স্কুলের নাম '
+                        className='w-full input-from-contorl px-3 py-2 text-base rounded-md bg-white text-black'
+                        required
+                      />
+                    </div>
                     <div className='col-span-full'>
                       <textarea
                         id='address'
                         cols='10'
-                        rows='4'
+                        rows='3'
                         name='address'
-                        placeholder='শিক্ষার্থীর এড্রেস'
+                        placeholder='শিক্ষার্থীর ঠিকানা'
                         className='w-full p-3 rounded-md input-from-contorl text-gray-900'
                         required
                       ></textarea>
+                    </div>
+
+                    <div className='col-span-6'>
+                      <label htmlFor='MarketingAccept' className='flex gap-3'>
+                        <input
+                          type='checkbox'
+                          id='MarketingAccept'
+                          name='marketing_accept'
+                          className='size-5 rounded-md border-gray-400 bg-white text-[#1bb57b] focus:ring-[#1bb57b] focus:border-[#1bb57b] hover:border-[#1bb57b] checked:bg-[#1bb57b] checked:border-[#1bb57b] shadow-sm'
+                        />
+
+                        <span className='text-gray-400 cursor-pointer'>
+                          ক্লাসে জয়েন করতে পারবেন?{' '}
+                          <span className='text-[#1bb57b] font-medium'>
+                            (শুক্র / শনি)
+                          </span>
+                        </span>
+                      </label>
                     </div>
 
                     <div className='col-span-full'>
