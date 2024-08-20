@@ -110,7 +110,7 @@ const Registration = () => {
                         id='email'
                         type='email'
                         name='email'
-                        placeholder='শিক্ষার্থীর ইমেইল'
+                        placeholder='শিক্ষার্থীর ইমেইল(অফসনাল)'
                         className='w-full p-3 rounded-md input-from-contorl  text-gray-900'
                         required
                       />

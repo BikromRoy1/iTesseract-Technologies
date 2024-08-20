@@ -3,15 +3,15 @@ import React, { useEffect, useState } from 'react';
 import terms from '../../../Images/Robot.jpg';
 import Breadcrumb from '../../Breadcrumb/Breadcrumb';
 
+import { apiUrl } from '../../../config/config';
+
 const Policy = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          'https://itesseract.com.bd/main/api/v1/privacy-info'
-        );
+        const response = await axios.get(`${apiUrl}/api/v1/privacy-info`);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

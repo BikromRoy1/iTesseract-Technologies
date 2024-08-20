@@ -119,9 +119,13 @@ const Videos = ({ mainCourse }) => {
                     </div>
                     <p className='mb-0 text-[#7b7b8a] text-[16px] font-semibold flex items-center gap-2'>
                       {content?.duration}
-                      <span>
+                      <span className=''>
                         <a
-                          className='flex items-center gap-1 badge'
+                          className={`flex items-center gap-1 badge py-[11px]  ${
+                            content.is_preview
+                              ? 'bg-[#1CAB55] border-[#1CAB55]'
+                              : 'bg-[#FD7E14] border-[#FD7E14]'
+                          } `}
                           onClick={() => {
                             if (content?.is_preview) {
                               handleViewClick();
@@ -131,18 +135,35 @@ const Videos = ({ mainCourse }) => {
                           }}
                           style={{ cursor: 'pointer' }}
                         >
-                          <svg
-                            xmlns='http://www.w3.org/2000/svg'
-                            width='19'
-                            height='19'
-                            fill='currentColor'
-                            className='bi bi-eye'
-                            viewBox='0 0 16 16'
-                          >
-                            <path d='M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z' />
-                            <path d='M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0' />
-                          </svg>
-                          দেখুন
+                          {content?.is_preview ? (
+                            <>
+                              <svg
+                                xmlns='http://www.w3.org/2000/svg'
+                                width='18'
+                                height='18'
+                                fill='currentColor'
+                                className='bi bi-eye'
+                                viewBox='0 0 16 16'
+                              >
+                                <path d='M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z' />
+                                <path d='M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0' />
+                              </svg>
+                              দেখুন
+                            </>
+                          ) : (
+                            <>
+                              <svg
+                                xmlns='http://www.w3.org/2000/svg'
+                                viewBox='0 0 512 512'
+                                width='15'
+                                height='15'
+                                fill='currentColor'
+                              >
+                                <path d='M307 34.8c-11.5 5.1-19 16.6-19 29.2l0 64-112 0C78.8 128 0 206.8 0 304C0 417.3 81.5 467.9 100.2 478.1c2.5 1.4 5.3 1.9 8.1 1.9c10.9 0 19.7-8.9 19.7-19.7c0-7.5-4.3-14.4-9.8-19.5C108.8 431.9 96 414.4 96 384c0-53 43-96 96-96l96 0 0 64c0 12.6 7.4 24.1 19 29.2s25 3 34.4-5.4l160-144c6.7-6.1 10.6-14.7 10.6-23.8s-3.8-17.7-10.6-23.8l-160-144c-9.4-8.5-22.9-10.6-34.4-5.4z' />
+                              </svg>
+                              রেজিস্ট্রেশন
+                            </>
+                          )}
                         </a>
                       </span>
                     </p>
