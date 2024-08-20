@@ -5,8 +5,8 @@ import animationContact from '../../../Images/contact.json';
 import Registrationbanner from '../../../Images/registion.jpg';
 import Breadcrumb from '../../Breadcrumb/Breadcrumb';
 
-import { apiUrl } from '../../../config/config';
 import { toast } from 'react-toastify';
+import { apiUrl } from '../../../config/config';
 
 const Registration = () => {
   const [data, setData] = useState([]);
@@ -37,10 +37,14 @@ const Registration = () => {
     const courseTimings = form.courseTime.value;
     const studentSchoolName = form.studentSchoolName.value;
 
+    // Correctly capture the checkbox state
+    const checked = form.marketing_accept.checked;
+    // Convert checked state to 'yes' or 'no'
+    const marketingAccept = checked ? 'Yes' : 'No';
 
     try {
-      const response = await axios.post(
-        `${apiUrl}/api/v1/enroll/store?name=${studentName}&phone=${studentPhone}&email=${studentEmail}&address=${studentAddress}&course_id=${courseName}&level=`
+      const response = await axios?.post(
+        `${apiUrl}/api/v1/enroll/store?name=${studentName}&phone=${studentPhone}&email=${studentEmail}&address=${studentAddress}&course_id=${courseName}&school=${studentSchoolName}&class=${studentClassName}&time=${courseTimings}&weekend_agreement=${marketingAccept}`
       );
       toast.success(' ভর্তির  আবেদন জন্য ধন্যবাদ !', {
         autoClose: 2000,
@@ -145,7 +149,7 @@ const Registration = () => {
                         required
                       >
                         {courses?.map((course) => (
-                          <option key={course?.id} value={course?.course_name}>
+                          <option key={course?.id} value={course?.id}>
                             {`${course?.course_name}`}
                           </option>
                         ))}
@@ -158,7 +162,7 @@ const Registration = () => {
                         className='w-full p-[9px] rounded-md input-from-contorl text-gray-900'
                         required
                       >
-                        <option selected disabled value='time-01'>
+                        <option disabled value=''>
                           সিলেক্ট ক্লাস সময়
                         </option>
                         <option value='09 AM - 01 PM'> 09 AM - 01 PM</option>
@@ -171,7 +175,7 @@ const Registration = () => {
                         id='studentSchoolName'
                         type='text'
                         name='studentSchoolName'
-                        placeholder='স্কুলের নাম '
+                        placeholder='স্কুলের নাম'
                         className='w-full input-from-contorl px-3 py-2 text-base rounded-md bg-white text-black'
                         required
                       />
