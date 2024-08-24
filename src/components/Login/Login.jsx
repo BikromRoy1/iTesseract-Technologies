@@ -1,18 +1,16 @@
-import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import roundedLogo from '../../Images/Round-logo.png';
 import loginSVG from '../../Images/icons/login.png';
 import mainLogo from '../../Images/main-logo.svg';
-import { AuthContext } from '../../context/AuthProvider';
 import './Login.css';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setSubmitting] = useState(false);
-  const navigate = useNavigate();
 
-  const { login } = useContext(AuthContext);
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -26,7 +24,7 @@ const Login = () => {
       });
     }
 
-    login(userLogin, userPassword, event.target, setSubmitting);
+
   };
 
   return (

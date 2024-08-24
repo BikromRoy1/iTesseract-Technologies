@@ -11,6 +11,41 @@ const Videos = ({ mainCourse }) => {
     navigate('/videosPlay', { state: { modules, course } });
   };
 
+  function parseDuration(duration) {
+    const parts = duration.split(' ');
+    let totalSeconds = 0;
+
+    parts.forEach((part) => {
+      if (part.includes('h')) {
+        totalSeconds += parseInt(part) * 3600;
+      } else if (part.includes('m')) {
+        totalSeconds += parseInt(part) * 60;
+      } else if (part.includes('s')) {
+        totalSeconds += parseInt(part);
+      }
+    });
+
+    return totalSeconds;
+  }
+
+  function formatDuration(seconds) {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const remainingSeconds = seconds % 60;
+
+    return `${hours}${' '} ঘন্টা  ${minutes} ${' '} মিনিট ${remainingSeconds}${' '}সেকেন্ড`;
+  }
+
+  let totalDurationInSeconds = 0;
+
+  modules.forEach((module) => {
+    module.course_contents.forEach((content) => {
+      totalDurationInSeconds += parseDuration(content.duration);
+    });
+  });
+
+  const totalDuration = formatDuration(totalDurationInSeconds);
+
   // Function to zero-pad numbers less than 10
   const zeroPad = (num) => (num < 10 ? `0${num}` : num);
   return (
@@ -21,10 +56,12 @@ const Videos = ({ mainCourse }) => {
       <div className='videos-timing'>
         <ul className='flex pb-3 flex-wrap items-center'>
           <li className='mr-[30px] text-[#7b7b8a] text-[17px] font-medium'>
-            {zeroPad(modules?.length)} -ক্লাস
+            <span className='text-[#124265] font-semibold'>ক্লাস-</span>{' '}
+            {zeroPad(modules?.length)}
           </li>
           <li className='mr-[30px] text-[#7b7b8a] text-[17px] font-medium'>
-            মোট: 5 ঘন্টা 56 মিনিট 24 সেকেন্ড
+            <span className='text-[#124265] font-semibold'>মোট:</span>{' '}
+            {totalDuration}
           </li>
         </ul>
       </div>

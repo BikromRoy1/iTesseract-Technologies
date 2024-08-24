@@ -400,7 +400,14 @@ const VideosPlaying = () => {
               </MediaPlayer>
 
               <h3 className='font-semibold  text-[16px] md:text-[22px] leading-[28px] pt-[20px]'>
-                Video: {activeVideoTitle} - Duration: {videoDuration}
+                Video:{' '}
+                <span className='text-[#059669] text-[14px] md:text-[17px]'>
+                  {activeVideoTitle}
+                </span>{' '}
+                - Duration:{' '}
+                <span className='text-[#0891b2] text-[14px] md:text-[17px]'>
+                  {videoDuration}
+                </span>
               </h3>
             </div>
             <div>

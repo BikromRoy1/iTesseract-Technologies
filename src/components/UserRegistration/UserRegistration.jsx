@@ -6,9 +6,10 @@ import roundedLogo from '../../Images/Round-logo.png';
 import mainLogo from '../../Images/main-logo.svg';
 import './UserRegistration.css';
 
+import { apiUrl } from '../../config/config';
+
 const UserRegistration = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [isSubmitting, setSubmitting] = useState(false);
 
   const navigate = useNavigate();
 
@@ -26,15 +27,21 @@ const UserRegistration = () => {
       });
     }
 
-    setSubmitting(true);
-
     try {
+      const data = {
+        name,
+        email,
+        phone: number,
+        password,
+      };
+
       const result = await axios.post(
-        `http://10.17.20.218/itesseract/public/api/v1/register?name=${name}&email=${email}&phone=${number}&password=${password}`
+        `${apiUrl}/api/v1/register?name=${data.name}&email=${data.email}&phone=${data.phone}&password=${data.password}`
       );
       toast.success('Successfully Created a User!', {
         autoClose: 2000,
       });
+      // sessionStorage.setItem('user-info', JSON.stringify(result));
       navigate('/login');
       form.reset();
     } catch (error) {
@@ -47,10 +54,8 @@ const UserRegistration = () => {
         toast.warning(`The email has already been taken.`);
       } else {
         // If no specific error message, show the generic error message
-        toast.error(`Error: ${error.message}`);
+        console.log(`Error: ${error.message}`);
       }
-    } finally {
-      setSubmitting(false);
     }
   };
 

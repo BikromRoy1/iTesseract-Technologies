@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import liveCourse from '../../../Images/icons/live-course.png';
+import profile from '../../../Images/icons/profile.png';
 import recordCourse from '../../../Images/icons/record-courses.png';
+import logout from '../../../Images/icons/signout.png';
 import logo from '../../../Images/main-logo.svg';
 
 const Header = () => {
@@ -136,46 +138,46 @@ const Header = () => {
               যোগাযোগ
             </Link>
           </li>
-          {/* {userEmail === "bikromroy2001@gmail.com" ? (
+          {userEmail === 'bikromroy2001@gmail.com' ? (
             <li>
-              <div className="dropdown dropdown-end">
+              <div className='dropdown dropdown-end'>
                 <div
                   tabIndex={0}
-                  role="button"
-                  className="btn btn-ghost btn-circle avatar"
+                  role='button'
+                  className='btn btn-ghost btn-circle avatar'
                 >
-                  <div className="w-8 rounded-full">
+                  <div className='w-8 rounded-full'>
                     <img
-                      alt="Tailwind CSS Navbar component"
-                      src="https://picsum.photos/200"
+                      alt='Tailwind CSS Navbar component'
+                      src='https://picsum.photos/200'
                     />
                   </div>
                 </div>
                 <ul
                   tabIndex={0}
-                  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-44"
+                  className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-44'
                 >
                   <li>
-                    <Link to="/dashboard" className="">
+                    <Link to='/dashboard' className=''>
                       <img
                         width={22}
                         height={22}
                         src={profile}
-                        alt="profile-icons"
-                        loading="lazy"
+                        alt='profile-icons'
+                        loading='lazy'
                       />
                       প্রোফাইল
                     </Link>
                   </li>
                   <li onClick={handleLogout}>
                     <Link>
-                      {" "}
+                      {' '}
                       <img
                         width={22}
                         height={22}
                         src={logout}
-                        alt="logout"
-                        loading="lazy"
+                        alt='logout'
+                        loading='lazy'
                       />
                       লগ-আউট
                     </Link>
@@ -185,15 +187,15 @@ const Header = () => {
             </li>
           ) : (
             <Link
-              onClick={() => setUserEmail("bikromroy2001@gmail.com")}
-              to="/login"
-              aria-label="login "
-              title="login"
-              className=" bg-[#1bb57b] px-4 py-1 rounded-md font-medium tracking-wide text-white transition-colors whitespace-nowrap duration-200"
+              onClick={() => setUserEmail('bikromroy2001@gmail.com')}
+              to='/login'
+              aria-label='login '
+              title='login'
+              className=' bg-[#1bb57b] px-4 py-1 rounded-md font-medium tracking-wide text-white transition-colors whitespace-nowrap duration-200'
             >
               লগ-ইন
             </Link>
-          )} */}
+          )}
         </ul>
         <div className='lg:hidden'>
           <button
