@@ -1,14 +1,12 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-import { FaArrowUp } from "react-icons/fa";
-import "./GoToTop.css";
+import React, { useEffect, useState } from 'react';
+import { FaArrowUp } from 'react-icons/fa';
+import './GoToTop.css';
 
 const GoToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const goToBtn = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   };
 
   const listenToScroll = () => {
@@ -24,15 +22,15 @@ const GoToTop = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", listenToScroll);
-    return () => window.removeEventListener("scroll", listenToScroll);
+    window.addEventListener('scroll', listenToScroll);
+    return () => window.removeEventListener('scroll', listenToScroll);
   }, []);
 
   return (
-    <div className="wrapper">
+    <div class='wrapper'>
       {isVisible && (
-        <div className="top-btn" onClick={goToBtn}>
-          <FaArrowUp className="top-btn-icon" />
+        <div class='top-btn' onClick={goToBtn}>
+          <FaArrowUp class='top-btn-icon' />
         </div>
       )}
     </div>

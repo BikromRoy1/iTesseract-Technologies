@@ -59,9 +59,9 @@ const Footers = () => {
                     <img src={call} alt='call' />
                   </div>
                   <p className='text-base footer-color2 font-semibold'>
-                    <a href={`tel:${contact?.data?.phone}`}>
+                    <Link to={`tel:${contact?.data?.phone}`}>
                       <b>Phone: </b> {contact?.data?.phone}
-                    </a>
+                    </Link>
                   </p>
                 </div>
               </Link>

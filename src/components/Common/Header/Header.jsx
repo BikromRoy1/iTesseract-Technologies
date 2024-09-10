@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import liveCourse from '../../../Images/icons/live-course.png';
@@ -10,10 +10,16 @@ import logo from '../../../Images/main-logo.svg';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const [userEmail, setUserEmail] = useState('bikromroy2001@gmail.com');
+  const [userEmail, setUserEmail] = useState('');
+
+  useEffect(() => {
+    const getInfo = JSON.parse(localStorage.getItem('userInfo'));
+    setUserEmail(getInfo?.email);
+  }, []);
 
   const handleLogout = () => {
-    setUserEmail('');
+    localStorage.removeItem('userInfo');
+    window.location.reload();
   };
 
   return (
@@ -138,7 +144,7 @@ const Header = () => {
               যোগাযোগ
             </Link>
           </li>
-          {userEmail === 'bikromroy2001@gmail.com' ? (
+          {userEmail ? (
             <li>
               <div className='dropdown dropdown-end'>
                 <div
@@ -187,7 +193,6 @@ const Header = () => {
             </li>
           ) : (
             <Link
-              onClick={() => setUserEmail('bikromroy2001@gmail.com')}
               to='/login'
               aria-label='login '
               title='login'

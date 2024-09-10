@@ -6,6 +6,7 @@ import ContactModel from '../../ContactModel/ContactModel';
 import { useState } from 'react';
 
 import { apiUrl } from '../../../config/config';
+import { Link } from 'react-router-dom';
 
 const TopHeader = () => {
   const [socials, setSocials] = useState([]);
@@ -31,18 +32,18 @@ const TopHeader = () => {
         <div className='container px-6 mx-auto'>
           <div className='flex items-center justify-between'>
             <div className='flex items-center gap-3'>
-              <a
+              <Link
                 target='_blank'
                 rel='noopener noreferrer'
-                href={socialLinks?.facebook}
+                to={socialLinks?.facebook}
               >
                 <FaFacebook
                   className='cursor-pointer'
                   size='18'
                   color='#ffffff'
                 ></FaFacebook>
-              </a>
-              <a
+              </Link>
+              <Link
                 target='_blank'
                 rel='noopener noreferrer'
                 href={socialLinks?.twitter}
@@ -52,8 +53,8 @@ const TopHeader = () => {
                   size='18'
                   color='#ffffff'
                 ></FaTwitter>
-              </a>
-              <a
+              </Link>
+              <Link
                 target='_blank'
                 rel='noopener noreferrer'
                 href={socialLinks?.instagram}
@@ -63,8 +64,8 @@ const TopHeader = () => {
                   size='18'
                   color='#ffffff'
                 ></FaInstagram>
-              </a>
-              <a
+              </Link>
+              <Link
                 target='_blank'
                 rel='noopener noreferrer'
                 href={socialLinks?.linkedin}
@@ -74,7 +75,7 @@ const TopHeader = () => {
                   size='18'
                   color='#ffffff'
                 ></FaLinkedin>
-              </a>
+              </Link>
             </div>
             <div className='flex items-center flex-wrap gap-3'>
               <p className='text-font hidden md:block text-white'>

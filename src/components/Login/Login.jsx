@@ -1,16 +1,19 @@
+import axios from 'axios';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import roundedLogo from '../../Images/Round-logo.png';
 import loginSVG from '../../Images/icons/login.png';
 import mainLogo from '../../Images/main-logo.svg';
 import './Login.css';
 
+import { apiUrl } from '../../config/config';
+
 const Login = () => {
+  const navigate = useNavigate();
+
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setSubmitting] = useState(false);
-
-
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -24,7 +27,44 @@ const Login = () => {
       });
     }
 
+    try {
+      const data = {
+        userLogin,
+        userPassword,
+      };
 
+      const result = await axios.post(
+        `${apiUrl}/api/v1/login?email=${userLogin}&password=${userPassword}`
+      );
+      toast.success('Successfully login', {
+        autoClose: 2000,
+      });
+
+      console.log(result);
+
+      const userInfo = {
+        email: result.data.user.email,
+        token: result.data.authorisation.token,
+      };
+
+      localStorage.setItem('userInfo', JSON.stringify(userInfo));
+
+      window.location.replace('/');
+      // navigate('/');
+      form.reset();
+    } catch (error) {
+      // Check if there's a specific error message from the response
+      if (
+        error.response &&
+        error.response.data &&
+        error.response.data.message
+      ) {
+        toast.warning(`The email has already been taken.`);
+      } else {
+        // If no specific error message, show the generic error message
+        console.log(`Error: ${error.message}`);
+      }
+    }
   };
 
   return (

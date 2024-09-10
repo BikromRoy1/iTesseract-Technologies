@@ -27,6 +27,7 @@ import Team from '../components/Pages/Team/Team/Team';
 import UserRegistration from '../components/UserRegistration/UserRegistration.jsx';
 
 import { apiUrl } from '../config/config.js';
+import PrivateRoutes from './PrivateRoutes/PrivateRoutes.js';
 
 const router = createBrowserRouter([
   {
@@ -116,7 +117,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element: <DashboardLayout></DashboardLayout>,
+    element: (
+      <PrivateRoutes>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoutes>
+    ),
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
