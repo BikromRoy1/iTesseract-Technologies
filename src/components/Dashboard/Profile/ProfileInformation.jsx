@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './ProfileInformation.css';
 
-const ProfileInformation = () => {
-  let name = 'Mohammad Abdul Hamid';
+const ProfileInformation = ({ userInfo }) => {
+  console.log(userInfo);
+
+  let name = userInfo?.data?.user?.name ? userInfo.data.user.name : 'N/A';
   let fatherName = 'Mohammad Eliyas';
   let motherName = 'Rabiya Begum';
-  let email = 'email@example.com';
-  let number = '01795-188538';
+  let email = userInfo?.data?.user?.email;
+  let number = userInfo?.data?.user?.mobile;
   let Gender = 'Male';
   let BirthDay = '14 March, 2002';
   let location = 'Bagerhat-বাগেরহাট';

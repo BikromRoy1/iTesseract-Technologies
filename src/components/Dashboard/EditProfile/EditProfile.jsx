@@ -4,6 +4,17 @@ import './editProfile.css';
 
 const EditProfile = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [userName, setUserName] = useState(''); // Renamed from 'name' to 'userName'
+  const [fathersName, setFathersName] = useState('');
+  const [mothersName, setMothersName] = useState('');
+  const [gender, setGender] = useState('');
+  const [birthDate, setBirthDate] = useState('');
+  const [religion, setReligion] = useState('');
+  const [district, setDistrict] = useState('');
+  const [address, setAddress] = useState('');
+  const [classStudent, setClassStudent] = useState('');
+  const [institute, setInstitute] = useState('');
+  const [image, setImage] = useState(null); // To handle file upload
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -13,10 +24,75 @@ const EditProfile = () => {
     }
   };
 
-  console.log(selectedImage);
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const getInfo = JSON.parse(localStorage.getItem('userInfo'));
+    const token = getInfo?.token;
+
+    // Create a form data object with the necessary keys
+    const formData = {
+      name: name, // Example value from state
+      fathers_name: fathersName, // Example value from state
+      mothers_name: mothersName, // Example value from state
+      gender: gender, // Example value from state
+      date_of_birth: birthDate, // Example value from state
+      religion: religion, // Example value from state
+      district: district, // Example value from state
+      address: address, // Example value from state
+      class: classStudent, // Example value from state
+      institute: institute, // Example value from state
+      image: image, // Example value from file input or state
+    };
+
+    try {
+      const response = await fetch(
+        'https://itesseract.com.bd/main/api/v1/profile-update',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(formData), // Send formData as JSON
+        }
+      );
+
+      // Check if the response is JSON
+      const contentType = response.headers.get('content-type');
+      if (contentType && contentType.indexOf('application/json') !== -1) {
+        const data = await response.json();
+
+        if (data.success) {
+          alert('Profile updated successfully');
+        } else {
+          alert('Profile update failed: ' + data.message);
+        }
+      } else {
+        // If the response is not JSON, throw an error
+        const errorMessage = await response.text(); // Capture the HTML or error response as text
+        console.error('Error:', errorMessage);
+        alert(
+          'An unexpected error occurred. Please check the server response.'
+        );
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred while updating the profile.');
+    }
+  };
 
   let email = 'email@example.com';
   let number = '01795-188538';
+
+  console.log(formData);
 
   return (
     <section className='dashboard-section'>
@@ -90,180 +166,180 @@ const EditProfile = () => {
           <div className='box-title relative '>প্রোফাইল আপডেট</div>
         </div>
         <div className='p-[1.25rem]'>
-          <form className='grid grid-cols-1 gap-x-4 lg:grid-cols-3 lg:gap-x-6'>
-            <div className='mb-[16px]'>
-              <div>
+          <form onSubmit={handleSubmit}>
+            <div className='grid grid-cols-1 gap-x-4 lg:grid-cols-3 lg:gap-x-6'>
+              {/* Name Field */}
+              <div className='mb-[16px]'>
                 <label
-                  class='mb-2 font-semibold inline-block text-[#a1a5b7]'
-                  for='name'
+                  className='mb-2 font-semibold inline-block text-[#a1a5b7]'
+                  htmlFor='name'
                 >
-                  নাম
-                  <span className='text-[#f76a78]'>*</span>
+                  নাম<span className='text-[#f76a78]'>*</span>
                 </label>
                 <input
                   type='text'
                   name='name'
-                  class='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
-                  id='name'
+                  className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
                   placeholder='আপনার পুরো নাম লিখুন'
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
                 />
               </div>
-            </div>
-            <div className='mb-[16px]'>
-              <div>
+              {/* Phone Number Field (ReadOnly) */}
+              <div className='mb-[16px]'>
                 <label
-                  class='mb-2 font-semibold inline-block text-[#a1a5b7]'
-                  for='name'
+                  className='mb-2 font-semibold inline-block text-[#a1a5b7]'
+                  htmlFor='phoneNumber'
                 >
                   ফোন নাম্বার
                 </label>
                 <input
                   type='text'
-                  name='name'
-                  class='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
-                  id='name'
+                  name='phoneNumber'
+                  className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
+                  value={formData.phoneNumber}
                   readOnly
-                  value={number}
                 />
               </div>
-            </div>
-            <div className='mb-[16px]'>
-              <div>
+              {/* Father's Name Field */}
+              <div className='mb-[16px]'>
                 <label
-                  class='mb-2 font-semibold inline-block text-[#a1a5b7]'
-                  for='name'
+                  className='mb-2 font-semibold inline-block text-[#a1a5b7]'
+                  htmlFor='fatherName'
                 >
-                  বাবার নাম
-                  <span className='text-[#f76a78]'>*</span>
+                  বাবার নাম<span className='text-[#f76a78]'>*</span>
                 </label>
                 <input
                   type='text'
-                  name='name'
-                  class='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
-                  id='name'
+                  name='fatherName'
+                  className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
                   placeholder='তোমার বাবার নাম লিখ'
+                  value={formData.fatherName}
+                  onChange={handleInputChange}
+                  required
                 />
               </div>
-            </div>
-            <div className='mb-[16px]'>
-              <div>
+              {/* Mother's Name Field */}
+              <div className='mb-[16px]'>
                 <label
-                  class='mb-2 font-semibold inline-block text-[#a1a5b7]'
-                  for='name'
+                  className='mb-2 font-semibold inline-block text-[#a1a5b7]'
+                  htmlFor='motherName'
                 >
-                  মায়ের নাম
-                  <span className='text-[#f76a78]'>*</span>
+                  মায়ের নাম<span className='text-[#f76a78]'>*</span>
                 </label>
                 <input
                   type='text'
-                  name='name'
-                  class='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
-                  id='name'
+                  name='motherName'
+                  className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
                   placeholder='তোমার মায়ের নাম লিখ'
+                  value={formData.motherName}
+                  onChange={handleInputChange}
+                  required
                 />
               </div>
-            </div>
-            <div className='mb-[16px]'>
-              <div>
+
+              {/* Email Field */}
+              <div className='mb-[16px]'>
                 <label
-                  class='mb-2 font-semibold inline-block text-[#a1a5b7]'
-                  for='name'
+                  className='mb-2 font-semibold inline-block text-[#a1a5b7]'
+                  htmlFor='email'
                 >
                   ইমেইল
                 </label>
                 <input
                   type='text'
-                  name='name'
-                  class='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
-                  id='name'
-                  value={email}
+                  name='email'
+                  className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
+                  value={formData.email}
+                  onChange={handleInputChange} // Add onChange to make it editable
                 />
               </div>
-            </div>
-            <div className='mb-[16px]'>
-              <div>
+              {/* Birth Date Field */}
+              <div className='mb-[16px]'>
                 <label
-                  class='mb-2 font-semibold inline-block text-[#a1a5b7]'
-                  for='name'
+                  className='mb-2 font-semibold inline-block text-[#a1a5b7]'
+                  htmlFor='birthDate'
                 >
-                  জন্ম তারিখ
-                  <span className='text-[#f76a78]'>*</span>
+                  জন্ম তারিখ<span className='text-[#f76a78]'>*</span>
                 </label>
                 <input
                   type='date'
-                  name='name'
-                  class='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
-                  id='name'
-                  placeholder='আপনার জন্ম তারিখ নির্বাচন করুন'
+                  name='birthDate'
+                  className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
+                  value={formData.birthDate}
+                  onChange={handleInputChange}
+                  required
                 />
               </div>
-            </div>
-            <div className='mb-[16px]'>
-              <div>
+
+              {/* District Field */}
+              <div className='mb-[16px]'>
                 <label
-                  class='mb-2 font-semibold inline-block text-[#a1a5b7]'
-                  for='name'
+                  className='mb-2 font-semibold inline-block text-[#a1a5b7]'
+                  htmlFor='district'
                 >
                   জেলা
                 </label>
                 <input
                   type='text'
-                  name='name'
-                  class='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
-                  id='name'
+                  name='district'
+                  className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
                   placeholder='আপনার জেলার নাম লিখুন'
+                  value={formData.district}
+                  onChange={handleInputChange}
                 />
               </div>
-            </div>
-            <div className='mb-[16px]'>
-              <div>
+              {/* Class Field */}
+              <div className='mb-[16px]'>
                 <label
-                  class='mb-2 font-semibold inline-block text-[#a1a5b7]'
-                  for='name'
+                  className='mb-2 font-semibold inline-block text-[#a1a5b7]'
+                  htmlFor='classStudent'
                 >
-                  ক্লাস
-                  <span className='text-[#f76a78]'>*</span>
+                  ক্লাস<span className='text-[#f76a78]'>*</span>
                 </label>
                 <input
                   type='text'
-                  name='name'
-                  class='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
-                  id='name'
+                  name='classStudent'
+                  className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
                   placeholder='আপনার ক্লাস লিখুন'
+                  value={formData.class}
+                  onChange={handleInputChange}
+                  required
                 />
               </div>
-            </div>
-            <div className='mb-[16px]'>
-              <div>
+              {/* School Field */}
+              <div className='mb-[16px]'>
                 <label
-                  class='mb-2 font-semibold inline-block text-[#a1a5b7]'
-                  for='name'
+                  className='mb-2 font-semibold inline-block text-[#a1a5b7]'
+                  htmlFor='school'
                 >
-                  আপনার স্কুল
-                  <span className='text-[#f76a78]'>*</span>
+                  আপনার স্কুল<span className='text-[#f76a78]'>*</span>
                 </label>
                 <input
                   type='text'
-                  name='name'
-                  class='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
-                  id='name'
+                  name='school'
+                  className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
                   placeholder='আপনার স্কুল নাম লিখুন'
+                  value={formData.school}
+                  onChange={handleInputChange}
+                  required
                 />
               </div>
-            </div>
-            <div className='mb-[16px]'>
-              <div>
+              {/* Religion Field */}
+              <div className='mb-[16px]'>
                 <label
-                  class='mb-2 font-semibold inline-block text-[#a1a5b7]'
-                  for='name'
+                  className='mb-2 font-semibold inline-block text-[#a1a5b7]'
+                  htmlFor='religion'
                 >
-                  ধর্ম
-                  <span className='text-[#f76a78]'>*</span>
+                  ধর্ম<span className='text-[#f76a78]'>*</span>
                 </label>
                 <select
-                  name='department'
-                  id='department'
-                  class='form-select w-full rounded-md border-2 border-[#1BB57B] p-[8px] text-[15px] focus:outline-none'
+                  name='religion'
+                  className='form-select w-full rounded-md border-2 border-[#1BB57B] p-[8px] text-[15px] focus:outline-none'
+                  value={formData.religion}
+                  onChange={handleInputChange}
+                  required
                 >
                   <option value=''>তোমার ধর্ম বাছাই করো</option>
                   <option value='Muslim'>ইসলাম ধর্মাবলম্বী</option>
@@ -273,86 +349,55 @@ const EditProfile = () => {
                   <option value='other'>অন্যান্য</option>
                 </select>
               </div>
-            </div>
-            <div className='mb-[16px]'>
-              <div>
+              {/* Current Address Field */}
+              <div className='mb-[16px]'>
                 <label
-                  class='mb-2 font-semibold inline-block text-[#a1a5b7]'
-                  for='name'
+                  className='mb-2 font-semibold inline-block text-[#a1a5b7]'
+                  htmlFor='currentAddress'
                 >
-                  বর্তমান ঠিকানা
-                  <span className='text-[#f76a78]'>*</span>
+                  বর্তমান ঠিকানা<span className='text-[#f76a78]'>*</span>
                 </label>
                 <input
                   type='text'
-                  name='name'
-                  class='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
-                  id='name'
-                  placeholder='তোমার বর্তমান ঠিকানা লিখ'
+                  name='currentAddress'
+                  className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
+                  placeholder='আপনার বর্তমান ঠিকানা লিখুন'
+                  value={formData.currentAddress}
+                  onChange={handleInputChange}
+                  required
                 />
               </div>
-            </div>
-            <div className='mb-[16px]'>
-              <div>
+              {/* Gender Field */}
+              <div className='mb-[16px]'>
                 <label
                   className='mb-2 font-semibold inline-block text-[#a1a5b7]'
-                  for='name'
+                  htmlFor='gender'
                 >
-                  লিঙ্গ
-                  <span className='text-[#f76a78]'>*</span>
+                  লিঙ্গ<span className='text-[#f76a78]'>*</span>
                 </label>
-                <div className='flex items-center space-x-6'>
-                  <div className='flex items-center'>
-                    <input
-                      type='radio'
-                      name='radio1'
-                      id='radioButton1'
-                      className='h-5 w-5'
-                    />
-                    <label
-                      for='radioButton1'
-                      className='pl-3 text-base font-medium text-[#07074D]'
-                    >
-                      Male
-                    </label>
-                  </div>
-                  <div className='flex items-center'>
-                    <input
-                      type='radio'
-                      name='radio1'
-                      id='radioButton2'
-                      className='h-5 w-5'
-                    />
-                    <label
-                      for='radioButton2'
-                      className='pl-3 text-base font-medium text-[#07074D]'
-                    >
-                      Female
-                    </label>
-                  </div>
-                  <div className='flex items-center'>
-                    <input
-                      type='radio'
-                      name='radio1'
-                      id='radioButton3'
-                      className='h-5 w-5'
-                    />
-                    <label
-                      for='radioButton3'
-                      className='pl-3 text-base font-medium text-[#07074D]'
-                    >
-                      Other
-                    </label>
-                  </div>
-                </div>
+                <select
+                  name='gender'
+                  className='form-select w-full rounded-md border-2 border-[#1BB57B] p-[8px] text-[15px] focus:outline-none'
+                  value={formData.gender}
+                  onChange={handleInputChange}
+                  required
+                >
+                  <option value=''>লিঙ্গ বাছাই করুন</option>
+                  <option value='Male'>পুরুষ</option>
+                  <option value='Female'>মহিলা</option>
+                  <option value='Other'>অন্যান্য</option>
+                </select>
               </div>
             </div>
+            <div className='flex justify-center mt-3 mb-1'>
+              <button
+                type='submit'
+                className='bg-[#1BB57B] text-white font-medium px-4 py-1 rounded-md'
+              >
+                আপডেট করুন
+              </button>
+            </div>
           </form>
-          <div className='flex justify-center mt-3 mb-1'>
-            <button className='bg-[#1BB57B] text-white font-medium px-4 py-1 rounded-md'>
-              আপডেট করুন
-            </button>
-          </div>
         </div>
       </div>
     </section>

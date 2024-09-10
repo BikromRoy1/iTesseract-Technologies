@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BiChevronsRight } from 'react-icons/bi';
 import profile from '../../../Images/team/abdulhamid.png';
 import ProfileInformation from './ProfileInformation';
@@ -6,8 +6,50 @@ import ProfileInformation from './ProfileInformation';
 import evening from '../../../Images/icons/Evening.png';
 import afternoon from '../../../Images/icons/afternoon.png';
 import morning from '../../../Images/icons/morning.png';
+import DBLoader from '../../DBLoader/DBLoader';
 
 const Profile = () => {
+  const [userInfo, setUserInfo] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    // Retrieve token from localStorage
+    const getInfo = JSON.parse(localStorage.getItem('userInfo'));
+    const token = getInfo?.token; // Assuming the token is stored inside `userInfo`
+
+    // Fetch the API data with token in headers
+    fetch('https://itesseract.com.bd/main/api/v1/get-user-info', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`, // Pass the token as a Bearer token
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setUserInfo(data); // Store the API data in the state
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []); // Empty dependency array means this useEffect runs only once when the component mounts
+
+  if (loading) {
+    return <DBLoader />;
+  }
+
+  if (error) {
+    return <p className='flex items-center justify-center h-[80vh] w-full capitalize font-medium text-base'>Error: {error.message}</p>;
+  }
+
   const morningIcons = morning;
   const afternoonIcons = afternoon;
   const eveningIcons = evening;
@@ -34,7 +76,7 @@ const Profile = () => {
 
   const greeting = getGreeting();
 
-  const UserName = 'Mohammad Abdul Hamid';
+  const UserName = userInfo?.data?.user?.name;
 
   // Split the name string into an array of words
   const words = UserName.split(' ');
@@ -55,7 +97,7 @@ const Profile = () => {
         </ol>
       </div>
       <div class='grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-7'>
-        <div class='dashboard-box'>
+        <div class='dashboard-box flex items-center'>
           <div class='p-[1.25rem]'>
             <div class='flex items-center gap-3 md:gap-6'>
               <div>
@@ -75,7 +117,7 @@ const Profile = () => {
                   {UserName}
                 </h4>
                 <p>Course Student</p>
-                <h3 class='text-[#a1a5b7]'>contact@itesseract.co</h3>
+                <h3 class='text-[#a1a5b7]'>{userInfo?.data?.user?.email}</h3>
               </div>
             </div>
             <div class='flex items-center gap-2 pt-4'>
@@ -120,7 +162,7 @@ const Profile = () => {
         </div>
       </div>
 
-      <ProfileInformation />
+      <ProfileInformation userInfo={userInfo} />
     </section>
   );
 };

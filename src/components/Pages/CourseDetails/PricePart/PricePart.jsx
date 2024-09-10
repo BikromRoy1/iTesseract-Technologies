@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaStopwatch } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 import playIcons from '../../../../Images/icons/play_icon_2 1.svg';
+import RegistrationModal from '../../../ContactModel/RegistrationModal';
 import VideosModal from '../VideosModal/VideosModal';
 import './PricePart.css';
 
@@ -113,19 +113,23 @@ const PricePart = ({ mainCourse }) => {
           </div>
         </div>
         <div className='mt-4'>
-          <Link to='/registration'>
-            <button className='btn-buy mb-0 rounded-md bg-[#1CAB55] p-3 whitespace-nowrap text-base font-semibold text-white md:w-full  '>
+          <button className='btn-buy mb-0 rounded-md bg-[#1CAB55] p-3 whitespace-nowrap text-base font-semibold text-white md:w-full cursor-pointer'>
+            <label className='cursor-pointer' htmlFor='my-modal-4'>
               কোর্সটি কিনুন
-            </button>
-          </Link>
-          <Link to='/registration'>
-            <button className='btn-buy mb-0 mt-2 rounded-md bg-[#FFBB2C] p-3 whitespace-nowrap text-base font-semibold text-[#124265] md:w-full  '>
+            </label>
+          </button>
+          <button
+            htmlFor='my-modal-4'
+            className='btn-buy mb-0 mt-2 rounded-md bg-[#FFBB2C] p-3 whitespace-nowrap text-base font-semibold text-[#124265] md:w-full cursor-pointer'
+          >
+            <label className='cursor-pointer' htmlFor='my-modal-4'>
               কোর্সের জন্য রেজিস্ট্রেশন করুন
-            </button>
-          </Link>
+            </label>
+          </button>
         </div>
       </div>
       <VideosModal promotional_video={promotional_video} />
+      <RegistrationModal></RegistrationModal>
     </div>
   );
 };

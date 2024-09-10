@@ -62,13 +62,14 @@ export default function Sidebar({ children }) {
   );
 }
 
-export function SidebarItem({ icon, text, active, alert, to }) {
+export function SidebarItem({ icon, text, active, alert, to, handleLogout }) {
   const { expanded } = useContext(SidebarContext);
   const location = useLocation();
   const isActive = location.pathname === to;
   return (
     <Link to={to}>
       <li
+        onClick={handleLogout}
         className={`relative flex items-center py-2 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group ${
           isActive
             ? 'bg-gradient-to-tr from-green-200 to-green-100 text-[#1bb57b]'
