@@ -1,98 +1,233 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import userphotos from '../../../Images/team/abdulhamid.png';
 import './editProfile.css';
 
 const EditProfile = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [userName, setUserName] = useState(''); // Renamed from 'name' to 'userName'
-  const [fathersName, setFathersName] = useState('');
-  const [mothersName, setMothersName] = useState('');
-  const [gender, setGender] = useState('');
-  const [birthDate, setBirthDate] = useState('');
-  const [religion, setReligion] = useState('');
-  const [district, setDistrict] = useState('');
-  const [address, setAddress] = useState('');
-  const [classStudent, setClassStudent] = useState('');
-  const [institute, setInstitute] = useState('');
-  const [image, setImage] = useState(null); // To handle file upload
+  const [userInfo, setUserInfo] = useState(null);
+  const [imageFile, setImageFile] = useState(null);
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    name: '',
+    phoneNumber: '',
+    fatherName: '',
+    motherName: '',
+    email: '',
+    birthDate: '',
+    district: '',
+    classStudent: '',
+    school: '',
+    religion: '',
+    currentAddress: '',
+    gender: '',
+  });
+
+  console.log(formData);
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      // Update the state with the selected image file
-      setSelectedImage(URL.createObjectURL(file));
+      // Create a temporary URL for the selected image
+      const imageUrl = URL.createObjectURL(file);
+      setSelectedImage(imageUrl);
+      setImageFile(file);
+    } else {
+      setImageFile(null);
     }
   };
 
-  const handleInputChange = (e) => {
+  const getInfo = JSON.parse(localStorage.getItem('userInfo'));
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   const body = {
+  //     name: formData.name,
+  //     phone_number: formData.phoneNumber,
+  //     fathers_name: formData.fatherName,
+  //     mothers_name: formData.motherName,
+  //     date_of_birth: formData.birthDate,
+  //     district: formData.district,
+  //     class: formData.classStudent,
+  //     institute: formData.school,
+  //     religion: formData.religion,
+  //     address: formData.currentAddress,
+  //     gender: formData.gender,
+  //     // image: imageFile,
+  //   };
+
+  //   console.log(body);
+
+  //   try {
+  //     const response = await fetch(
+  //       'https://itesseract.com.bd/main/api/v1/profile-update',
+  //       {
+  //         method: 'POST',
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //           Authorization: `Bearer ${token}`, // Passing the token in the Authorization header
+  //         },
+  //         body: JSON.stringify(body),
+  //       }
+  //     );
+
+  //     const result = await response.json();
+
+  //     if (response.ok) {
+  //       toast.success(`Profile updated successfully`);
+  //       navigate('/dashboard/profile');
+  //     } else {
+  //       toast.error(`Failed to update profile`);
+  //     }
+  //   } catch (error) {
+  //     console.error('Error:', error);
+  //   }
+  // };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   const formData = new FormData();
+  //   formData.append('name', formData.name);
+  //   formData.append('phone_number', formData.phoneNumber);
+  //   formData.append('fathers_name', formData.fatherName);
+  //   formData.append('mothers_name', formData.motherName);
+  //   formData.append('date_of_birth', formData.birthDate);
+  //   formData.append('district', formData.district);
+  //   formData.append('class', formData.classStudent);
+  //   formData.append('institute', formData.school);
+  //   formData.append('religion', formData.religion);
+  //   formData.append('address', formData.currentAddress);
+  //   formData.append('gender', formData.gender);
+
+  //   if (imageFile) {
+  //     formData.append('image', imageFile);
+  //   }
+
+  //   console.log(formData);
+
+  //   try {
+  //     const response = await fetch(
+  //       'https://itesseract.com.bd/main/api/v1/profile-update',
+  //       {
+  //         method: 'POST',
+  //         headers: {
+  //           Authorization: `Bearer ${token}`, // Passing the token in the Authorization header
+  //           // Note: No 'Content-Type' header here because FormData sets it automatically
+  //         },
+  //         body: formData,
+  //       }
+  //     );
+
+  //     if (response.ok) {
+  //       const result = await response.json(); // Parse JSON result
+  //       toast.success(`Profile updated successfully`);
+  //       navigate('/dashboard/profile');
+  //     } else {
+  //       const errorResult = await response.text(); // Read response as text for error details
+  //       toast.error(`Failed to update profile: ${errorResult}`);
+  //     }
+  //   } catch (error) {
+  //     console.error('Error:', error);
+  //     toast.error('An unexpected error occurred');
+  //   }
+  // };
+
+  // Fetch userInfo from localStorage or API on component mount
+  
+  useEffect(() => {
+    const getInfo = JSON.parse(localStorage.getItem('userInfo'));
+    const token = getInfo?.token;
+
+    if (token) {
+      fetch('https://itesseract.com.bd/main/api/v1/get-user-info', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data?.data?.user_details?.gender);
+          setFormData({
+            ...formData,
+            name: data?.data?.user?.name || '',
+            fatherName: data?.data?.user_details?.fathers_name || '',
+            motherName: data?.data?.user_details?.mothers_name || '',
+            birthDate: data?.data?.user_details?.date_of_birth || '',
+            district: data?.data?.user_details?.district || '',
+            classStudent: data?.data?.user_details?.class || '',
+            school: data?.data?.user_details?.institute || '',
+            religion: data?.data?.user_details?.religion || '',
+            currentAddress: data?.data?.user_details?.address || '',
+            gender: data?.data?.user_details?.gender || '',
+          });
+        })
+        .catch((error) => console.error('Error fetching user info:', error));
+    }
+  }, []);
+
+  const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const getInfo = JSON.parse(localStorage.getItem('userInfo'));
     const token = getInfo?.token;
 
-    // Create a form data object with the necessary keys
-    const formData = {
-      name: name, // Example value from state
-      fathers_name: fathersName, // Example value from state
-      mothers_name: mothersName, // Example value from state
-      gender: gender, // Example value from state
-      date_of_birth: birthDate, // Example value from state
-      religion: religion, // Example value from state
-      district: district, // Example value from state
-      address: address, // Example value from state
-      class: classStudent, // Example value from state
-      institute: institute, // Example value from state
-      image: image, // Example value from file input or state
+    if (!token) {
+      console.error('User is not authenticated');
+      return;
+    }
+
+    const body = {
+      name: formData.name,
+      phone_number: formData.phoneNumber,
+      fathers_name: formData.fatherName,
+      mothers_name: formData.motherName,
+      date_of_birth: formData.birthDate,
+      district: formData.district,
+      class: formData.classStudent,
+      institute: formData.school,
+      religion: formData.religion,
+      address: formData.currentAddress,
+      gender: formData.gender,
+      // image: imageFile,
     };
 
-    try {
-      const response = await fetch(
-        'https://itesseract.com.bd/main/api/v1/profile-update',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify(formData), // Send formData as JSON
-        }
-      );
+    console.log(`"This is body data"${body}`);
 
-      // Check if the response is JSON
-      const contentType = response.headers.get('content-type');
-      if (contentType && contentType.indexOf('application/json') !== -1) {
-        const data = await response.json();
-
-        if (data.success) {
-          alert('Profile updated successfully');
-        } else {
-          alert('Profile update failed: ' + data.message);
+    // Submit the updated form data to the API
+    fetch('https://itesseract.com.bd/main/api/v1/profile-update', {
+      method: 'POST', // or PUT, depending on your API
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(body),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to update user info');
         }
-      } else {
-        // If the response is not JSON, throw an error
-        const errorMessage = await response.text(); // Capture the HTML or error response as text
-        console.error('Error:', errorMessage);
-        alert(
-          'An unexpected error occurred. Please check the server response.'
-        );
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('An error occurred while updating the profile.');
-    }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(`updated console data : ${data}`);
+        console.log('User info updated successfully:', data);
+        // Optional: show success message or redirect
+      })
+      .catch((error) => {
+        console.error('Error updating user info:', error);
+      });
   };
-
-  let email = 'email@example.com';
-  let number = '01795-188538';
-
-  console.log(formData);
 
   return (
     <section className='dashboard-section'>
@@ -182,7 +317,7 @@ const EditProfile = () => {
                   className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
                   placeholder='আপনার পুরো নাম লিখুন'
                   value={formData.name}
-                  onChange={handleInputChange}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -198,7 +333,11 @@ const EditProfile = () => {
                   type='text'
                   name='phoneNumber'
                   className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
-                  value={formData.phoneNumber}
+                  value={
+                    userInfo?.data?.user?.mobile
+                      ? userInfo?.data?.user?.mobile
+                      : 'N/A'
+                  }
                   readOnly
                 />
               </div>
@@ -214,10 +353,9 @@ const EditProfile = () => {
                   type='text'
                   name='fatherName'
                   className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
-                  placeholder='তোমার বাবার নাম লিখ'
                   value={formData.fatherName}
-                  onChange={handleInputChange}
-                  required
+                  onChange={handleChange}
+                  placeholder='তোমার বাবার নাম লিখ'
                 />
               </div>
               {/* Mother's Name Field */}
@@ -232,9 +370,9 @@ const EditProfile = () => {
                   type='text'
                   name='motherName'
                   className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
-                  placeholder='তোমার মায়ের নাম লিখ'
                   value={formData.motherName}
-                  onChange={handleInputChange}
+                  onChange={handleChange}
+                  placeholder='তোমার মায়ের নাম লিখ'
                   required
                 />
               </div>
@@ -250,9 +388,9 @@ const EditProfile = () => {
                 <input
                   type='text'
                   name='email'
+                  value={getInfo?.email}
                   className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
-                  value={formData.email}
-                  onChange={handleInputChange} // Add onChange to make it editable
+                  readOnly
                 />
               </div>
               {/* Birth Date Field */}
@@ -266,10 +404,9 @@ const EditProfile = () => {
                 <input
                   type='date'
                   name='birthDate'
-                  className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
                   value={formData.birthDate}
-                  onChange={handleInputChange}
-                  required
+                  onChange={handleChange}
+                  className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
                 />
               </div>
 
@@ -284,10 +421,10 @@ const EditProfile = () => {
                 <input
                   type='text'
                   name='district'
+                  value={formData.district}
+                  onChange={handleChange}
                   className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
                   placeholder='আপনার জেলার নাম লিখুন'
-                  value={formData.district}
-                  onChange={handleInputChange}
                 />
               </div>
               {/* Class Field */}
@@ -302,9 +439,9 @@ const EditProfile = () => {
                   type='text'
                   name='classStudent'
                   className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
+                  value={formData.classStudent}
+                  onChange={handleChange}
                   placeholder='আপনার ক্লাস লিখুন'
-                  value={formData.class}
-                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -320,9 +457,9 @@ const EditProfile = () => {
                   type='text'
                   name='school'
                   className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
-                  placeholder='আপনার স্কুল নাম লিখুন'
                   value={formData.school}
-                  onChange={handleInputChange}
+                  onChange={handleChange}
+                  placeholder='আপনার স্কুল নাম লিখুন'
                   required
                 />
               </div>
@@ -337,9 +474,9 @@ const EditProfile = () => {
                 <select
                   name='religion'
                   className='form-select w-full rounded-md border-2 border-[#1BB57B] p-[8px] text-[15px] focus:outline-none'
-                  value={formData.religion}
-                  onChange={handleInputChange}
                   required
+                  value={formData.religion}
+                  onChange={handleChange}
                 >
                   <option value=''>তোমার ধর্ম বাছাই করো</option>
                   <option value='Muslim'>ইসলাম ধর্মাবলম্বী</option>
@@ -362,9 +499,9 @@ const EditProfile = () => {
                   name='currentAddress'
                   className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
                   placeholder='আপনার বর্তমান ঠিকানা লিখুন'
-                  value={formData.currentAddress}
-                  onChange={handleInputChange}
                   required
+                  value={formData.currentAddress}
+                  onChange={handleChange}
                 />
               </div>
               {/* Gender Field */}
@@ -378,9 +515,9 @@ const EditProfile = () => {
                 <select
                   name='gender'
                   className='form-select w-full rounded-md border-2 border-[#1BB57B] p-[8px] text-[15px] focus:outline-none'
-                  value={formData.gender}
-                  onChange={handleInputChange}
                   required
+                  value={formData.gender}
+                  onChange={handleChange}
                 >
                   <option value=''>লিঙ্গ বাছাই করুন</option>
                   <option value='Male'>পুরুষ</option>

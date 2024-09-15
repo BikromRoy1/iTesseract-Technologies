@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaStopwatch } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import playIcons from '../../../../Images/icons/play_icon_2 1.svg';
 import RegistrationModal from '../../../ContactModel/RegistrationModal';
 import VideosModal from '../VideosModal/VideosModal';
@@ -126,6 +127,12 @@ const PricePart = ({ mainCourse }) => {
               কোর্সের জন্য রেজিস্ট্রেশন করুন
             </label>
           </button>
+          <Link
+            to='/checkout'
+            className='btn-buy mb-0 mt-2 rounded-md bg-[#2cff5a] p-3 whitespace-nowrap text-base font-semibold text-[#124265] md:w-full cursor-pointer'
+          >
+            <span className='cursor-pointer'>কোর্সটি কিনুন</span>
+          </Link>
         </div>
       </div>
       <VideosModal promotional_video={promotional_video} />

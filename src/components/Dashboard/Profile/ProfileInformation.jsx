@@ -5,18 +5,47 @@ import './ProfileInformation.css';
 const ProfileInformation = ({ userInfo }) => {
   console.log(userInfo);
 
+  // Date format for the profile
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    return new Intl.DateTimeFormat('en-GB', options).format(date);
+  };
+
+  // face all data for the profile
   let name = userInfo?.data?.user?.name ? userInfo.data.user.name : 'N/A';
-  let fatherName = 'Mohammad Eliyas';
-  let motherName = 'Rabiya Begum';
-  let email = userInfo?.data?.user?.email;
-  let number = userInfo?.data?.user?.mobile;
-  let Gender = 'Male';
-  let BirthDay = '14 March, 2002';
-  let location = 'Bagerhat-বাগেরহাট';
-  let school = 'ATKHALI SECONDARY SCHOOL';
-  let Class = 'Higher Secondary Certificate';
-  let Religion = 'Islam';
-  let address = 'Dhaka, Bangladesh';
+  let fatherName = userInfo?.data?.user_details?.fathers_name
+    ? userInfo.data.user_details.fathers_name
+    : 'N/A';
+  let motherName = userInfo?.data?.user_details?.mothers_name
+    ? userInfo.data.user_details.mothers_name
+    : 'N/A';
+  let email = userInfo?.data?.user?.email ? userInfo?.data?.user?.email : 'N/A';
+  let number = userInfo?.data?.user?.mobile
+    ? userInfo?.data?.user?.mobile
+    : 'N/A';
+  let Gender = userInfo?.data?.user_details?.gender
+    ? userInfo?.data?.user_details?.gender
+    : 'N/A';
+  // let BirthDay = '14 March, 2002';
+  let BirthDay = userInfo?.data?.user_details?.date_of_birth
+    ? userInfo?.data?.user_details?.date_of_birth
+    : 'N/A';
+  let location = userInfo?.data?.user_details?.district
+    ? userInfo?.data?.user_details?.district
+    : 'N/A';
+  let school = userInfo?.data?.user_details?.institute
+    ? userInfo?.data?.user_details?.institute
+    : 'N/A';
+  let Class = userInfo?.data?.user_details?.class
+    ? userInfo?.data?.user_details?.class
+    : 'N/A';
+  let Religion = userInfo?.data?.user_details?.religion
+    ? userInfo?.data?.user_details?.religion
+    : 'N/A';
+  let address = userInfo?.data?.user_details?.address
+    ? userInfo?.data?.user_details?.address
+    : 'N/A';
 
   return (
     <section className='dashboard-box mt-[1.5rem]'>

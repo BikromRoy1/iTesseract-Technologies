@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import liveCourse from '../../../Images/icons/live-course.png';
 import profile from '../../../Images/icons/profile.png';
 import recordCourse from '../../../Images/icons/record-courses.png';
 import logout from '../../../Images/icons/signout.png';
 import logo from '../../../Images/main-logo.svg';
+
+import { apiUrl } from '../../../config/config';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,9 +20,35 @@ const Header = () => {
     setUserEmail(getInfo?.email);
   }, []);
 
-  const handleLogout = () => {
-    localStorage.removeItem('userInfo');
-    window.location.reload();
+  const handleLogout = async () => {
+    try {
+      const getInfo = JSON.parse(localStorage.getItem('userInfo'));
+
+      if (!getInfo.token) {
+        console.error('No auth token found');
+        return; // If no token is found, stop execution
+      }
+
+      const response = await fetch(`${apiUrl}/api/v1/logout`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${getInfo.token}`, // Pass the token in the Authorization header
+        },
+      });
+
+      if (response.ok) {
+        // Logout successful
+        localStorage.removeItem('userInfo');
+        localStorage.removeItem('authToken'); // Clear the token
+        window.location.href = '/login'; // Redirect after logout
+        toast.success('Successfully logged out');
+      } else {
+        console.error('Logout failed: ', response.status); // Log the status for debugging
+      }
+    } catch (error) {
+      console.error('Error during logout:', error);
+    }
   };
 
   return (

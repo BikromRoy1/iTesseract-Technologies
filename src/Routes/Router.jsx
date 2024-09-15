@@ -26,6 +26,7 @@ import RecordCourse from '../components/Pages/RecordedCourse/RecordCourse';
 import Team from '../components/Pages/Team/Team/Team';
 import UserRegistration from '../components/UserRegistration/UserRegistration.jsx';
 
+import Checkout from '../components/checkout/Checkout.jsx';
 import { apiUrl } from '../config/config.js';
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes.js';
 
@@ -112,6 +113,10 @@ const router = createBrowserRouter([
       {
         path: '/UserRegistration',
         element: <UserRegistration></UserRegistration>,
+      },
+      {
+        path: '/checkout',
+        element: <Checkout></Checkout>,
       },
     ],
   },

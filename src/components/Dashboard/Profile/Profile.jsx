@@ -8,6 +8,8 @@ import afternoon from '../../../Images/icons/afternoon.png';
 import morning from '../../../Images/icons/morning.png';
 import DBLoader from '../../DBLoader/DBLoader';
 
+import { apiUrl } from '../../../config/config';
+
 const Profile = () => {
   const [userInfo, setUserInfo] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -104,7 +106,7 @@ const Profile = () => {
                 <div class='avatar online w-[100px] h-[100px]'>
                   <img
                     class='object-cover rounded-full border-2 border-[#36D399]'
-                    src={profile}
+                    src={`${apiUrl}/${userInfo?.data?.user?.image}`}
                     width={100}
                     height={100}
                     loading='lazy'
