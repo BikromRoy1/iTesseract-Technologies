@@ -62,6 +62,10 @@ const PricePart = ({ mainCourse }) => {
   // Convert the difference from milliseconds to days
   const daysUntilOffer = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
 
+  // get a user token
+  const getInfo = JSON.parse(localStorage.getItem('userInfo'));
+  const token = getInfo?.token;
+
   return (
     <div className='price-card mb-[1.6rem]'>
       <div className='course-videos relative'>
@@ -114,11 +118,11 @@ const PricePart = ({ mainCourse }) => {
           </div>
         </div>
         <div className='mt-4'>
-          <button className='btn-buy mb-0 rounded-md bg-[#1CAB55] p-3 whitespace-nowrap text-base font-semibold text-white md:w-full cursor-pointer'>
-            <label className='cursor-pointer' htmlFor='my-modal-4'>
-              কোর্সটি কিনুন
-            </label>
-          </button>
+          <Link to={token ? '/checkout' : '/login'}>
+            <button className='btn-buy mb-0 rounded-md bg-[#1CAB55] p-3 whitespace-nowrap text-base font-semibold text-white md:w-full cursor-pointer'>
+              <span className='cursor-pointer'>কোর্সটি কিনুন</span>
+            </button>
+          </Link>
           <button
             htmlFor='my-modal-4'
             className='btn-buy mb-0 mt-2 rounded-md bg-[#FFBB2C] p-3 whitespace-nowrap text-base font-semibold text-[#124265] md:w-full cursor-pointer'
@@ -127,12 +131,6 @@ const PricePart = ({ mainCourse }) => {
               কোর্সের জন্য রেজিস্ট্রেশন করুন
             </label>
           </button>
-          <Link
-            to='/checkout'
-            className='btn-buy mb-0 mt-2 rounded-md bg-[#2cff5a] p-3 whitespace-nowrap text-base font-semibold text-[#124265] md:w-full cursor-pointer'
-          >
-            <span className='cursor-pointer'>কোর্সটি কিনুন</span>
-          </Link>
         </div>
       </div>
       <VideosModal promotional_video={promotional_video} />
