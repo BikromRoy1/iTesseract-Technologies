@@ -1,12 +1,13 @@
 import React from 'react';
 import { FaStopwatch } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import playIcons from '../../../../Images/icons/play_icon_2 1.svg';
 import RegistrationModal from '../../../ContactModel/RegistrationModal';
 import VideosModal from '../VideosModal/VideosModal';
 import './PricePart.css';
 
 const PricePart = ({ mainCourse }) => {
+  const navigate = useNavigate();
   const { promotional_video, price, discount_price, discount, offer_date } =
     mainCourse.course;
 
@@ -66,6 +67,22 @@ const PricePart = ({ mainCourse }) => {
   const getInfo = JSON.parse(localStorage.getItem('userInfo'));
   const token = getInfo?.token;
 
+  // get to the courses id number
+  const courseId = mainCourse?.course?.id;
+
+  // click function to
+  const handleViewClick = (courseId) => {
+    if (token) {
+      // Navigate to checkout with only courseId
+      navigate('/checkout', {
+        state: { courseId }, // Only pass courseId
+      });
+    } else {
+      // Navigate to login page
+      navigate('/login');
+    }
+  };
+
   return (
     <div className='price-card mb-[1.6rem]'>
       <div className='course-videos relative'>
@@ -118,11 +135,12 @@ const PricePart = ({ mainCourse }) => {
           </div>
         </div>
         <div className='mt-4'>
-          <Link to={token ? '/checkout' : '/login'}>
-            <button className='btn-buy mb-0 rounded-md bg-[#1CAB55] p-3 whitespace-nowrap text-base font-semibold text-white md:w-full cursor-pointer'>
-              <span className='cursor-pointer'>কোর্সটি কিনুন</span>
-            </button>
-          </Link>
+          <button
+            onClick={() => handleViewClick(courseId)}
+            className='btn-buy mb-0 rounded-md bg-[#1CAB55] p-3 whitespace-nowrap text-base font-semibold text-white md:w-full cursor-pointer'
+          >
+            <span className='cursor-pointer'>কোর্সটি কিনুন</span>
+          </button>
           <button
             htmlFor='my-modal-4'
             className='btn-buy mb-0 mt-2 rounded-md bg-[#FFBB2C] p-3 whitespace-nowrap text-base font-semibold text-[#124265] md:w-full cursor-pointer'
