@@ -415,7 +415,7 @@ const Checkout = () => {
                     </div>
                     <div className='mx-3'>
                       <button className='max-w[300px] mx-auto block w-full bg-[#1bb57b] px-4 py-[6px] rounded-md font-medium text-base tracking-wide text-white transition-colors whitespace-nowrap duration-200'>
-                        শুরু করুন
+                        পেমেন্ট করুন
                       </button>
                     </div>
                   </div>

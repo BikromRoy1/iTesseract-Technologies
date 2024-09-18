@@ -6,6 +6,10 @@ import './DBHeader.css';
 
 const DBHeader = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [userInfo, setUserInfo] = useState(null);
+
+  const getInfo = JSON.parse(localStorage.getItem('userInfo'));
+  const token = getInfo?.token;
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -21,6 +25,29 @@ const DBHeader = () => {
     const options = { month: 'long', day: 'numeric', year: 'numeric' };
     return date.toLocaleDateString('en-US', options);
   };
+
+  useEffect(() => {
+    // Fetch the API data with token in headers
+    fetch('https://itesseract.com.bd/main/api/v1/get-user-info', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`, // Pass the token as a Bearer token
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setUserInfo(data); // Store the API data in the state
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []); // Empty dependency array means this useEffect runs only once when the component mounts
 
   return (
     <section class='pl-0 md:pl-7'>
@@ -44,7 +71,8 @@ const DBHeader = () => {
                 </span>
                 <h2 class='mb-[2px] text-[20px] md:text-[30px] text-white font-semibold tracking-wider'>
                   {' '}
-                  Welcome Back, <span class='font-bold'>Abdul Hamid!</span>
+                  Welcome Back,{' '}
+                  <span class='font-bold'>{userInfo?.data?.user?.name}!</span>
                 </h2>
                 <p class='text-[#cfcfd8] text-base'>
                   See What’s happening with your courses and students.

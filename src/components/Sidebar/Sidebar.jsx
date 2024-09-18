@@ -1,5 +1,5 @@
 import { ChevronFirst, ChevronLast, MoreVertical } from 'lucide-react';
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../../Images/main-logo.svg';
 import profile from '../../Images/teacher/student-01.png';
@@ -8,6 +8,38 @@ const SidebarContext = createContext();
 
 export default function Sidebar({ children }) {
   const [expanded, setExpanded] = useState(true);
+  const [userInfo, setUserInfo] = useState(null);
+
+  const getInfo = JSON.parse(localStorage.getItem('userInfo'));
+  const userEmail = getInfo?.email;
+  const token = getInfo?.token;
+
+  // Maximum length of email to display
+  const maxLength = 30;
+
+  useEffect(() => {
+    // Fetch the API data with token in headers
+    fetch('https://itesseract.com.bd/main/api/v1/get-user-info', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`, // Pass the token as a Bearer token
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setUserInfo(data); // Store the API data in the state
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []); // Empty dependency array means this useEffect runs only once when the component mounts
+
   return (
     <>
       <aside className='h-screen'>
@@ -48,9 +80,20 @@ export default function Sidebar({ children }) {
               } `}
             >
               <div className='leading-4'>
-                <h4 className='font-semibold'>constGenius</h4>
+                <h4 className='font-semibold'>
+                  {' '}
+                  {userInfo?.data?.user?.name
+                    ? userInfo?.data?.user?.name?.length > maxLength
+                      ? userInfo?.data?.user?.name?.slice(0, maxLength) + '...'
+                      : userInfo?.data?.user?.name
+                    : 'not found'}
+                </h4>
                 <span className='text-xs text-gray-600'>
-                  constgenius@gmail.com
+                  {userEmail
+                    ? userEmail?.length > maxLength
+                      ? userEmail?.slice(0, maxLength) + '...'
+                      : userEmail
+                    : 'not found'}
                 </span>
               </div>
               <MoreVertical size={20} />
