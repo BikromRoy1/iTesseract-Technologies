@@ -13,6 +13,12 @@ const Checkout = () => {
   const [courseData, setCourseData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [formData, setFormData] = useState({
+    batchOption: '',
+    courseDuration: '',
+    durationName: '', // Store the name of the selected duration
+    price: '', // Set price to an empty string by default
+  });
 
   const { courseId = 'No ID' } = location.state || {};
 
@@ -98,14 +104,52 @@ const Checkout = () => {
       </div>
     );
 
+  // Handle change for BatchOption select field
+  const handleBatchChange = (e) => {
+    setFormData({
+      ...formData,
+      batchOption: e.target.value, // Update batch option value
+    });
+  };
+
+  // Handle change for courseDurations select field and update price
+  const handleDurationChange = (e) => {
+    const selectedValue = e.target.value;
+
+    if (selectedValue === '') {
+      setFormData({
+        ...formData,
+        courseDuration: '',
+        durationName: '', // Clear duration name
+        price: '', // Set price to empty string
+      });
+      return;
+    }
+
+    const selectedDuration = courseData.data.course_durations.find(
+      (duration) => duration.duration.name === selectedValue
+    );
+
+    setFormData({
+      ...formData,
+      courseDuration: selectedValue,
+      durationName: selectedDuration ? selectedDuration.duration.name : '', // Update duration name
+      price: selectedDuration ? selectedDuration.price : '', // Update price or set it as empty string
+    });
+  };
+
   // Extract price and discount price
-  const price = courseData?.data?.course?.price || 0;
-  const discountPrice = courseData?.data?.course?.discount_price || 0;
+  const defaultPrice = courseData?.data?.course?.price || 0;
+  const defaultDiscountPrice = courseData?.data?.course?.discount_price || 0;
 
   // Calculate the total price after discount
-  const totalPrice = price - discountPrice;
+  // const totalPrice = price - discountPrice;
 
-  console.log(courseData.data?.batches);
+  // Calculate the total price based on selection
+  const totalPrice =
+    formData.price !== ''
+      ? formData.price // Use user-selected price directly
+      : defaultPrice - defaultDiscountPrice; // Apply discount to default price
 
   return (
     <div>
@@ -217,9 +261,14 @@ const Checkout = () => {
                               name='BatchOption'
                               id='BatchOption'
                               className='w-full px-2 py-[4px] rounded-md input-from-contorl text-gray-900'
+                              value={formData.batchOption} // Set the selected value
+                              onChange={handleBatchChange} // Handle change event
                             >
+                              <option className='text-xs' value=''>
+                                Select Batch
+                              </option>
                               {courseData?.data?.batches?.length > 0 ? (
-                                courseData.data.batches.map((batch) => (
+                                courseData?.data?.batches?.map((batch) => (
                                   <option
                                     className='text-xs'
                                     key={batch.id}
@@ -251,7 +300,12 @@ const Checkout = () => {
                               name='course_durations'
                               id='course_durations'
                               className='w-full px-2 py-[4px] rounded-md input-from-contorl text-gray-900'
+                              value={formData.courseDuration} // Set the selected value
+                              onChange={handleDurationChange} // Handle change event
                             >
+                              <option className='text-xs' value=''>
+                                Select values
+                              </option>
                               {courseData?.data?.course_durations?.length >
                               0 ? (
                                 courseData.data.course_durations.map(
@@ -259,7 +313,7 @@ const Checkout = () => {
                                     <option
                                       className='text-xs'
                                       key={durations?.id}
-                                      value={durations?.duration?.name}
+                                      value={`${durations?.duration?.name}`}
                                     >
                                       {durations?.duration?.name}- ৳(
                                       {durations.price})
@@ -308,6 +362,45 @@ const Checkout = () => {
                         -৳{courseData?.data?.course?.discount_price}
                       </p>
                     </div>
+                    {formData?.price !== '' && (
+                      <div className='w-full flex items-center justify-between mb-1 mt-1'>
+                        <button class='gap-2 py-2  flex ghost text-green-500 ng-star-inserted'>
+                          <svg
+                            width='20'
+                            height='20'
+                            viewBox='0 0 20 20'
+                            fill='none'
+                            xmlns='http://www.w3.org/2000/svg'
+                          >
+                            <path
+                              d='M3.67063 12.9386L7.44563 16.7136C8.99563 18.2636 11.5123 18.2636 13.0706 16.7136L16.729 13.0553C18.279 11.5053 18.279 8.98864 16.729 7.43031L12.9456 3.66364C12.154 2.87197 11.0623 2.44697 9.94563 2.50531L5.77896 2.70531C4.1123 2.78031 2.7873 4.10531 2.70396 5.76364L2.50396 9.93031C2.45396 11.0553 2.87896 12.147 3.67063 12.9386Z'
+                              stroke='currentColor'
+                              stroke-width='1.41176'
+                              stroke-linecap='round'
+                              stroke-linejoin='round'
+                            ></path>
+                            <path
+                              d='M8.11458 10.1891C9.26518 10.1891 10.1979 9.25639 10.1979 8.10579C10.1979 6.9552 9.26518 6.02246 8.11458 6.02246C6.96399 6.02246 6.03125 6.9552 6.03125 8.10579C6.03125 9.25639 6.96399 10.1891 8.11458 10.1891Z'
+                              stroke='currentColor'
+                              stroke-width='1.41176'
+                              stroke-linecap='round'
+                            ></path>
+                            <path
+                              d='M11.0312 14.3558L14.3646 11.0225'
+                              stroke='currentColor'
+                              stroke-width='1.41176'
+                              stroke-miterlimit='10'
+                              stroke-linecap='round'
+                              stroke-linejoin='round'
+                            ></path>
+                          </svg>
+                          <span>{formData?.durationName}</span>
+                        </button>
+                        <p className='font-semibold text-[20px] tracking-[0.20000000298023224px]'>
+                          ৳{formData?.price}
+                        </p>
+                      </div>
+                    )}
                   </div>
                   <div>
                     <div className='flex justify-between p-4 text-lg font-semibold'>
