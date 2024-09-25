@@ -5,6 +5,8 @@ import { Link, useLocation } from 'react-router-dom';
 import Checkouts from '../../Images/Checkout.jpg';
 import './Checkout.css';
 
+import Lottie from 'lottie-react';
+import animation from '../../Images/content.json';
 import { apiUrl } from '../../config/config';
 import DBLoader from '../DBLoader/DBLoader';
 
@@ -66,37 +68,21 @@ const Checkout = () => {
     return (
       <div className='w-full h-screen flex items-center justify-center'>
         <div className='text-center'>
+          <h2 className='mb-5 font-extrabold text-9xl dark:text-gray-600'>
+            <span className='logo-color'>
+              <Lottie animationData={animation}></Lottie>
+            </span>
+          </h2>
           <p className='text-2xl font-semibold md:text-3xl'>
             দুঃখিত, আমরা এই পৃষ্ঠাটি খুঁজে পাইনি
           </p>
-          <p className='mt-4 mb-8 dark:text-gray-400'>
+          <p className='mt-4 mb-4 dark:text-gray-400'>
             দয়া করে একটি কোর্স নির্বাচন করুন. এখানে কিছু সহায়ক লিঙ্ক আছে :
           </p>
-          <div className='flex items-center justify-center w-full mt-6 gap-x-3 shrink-0 sm:w-auto mx-auto'>
+          <div className='flex items-center justify-center w-full mt-2 gap-x-3 shrink-0 sm:w-auto mx-auto'>
             <Link to='/'>
-              <button className='flex items-center justify-center w-1/2 px-5 py-2 text-sm text-gray-700 transition-colors duration-200 bg-white border rounded-lg gap-x-2 sm:w-auto dark:hover:bg-gray-800 dark:bg-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:border-gray-700'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  strokeWidth='1.5'
-                  stroke='currentColor'
-                  className='w-5 h-5 rtl:rotate-180'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    d='M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18'
-                  />
-                </svg>
-
-                <span>হোম পেজ যান </span>
-              </button>
-            </Link>
-
-            <Link to='/recorded'>
-              <button className='w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-[#1CB63E] rounded-lg shrink-0 sm:w-auto hover:bg-[#06A12A] dark:hover:bg-[#06A12A] dark:bg-[#1CB63E]'>
-                কোর্স সমূহ
+              <button className='px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-[#1CB63E] rounded-lg  hover:bg-[#06A12A] dark:hover:bg-[#06A12A] dark:bg-[#1CB63E]'>
+                Go To Home
               </button>
             </Link>
           </div>
