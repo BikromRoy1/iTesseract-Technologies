@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { BiChevronsRight } from 'react-icons/bi';
 import welcome from '../../../Images/icons/welcome.png';
+import DBLoader from '../../DBLoader/DBLoader';
 import Analytics from '../Analytics/Analytics';
 import './DBHeader.css';
 
 const DBHeader = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [userInfo, setUserInfo] = useState(null);
+  const [myCourse, setMyCourse] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const getInfo = JSON.parse(localStorage.getItem('userInfo'));
   const token = getInfo?.token;
@@ -49,6 +53,49 @@ const DBHeader = () => {
       });
   }, []); // Empty dependency array means this useEffect runs only once when the component mounts
 
+  useEffect(() => {
+    // Fetch the API data with token in headers
+    fetch('https://itesseract.com.bd/main/api/v1/order-list', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`, // Pass the token as a Bearer token
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setMyCourse(data); // Store the API data in the state
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []); // Empty dependency array means this useEffect runs only once when the component mounts
+
+  if (loading) {
+    return <DBLoader />;
+  }
+
+  if (error) {
+    return (
+      <p className='flex items-center justify-center h-[80vh] w-full capitalize font-medium text-base'>
+        Error: {error.message}
+      </p>
+    );
+  }
+
+  // Function to zero-pad numbers less than 10
+  const zeroPad = (num) => (num < 10 ? `0${num}` : num);
+
+  // all course length for this
+  const totalCourse = myCourse?.data?.length;
+
   return (
     <section class='pl-0 md:pl-7'>
       <div class='p-6'>
@@ -84,7 +131,9 @@ const DBHeader = () => {
                         COURSES
                       </span>
                       <h4 class='text-[#6560f0] mb-0 font-extrabold text-[24px]'>
-                        23
+                        {myCourse?.data?.length > 0
+                          ? zeroPad(totalCourse)
+                          : '0'}
                       </h4>
                     </div>
                   </div>
