@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import userphotos from '../../../Images/team/abdulhamid.png';
+import { toast } from 'react-toastify';
+import userphotos from '../../../Images/teacher/student-01.png';
 import './editProfile.css';
+
+import { apiUrl } from '../../../config/config';
 
 const EditProfile = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -26,17 +29,35 @@ const EditProfile = () => {
 
   console.log(formData);
 
+  // const handleImageChange = (event) => {
+  //   const file = event.target.files[0];
+  //   if (file) {
+  //     // Create a temporary URL for the selected image
+  //     const imageUrl = URL.createObjectURL(file);
+  //     setSelectedImage(imageUrl);
+  //     setImageFile(file);
+  //   } else {
+  //     setImageFile(null);
+  //   }
+  // };
+
   const handleImageChange = (event) => {
     const file = event.target.files[0];
+
     if (file) {
       // Create a temporary URL for the selected image
       const imageUrl = URL.createObjectURL(file);
       setSelectedImage(imageUrl);
       setImageFile(file);
+
+      // Clean up the object URL when the component unmounts or when a new image is selected
+      return () => URL.revokeObjectURL(imageUrl);
     } else {
-      setImageFile(null);
+      setSelectedImage(null); // Clear the preview if no file is selected
+      setImageFile(null); // Clear the image file if no file is selected
     }
   };
+
 
   const getInfo = JSON.parse(localStorage.getItem('userInfo'));
 
@@ -135,7 +156,7 @@ const EditProfile = () => {
   // };
 
   // Fetch userInfo from localStorage or API on component mount
-  
+
   useEffect(() => {
     const getInfo = JSON.parse(localStorage.getItem('userInfo'));
     const token = getInfo?.token;
@@ -163,6 +184,7 @@ const EditProfile = () => {
             religion: data?.data?.user_details?.religion || '',
             currentAddress: data?.data?.user_details?.address || '',
             gender: data?.data?.user_details?.gender || '',
+            image: data?.data?.user?.image || '', // Add the image field
           });
         })
         .catch((error) => console.error('Error fetching user info:', error));
@@ -176,6 +198,65 @@ const EditProfile = () => {
     });
   };
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   const getInfo = JSON.parse(localStorage.getItem('userInfo'));
+  //   const token = getInfo?.token;
+
+  //   if (!token) {
+  //     console.error('User is not authenticated');
+  //     return;
+  //   }
+
+  //   const body = {
+  //     name: formData.name,
+  //     phone_number: formData.phoneNumber,
+  //     fathers_name: formData.fatherName,
+  //     mothers_name: formData.motherName,
+  //     date_of_birth: formData.birthDate,
+  //     district: formData.district,
+  //     class: formData.classStudent,
+  //     institute: formData.school,
+  //     religion: formData.religion,
+  //     address: formData.currentAddress,
+  //     gender: formData.gender,
+  //     image: imageFile,
+  //   };
+
+  //   console.log(`"This is body data"${body}`);
+
+  //   // Submit the updated form data to the API
+  //   fetch('https://itesseract.com.bd/main/api/v1/profile-update', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       Authorization: `Bearer ${token}`,
+  //     },
+  //     body: JSON.stringify(body),
+  //   })
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error('Failed to update user info');
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       if (data) {
+  //         toast.success(`Profile updated successfully`);
+  //         navigate('/dashboard/profile');
+  //       } else {
+  //         toast.error(`Failed to update profile`);
+  //       }
+  //       console.log(`updated console data : ${data}`);
+  //       console.log('User info updated successfully:', data);
+  //       // Optional: show success message or redirect
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error updating user info:', error);
+  //     });
+  // };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -187,31 +268,37 @@ const EditProfile = () => {
       return;
     }
 
-    const body = {
-      name: formData.name,
-      phone_number: formData.phoneNumber,
-      fathers_name: formData.fatherName,
-      mothers_name: formData.motherName,
-      date_of_birth: formData.birthDate,
-      district: formData.district,
-      class: formData.classStudent,
-      institute: formData.school,
-      religion: formData.religion,
-      address: formData.currentAddress,
-      gender: formData.gender,
-      // image: imageFile,
-    };
+    // Assuming `formData` is your form state, rename it to avoid conflicts
+    const userData = formData; // Copy the form state (already populated with text data)
 
-    console.log(`"This is body data"${body}`);
+    // Create a new FormData object for file uploads
+    const uploadData = new FormData();
 
-    // Submit the updated form data to the API
+    // Append text fields
+    uploadData.append('name', userData.name);
+    uploadData.append('phone_number', userData.phoneNumber);
+    uploadData.append('fathers_name', userData.fatherName);
+    uploadData.append('mothers_name', userData.motherName);
+    uploadData.append('date_of_birth', userData.birthDate);
+    uploadData.append('district', userData.district);
+    uploadData.append('class', userData.classStudent);
+    uploadData.append('institute', userData.school);
+    uploadData.append('religion', userData.religion);
+    uploadData.append('address', userData.currentAddress);
+    uploadData.append('gender', userData.gender);
+
+    // Append the image file if it exists
+    if (imageFile) {
+      uploadData.append('image', imageFile);
+    }
+
+    // Submit the form data to the API
     fetch('https://itesseract.com.bd/main/api/v1/profile-update', {
-      method: 'POST', // or PUT, depending on your API
+      method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(body),
+      body: uploadData, // Send the FormData object
     })
       .then((response) => {
         if (!response.ok) {
@@ -220,9 +307,13 @@ const EditProfile = () => {
         return response.json();
       })
       .then((data) => {
-        console.log(`updated console data : ${data}`);
+        if (data) {
+          toast.success('Profile updated successfully');
+          navigate('/dashboard/profile');
+        } else {
+          toast.error('Failed to update profile');
+        }
         console.log('User info updated successfully:', data);
-        // Optional: show success message or redirect
       })
       .catch((error) => {
         console.error('Error updating user info:', error);
@@ -247,10 +338,16 @@ const EditProfile = () => {
                   src={selectedImage}
                   alt='user'
                 />
+              ) : formData.image ? (
+                <img
+                  className='w-full h-full rounded-full object-cover'
+                  src={`${apiUrl}/${formData.image}`}
+                  alt='user'
+                />
               ) : (
                 <img
                   className='w-full h-full rounded-full object-cover'
-                  src={userphotos} // Your default image URL here
+                  src={userphotos}
                   alt='user'
                 />
               )}
@@ -274,14 +371,14 @@ const EditProfile = () => {
                     xmlns='http://www.w3.org/2000/svg'
                   >
                     <path
-                      fill-rule='evenodd'
-                      clip-rule='evenodd'
+                      fillRule='evenodd'
+                      clipRule='evenodd'
                       d='M4.76464 1.42638C4.87283 1.2641 5.05496 1.16663 5.25 1.16663H8.75C8.94504 1.16663 9.12717 1.2641 9.23536 1.42638L10.2289 2.91663H12.25C12.7141 2.91663 13.1592 3.101 13.4874 3.42919C13.8156 3.75738 14 4.2025 14 4.66663V11.0833C14 11.5474 13.8156 11.9925 13.4874 12.3207C13.1592 12.6489 12.7141 12.8333 12.25 12.8333H1.75C1.28587 12.8333 0.840752 12.6489 0.512563 12.3207C0.184375 11.9925 0 11.5474 0 11.0833V4.66663C0 4.2025 0.184374 3.75738 0.512563 3.42919C0.840752 3.101 1.28587 2.91663 1.75 2.91663H3.77114L4.76464 1.42638ZM5.56219 2.33329L4.5687 3.82353C4.46051 3.98582 4.27837 4.08329 4.08333 4.08329H1.75C1.59529 4.08329 1.44692 4.14475 1.33752 4.25415C1.22812 4.36354 1.16667 4.51192 1.16667 4.66663V11.0833C1.16667 11.238 1.22812 11.3864 1.33752 11.4958C1.44692 11.6052 1.59529 11.6666 1.75 11.6666H12.25C12.4047 11.6666 12.5531 11.6052 12.6625 11.4958C12.7719 11.3864 12.8333 11.238 12.8333 11.0833V4.66663C12.8333 4.51192 12.7719 4.36354 12.6625 4.25415C12.5531 4.14475 12.4047 4.08329 12.25 4.08329H9.91667C9.72163 4.08329 9.53949 3.98582 9.4313 3.82353L8.43781 2.33329H5.56219Z'
                       fill='white'
                     ></path>
                     <path
-                      fill-rule='evenodd'
-                      clip-rule='evenodd'
+                      fillRule='evenodd'
+                      clipRule='evenodd'
                       d='M6.99992 5.83329C6.03342 5.83329 5.24992 6.61679 5.24992 7.58329C5.24992 8.54979 6.03342 9.33329 6.99992 9.33329C7.96642 9.33329 8.74992 8.54979 8.74992 7.58329C8.74992 6.61679 7.96642 5.83329 6.99992 5.83329ZM4.08325 7.58329C4.08325 5.97246 5.38909 4.66663 6.99992 4.66663C8.61075 4.66663 9.91659 5.97246 9.91659 7.58329C9.91659 9.19412 8.61075 10.5 6.99992 10.5C5.38909 10.5 4.08325 9.19412 4.08325 7.58329Z'
                       fill='white'
                     ></path>
@@ -318,7 +415,6 @@ const EditProfile = () => {
                   placeholder='আপনার পুরো নাম লিখুন'
                   value={formData.name}
                   onChange={handleChange}
-                  required
                 />
               </div>
               {/* Phone Number Field (ReadOnly) */}
@@ -373,7 +469,6 @@ const EditProfile = () => {
                   value={formData.motherName}
                   onChange={handleChange}
                   placeholder='তোমার মায়ের নাম লিখ'
-                  required
                 />
               </div>
 
@@ -442,7 +537,6 @@ const EditProfile = () => {
                   value={formData.classStudent}
                   onChange={handleChange}
                   placeholder='আপনার ক্লাস লিখুন'
-                  required
                 />
               </div>
               {/* School Field */}
@@ -460,7 +554,6 @@ const EditProfile = () => {
                   value={formData.school}
                   onChange={handleChange}
                   placeholder='আপনার স্কুল নাম লিখুন'
-                  required
                 />
               </div>
               {/* Religion Field */}
@@ -474,7 +567,6 @@ const EditProfile = () => {
                 <select
                   name='religion'
                   className='form-select w-full rounded-md border-2 border-[#1BB57B] p-[8px] text-[15px] focus:outline-none'
-                  required
                   value={formData.religion}
                   onChange={handleChange}
                 >
@@ -499,7 +591,6 @@ const EditProfile = () => {
                   name='currentAddress'
                   className='form-control w-full rounded-md border-2 border-[#1BB57B] p-[10px] text-[15px] focus:outline-none'
                   placeholder='আপনার বর্তমান ঠিকানা লিখুন'
-                  required
                   value={formData.currentAddress}
                   onChange={handleChange}
                 />
@@ -515,7 +606,6 @@ const EditProfile = () => {
                 <select
                   name='gender'
                   className='form-select w-full rounded-md border-2 border-[#1BB57B] p-[8px] text-[15px] focus:outline-none'
-                  required
                   value={formData.gender}
                   onChange={handleChange}
                 >

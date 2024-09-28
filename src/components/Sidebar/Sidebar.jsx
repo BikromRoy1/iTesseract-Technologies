@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../../Images/main-logo.svg';
 import profile from '../../Images/teacher/student-01.png';
+import { apiUrl } from '../../config/config';
 
 const SidebarContext = createContext();
 
@@ -69,10 +70,14 @@ export default function Sidebar({ children }) {
 
           <div className='border-t flex p-3'>
             <img
-              src={profile}
+              src={
+                userInfo?.data?.user?.image
+                  ? `${apiUrl}/${userInfo?.data?.user?.image}`
+                  : profile
+              }
               loading='lazy'
               alt='userImage'
-              className='w-10 h-10 rounded-md'
+              className='w-10 h-10 rounded-full'
             />
             <div
               className={`flex justify-between items-center overflow-hidden transition-all ${
