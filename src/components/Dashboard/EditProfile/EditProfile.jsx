@@ -5,11 +5,14 @@ import userphotos from '../../../Images/teacher/student-01.png';
 import './editProfile.css';
 
 import { apiUrl } from '../../../config/config';
+import DBLoader from '../../DBLoader/DBLoader';
 
 const EditProfile = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [userInfo, setUserInfo] = useState(null);
   const [imageFile, setImageFile] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -29,18 +32,6 @@ const EditProfile = () => {
 
   console.log(formData);
 
-  // const handleImageChange = (event) => {
-  //   const file = event.target.files[0];
-  //   if (file) {
-  //     // Create a temporary URL for the selected image
-  //     const imageUrl = URL.createObjectURL(file);
-  //     setSelectedImage(imageUrl);
-  //     setImageFile(file);
-  //   } else {
-  //     setImageFile(null);
-  //   }
-  // };
-
   const handleImageChange = (event) => {
     const file = event.target.files[0];
 
@@ -58,104 +49,7 @@ const EditProfile = () => {
     }
   };
 
-
   const getInfo = JSON.parse(localStorage.getItem('userInfo'));
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   const body = {
-  //     name: formData.name,
-  //     phone_number: formData.phoneNumber,
-  //     fathers_name: formData.fatherName,
-  //     mothers_name: formData.motherName,
-  //     date_of_birth: formData.birthDate,
-  //     district: formData.district,
-  //     class: formData.classStudent,
-  //     institute: formData.school,
-  //     religion: formData.religion,
-  //     address: formData.currentAddress,
-  //     gender: formData.gender,
-  //     // image: imageFile,
-  //   };
-
-  //   console.log(body);
-
-  //   try {
-  //     const response = await fetch(
-  //       'https://itesseract.com.bd/main/api/v1/profile-update',
-  //       {
-  //         method: 'POST',
-  //         headers: {
-  //           'Content-Type': 'application/json',
-  //           Authorization: `Bearer ${token}`, // Passing the token in the Authorization header
-  //         },
-  //         body: JSON.stringify(body),
-  //       }
-  //     );
-
-  //     const result = await response.json();
-
-  //     if (response.ok) {
-  //       toast.success(`Profile updated successfully`);
-  //       navigate('/dashboard/profile');
-  //     } else {
-  //       toast.error(`Failed to update profile`);
-  //     }
-  //   } catch (error) {
-  //     console.error('Error:', error);
-  //   }
-  // };
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   const formData = new FormData();
-  //   formData.append('name', formData.name);
-  //   formData.append('phone_number', formData.phoneNumber);
-  //   formData.append('fathers_name', formData.fatherName);
-  //   formData.append('mothers_name', formData.motherName);
-  //   formData.append('date_of_birth', formData.birthDate);
-  //   formData.append('district', formData.district);
-  //   formData.append('class', formData.classStudent);
-  //   formData.append('institute', formData.school);
-  //   formData.append('religion', formData.religion);
-  //   formData.append('address', formData.currentAddress);
-  //   formData.append('gender', formData.gender);
-
-  //   if (imageFile) {
-  //     formData.append('image', imageFile);
-  //   }
-
-  //   console.log(formData);
-
-  //   try {
-  //     const response = await fetch(
-  //       'https://itesseract.com.bd/main/api/v1/profile-update',
-  //       {
-  //         method: 'POST',
-  //         headers: {
-  //           Authorization: `Bearer ${token}`, // Passing the token in the Authorization header
-  //           // Note: No 'Content-Type' header here because FormData sets it automatically
-  //         },
-  //         body: formData,
-  //       }
-  //     );
-
-  //     if (response.ok) {
-  //       const result = await response.json(); // Parse JSON result
-  //       toast.success(`Profile updated successfully`);
-  //       navigate('/dashboard/profile');
-  //     } else {
-  //       const errorResult = await response.text(); // Read response as text for error details
-  //       toast.error(`Failed to update profile: ${errorResult}`);
-  //     }
-  //   } catch (error) {
-  //     console.error('Error:', error);
-  //     toast.error('An unexpected error occurred');
-  //   }
-  // };
-
-  // Fetch userInfo from localStorage or API on component mount
 
   useEffect(() => {
     const getInfo = JSON.parse(localStorage.getItem('userInfo'));
@@ -186,10 +80,27 @@ const EditProfile = () => {
             gender: data?.data?.user_details?.gender || '',
             image: data?.data?.user?.image || '', // Add the image field
           });
+          setLoading(false);
         })
-        .catch((error) => console.error('Error fetching user info:', error));
+        .catch((error) => {
+           setError(error);
+           setLoading(false);
+           console.error('Error fetching user info:', error);
+        });
     }
   }, []);
+
+    if (loading) {
+      return <DBLoader />;
+    }
+
+    if (error) {
+      return (
+        <p className='flex items-center justify-center h-[80vh] w-full capitalize font-medium text-base'>
+          Error: {error.message}
+        </p>
+      );
+    }
 
   const handleChange = (e) => {
     setFormData({
@@ -197,65 +108,6 @@ const EditProfile = () => {
       [e.target.name]: e.target.value,
     });
   };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   const getInfo = JSON.parse(localStorage.getItem('userInfo'));
-  //   const token = getInfo?.token;
-
-  //   if (!token) {
-  //     console.error('User is not authenticated');
-  //     return;
-  //   }
-
-  //   const body = {
-  //     name: formData.name,
-  //     phone_number: formData.phoneNumber,
-  //     fathers_name: formData.fatherName,
-  //     mothers_name: formData.motherName,
-  //     date_of_birth: formData.birthDate,
-  //     district: formData.district,
-  //     class: formData.classStudent,
-  //     institute: formData.school,
-  //     religion: formData.religion,
-  //     address: formData.currentAddress,
-  //     gender: formData.gender,
-  //     image: imageFile,
-  //   };
-
-  //   console.log(`"This is body data"${body}`);
-
-  //   // Submit the updated form data to the API
-  //   fetch('https://itesseract.com.bd/main/api/v1/profile-update', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //     body: JSON.stringify(body),
-  //   })
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         throw new Error('Failed to update user info');
-  //       }
-  //       return response.json();
-  //     })
-  //     .then((data) => {
-  //       if (data) {
-  //         toast.success(`Profile updated successfully`);
-  //         navigate('/dashboard/profile');
-  //       } else {
-  //         toast.error(`Failed to update profile`);
-  //       }
-  //       console.log(`updated console data : ${data}`);
-  //       console.log('User info updated successfully:', data);
-  //       // Optional: show success message or redirect
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error updating user info:', error);
-  //     });
-  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();

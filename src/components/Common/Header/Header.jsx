@@ -7,12 +7,13 @@ import profile from '../../../Images/icons/profile.png';
 import recordCourse from '../../../Images/icons/record-courses.png';
 import logout from '../../../Images/icons/signout.png';
 import logo from '../../../Images/main-logo.svg';
+import profileUser from '../../../Images/teacher/student-01.png';
 
 import { apiUrl } from '../../../config/config';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [userInfo, setUserInfo] = useState(null);
   const [userEmail, setUserEmail] = useState('');
 
   useEffect(() => {
@@ -50,6 +51,33 @@ const Header = () => {
       console.error('Error during logout:', error);
     }
   };
+
+  useEffect(() => {
+    // Retrieve token from localStorage
+    const getInfo = JSON.parse(localStorage.getItem('userInfo'));
+    const token = getInfo?.token; // Assuming the token is stored inside `userInfo`
+
+    // Fetch the API data with token in headers
+    fetch('https://itesseract.com.bd/main/api/v1/get-user-info', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`, // Pass the token as a Bearer token
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setUserInfo(data); // Store the API data in the state
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []); // Empty dependency array means this useEffect runs only once when the component mounts
 
   return (
     <div className='px-4 py-5 bg-white mx-auto sm:max-w-full md:max-w-full lg:max-w-screen md:px-24 lg:px-14 sticky top-0 z-50 header-shadow'>
@@ -184,7 +212,11 @@ const Header = () => {
                   <div className='w-8 rounded-full'>
                     <img
                       alt='Tailwind CSS Navbar component'
-                      src='https://picsum.photos/200'
+                      src={
+                        userInfo?.data?.user?.image
+                          ? `${apiUrl}/${userInfo?.data?.user?.image}`
+                          : profileUser
+                      }
                     />
                   </div>
                 </div>
@@ -384,6 +416,67 @@ const Header = () => {
                         যোগাযোগ
                       </Link>
                     </li>
+                    {userEmail ? (
+                      <li>
+                        <div className='dropdown dropdown-end'>
+                          <div
+                            tabIndex={0}
+                            role='button'
+                            className='btn btn-ghost btn-circle avatar'
+                          >
+                            <div className='w-8 rounded-full'>
+                              <img
+                                alt='Tailwind CSS Navbar component'
+                                src={
+                                  userInfo?.data?.user?.image
+                                    ? `${apiUrl}/${userInfo?.data?.user?.image}`
+                                    : profileUser
+                                }
+                              />
+                            </div>
+                          </div>
+                          <ul
+                            tabIndex={0}
+                            className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-44'
+                          >
+                            <li>
+                              <Link to='/dashboard' className=''>
+                                <img
+                                  width={22}
+                                  height={22}
+                                  src={profile}
+                                  alt='profile-icons'
+                                  loading='lazy'
+                                />
+                                প্রোফাইল
+                              </Link>
+                            </li>
+                            <li onClick={handleLogout}>
+                              <Link>
+                                {' '}
+                                <img
+                                  width={22}
+                                  height={22}
+                                  src={logout}
+                                  alt='logout'
+                                  loading='lazy'
+                                />
+                                লগ-আউট
+                              </Link>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    ) : (
+                      <Link
+                        to='/login'
+                        aria-label='login '
+                        title='login'
+                        className=' bg-[#1bb57b] px-4 py-1 rounded-md font-medium tracking-wide text-white transition-colors whitespace-nowrap duration-200'
+                      >
+                        লগ-ইন
+                      </Link>
+                    )}
                   </ul>
                 </nav>
               </div>
