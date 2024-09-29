@@ -22,6 +22,8 @@ const Checkout = () => {
     price: '', // Set price to an empty string by default
   });
 
+  
+console.log(courseData);
   const { courseId = 'No ID' } = location.state || {};
 
   const getInfo = JSON.parse(localStorage.getItem('userInfo'));

@@ -27,6 +27,8 @@ const Kits = () => {
 
   const courses = data.data;
 
+  console.log(courses);
+
   function formatNumberToBangla(number) {
     const banglaDigits = {
       0: '০',
