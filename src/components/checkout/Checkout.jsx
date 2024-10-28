@@ -22,8 +22,6 @@ const Checkout = () => {
     price: '', // Set price to an empty string by default
   });
 
-  
-console.log(courseData);
   const { courseId = 'No ID' } = location.state || {};
 
   const getInfo = JSON.parse(localStorage.getItem('userInfo'));
@@ -364,22 +362,22 @@ console.log(courseData);
                               d='M3.67063 12.9386L7.44563 16.7136C8.99563 18.2636 11.5123 18.2636 13.0706 16.7136L16.729 13.0553C18.279 11.5053 18.279 8.98864 16.729 7.43031L12.9456 3.66364C12.154 2.87197 11.0623 2.44697 9.94563 2.50531L5.77896 2.70531C4.1123 2.78031 2.7873 4.10531 2.70396 5.76364L2.50396 9.93031C2.45396 11.0553 2.87896 12.147 3.67063 12.9386Z'
                               stroke='currentColor'
                               stroke-width='1.41176'
-                              stroke-linecap='round'
-                              stroke-linejoin='round'
+                              strokeLinecap='round'
+                              strokeLinejoin='round'
                             ></path>
                             <path
                               d='M8.11458 10.1891C9.26518 10.1891 10.1979 9.25639 10.1979 8.10579C10.1979 6.9552 9.26518 6.02246 8.11458 6.02246C6.96399 6.02246 6.03125 6.9552 6.03125 8.10579C6.03125 9.25639 6.96399 10.1891 8.11458 10.1891Z'
                               stroke='currentColor'
                               stroke-width='1.41176'
-                              stroke-linecap='round'
+                              strokeLinecap='round'
                             ></path>
                             <path
                               d='M11.0312 14.3558L14.3646 11.0225'
                               stroke='currentColor'
                               stroke-width='1.41176'
-                              stroke-miterlimit='10'
-                              stroke-linecap='round'
-                              stroke-linejoin='round'
+                              strokeMiterlimit='10'
+                              strokeLinecap='round'
+                              strokeLinejoin='round'
                             ></path>
                           </svg>
                           <span>{formData?.durationName}</span>
