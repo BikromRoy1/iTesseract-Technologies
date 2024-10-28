@@ -12,14 +12,17 @@ import { apiUrl } from '../../../../config/config';
 
 const Kits = () => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true); // Loading state
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${apiUrl}/api/v1/courses`);
         setData(response.data);
+        setLoading(false); // Set loading to false when data is fetched
       } catch (error) {
         console.error('Error fetching data:', error);
+        setLoading(false); // Set loading to false in case of an error
       }
     };
     fetchData();
@@ -69,105 +72,135 @@ const Kits = () => {
         </div>
 
         <div className='grid grid-cols-1 gap-8  xl:gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3'>
-          {courses?.slice(0, 3)?.map((item) => (
-            <div key={item.id} className='single-card'>
-              <div className='course-card'>
-                <div className='course-card-img'>
-                  <img
-                    src={`${apiUrl}/${item?.image}`}
-                    loading='lazy'
-                    alt={item?.course_name}
-                  />
-                  <div className='thumbnail-content'>
-                    <span className='bg-[#ffbb2c] text-white rounded-[2px] inline-block px-[12px] font-semibold text-[15px] leading-[26px] m-[5px]'>
-                      {item?.discount}% OFF
-                    </span>
-                  </div>
+          {loading ? (
+            <>
+              <div className='flex flex-col m-8 rounded-lg shadow-sm w-full animate-pulse h-96'>
+                <div className='h-48 rounded-t bg-[#d1fae5]'></div>
+                <div className='flex-1 px-4 py-8 space-y-4 sm:p-8 bg-[#ecfdf5]'>
+                  <div className='w-full h-6 rounded bg-[#d1fae5]'></div>
+                  <div className='w-full h-6 rounded bg-[#d1fae5]'></div>
+                  <div className='w-3/4 h-6 rounded bg-[#d1fae5]'></div>
                 </div>
-                <div className='course-card-body'>
-                  <div className='price-list flex items-center justify-between pb-[12px]'>
-                    <div className='flex items-center'>
-                      <h3 className='current-price primary-color font-bold text-[22px] tracking-[0.20000000298023224px]'>
-                        ৳{' '}
-                        {formatNumberToBangla(
-                          item?.price ? item.price.toLocaleString('en-US') : '0'
-                        )}
-                      </h3>
-                    </div>
-                    <div className='flex items-center gap-2'>
-                      <FaWifi className='text-[#4AB2FD] w-5 h-5' />
-                      <h5 className='text-primary-color text-[17px] font-semibold'>
-                        {item?.type}
-                      </h5>
-                    </div>
-                  </div>
-                  <h4 className='font-semibold text-[#124265] capitalize kits-title-2'>
-                    {item?.course_name}
-                  </h4>
-                  <div className='course-timing flex items-center gap-5 pb-4'>
-                    <div className='flex items-center gap-2'>
-                      <BsCommand className='text-[#1bb57b] w-5 h-5 font-bold' />
-                      <h4 className='font-semibold text-primary-color'>
-                        {zeroPad(item?.modules?.length)}-টি পাঠ
-                      </h4>
-                    </div>
-                    <div className='flex items-center gap-2'>
-                      <FiUsers className='text-[#4AB2FD] w-5 h-5' />
-                      <h4 className='font-semibold text-primary-color'>
-                        {item?.enroll_student} Students
-                      </h4>
-                    </div>
-                    <div className='flex items-center gap-2'>
-                      <IoDocumentTextOutline className='text-[#9333ea] w-5 h-5' />
-                      <h4 className='font-semibold text-primary-color'>
-                        {item?.project} Tests
-                      </h4>
+              </div>
+              <div className='flex flex-col m-8 rounded-lg shadow-sm w-full animate-pulse h-96'>
+                <div className='h-48 rounded-t bg-[#d1fae5]'></div>
+                <div className='flex-1 px-4 py-8 space-y-4 sm:p-8 bg-[#ecfdf5]'>
+                  <div className='w-full h-6 rounded bg-[#d1fae5]'></div>
+                  <div className='w-full h-6 rounded bg-[#d1fae5]'></div>
+                  <div className='w-3/4 h-6 rounded bg-[#d1fae5]'></div>
+                </div>
+              </div>
+              <div className='flex flex-col m-8 rounded-lg shadow-sm w-full animate-pulse h-96'>
+                <div className='h-48 rounded-t bg-[#d1fae5]'></div>
+                <div className='flex-1 px-4 py-8 space-y-4 sm:p-8 bg-[#ecfdf5]'>
+                  <div className='w-full h-6 rounded bg-[#d1fae5]'></div>
+                  <div className='w-full h-6 rounded bg-[#d1fae5]'></div>
+                  <div className='w-3/4 h-6 rounded bg-[#d1fae5]'></div>
+                </div>
+              </div>
+            </>
+          ) : (
+            courses?.slice(0, 3)?.map((item) => (
+              <div key={item.id} className='single-card'>
+                <div className='course-card'>
+                  <div className='course-card-img'>
+                    <img
+                      src={`${apiUrl}/${item?.image}`}
+                      loading='lazy'
+                      alt={item?.course_name}
+                    />
+                    <div className='thumbnail-content'>
+                      <span className='bg-[#ffbb2c] text-white rounded-[2px] inline-block px-[12px] font-semibold text-[15px] leading-[26px] m-[5px]'>
+                        {item?.discount}% OFF
+                      </span>
                     </div>
                   </div>
-                  <div className='flex items-center justify-between'>
-                    <div className='flex items-center gap-2'>
-                      <img
-                        src={`${apiUrl}/${item?.trainer?.image}`}
-                        className='rounded-full w-10 h-10'
-                        loading='lazy'
-                        alt={item?.trainer?.name}
-                      />
-                      <div>
-                        <h2 className='font-semibold text-[17px] tracking-[0.20000000298023224px]'>
-                          {item?.trainer?.name}
-                        </h2>
+                  <div className='course-card-body'>
+                    <div className='price-list flex items-center justify-between pb-[12px]'>
+                      <div className='flex items-center'>
+                        <h3 className='current-price primary-color font-bold text-[22px] tracking-[0.20000000298023224px]'>
+                          ৳{' '}
+                          {formatNumberToBangla(
+                            item?.price
+                              ? item.price.toLocaleString('en-US')
+                              : '0'
+                          )}
+                        </h3>
+                      </div>
+                      <div className='flex items-center gap-2'>
+                        <FaWifi className='text-[#4AB2FD] w-5 h-5' />
+                        <h5 className='text-primary-color text-[17px] font-semibold'>
+                          {item?.type}
+                        </h5>
                       </div>
                     </div>
-
-                    <div>
-                      <Link to={`/course/${item?.slug}`}>
-                        <button className='custom-button text-[15px] font-semibold px-[16px] py-[5px] text-white rounded-md flex items-center gap-1'>
-                          এখান থেকে শিখুন{' '}
-                          <svg
-                            stroke='currentColor'
-                            fill='currentColor'
-                            strokeWidth='0'
-                            viewBox='0 0 512 512'
-                            height='18'
-                            width='18'
-                            xmlns='http://www.w3.org/2000/svg'
-                          >
-                            <path
-                              fill='none'
-                              strokeLinecap='round'
-                              strokeLinejoin='round'
-                              strokeWidth='48'
-                              d='M268 112l144 144-144 144m124-144H100'
-                            ></path>
-                          </svg>
-                        </button>
-                      </Link>
+                    <h4 className='font-semibold text-[#124265] capitalize kits-title-2'>
+                      {item?.course_name}
+                    </h4>
+                    <div className='course-timing flex items-center gap-5 pb-4'>
+                      <div className='flex items-center gap-2'>
+                        <BsCommand className='text-[#1bb57b] w-5 h-5 font-bold' />
+                        <h4 className='font-semibold text-primary-color'>
+                          {zeroPad(item?.modules?.length)}-টি পাঠ
+                        </h4>
+                      </div>
+                      <div className='flex items-center gap-2'>
+                        <FiUsers className='text-[#4AB2FD] w-5 h-5' />
+                        <h4 className='font-semibold text-primary-color'>
+                          {item?.enroll_student} Students
+                        </h4>
+                      </div>
+                      <div className='flex items-center gap-2'>
+                        <IoDocumentTextOutline className='text-[#9333ea] w-5 h-5' />
+                        <h4 className='font-semibold text-primary-color'>
+                          {item?.project} Tests
+                        </h4>
+                      </div>
+                    </div>
+                    <div className='flex items-center justify-between'>
+                      <div className='flex items-center gap-2'>
+                        <img
+                          src={`${apiUrl}/${item?.trainer?.image}`}
+                          className='rounded-full w-10 h-10'
+                          loading='lazy'
+                          alt={item?.trainer?.name}
+                        />
+                        <div>
+                          <h2 className='font-semibold text-[17px] tracking-[0.20000000298023224px]'>
+                            {item?.trainer?.name}
+                          </h2>
+                        </div>
+                      </div>
+                      <div>
+                        <Link to={`/course/${item?.slug}`}>
+                          <button className='custom-button text-[15px] font-semibold px-[16px] py-[5px] text-white rounded-md flex items-center gap-1'>
+                            এখান থেকে শিখুন
+                            <svg
+                              stroke='currentColor'
+                              fill='currentColor'
+                              strokeWidth='0'
+                              viewBox='0 0 512 512'
+                              height='18'
+                              width='18'
+                              xmlns='http://www.w3.org/2000/svg'
+                            >
+                              <path
+                                fill='none'
+                                strokeLinecap='round'
+                                strokeLinejoin='round'
+                                strokeWidth='48'
+                                d='M268 112l144 144-144 144m124-144H100'
+                              ></path>
+                            </svg>
+                          </button>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </div>
       <Services></Services>
