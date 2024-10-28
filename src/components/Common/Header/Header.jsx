@@ -134,6 +134,26 @@ const Header = () => {
           <li>
             <Link
               to='/recorded'
+              aria-label='Recorded'
+              title='রেকর্ডেড'
+              className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-[#1bb57b]'
+            >
+              রেকর্ডেড কোর্স
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='/live'
+              aria-label='live'
+              title='লাইভ'
+              className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-[#1bb57b]'
+            >
+              লাইভ কোর্স
+            </Link>
+          </li>
+          {/* <li>
+            <Link
+              to='/recorded'
               aria-label='Courses '
               title='কোর্স সমূহ '
               className='font-medium dropdown dropdown-hover tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
@@ -180,7 +200,7 @@ const Header = () => {
                 </li>
               </ul>
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               to='/blogs'
@@ -349,6 +369,26 @@ const Header = () => {
                     </li>
                     <li>
                       <Link
+                        to='/recorded'
+                        aria-label='Recorded'
+                        title='রেকর্ডেড'
+                        className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-[#1bb57b]'
+                      >
+                        রেকর্ডেড কোর্স
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to='/live'
+                        aria-label='live'
+                        title='লাইভ'
+                        className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-[#1bb57b]'
+                      >
+                        লাইভ কোর্স
+                      </Link>
+                    </li>
+                    {/* <li>
+                      <Link
                         aria-label='Courses '
                         title='কোর্স সমূহ '
                         className='font-medium dropdown dropdown-bottom tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
@@ -395,7 +435,7 @@ const Header = () => {
                           </li>
                         </ul>
                       </Link>
-                    </li>
+                    </li> */}
                     <li>
                       <Link
                         to='/blogs'
