@@ -27,6 +27,7 @@ const LevelTwo = () => {
 
   const oflineCourses = data.data;
 
+
   function formatNumberToBangla(number) {
     const banglaDigits = {
       0: '০',

@@ -47,7 +47,7 @@ const AdBoard = () => {
                     src={`${apiUrl}/` + team?.image}
                     alt={team?.name}
                     loading='lazy'
-                    className='h-[130px] w-[130px] rounded-full'
+                    className='h-[130px] w-[130px] rounded-full object-cover'
                   />
                   <span className='absolute bottom-0 left-0 -z-10 h-10 w-10 rounded-full bg-secondary opacity-100 transition-all group-hover:opacity-100'></span>
                   <span className='absolute right-0 top-0 -z-10 opacity-100 transition-all group-hover:opacity-100'>

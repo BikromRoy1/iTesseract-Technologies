@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { FaAngleDown } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import liveCourse from '../../../Images/icons/live-course.png';
 import profile from '../../../Images/icons/profile.png';
-import recordCourse from '../../../Images/icons/record-courses.png';
 import logout from '../../../Images/icons/signout.png';
 import logo from '../../../Images/main-logo.svg';
 import profileUser from '../../../Images/teacher/student-01.png';
@@ -16,37 +13,62 @@ const Header = () => {
   const [userInfo, setUserInfo] = useState(null);
   const [userEmail, setUserEmail] = useState('');
 
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
+
   useEffect(() => {
     const getInfo = JSON.parse(localStorage.getItem('userInfo'));
     setUserEmail(getInfo?.email);
   }, []);
 
-  const handleLogout = async () => {
+  // const handleLogout = async () => {
+  //   try {
+  //     const getInfo = JSON.parse(localStorage.getItem('userInfo'));
+
+  //     if (!getInfo.token) {
+  //       console.error('No auth token found');
+  //       return;
+  //     }
+
+  //     const response = await fetch(`${apiUrl}/api/v1/logout`, {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         Authorization: `Bearer ${getInfo.token}`,
+  //       },
+  //     });
+
+  //     if (response.ok) {
+  //       // Logout successful
+  //       localStorage.removeItem('userInfo');
+  //       localStorage.removeItem('authToken');
+  //       window.location.href = '/login';
+  //       toast.success('Successfully logged out');
+  //     } else {
+  //       console.error('Logout failed: ', response.status);
+  //     }
+  //   } catch (error) {
+  //     console.error('Error during logout:', error);
+  //   }
+  // };
+
+  const handleLogout = () => {
     try {
       const getInfo = JSON.parse(localStorage.getItem('userInfo'));
+      console.log('Retrieved userInfo:', getInfo);
 
-      if (!getInfo.token) {
-        console.error('No auth token found');
-        return; // If no token is found, stop execution
+      if (!getInfo || !getInfo.token) {
+        console.warn('No auth token found, but proceeding with logout');
       }
 
-      const response = await fetch(`${apiUrl}/api/v1/logout`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${getInfo.token}`, // Pass the token in the Authorization header
-        },
-      });
+      // Clear user-related data from localStorage
+      localStorage.removeItem('userInfo');
+      localStorage.removeItem('authToken');
 
-      if (response.ok) {
-        // Logout successful
-        localStorage.removeItem('userInfo');
-        localStorage.removeItem('authToken'); // Clear the token
-        window.location.href = '/login'; // Redirect after logout
-        toast.success('Successfully logged out');
-      } else {
-        console.error('Logout failed: ', response.status); // Log the status for debugging
-      }
+      // Redirect to login page
+      window.location.href = '/login';
+      toast.success('Successfully logged out');
     } catch (error) {
       console.error('Error during logout:', error);
     }
@@ -96,7 +118,11 @@ const Header = () => {
               to='/'
               aria-label='Home'
               title='হোম'
-              className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-[#1bb57b]'
+              className={`font-medium tracking-wide  transition-colors duration-200 ${
+                isActive('/')
+                  ? 'text-[#1bb57b]'
+                  : 'text-gray-700 hover:text-[#1bb57b]'
+              }`}
             >
               হোম
             </Link>
@@ -106,7 +132,11 @@ const Header = () => {
               to='/about'
               aria-label='About'
               title='আমাদের সম্পর্কে'
-              className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-[#1bb57b]'
+              className={`font-medium tracking-wide transition-colors duration-200 ${
+                isActive('/about')
+                  ? 'text-[#1bb57b]'
+                  : 'text-gray-700 hover:text-[#1bb57b]'
+              }`}
             >
               আমাদের সম্পর্কে{' '}
             </Link>
@@ -116,7 +146,11 @@ const Header = () => {
               to='/product'
               aria-label='Product'
               title='প্রোডাক্টস'
-              className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-[#1bb57b]'
+              className={`font-medium tracking-wide transition-colors duration-200 ${
+                isActive('/product')
+                  ? 'text-[#1bb57b]'
+                  : 'text-gray-700 hover:text-[#1bb57b]'
+              }`}
             >
               <p> প্রোডাক্টস</p>
             </Link>
@@ -126,7 +160,11 @@ const Header = () => {
               to='/team'
               aria-label='Team'
               title='টিম'
-              className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-[#1bb57b]'
+              className={`font-medium tracking-wide transition-colors duration-200 ${
+                isActive('/team')
+                  ? 'text-[#1bb57b]'
+                  : 'text-gray-700 hover:text-[#1bb57b]'
+              }`}
             >
               টিম
             </Link>
@@ -136,7 +174,11 @@ const Header = () => {
               to='/recorded'
               aria-label='Recorded'
               title='রেকর্ডেড'
-              className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-[#1bb57b]'
+              className={`font-medium tracking-wide transition-colors duration-200 ${
+                isActive('/recorded')
+                  ? 'text-[#1bb57b]'
+                  : 'text-gray-700 hover:text-[#1bb57b]'
+              }`}
             >
               রেকর্ডেড কোর্স
             </Link>
@@ -146,7 +188,11 @@ const Header = () => {
               to='/live'
               aria-label='live'
               title='লাইভ'
-              className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-[#1bb57b]'
+              className={`font-medium tracking-wide transition-colors duration-200 ${
+                isActive('/live')
+                  ? 'text-[#1bb57b]'
+                  : 'text-gray-700 hover:text-[#1bb57b]'
+              }`}
             >
               লাইভ কোর্স
             </Link>
@@ -206,7 +252,11 @@ const Header = () => {
               to='/blogs'
               aria-label='Blog '
               title=' ব্লগ '
-              className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-[#1bb57b]'
+              className={`font-medium tracking-wide transition-colors duration-200 ${
+                isActive('/blogs')
+                  ? 'text-[#1bb57b]'
+                  : 'text-gray-700 hover:text-[#1bb57b]'
+              }`}
             >
               ব্লগ
             </Link>
@@ -216,7 +266,11 @@ const Header = () => {
               to='/contact'
               aria-label='Contact '
               title='যোগাযোগ'
-              className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-[#1bb57b]'
+              className={`font-medium tracking-wide transition-colors duration-200 ${
+                isActive('/contact')
+                  ? 'text-[#1bb57b]'
+                  : 'text-gray-700 hover:text-[#1bb57b]'
+              }`}
             >
               যোগাযোগ
             </Link>
