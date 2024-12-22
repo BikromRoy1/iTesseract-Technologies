@@ -129,6 +129,34 @@ const Header = () => {
           </li>
           <li>
             <Link
+              to='/live'
+              aria-label='live'
+              title='লাইভ'
+              className={`font-medium tracking-wide transition-colors duration-200 ${
+                isActive('/live')
+                  ? 'text-[#1bb57b]'
+                  : 'text-gray-700 hover:text-[#1bb57b]'
+              }`}
+            >
+              লাইভ কোর্স
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='/recorded'
+              aria-label='Recorded'
+              title='রেকর্ডেড'
+              className={`font-medium tracking-wide transition-colors duration-200 ${
+                isActive('/recorded')
+                  ? 'text-[#1bb57b]'
+                  : 'text-gray-700 hover:text-[#1bb57b]'
+              }`}
+            >
+              রেকর্ডেড কোর্স
+            </Link>
+          </li>
+          {/* <li>
+            <Link
               to='/about'
               aria-label='About'
               title='আমাদের সম্পর্কে'
@@ -140,7 +168,7 @@ const Header = () => {
             >
               আমাদের সম্পর্কে{' '}
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               to='/product'
@@ -169,34 +197,7 @@ const Header = () => {
               টিম
             </Link>
           </li>
-          <li>
-            <Link
-              to='/recorded'
-              aria-label='Recorded'
-              title='রেকর্ডেড'
-              className={`font-medium tracking-wide transition-colors duration-200 ${
-                isActive('/recorded')
-                  ? 'text-[#1bb57b]'
-                  : 'text-gray-700 hover:text-[#1bb57b]'
-              }`}
-            >
-              রেকর্ডেড কোর্স
-            </Link>
-          </li>
-          <li>
-            <Link
-              to='/live'
-              aria-label='live'
-              title='লাইভ'
-              className={`font-medium tracking-wide transition-colors duration-200 ${
-                isActive('/live')
-                  ? 'text-[#1bb57b]'
-                  : 'text-gray-700 hover:text-[#1bb57b]'
-              }`}
-            >
-              লাইভ কোর্স
-            </Link>
-          </li>
+
           {/* <li>
             <Link
               to='/recorded'
@@ -393,6 +394,26 @@ const Header = () => {
                   <ul className='space-y-4 text-center'>
                     <li>
                       <Link
+                        to='/live'
+                        aria-label='live'
+                        title='লাইভ'
+                        className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-[#1bb57b]'
+                      >
+                        লাইভ কোর্স
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to='/recorded'
+                        aria-label='Recorded'
+                        title='রেকর্ডেড'
+                        className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-[#1bb57b]'
+                      >
+                        রেকর্ডেড কোর্স
+                      </Link>
+                    </li>
+                    {/* <li>
+                      <Link
                         to='/about'
                         aria-label='About'
                         title=' আমাদের সম্পর্কে'
@@ -400,7 +421,7 @@ const Header = () => {
                       >
                         আমাদের সম্পর্কে
                       </Link>
-                    </li>
+                    </li> */}
                     <li>
                       <Link
                         to='/product'
@@ -421,26 +442,7 @@ const Header = () => {
                         টিম
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        to='/recorded'
-                        aria-label='Recorded'
-                        title='রেকর্ডেড'
-                        className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-[#1bb57b]'
-                      >
-                        রেকর্ডেড কোর্স
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to='/live'
-                        aria-label='live'
-                        title='লাইভ'
-                        className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-[#1bb57b]'
-                      >
-                        লাইভ কোর্স
-                      </Link>
-                    </li>
+
                     {/* <li>
                       <Link
                         aria-label='Courses '

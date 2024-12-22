@@ -9,6 +9,7 @@ import Lottie from 'lottie-react';
 import animation from '../../Images/content.json';
 import { apiUrl } from '../../config/config';
 import DBLoader from '../DBLoader/DBLoader';
+import Payment from './Payment';
 
 const Checkout = () => {
   const location = useLocation();
@@ -17,6 +18,7 @@ const Checkout = () => {
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
     batchOption: '',
+    batchId: '',
     courseDuration: '',
     durationName: '', // Store the name of the selected duration
     price: '', // Set price to an empty string by default
@@ -92,9 +94,20 @@ const Checkout = () => {
 
   // Handle change for BatchOption select field
   const handleBatchChange = (e) => {
+    // setFormData({
+    //   ...formData,
+    //   batchOption: e.target.value,
+    //   batchId: e.target.value,
+    // });
+    const selectedBatchId = Number(e.target.value); // Convert selected value to a number
+    const selectedBatch = courseData?.data?.batches?.find(
+      (batch) => batch.id === selectedBatchId
+    ); // Find the batch object based on the selected id
+
     setFormData({
       ...formData,
-      batchOption: e.target.value, // Update batch option value
+      batchOption: selectedBatch ? selectedBatch.name : '', // Store the batch name
+      batchId: selectedBatchId, // Store the batch id
     });
   };
 
@@ -136,6 +149,8 @@ const Checkout = () => {
     formData.price !== ''
       ? formData.price // Use user-selected price directly
       : defaultPrice - defaultDiscountPrice; // Apply discount to default price
+
+  console.log(courseData);
 
   return (
     <div>
@@ -243,11 +258,42 @@ const Checkout = () => {
                             >
                               ব্যাচ সিলেক্ট করো
                             </label>
+                            {/* <select
+                              name='BatchOption'
+                              id='BatchOption'
+                              className='w-full px-2 py-[4px] rounded-md input-from-contorl text-gray-900'
+                              value={formData.batchOption} 
+                              onChange={handleBatchChange}
+                            >
+                              <option className='text-xs' value=''>
+                                Select Batch
+                              </option>
+                              {courseData?.data?.batches?.length > 0 ? (
+                                courseData?.data?.batches?.map((batch) => (
+                                  <option
+                                    className='text-xs'
+                                    key={batch.id}
+                                    value={batch.id}
+                                  >
+                                    {batch.name}
+                                  </option>
+                                ))
+                              ) : (
+                                <option
+                                  className='text-xs'
+                                  selected
+                                  disabled
+                                  value=''
+                                >
+                                  No Batch Available
+                                </option>
+                              )}
+                            </select> */}
                             <select
                               name='BatchOption'
                               id='BatchOption'
                               className='w-full px-2 py-[4px] rounded-md input-from-contorl text-gray-900'
-                              value={formData.batchOption} // Set the selected value
+                              value={formData.batchId} // Set the selected value to batchId
                               onChange={handleBatchChange} // Handle change event
                             >
                               <option className='text-xs' value=''>
@@ -258,9 +304,9 @@ const Checkout = () => {
                                   <option
                                     className='text-xs'
                                     key={batch.id}
-                                    value={batch.name}
+                                    value={batch.id} // Use batch.id as the value
                                   >
-                                    {batch.name}
+                                    {batch.name} {/* Display batch name */}
                                   </option>
                                 ))
                               ) : (
@@ -361,20 +407,20 @@ const Checkout = () => {
                             <path
                               d='M3.67063 12.9386L7.44563 16.7136C8.99563 18.2636 11.5123 18.2636 13.0706 16.7136L16.729 13.0553C18.279 11.5053 18.279 8.98864 16.729 7.43031L12.9456 3.66364C12.154 2.87197 11.0623 2.44697 9.94563 2.50531L5.77896 2.70531C4.1123 2.78031 2.7873 4.10531 2.70396 5.76364L2.50396 9.93031C2.45396 11.0553 2.87896 12.147 3.67063 12.9386Z'
                               stroke='currentColor'
-                              stroke-width='1.41176'
+                              strokeWidth='1.41176'
                               strokeLinecap='round'
                               strokeLinejoin='round'
                             ></path>
                             <path
                               d='M8.11458 10.1891C9.26518 10.1891 10.1979 9.25639 10.1979 8.10579C10.1979 6.9552 9.26518 6.02246 8.11458 6.02246C6.96399 6.02246 6.03125 6.9552 6.03125 8.10579C6.03125 9.25639 6.96399 10.1891 8.11458 10.1891Z'
                               stroke='currentColor'
-                              stroke-width='1.41176'
+                              strokeWidth='1.41176'
                               strokeLinecap='round'
                             ></path>
                             <path
                               d='M11.0312 14.3558L14.3646 11.0225'
                               stroke='currentColor'
-                              stroke-width='1.41176'
+                              strokeWidth='1.41176'
                               strokeMiterlimit='10'
                               strokeLinecap='round'
                               strokeLinejoin='round'
@@ -400,15 +446,39 @@ const Checkout = () => {
                       <h4> ৳ {totalPrice} </h4>
                     </div>
                     <div className='mx-3'>
-                      <button className='max-w[300px] mx-auto block w-full bg-[#1bb57b] px-4 py-[6px] rounded-md font-medium text-base tracking-wide text-white transition-colors whitespace-nowrap duration-200'>
+                      {/* {formData?.batchOption && formData?.courseDuration && (
+                        <button className='max-w[300px] mx-auto block w-full bg-[#1bb57b] px-4 py-[6px] rounded-md font-medium text-base tracking-wide text-white transition-colors whitespace-nowrap duration-200'>
+                          পেমেন্ট করুন
+                        </button>
+                      )} */}
+                      <label
+                        htmlFor={
+                          formData.batchOption && formData.courseDuration
+                            ? 'my-modal-4'
+                            : ''
+                        }
+                        className={`max-w[300px] cursor-pointer text-center mx-auto block w-full px-4 py-[6px] rounded-md font-medium text-base tracking-wide transition-colors whitespace-nowrap duration-200 ${
+                          formData.batchOption && formData.courseDuration
+                            ? 'bg-[#1bb57b] text-white'
+                            : 'bg-gray-400 text-gray-600 cursor-not-allowed'
+                        }`}
+                        onClick={(e) => {
+                          if (
+                            !(formData.batchOption && formData.courseDuration)
+                          ) {
+                            e.preventDefault(); // Prevent modal from opening
+                          }
+                        }}
+                      >
                         পেমেন্ট করুন
-                      </button>
+                      </label>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <Payment courseData={courseData} formData={formData} />
         </div>
       </div>
     </div>
