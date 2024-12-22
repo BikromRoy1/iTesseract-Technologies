@@ -100,7 +100,7 @@ const Kits = () => {
               </div>
             </>
           ) : (
-            courses?.slice(0, 3)?.map((item) => (
+            courses?.slice(0, 6)?.map((item) => (
               <div key={item.id} className='single-card'>
                 <div className='course-card'>
                   <div className='course-card-img'>
