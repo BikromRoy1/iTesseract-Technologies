@@ -22,13 +22,13 @@ const Terms = () => {
 
   const tarms = data?.data?.terms_condition;
 
-  function removeHTMLTags(htmlString) {
-    const parser = new DOMParser();
-    const parsedDocument = parser.parseFromString(htmlString, 'text/html');
-    return parsedDocument.body.textContent || '';
-  }
+  // function removeHTMLTags(htmlString) {
+  //   const parser = new DOMParser();
+  //   const parsedDocument = parser.parseFromString(htmlString, 'text/html');
+  //   return parsedDocument.body.textContent || '';
+  // }
 
-  const plainText = removeHTMLTags(tarms);
+  // const plainText = removeHTMLTags(tarms);
 
   return (
     <section>
@@ -41,9 +41,10 @@ const Terms = () => {
         <h2 className='pb-3 text-3xl font-bold md:text-4xl text-[#124265]'>
           Terms & Conditions
         </h2>
-        <p className='max-w-4xl mx-auto text-base  dark:text-gray-400 md:text-base'>
-          {plainText}
-        </p>
+        <p
+          className='max-w-4xl mx-auto text-left text-2xl'
+          dangerouslySetInnerHTML={{ __html: tarms }}
+        ></p>
       </div>
     </section>
   );
