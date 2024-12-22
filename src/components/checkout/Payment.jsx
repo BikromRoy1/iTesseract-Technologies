@@ -1,9 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { apiUrl } from '../../config/config';
 
 const Payment = ({ courseData, formData }) => {
   const [contact, setContact] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,7 +20,11 @@ const Payment = ({ courseData, formData }) => {
     fetchData();
   }, []);
 
+  // custom request
   const courseID = courseData?.data?.course?.id;
+  const batchId = formData?.batchId;
+  const totalPrice = formData?.price;
+  const courseDurationId = formData?.durationId;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -25,7 +32,7 @@ const Payment = ({ courseData, formData }) => {
     const Transaction = form.Transaction.value;
     const Sender = form.Sender.value;
 
-    const paymentApiUrl = `https://itesseract.com.bd/main/api/v1/order/store?course_id=${courseID}&batch_id=3&amount=24000&discount&transaction_id=sd34dss4667dgg&course_duration_id=3&status=Success&payment_id=&sender_number=01795188538`;
+    const paymentApiUrl = `https://itesseract.com.bd/main/api/v1/order/store?course_id=${courseID}&batch_id=${batchId}&amount=${totalPrice}&transaction_id=${Transaction}&course_duration_id=${courseDurationId}&sender_number=${Sender}`;
     // Retrieve token from localStorage
     const getInfo = JSON.parse(localStorage.getItem('userInfo'));
     const token = getInfo?.token; // Assuming the token is stored inside `userInfo`
@@ -44,11 +51,21 @@ const Payment = ({ courseData, formData }) => {
       }
 
       const result = await response.json();
-      console.log('API Response:', result);
-      alert('Payment submitted successfully!');
+      toast.success('পেমেন্ট সফলভাবে জমা দেওয়া হয়েছে', {
+        autoClose: 2000, // Closes automatically after 2 seconds
+      });
+
+      // Reset form data
+      form.reset();
+
+      // Navigate to the dashboard after 3 seconds
+      setTimeout(() => {
+        navigate('/dashboard');
+      }, 3000);
     } catch (error) {
-      console.error('Error submitting payment:', error);
-      alert('Failed to submit payment. Please try again.');
+      toast.error('পেমেন্ট জমা দিতে ব্যর্থ হয়েছে। আবার চেষ্টা করুন।', {
+        autoClose: 2000, // Closes automatically after 2 seconds
+      });
     }
   };
 

@@ -22,13 +22,8 @@ const Policy = () => {
 
   const policy = data?.data?.privacy_policy;
 
-  function removeHTMLTags(htmlString) {
-    const parser = new DOMParser();
-    const parsedDocument = parser.parseFromString(htmlString, 'text/html');
-    return parsedDocument.body.textContent || '';
-  }
+  console.log(data);
 
-  const plainText = removeHTMLTags(policy);
   return (
     <section>
       <Breadcrumb
@@ -37,12 +32,10 @@ const Policy = () => {
         img={terms}
       ></Breadcrumb>
       <div className='container p-4 mx-auto my-6 space-y-1 text-center'>
-        <h2 className='pb-3 text-3xl font-bold md:text-4xl text-[#124265]'>
-          Privacy & Policy
-        </h2>
-        <p className='max-w-4xl mx-auto text-base  dark:text-gray-400 md:text-base'>
-          {plainText}
-        </p>
+        <p
+          className='max-w-4xl mx-auto text-left'
+          dangerouslySetInnerHTML={{ __html: policy }}
+        ></p>
       </div>
     </section>
   );

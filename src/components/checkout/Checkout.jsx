@@ -17,11 +17,12 @@ const Checkout = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
-    batchOption: '',
-    batchId: '',
-    courseDuration: '',
-    durationName: '', // Store the name of the selected duration
-    price: '', // Set price to an empty string by default
+    batchOption: '', // Selected batch option (if applicable)
+    batchId: '', // Batch ID (if applicable)
+    courseDuration: '', // Selected course duration
+    durationName: '', // Name of the selected duration
+    durationId: '', // ID of the selected duration
+    price: '', // Price of the selected duration
   });
 
   const { courseId = 'No ID' } = location.state || {};
@@ -112,6 +113,31 @@ const Checkout = () => {
   };
 
   // Handle change for courseDurations select field and update price
+  // const handleDurationChange = (e) => {
+  //   const selectedValue = e.target.value;
+
+  //   if (selectedValue === '') {
+  //     setFormData({
+  //       ...formData,
+  //       courseDuration: '',
+  //       durationName: '', // Clear duration name
+  //       price: '', // Set price to empty string
+  //     });
+  //     return;
+  //   }
+
+  //   const selectedDuration = courseData.data.course_durations.find(
+  //     (duration) => duration.duration.name === selectedValue
+  //   );
+
+  //   setFormData({
+  //     ...formData,
+  //     courseDuration: selectedValue,
+  //     durationName: selectedDuration ? selectedDuration.duration.name : '', // Update duration name
+  //     price: selectedDuration ? selectedDuration.price : '', // Update price or set it as empty string
+  //   });
+  // };
+
   const handleDurationChange = (e) => {
     const selectedValue = e.target.value;
 
@@ -121,6 +147,7 @@ const Checkout = () => {
         courseDuration: '',
         durationName: '', // Clear duration name
         price: '', // Set price to empty string
+        durationId: '', // Clear duration_id
       });
       return;
     }
@@ -134,6 +161,7 @@ const Checkout = () => {
       courseDuration: selectedValue,
       durationName: selectedDuration ? selectedDuration.duration.name : '', // Update duration name
       price: selectedDuration ? selectedDuration.price : '', // Update price or set it as empty string
+      durationId: selectedDuration ? selectedDuration.id : '', // Update duration_id or clear it
     });
   };
 
@@ -149,8 +177,9 @@ const Checkout = () => {
     formData.price !== ''
       ? formData.price // Use user-selected price directly
       : defaultPrice - defaultDiscountPrice; // Apply discount to default price
-
-  console.log(courseData);
+  
+  
+  
 
   return (
     <div>
