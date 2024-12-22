@@ -63,8 +63,13 @@ const ProductDetails = () => {
                 <h3 className='font-bold text-[#124265] text-[16px] md:text-[18px] leading-[28px] pb-[5px]'>
                   বর্ণনা:{' '}
                 </h3>
-                <small className='text-gray-500 text-justify text-[16px]'>
-                  {singleProduct.description}
+                <small
+                  className='text-gray-500 text-justify text-[16px]'
+                  dangerouslySetInnerHTML={{
+                    __html: singleProduct?.description,
+                  }}
+                >
+                  {/* {singleProduct.description} */}
                 </small>
               </div>
               <div className=' mt-6 CourseDetails-card border-[#1bb57b] border-b-2'>

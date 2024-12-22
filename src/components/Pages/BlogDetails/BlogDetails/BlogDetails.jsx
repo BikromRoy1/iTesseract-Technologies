@@ -166,8 +166,9 @@ const BlogDetails = () => {
                     <p
                       className='wow fadeInUp mb-8 text-base leading-relaxed text-body-color text-justify'
                       data-wow-delay='.1s'
+                      dangerouslySetInnerHTML={{ __html: singlePost?.body }}
                     >
-                      {plainText}
+                      {/* {plainText} */}
                     </p>
 
                     <div

@@ -4,6 +4,7 @@
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.089);
   overflow: hidden;
+  height: 100%;
 }
 .blog-img {
   overflow: hidden;
