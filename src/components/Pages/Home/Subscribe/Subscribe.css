@@ -1,7 +1,8 @@
 #subscribe-home {
   overflow: hidden;
   background: #f7f5f2;
-  padding: 102px 0;
+  /* padding: 102px 0; */
+  padding: 50px 0;
   position: relative;
   z-index: 1;
   background-repeat: no-repeat;

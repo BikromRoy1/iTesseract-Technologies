@@ -11,7 +11,6 @@ const Home = () => {
   return (
     <div>
       <NewBanner></NewBanner>
-
       <Kits></Kits>
       <ItesseractAbout></ItesseractAbout>
       <ChiefAdvisor></ChiefAdvisor>
