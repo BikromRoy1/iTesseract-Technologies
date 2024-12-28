@@ -62,8 +62,8 @@ const Kits = () => {
       <div className='container px-6 py-10 mx-auto'>
         <div className='section-header'>
           <h2>
-            প্রশিক্ষণের নিজস্ব{' '}
-            <span className='title-gradient'>রোবটিক্স টুলস</span>
+            রোবটিক্স ও প্রোগ্রামিং শেখার{' '}
+            <span className='title-gradient'>সেরা কোর্স সমূহ</span>
           </h2>
           <p>
             বাংলাদেশে প্রথম আমরাই তিনটি ধাপে নিজস্ব রোবটিক্স টুলস দিয়ে প্রশিক্ষণ
