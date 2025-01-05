@@ -291,7 +291,7 @@ const Checkout = () => {
                           <svg
                             stroke='currentColor'
                             fill='currentColor'
-                            stroke-width='0'
+                            strokeWidth='0'
                             viewBox='0 0 448 512'
                             className='text-[#FD7E14]'
                             width='17px'
@@ -309,7 +309,7 @@ const Checkout = () => {
                           <svg
                             stroke='currentColor'
                             fill='currentColor'
-                            stroke-width='0'
+                            strokeWidth='0'
                             viewBox='0 0 640 512'
                             width='17px'
                             height='17px'

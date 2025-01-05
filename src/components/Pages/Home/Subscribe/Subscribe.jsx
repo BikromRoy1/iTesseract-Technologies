@@ -150,9 +150,9 @@ const Subscribe = () => {
           </div>
 
           <div className='mt-8 lg:w-1/2 lg:mt-0'>
-            <h2 class='text-2xl font-extrabold mb-6'>
-              <span class='theme-primary-color'>ফ্রি ডেমো ক্লাস বুক</span>
-              <span class='title-gradient'> করতে রেজিস্ট্রেশন করো</span>
+            <h2 className='text-2xl font-extrabold mb-6'>
+              <span className='theme-primary-color'>ফ্রি ডেমো ক্লাস বুক</span>
+              <span className='title-gradient'> করতে রেজিস্ট্রেশন করো</span>
             </h2>
             <form
               onSubmit={handleSubmit}

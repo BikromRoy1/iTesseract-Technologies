@@ -32,7 +32,7 @@ const MangTeam = () => {
           <p>আইটেসারেক্ট টেকনোলিজস ম্যানেজমেন্ট টীম</p>
         </div>
 
-        <div class='-mx-4 flex flex-wrap justify-center'>
+        <div className='-mx-4 flex flex-wrap justify-center'>
           {teamMembers?.map((team) => (
             <div
               key={team?.id}

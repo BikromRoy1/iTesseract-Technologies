@@ -65,8 +65,8 @@ const MyLiveClass = () => {
         <div className='p-[1.25rem]'>
           {myLiveClass?.data?.length > 0 ? (
             <div className='grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-6'>
-              {myLiveClass?.data?.map((lives) => (
-                <div>
+              {myLiveClass?.data?.map((lives, index) => (
+                <div key={index}>
                   <div className='h-full'>
                     <div className='space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-2 w-full'>
                       <div className='flex flex-col rounded-lg bg-white sm:flex-row items-start w-full'>
@@ -129,7 +129,7 @@ const MyLiveClass = () => {
                               </ul>
                             </div>
                           </div>
-                          <div class='mt-1 mx-4 flex items-center justify-start gap-2 md:mt-0 ng-tns-c81-0'>
+                          <div className='mt-1 mx-4 flex items-center justify-start gap-2 md:mt-0 ng-tns-c81-0'>
                             <span className='primary-color font-medium text-base'>
                               লাইভ ক্লাস লিঙ্ক:-
                             </span>
