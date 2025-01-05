@@ -22,8 +22,6 @@ const Policy = () => {
 
   const policy = data?.data?.privacy_policy;
 
-  console.log(data);
-
   return (
     <section>
       <Breadcrumb

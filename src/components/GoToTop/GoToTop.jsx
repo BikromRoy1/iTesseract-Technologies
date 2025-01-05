@@ -27,10 +27,10 @@ const GoToTop = () => {
   }, []);
 
   return (
-    <div class='wrapper'>
+    <div className='wrapper'>
       {isVisible && (
-        <div class='top-btn' onClick={goToBtn}>
-          <FaArrowUp class='top-btn-icon' />
+        <div className='top-btn' onClick={goToBtn}>
+          <FaArrowUp className='top-btn-icon' />
         </div>
       )}
     </div>

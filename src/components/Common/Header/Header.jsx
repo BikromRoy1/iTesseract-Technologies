@@ -56,7 +56,7 @@ const Header = () => {
   const handleLogout = () => {
     try {
       const getInfo = JSON.parse(localStorage.getItem('userInfo'));
-      console.log('Retrieved userInfo:', getInfo);
+      // console.log('Retrieved userInfo:', getInfo);
 
       if (!getInfo || !getInfo.token) {
         console.warn('No auth token found, but proceeding with logout');

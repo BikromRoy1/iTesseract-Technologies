@@ -1,4 +1,8 @@
-import { MediaPlayer, MediaProvider } from '@vidstack/react';
+import { MediaPlayer, MediaProvider, Poster, Track } from '@vidstack/react';
+import '@vidstack/react/player/styles/default/layouts/audio.css';
+import '@vidstack/react/player/styles/default/layouts/video.css';
+import '@vidstack/react/player/styles/default/theme.css';
+
 import {
   DefaultVideoLayout,
   defaultLayoutIcons,
@@ -106,6 +110,28 @@ const DBVideos = () => {
   // Get the total duration in human-readable format
   const totalDuration = formatDuration(totalDurationInSeconds);
 
+  const textTracks = [
+    {
+      label: 'English',
+      language: 'en-US',
+      kind: 'subtitles',
+      type: 'vtt',
+      default: true,
+    },
+    {
+      label: 'Spanish',
+      language: 'es-ES',
+      kind: 'subtitles',
+      type: 'vtt',
+    },
+    {
+      language: 'en-US',
+      kind: 'chapters',
+      type: 'vtt',
+      default: true,
+    },
+  ];
+
   return (
     <section className='dashboard-section'>
       <div className='dashboard-box'>
@@ -130,7 +156,12 @@ const DBVideos = () => {
                   key={currentVideoId} // Add a key to force re-render
                   src={currentVideo?.file || ''}
                 >
-                  <MediaProvider />
+                  <MediaProvider>
+                    <Poster className='vds-poster' />
+                    {textTracks.map((track, index) => (
+                      <Track {...track} key={track.index} />
+                    ))}
+                  </MediaProvider>
 
                   <DefaultVideoLayout
                     thumbnails='https://image.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/storyboard.vtt'
@@ -261,16 +292,16 @@ const DBVideos = () => {
           </div>
         ) : (
           <div className='flex items-center justify-center w-full h-[80vh]'>
-            <div class='text-center'>
+            <div className='text-center'>
               <h2 className='mb-5 font-extrabold text-9xl dark:text-gray-600'>
                 <span className='logo-color'>
                   <Lottie animationData={animation}></Lottie>
                 </span>
               </h2>
-              <p class='text-2xl font-semibold md:text-3xl'>
+              <p className='text-2xl font-semibold md:text-3xl'>
                 😥দুঃখিত, কোর্স কনটেন্ট পৃষ্ঠাটি খুঁজে পাইনি
               </p>
-              <p class='mt-4 mb-8 dark:text-gray-400'>
+              <p className='mt-4 mb-8 dark:text-gray-400'>
                 দয়া করে কোর্স কনটেন্ট জন্য অপেক্ষা করুন।
               </p>
             </div>

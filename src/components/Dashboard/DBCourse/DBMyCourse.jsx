@@ -1,9 +1,9 @@
+import Lottie from 'lottie-react';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import course01 from '../../../Images/course-01.jpg';
-import DBLoader from '../../DBLoader/DBLoader';
+import { apiUrl } from '../../../config/config';
 import animation from '../../../Images/content.json';
-import Lottie from 'lottie-react';
+import DBLoader from '../../DBLoader/DBLoader';
 
 const DBMyCourse = () => {
   const [myCourse, setMyCourse] = useState(null);
@@ -68,7 +68,7 @@ const DBMyCourse = () => {
                   <div>
                     <img
                       className='rounded-t-lg'
-                      src={course01}
+                      src={`${apiUrl}/${course?.course?.image}`}
                       loading='lazy'
                       alt={course?.course?.course_name}
                     />
@@ -92,16 +92,16 @@ const DBMyCourse = () => {
           </div>
         ) : (
           <div className='flex items-center justify-center w-full h-[80vh]'>
-            <div class='text-center'>
+            <div className='text-center'>
               <h2 className='mb-5 font-extrabold text-9xl dark:text-gray-600'>
                 <span className='logo-color'>
                   <Lottie animationData={animation}></Lottie>
                 </span>
               </h2>
-              <p class='text-xl font-semibold md:text-3xl'>
+              <p className='text-xl font-semibold md:text-3xl'>
                 😥দুঃখিত, আপনি কোন কোর্স ক্রয় করেন নাই
               </p>
-              <p class='mt-4 mb-8 dark:text-gray-400'>
+              <p className='mt-4 mb-8 dark:text-gray-400'>
                 দয়া করে একটা কোর্স ক্রয় করুন না হলে, নাক ফাটিয়ে দিবো 😏।
               </p>
             </div>

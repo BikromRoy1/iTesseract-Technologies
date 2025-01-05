@@ -40,8 +40,6 @@ const Login = () => {
         autoClose: 2000,
       });
 
-      console.log(result);
-
       const userInfo = {
         email: result.data.user.email,
         token: result.data.authorisation.token,

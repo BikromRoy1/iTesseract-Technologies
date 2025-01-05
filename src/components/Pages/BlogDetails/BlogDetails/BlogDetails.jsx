@@ -2,14 +2,12 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import blogDetai from '../../../../Images/blogDetails.jpg';
-import teamAuthor from '../../../../Images/team/abdulhamid.png';
+import teamAuthor from '../../../../Images/icons/Avatars.png';
 import Breadcrumb from '../../../Breadcrumb/Breadcrumb';
 
 const BlogDetails = () => {
   const post = useLoaderData();
   const singlePost = post.data.blog;
-
-  console.log(singlePost);
 
   const createdAt = singlePost?.created_at;
   const date = new Date(createdAt);

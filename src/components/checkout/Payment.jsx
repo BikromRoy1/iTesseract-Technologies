@@ -93,7 +93,7 @@ const Payment = ({ courseData, formData }) => {
               fill='none'
               role='img'
               xmlns='http://www.w3.org/2000/svg'
-              class='header__logo'
+              className='header__logo'
             >
               <title id='headerLogo'>Bkash Logo</title>
               <g clip-path='url(#clip0_2750_4283)'>

@@ -14,7 +14,7 @@ import { useLocation } from 'react-router-dom';
 const VideosPlaying = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { modules, course } = location.state || {};  
+  const { modules, course } = location.state || {};
 
   // Total number of videos
   const courseContent = modules.map((module) => module.course_contents);
@@ -23,7 +23,6 @@ const VideosPlaying = () => {
     (acc, curr) => acc + curr,
     0
   );
-
 
   function parseDuration(duration) {
     const parts = duration.split(' ');
@@ -118,13 +117,9 @@ const VideosPlaying = () => {
   // Flatten modules to get all course contents
   const videoContents = modules.flatMap((module) => module.course_contents);
 
- 
-
   const currentVideo = videoContents.find(
     (video) => video.id === currentVideoId
   );
-
-   console.log(currentVideo);
 
   useEffect(() => {
     if (videoRef.current && currentVideo) {

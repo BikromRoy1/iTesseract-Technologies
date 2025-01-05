@@ -30,8 +30,6 @@ const EditProfile = () => {
     gender: '',
   });
 
-  console.log(formData);
-
   const handleImageChange = (event) => {
     const file = event.target.files[0];
 
@@ -65,7 +63,7 @@ const EditProfile = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log(data?.data?.user_details?.gender);
+          // console.log(data?.data?.user_details?.gender);
           setFormData({
             ...formData,
             name: data?.data?.user?.name || '',
@@ -83,24 +81,24 @@ const EditProfile = () => {
           setLoading(false);
         })
         .catch((error) => {
-           setError(error);
-           setLoading(false);
-           console.error('Error fetching user info:', error);
+          setError(error);
+          setLoading(false);
+          console.error('Error fetching user info:', error);
         });
     }
   }, []);
 
-    if (loading) {
-      return <DBLoader />;
-    }
+  if (loading) {
+    return <DBLoader />;
+  }
 
-    if (error) {
-      return (
-        <p className='flex items-center justify-center h-[80vh] w-full capitalize font-medium text-base'>
-          Error: {error.message}
-        </p>
-      );
-    }
+  if (error) {
+    return (
+      <p className='flex items-center justify-center h-[80vh] w-full capitalize font-medium text-base'>
+        Error: {error.message}
+      </p>
+    );
+  }
 
   const handleChange = (e) => {
     setFormData({
@@ -165,7 +163,7 @@ const EditProfile = () => {
         } else {
           toast.error('Failed to update profile');
         }
-        console.log('User info updated successfully:', data);
+        // console.log('User info updated successfully:', data);
       })
       .catch((error) => {
         console.error('Error updating user info:', error);

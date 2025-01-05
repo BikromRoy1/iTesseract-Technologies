@@ -27,8 +27,6 @@ const UniSkills = () => {
 
   const onlineCourses = data.data;
 
-  console.log(onlineCourses);
-
   function formatNumberToBangla(number) {
     const banglaDigits = {
       0: '০',

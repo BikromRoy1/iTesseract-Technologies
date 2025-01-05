@@ -6,14 +6,15 @@ import Checkouts from '../../Images/Checkout.jpg';
 import './Checkout.css';
 
 import Lottie from 'lottie-react';
+import { toast } from 'react-toastify';
 import animation from '../../Images/content.json';
 import { apiUrl } from '../../config/config';
 import DBLoader from '../DBLoader/DBLoader';
-import Payment from './Payment';
 
 const Checkout = () => {
   const location = useLocation();
   const [courseData, setCourseData] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
@@ -177,9 +178,58 @@ const Checkout = () => {
     formData.price !== ''
       ? formData.price // Use user-selected price directly
       : defaultPrice - defaultDiscountPrice; // Apply discount to default price
-  
-  
-  
+
+  // bkash payment add
+
+  const courseID = courseData?.data?.course?.id;
+  const batchId = formData?.batchId;
+  const totalPriceCourse = formData?.price;
+  const courseDurationId = formData?.durationId;
+
+  const handleSubmit = async () => {
+
+    if (isSubmitting) return; // Prevent multiple submissions
+    setIsSubmitting(true);
+
+    const paymentApiUrl = `https://itesseract.com.bd/main/api/v1/bkash-pay?course_id=${courseID}&batch_id=${batchId}&amount=${totalPriceCourse}&course_duration_id=${courseDurationId}`;
+    // Retrieve token from localStorage
+    const getInfo = JSON.parse(localStorage.getItem('userInfo'));
+    const token = getInfo?.token; // Assuming the token is stored inside `userInfo`
+
+    try {
+      const response = await fetch(paymentApiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`, // Replace with actual token if needed
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      // Handle the payment response here
+      handlePaymentResponse(result);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsSubmitting(false); // Allow resubmission after completion
+    }
+  };
+
+  const handlePaymentResponse = (response) => {
+    if (response?.success) {
+      // If success is true, open the URL in a new tab
+      window.location.href = response.data.url;
+    } else {
+      // Handle failure if needed
+      toast.error('পেমেন্ট জমা দিতে ব্যর্থ হয়েছে। আবার চেষ্টা করুন।', {
+        autoClose: 2000, // Closes automatically after 2 seconds
+      });
+    }
+  };
 
   return (
     <div>
@@ -425,7 +475,7 @@ const Checkout = () => {
                     </div>
                     {formData?.price !== '' && (
                       <div className='w-full flex items-center justify-between mb-1 mt-1'>
-                        <button class='gap-2 py-2  flex ghost text-green-500 ng-star-inserted'>
+                        <button className='gap-2 py-2  flex ghost text-green-500 ng-star-inserted'>
                           <svg
                             width='20'
                             height='20'
@@ -475,39 +525,28 @@ const Checkout = () => {
                       <h4> ৳ {totalPrice} </h4>
                     </div>
                     <div className='mx-3'>
-                      {/* {formData?.batchOption && formData?.courseDuration && (
-                        <button className='max-w[300px] mx-auto block w-full bg-[#1bb57b] px-4 py-[6px] rounded-md font-medium text-base tracking-wide text-white transition-colors whitespace-nowrap duration-200'>
-                          পেমেন্ট করুন
-                        </button>
-                      )} */}
-                      <label
-                        htmlFor={
-                          formData.batchOption && formData.courseDuration
-                            ? 'my-modal-4'
-                            : ''
-                        }
+                      <button
                         className={`max-w[300px] cursor-pointer text-center mx-auto block w-full px-4 py-[6px] rounded-md font-medium text-base tracking-wide transition-colors whitespace-nowrap duration-200 ${
                           formData.batchOption && formData.courseDuration
                             ? 'bg-[#1bb57b] text-white'
                             : 'bg-gray-400 text-gray-600 cursor-not-allowed'
                         }`}
                         onClick={(e) => {
-                          if (
-                            !(formData.batchOption && formData.courseDuration)
-                          ) {
-                            e.preventDefault(); // Prevent modal from opening
+                          if (formData.batchOption && formData.courseDuration) {
+                            handleSubmit(); // Call handleSubmit if conditions are met
+                          } else {
+                            e.preventDefault(); // Prevent modal from opening if conditions are not met
                           }
                         }}
                       >
                         পেমেন্ট করুন
-                      </label>
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <Payment courseData={courseData} formData={formData} />
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './ProfileInformation.css';
 
 const ProfileInformation = ({ userInfo }) => {
-  console.log(userInfo);
+ 
 
   // Date format for the profile
   const formatDate = (dateString) => {
