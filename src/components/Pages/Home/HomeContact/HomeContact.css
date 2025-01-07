@@ -1,14 +1,14 @@
-#subscribe-home {
+.home-contact {
   overflow: hidden;
   background: #f7f5f2;
-  padding: 102px 0;
+  padding: 50px 0;
   position: relative;
   z-index: 1;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50%;
 }
-#subscribe-home::before {
+.home-contact::before {
   content: '';
   position: absolute;
   left: 0;
@@ -22,32 +22,32 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-#subscribe-home .subscribe-content {
+.home-contact .home-content {
   position: relative;
   z-index: 2;
 }
-#subscribe-home .shapes-01 {
+.home-contact .shapes-01 {
   position: absolute;
   z-index: -1;
   transform: translateX(-9.56px) translateY(7.16px) translateZ(0px);
   top: 109px;
   left: 0px;
 }
-#subscribe-home .shapes-02 {
+.home-contact .shapes-02 {
   position: absolute;
   z-index: -1;
   transform: translateX(0.52px) translateY(-2.06px) translateZ(0px);
   bottom: 29px;
   left: 85px;
 }
-#subscribe-home .shapes-03 {
+.home-contact .shapes-03 {
   transform: translateX(7.92px) translateY(-1.94px) translateZ(0px);
   top: -61px;
   right: -10px;
   z-index: 0;
   position: absolute;
 }
-#subscribe-home .shapes-04 {
+.home-contact .shapes-04 {
   transform: translateX(2.44px) translateY(1.86px) translateZ(0px);
   top: -126px;
   right: 50px;

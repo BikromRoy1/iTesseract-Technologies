@@ -1,10 +1,10 @@
 import React from 'react';
 import NewBanner from '../Banner/NewBanner';
 import ChiefAdvisor from '../ChiefAdvisor/ChiefAdvisor';
+import HomeContact from '../HomeContact/HomeContact';
 import ItesseractAbout from '../ItesseractAbout/ItesseractAbout';
 import Kits from '../Kits/Kits';
 import Partner from '../Partner/Partner';
-import Subscribe from '../Subscribe/Subscribe';
 import Testimonial from '../Testimonial/Testimonial';
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
       <ItesseractAbout></ItesseractAbout>
       <ChiefAdvisor></ChiefAdvisor>
       <Testimonial></Testimonial>
-      <Subscribe></Subscribe>
+      <HomeContact />
       <Partner></Partner>
     </div>
   );

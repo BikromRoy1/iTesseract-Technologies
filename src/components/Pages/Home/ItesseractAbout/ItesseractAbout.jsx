@@ -23,7 +23,7 @@ const ItesseractAbout = () => {
     fetchData();
   }, []);
 
-  let startValue = 0;
+  const startValue = 0;
 
   // Ensure data is available and values are valid numbers
   const studentNumber = parseInt(data?.data?.student) || 0;

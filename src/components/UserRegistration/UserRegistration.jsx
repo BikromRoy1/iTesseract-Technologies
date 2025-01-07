@@ -92,14 +92,14 @@ const UserRegistration = () => {
             />
           </div>
 
-          <p className='mt-3 text-xl text-center text-gray-600 dark:text-gray-200'>
+          <p className='mt-3 text-xl text-center text-gray-200'>
             আপনাকে রেজিস্ট্রেশন পৃষ্ঠায় স্বাগতম!
           </p>
 
           <form onSubmit={handleSubmit}>
             <div className='mt-4'>
               <label
-                className='block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200'
+                className='block mb-2 text-sm font-medium text-gray-200'
                 htmlFor='userName'
               >
                 Full Name
@@ -115,7 +115,7 @@ const UserRegistration = () => {
             </div>
             <div className='mt-4'>
               <label
-                className='block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200'
+                className='block mb-2 text-sm font-medium text-gray-200'
                 htmlFor='userNumber'
               >
                 Your Phone Number
@@ -131,7 +131,7 @@ const UserRegistration = () => {
             </div>
             <div className='mt-4'>
               <label
-                className='block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200'
+                className='block mb-2 text-sm font-medium text-gray-200'
                 htmlFor='LoggingEmailAddress'
               >
                 Email Address
@@ -150,7 +150,7 @@ const UserRegistration = () => {
               <div className='flex flex-col my-4'>
                 <div className='flex justify-between'>
                   <label
-                    className='block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200'
+                    className='block mb-2 text-sm font-medium  text-gray-200'
                     htmlFor='loggingPassword'
                   >
                     Password
@@ -223,7 +223,7 @@ const UserRegistration = () => {
             <span className='text-white'>Do have account?</span>
             <Link
               to='/login'
-              className='title-gradient underline text-base font-semibold'
+              className='title-gradient underline text-base font-semibold decoration-[#07bc0c]'
             >
               Go To Login
             </Link>

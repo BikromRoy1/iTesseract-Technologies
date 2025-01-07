@@ -98,11 +98,11 @@ const Login = () => {
             />
           </div>
 
-          <p className='mt-3 text-xl text-center text-gray-600 dark:text-gray-200'>
+          <p className='mt-3 text-xl text-center text-gray-200'>
             আপনাকে লগইন পৃষ্ঠায় স্বাগতম!
           </p>
 
-          <span className='flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-[#15BD13] dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-[#24a15b]'>
+          <span className='flex cursor-pointer items-center justify-center mt-4  transition-colors duration-300 transform border rounded-lg border-gray-[#15BD13] text-gray-200  hover:bg-[#24a15b]'>
             <div className='px-1 md:px-4 py-2'>
               <img
                 className='w-7 h-7'
@@ -118,18 +118,18 @@ const Login = () => {
           </span>
 
           <div className='flex items-center justify-between mt-4'>
-            <span className='w-1/5 border-b dark:border-gray-400 lg:w-1/4'></span>
+            <span className='w-1/5 border-b border-gray-400 lg:w-1/4'></span>
 
-            <span className='text-xs text-center text-gray-500 uppercase dark:text-gray-300 hover:underline cursor-pointer'>
+            <span className='text-xs text-center  uppercase text-gray-300 hover:underline cursor-pointer'>
               Valid Email and Password
             </span>
 
-            <span className='w-1/5 border-b dark:border-gray-400 lg:w-1/4'></span>
+            <span className='w-1/5 border-b border-gray-400 lg:w-1/4'></span>
           </div>
           <form onSubmit={handleSubmit}>
             <div className='mt-4'>
               <label
-                className='block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200'
+                className='block mb-2 text-sm font-medium text-gray-200'
                 htmlFor='LoggingEmailAddress'
               >
                 Email Address
@@ -148,7 +148,7 @@ const Login = () => {
               <div className='flex flex-col my-4'>
                 <div className='flex justify-between'>
                   <label
-                    className='block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200'
+                    className='block mb-2 text-sm font-medium text-gray-200'
                     htmlFor='loggingPassword'
                   >
                     Password
@@ -221,7 +221,7 @@ const Login = () => {
             <span className='text-white'>You don't have an account?</span>
             <Link
               to='/UserRegistration'
-              className='title-gradient underline text-base font-semibold'
+              className='title-gradient underline text-base font-semibold decoration-[#07bc0c]'
             >
               Registration
             </Link>
