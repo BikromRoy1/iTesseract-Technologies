@@ -1,7 +1,10 @@
 import axios from 'axios';
+import Lottie from 'lottie-react';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { apiUrl } from '../../../../config/config';
+import animationContact from '../../../../Images/home-contact.json';
+import animationImage from '../../../../Images/home-content.svg';
 import shapes04 from '../../../../Images/icons/shape-08.png';
 import shapes02 from '../../../../Images/icons/shape-09.png';
 import shapes01 from '../../../../Images/icons/shape-10.png';
@@ -10,6 +13,7 @@ import './HomeContact.css';
 
 const HomeContact = () => {
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,6 +54,15 @@ const HomeContact = () => {
     }
   };
 
+  useEffect(() => {
+    // Simulating a loading delay (optional)
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // 2 seconds delay
+
+    return () => clearTimeout(timer); // Cleanup timeout
+  }, []);
+
   return (
     <section className='bg-gray-50 home-contact'>
       <div className='p-8 md:p-12 lg:px-16 home-content container mx-auto'>
@@ -67,10 +80,11 @@ const HomeContact = () => {
         </div>
         <div className='lg:flex items-center'>
           <div className='lg:w-1/2'>
-            {/* <Lottie
-            className='sm:w-full lg:w-[600px]'
-            animationData={homeAnimationContact}
-          ></Lottie> */}
+            <Lottie
+              className='sm:w-full lg:w-[500px]'
+              animationData={animationContact}
+            ></Lottie>
+            {/* <img src={animationImage} alt='' /> */}
           </div>
 
           <div className='mt-8 lg:w-1/2 lg:mt-0'>
