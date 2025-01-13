@@ -14,13 +14,13 @@ const PaymentFailed = () => {
             </span>
           </h2>
           <p className='text-xl font-semibold md:text-3xl'>
-            😥দুর্ভাগ্যবশত, আপনার পেমেন্ট ব্যর্থ হয়েছে।
+            😥দুঃখিত, আপনার পেমেন্ট ব্যর্থ হয়েছে।
           </p>
           <p className='mt-4 mb-6 dark:text-gray-400'>
             পৃষ্ঠাটি স্বয়ংক্রিয়ভাবে মূল পৃষ্ঠায় পুনঃনির্দেশিত হওয়ার সময় বা
             নীচের বোতামটি ক্লিক করুন 😢।
           </p>
-          <Link
+          {/* <Link
             className='group relative inline-flex items-center overflow-hidden rounded bg-[#1bb57b] px-8 py-3 text-white focus:outline-none focus:ring active:bg-[#52c234]'
             to='/'
           >
@@ -44,7 +44,7 @@ const PaymentFailed = () => {
             <span className='text-sm font-medium transition-all group-hover:me-4 uppercase'>
               Try again
             </span>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

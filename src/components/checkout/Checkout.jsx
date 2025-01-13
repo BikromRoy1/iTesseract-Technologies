@@ -10,6 +10,7 @@ import { toast } from 'react-toastify';
 import animation from '../../Images/content.json';
 import { apiUrl } from '../../config/config';
 import DBLoader from '../DBLoader/DBLoader';
+import Processing from './Processing';
 
 const Checkout = () => {
   const location = useLocation();
@@ -187,7 +188,6 @@ const Checkout = () => {
   const courseDurationId = formData?.durationId;
 
   const handleSubmit = async () => {
-
     if (isSubmitting) return; // Prevent multiple submissions
     setIsSubmitting(true);
 
@@ -524,7 +524,8 @@ const Checkout = () => {
                       </h4>
                       <h4> ৳ {totalPrice} </h4>
                     </div>
-                    <div className='mx-3'>
+                    <div className='mx-3 relative'>
+                      {isSubmitting && <Processing />}
                       <button
                         className={`max-w[300px] cursor-pointer text-center mx-auto block w-full px-4 py-[6px] rounded-md font-medium text-base tracking-wide transition-colors whitespace-nowrap duration-200 ${
                           formData.batchOption && formData.courseDuration
@@ -539,7 +540,7 @@ const Checkout = () => {
                           }
                         }}
                       >
-                        পেমেন্ট করুন
+                        {isSubmitting ? 'পেমেন্ট প্রসেসিং...' : 'পেমেন্ট করুন'}
                       </button>
                     </div>
                   </div>
