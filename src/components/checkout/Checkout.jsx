@@ -170,28 +170,42 @@ const Checkout = () => {
   // Extract price and discount price
   const defaultPrice = courseData?.data?.course?.price || 0;
   const defaultDiscountPrice = courseData?.data?.course?.discount_price || 0;
+  const offerDate = courseData?.data?.course?.offer_date;
 
   // Calculate the total price after discount
   // const totalPrice = price - discountPrice;
+
+  // Get today's date
+  const today = new Date();
+  const offerEndDate = new Date(offerDate);
+
+  // Condition to determine which price to show
+  const finalPrice =
+    today <= offerEndDate ? defaultDiscountPrice : defaultPrice;
+
+  const discount =
+    today <= offerEndDate ? defaultPrice - defaultDiscountPrice : 0;
 
   // Calculate the total price based on selection
   const totalPrice =
     formData.price !== ''
       ? formData.price // Use user-selected price directly
-      : defaultPrice - defaultDiscountPrice; // Apply discount to default price
+      : finalPrice; // Apply discount to default price
 
   // bkash payment add
 
   const courseID = courseData?.data?.course?.id;
   const batchId = formData?.batchId;
-  const totalPriceCourse = formData?.price;
+  const totalPriceCourse = formData?.price || finalPrice;
   const courseDurationId = formData?.durationId;
+
+  const durationParam = courseDurationId || null;
 
   const handleSubmit = async () => {
     if (isSubmitting) return; // Prevent multiple submissions
     setIsSubmitting(true);
 
-    const paymentApiUrl = `https://itesseract.com.bd/main/api/v1/bkash-pay?course_id=${courseID}&batch_id=${batchId}&amount=${totalPriceCourse}&course_duration_id=${courseDurationId}`;
+    const paymentApiUrl = `https://itesseract.com.bd/main/api/v1/bkash-pay?course_id=${courseID}&batch_id=${batchId}&amount=${totalPriceCourse}&course_duration_id=${durationParam}`;
     // Retrieve token from localStorage
     const getInfo = JSON.parse(localStorage.getItem('userInfo'));
     const token = getInfo?.token; // Assuming the token is stored inside `userInfo`
@@ -414,9 +428,7 @@ const Checkout = () => {
                               value={formData.courseDuration} // Set the selected value
                               onChange={handleDurationChange} // Handle change event
                             >
-                              <option className='text-xs' value=''>
-                                Select values
-                              </option>
+                              <option className='text-xs'>Select values</option>
                               {courseData?.data?.course_durations?.length >
                               0 ? (
                                 courseData.data.course_durations.map(
@@ -470,7 +482,7 @@ const Checkout = () => {
                         ডিস্কাউন্ট
                       </h4>
                       <p className='font-semibold text-[#E63C3C] text-[20px] tracking-[0.20000000298023224px]'>
-                        -৳{courseData?.data?.course?.discount_price}
+                        ৳{discount}
                       </p>
                     </div>
                     {formData?.price !== '' && (
@@ -528,12 +540,12 @@ const Checkout = () => {
                       {isSubmitting && <Processing />}
                       <button
                         className={`max-w[300px] cursor-pointer text-center mx-auto block w-full px-4 py-[6px] rounded-md font-medium text-base tracking-wide transition-colors whitespace-nowrap duration-200 ${
-                          formData.batchOption && formData.courseDuration
+                          formData.batchOption
                             ? 'bg-[#1bb57b] text-white'
                             : 'bg-gray-400 text-gray-600 cursor-not-allowed'
                         }`}
                         onClick={(e) => {
-                          if (formData.batchOption && formData.courseDuration) {
+                          if (formData.batchOption) {
                             handleSubmit(); // Call handleSubmit if conditions are met
                           } else {
                             e.preventDefault(); // Prevent modal from opening if conditions are not met
