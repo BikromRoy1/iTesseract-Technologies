@@ -79,7 +79,10 @@ const PricePart = ({ mainCourse }) => {
       });
     } else {
       // Navigate to login page
-      navigate('/login');
+      // navigate('/login');
+       navigate('/login', {
+         state: { from: window.location.pathname }, // Pass current page URL to login page
+       });
     }
   };
 

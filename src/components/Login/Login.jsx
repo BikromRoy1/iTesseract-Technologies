@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import roundedLogo from '../../Images/Round-logo.png';
 import loginSVG from '../../Images/icons/login.png';
@@ -11,6 +11,9 @@ import { apiUrl } from '../../config/config';
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  console.log(location);
 
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setSubmitting] = useState(false);
@@ -47,7 +50,17 @@ const Login = () => {
 
       localStorage.setItem('userInfo', JSON.stringify(userInfo));
 
-      window.location.replace('/');
+      // window.location.replace('/');
+
+      // Get the state from navigation
+      const from =
+        window.location.replace(location.state?.from) ||
+        window.location.replace('/');
+
+      navigate(from);
+
+      console.log(from);
+
       // navigate('/');
       form.reset();
     } catch (error) {

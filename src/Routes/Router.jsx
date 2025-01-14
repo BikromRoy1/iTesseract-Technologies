@@ -30,6 +30,7 @@ import PaymentFailed from '../components/PaymentFailed/PaymentFailed.jsx';
 import Checkout from '../components/checkout/Checkout.jsx';
 import { apiUrl } from '../config/config.js';
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes.js';
+import PaymentHistory from '../components/Dashboard/PaymentHistory/PaymentHistory.jsx';
 
 const router = createBrowserRouter([
   {
@@ -165,6 +166,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/live-class',
         element: <MyLiveClass></MyLiveClass>,
+      },
+      {
+        path: '/dashboard/payments',
+        element: <PaymentHistory></PaymentHistory>,
       },
     ],
   },

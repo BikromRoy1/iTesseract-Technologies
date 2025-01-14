@@ -1,4 +1,5 @@
 import {
+  BadgeDollarSign,
   LayoutDashboard,
   LogOut,
   Settings,
@@ -161,6 +162,11 @@ const DashboardLayout = () => {
                 icon={<Video size={20} />}
                 text='লাইভ ক্লাস'
                 alert
+              />
+              <SidebarItem
+                to='/dashboard/payments'
+                icon={<BadgeDollarSign size={20} />}
+                text='আমার পেমেন্ট'
               />
               <hr className='my-3' />
               <SidebarItem
