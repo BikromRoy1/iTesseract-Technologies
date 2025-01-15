@@ -13,8 +13,6 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  console.log(location);
-
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setSubmitting] = useState(false);
 
@@ -53,13 +51,20 @@ const Login = () => {
       // window.location.replace('/');
 
       // Get the state from navigation
-      const from =
-        window.location.replace(location.state?.from) ||
+
+      if (location?.state?.from) {
+        window.location.replace(location?.state?.from);
+      } else {
         window.location.replace('/');
+      }
 
-      navigate(from);
+      // const from =
+      //   window.location.replace(location?.state?.from) ||
+      //   window.location.replace('/');
 
-      console.log(from);
+      // navigate(from);
+
+      // console.log(from);
 
       // navigate('/');
       form.reset();
