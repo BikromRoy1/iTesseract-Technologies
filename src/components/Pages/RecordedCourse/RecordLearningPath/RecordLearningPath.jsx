@@ -1,5 +1,5 @@
 import React from 'react';
-import twoGirls from '../../../../Images/12part.png';
+import twoGirls from '../../../../Images/12part.jpg';
 
 const LearningPath = () => {
   return (

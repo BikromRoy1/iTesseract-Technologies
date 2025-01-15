@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Breadcrumb = ({ title, subTitle, img, slgs }) => {
   return (
     <div
-      className='hero h-80 text-center object-cover'
+      className='hero h-72 text-center object-cover'
       style={{
         backgroundImage: `url(${img})`,
       }}

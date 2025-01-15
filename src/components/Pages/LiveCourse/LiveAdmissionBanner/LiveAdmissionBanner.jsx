@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import playingimage from '../../../../Images/univerBanner.jpg';
+import playingimage from '../../../../Images/univerBanner.jpeg';
 
 const UniBanner = () => {
   return (
@@ -10,7 +10,7 @@ const UniBanner = () => {
         backgroundImage: `url(${playingimage})`,
       }}
     >
-      <div className='hero-overlay bg-opacity-80'></div>
+      <div className='hero-overlay bg-opacity-70'></div>
       <div className='hero-content text-center text-neutral-content'>
         <div className='max-w-2xl'>
           <h1 className='mb-5 text-4xl font-bold '>

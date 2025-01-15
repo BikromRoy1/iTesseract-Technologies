@@ -82,9 +82,11 @@ const ProductList = () => {
                 <small className='uppercase text-[#1bb57b] text-lg'>
                   {product?.name}
                 </small>
-                <h3 className=' text-[#124265] text-2xl font-semibold mt-3 mb-3'>
-                  {product?.title}
-                </h3>
+                <Link to={`/product/${product?.id}`}>
+                  <h3 className=' text-[#124265] text-2xl font-semibold mt-3 mb-3'>
+                    {product?.title}
+                  </h3>
+                </Link>
                 <small className='text-gray-500 text-justify text-sm'>
                   {product?.description?.length > 10 ? (
                     product?.description?.slice(0, 268) + '.....'

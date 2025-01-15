@@ -102,11 +102,13 @@ const Kits = () => {
               <div key={item.id} className='single-card'>
                 <div className='course-card'>
                   <div className='course-card-img'>
-                    <img
-                      src={`${apiUrl}/${item?.image}`}
-                      loading='lazy'
-                      alt={item?.course_name}
-                    />
+                    <Link to={`/course/${item?.slug}`}>
+                      <img
+                        src={`${apiUrl}/${item?.image}`}
+                        loading='lazy'
+                        alt={item?.course_name}
+                      />
+                    </Link>
                     <div className='thumbnail-content'>
                       <span className='bg-[#ffbb2c] text-white rounded-[2px] inline-block px-[12px] font-semibold text-[15px] leading-[26px] m-[5px]'>
                         {item?.discount}% OFF
@@ -132,9 +134,11 @@ const Kits = () => {
                         </h5>
                       </div>
                     </div>
-                    <h4 className='font-semibold text-[#124265] capitalize kits-title-2'>
-                      {item?.course_name}
-                    </h4>
+                    <Link to={`/course/${item?.slug}`}>
+                      <h4 className='font-semibold text-[#124265] capitalize kits-title-2'>
+                        {item?.course_name}
+                      </h4>
+                    </Link>
                     <div className='course-timing flex items-center gap-5 pb-4'>
                       <div className='flex items-center gap-2'>
                         <BsCommand className='text-[#1bb57b] w-5 h-5 font-bold' />
