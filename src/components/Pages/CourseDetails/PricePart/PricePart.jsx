@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaStopwatch } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import playIcons from '../../../../Images/icons/play_icon_2 1.svg';
 import RegistrationModal from '../../../ContactModel/RegistrationModal';
 import VideosModal from '../VideosModal/VideosModal';
@@ -80,11 +80,13 @@ const PricePart = ({ mainCourse }) => {
     } else {
       // Navigate to login page
       // navigate('/login');
-       navigate('/login', {
-         state: { from: window.location.pathname }, // Pass current page URL to login page
-       });
+      navigate('/login', {
+        state: { from: window.location.pathname }, // Pass current page URL to login page
+      });
     }
   };
+
+  console.log(daysUntilOffer);
 
   return (
     <div className='price-card mb-[1.6rem]'>
@@ -114,27 +116,40 @@ const PricePart = ({ mainCourse }) => {
             <h3 className='mb-0 main-price font-bold'>
               ৳{' '}
               {formatNumberToBangla(
-                price ? price?.toLocaleString('en-US') : '0'
+                discount_price && offerDate
+                  ? discount_price?.toLocaleString('en-US')
+                  : price?.toLocaleString('en-US') || '0'
               )}
             </h3>
 
-            <span className='second-price text-gray-500'>
-              <del>
-                ৳
-                {formatNumberToBangla(
-                  discount_price ? discount_price?.toLocaleString('en-US') : '0'
-                )}
-              </del>
-            </span>
-            <span className='badge bg-[#FD7E14] border-none mb-0 font-semibold'>
-              {discount}% off
-            </span>
+            {discount_price && offerDate ? (
+              <span className='second-price text-gray-500 font-bold'>
+                <del>
+                  {formatNumberToBangla(
+                    price ? price?.toLocaleString('en-US') : '0'
+                  )}
+                </del>
+              </span>
+            ) : null}
+            {discount > 0 && (
+              <span className='badge bg-[#FD7E14] border-none mb-0 font-semibold'>
+                {discount}% off
+              </span>
+            )}
           </div>
           <div className='mb-0 flex items-center gap-1 md:gap-2 text-[#D83549]'>
-            <FaStopwatch className='text-[#D83549]' width='16' height='16' />{' '}
-            <span className='font-semibold'>
-              {daysUntilOffer} days left at this price
-            </span>
+            {discount > 0 && daysUntilOffer > 0 && (
+              <>
+                <FaStopwatch
+                  className='text-[#D83549]'
+                  width='16'
+                  height='16'
+                />{' '}
+                <span className='font-semibold'>
+                  {daysUntilOffer} days left at this price
+                </span>
+              </>
+            )}
           </div>
         </div>
         <div className='mt-4'>

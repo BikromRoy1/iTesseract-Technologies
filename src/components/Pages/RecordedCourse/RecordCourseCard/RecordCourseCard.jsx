@@ -110,9 +110,11 @@ const LevelTwo = () => {
                           alt=''
                         />
                         <div className='thumbnail-content absolute left-3 top-3 z-10'>
-                          <span className='bg-[#ffbb2c] text-white rounded-[2px] inline-block px-[12px] font-semibold text-[15px] leading-[26px] m-[5px]'>
-                            {course?.discount}% OFF
-                          </span>
+                          {course?.discount > 0 && (
+                            <span className='bg-[#ffbb2c] text-white rounded-[2px] inline-block px-[12px] font-semibold text-[15px] leading-[26px] m-[5px]'>
+                              {course?.discount}% OFF
+                            </span>
+                          )}
                         </div>
                       </div>
                       <div className='p-6'>

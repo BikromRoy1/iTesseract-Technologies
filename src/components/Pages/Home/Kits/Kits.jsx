@@ -110,9 +110,11 @@ const Kits = () => {
                       />
                     </Link>
                     <div className='thumbnail-content'>
-                      <span className='bg-[#ffbb2c] text-white rounded-[2px] inline-block px-[12px] font-semibold text-[15px] leading-[26px] m-[5px]'>
-                        {item?.discount}% OFF
-                      </span>
+                      {item?.discount > 0 && (
+                        <span className='bg-[#ffbb2c] text-white rounded-[2px] inline-block px-[12px] font-semibold text-[15px] leading-[26px] m-[5px]'>
+                          {item?.discount}% OFF
+                        </span>
+                      )}
                     </div>
                   </div>
                   <div className='course-card-body'>
@@ -149,13 +151,20 @@ const Kits = () => {
                       <div className='flex items-center gap-2'>
                         <FiUsers className='text-[#4AB2FD] w-5 h-5' />
                         <h4 className='font-semibold text-primary-color'>
-                          {item?.enroll_student} Students
+                          {item?.enroll_student !== undefined &&
+                          item?.enroll_student !== null
+                            ? item.enroll_student
+                            : 0}{' '}
+                          Students
                         </h4>
                       </div>
                       <div className='flex items-center gap-2'>
                         <IoDocumentTextOutline className='text-[#9333ea] w-5 h-5' />
                         <h4 className='font-semibold text-primary-color'>
-                          {item?.project} Tests
+                          {item?.project !== undefined && item?.project !== null
+                            ? item?.project
+                            : 0}{' '}
+                          Tests
                         </h4>
                       </div>
                     </div>
