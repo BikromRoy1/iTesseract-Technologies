@@ -1,6 +1,6 @@
 import React from 'react';
 import Breadcrumb from '../../../Breadcrumb/Breadcrumb';
-import team from '../../../../Images/team.jpg';
+import team from '../../../../Images/team.jpeg';
 import AdBoard from '../AdBoard/AdBoard';
 import MangTeam from '../mangTeam/MangTeam';
 

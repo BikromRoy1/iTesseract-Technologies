@@ -7,9 +7,9 @@
 
 .top-btn {
   padding: 8px;
-  right: 26px;
+  right: 1.25rem;
   z-index: 999;
-  bottom: 70px;
+  bottom: 1.5rem;
   color: #fff;
   display: flex;
   cursor: pointer;

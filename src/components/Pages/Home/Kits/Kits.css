@@ -34,15 +34,49 @@
   /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06); */
   border-radius: 10px;
   height: 100%;
+  transition: all ease-in-out 0.4s;
 }
+
 .course-card .course-card-img {
   position: relative;
+  overflow: hidden;
+  border-radius: 10px 10px 0px 0px;
 }
 .course-card .course-card-img img {
-  border-radius: 10px 10px 0px 0px;
   height: 100%;
   width: 100%;
+  transition: 0.6s;
 }
+
+.course-card .course-card-img::before {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 2;
+  display: block;
+  content: '';
+  width: 50%;
+  transition: 0.6s;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  transform: skewX(-25deg);
+}
+.course-card:hover .course-card-img::before {
+  animation: shine 0.75s;
+}
+.course-card:hover .course-card-img img {
+  transform: scale(1.1);
+}
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
 .course-card .thumbnail-content {
   position: absolute;
   left: 10px;
