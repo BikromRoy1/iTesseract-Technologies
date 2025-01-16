@@ -7,9 +7,9 @@
 
 .top-btn {
   padding: 8px;
-  right: 80px;
+  right: 26px;
   z-index: 999;
-  bottom: 80px;
+  bottom: 70px;
   color: #fff;
   display: flex;
   cursor: pointer;
@@ -17,7 +17,7 @@
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  background-color: #1bb57b;
+  background: linear-gradient(226.1deg, rgb(8, 206, 51) 0%, rgb(20, 156, 82) 101.24%);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
