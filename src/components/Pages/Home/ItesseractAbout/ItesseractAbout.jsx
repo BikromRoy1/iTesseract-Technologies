@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
 import shape04 from '../../../../Images/icons/shape-04.png';
 import shape02 from '../../../../Images/icons/shape-05.png';
-import Robots from '../../../../Images/roobots.png';
+import Robots from '../../../../Images/Home-about.png';
 import './ItesseractAbout.css';
 
 import { apiUrl } from '../../../../config/config';
@@ -44,7 +44,7 @@ const ItesseractAbout = () => {
         </div>
 
         <div className='grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16 about-card'>
-          <div className='mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right'>
+          <div className='mx-auto max-w-2xl text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right'>
             <img loading='lazy' src={Robots} alt='Robot' />
           </div>
 

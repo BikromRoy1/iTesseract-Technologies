@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { apiUrl } from '../../../../config/config';
 import animationContact from '../../../../Images/home-contact.json';
-import animationImage from '../../../../Images/home-content.svg';
+import animationImage from '../../../../Images/home-contact.png';
 import shapes04 from '../../../../Images/icons/shape-08.png';
 import shapes02 from '../../../../Images/icons/shape-09.png';
 import shapes01 from '../../../../Images/icons/shape-10.png';
@@ -80,11 +80,11 @@ const HomeContact = () => {
         </div>
         <div className='lg:flex items-center'>
           <div className='lg:w-1/2'>
-            <Lottie
+            {/* <Lottie
               className='sm:w-full lg:w-[500px]'
               animationData={animationContact}
-            ></Lottie>
-            {/* <img src={animationImage} alt='' /> */}
+            ></Lottie> */}
+            <img src={animationImage} alt='' />
           </div>
 
           <div className='mt-8 lg:w-1/2 lg:mt-0'>
