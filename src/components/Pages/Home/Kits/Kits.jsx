@@ -55,6 +55,21 @@ const Kits = () => {
   // Function to zero-pad numbers less than 10
   const zeroPad = (num) => (num < 10 ? `0${num}` : num);
 
+  const calculateDaysUntilOffer = (offerDateStr) => {
+    if (!offerDateStr) return null;
+
+    console.log(offerDateStr);
+
+    const offerDate = new Date(offerDateStr);
+    const currentDate = new Date();
+
+    // Calculate the difference in milliseconds
+    const timeDiff = offerDate.getTime() - currentDate.getTime();
+
+    // Convert the difference from milliseconds to days
+    return Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+  };
+
   return (
     <section className='kits-course'>
       <div className='container px-6 py-10 mx-auto'>
@@ -119,15 +134,26 @@ const Kits = () => {
                   </div>
                   <div className='course-card-body'>
                     <div className='price-list flex items-center justify-between pb-[12px]'>
-                      <div className='flex items-center'>
+                      <div className='flex items-center gap-2'>
                         <h3 className='current-price primary-color font-bold text-[22px] tracking-[0.20000000298023224px]'>
                           ৳{' '}
                           {formatNumberToBangla(
-                            item?.price
-                              ? item.price.toLocaleString('en-US')
-                              : '0'
+                            item?.discount_price && item?.offer_date
+                              ? item?.discount_price?.toLocaleString('en-US')
+                              : item?.price?.toLocaleString('en-US') || '0'
                           )}
                         </h3>
+                        {item?.discount_price && item?.offer_date ? (
+                          <span className='second-price text-gray-500 font-bold'>
+                            <del>
+                              {formatNumberToBangla(
+                                item?.price
+                                  ? item?.price?.toLocaleString('en-US')
+                                  : '0'
+                              )}
+                            </del>
+                          </span>
+                        ) : null}
                       </div>
                       <div className='flex items-center gap-2'>
                         <FaWifi className='text-[#4AB2FD] w-5 h-5' />

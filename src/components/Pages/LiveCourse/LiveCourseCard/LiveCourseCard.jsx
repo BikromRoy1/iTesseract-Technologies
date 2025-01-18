@@ -121,15 +121,28 @@ const UniSkills = () => {
                     </div>
                     <div className='course-card-body'>
                       <div className='price-list flex items-center justify-between pb-[12px]'>
-                        <div className='flex items-center'>
+                        <div className='flex items-center gap-2'>
                           <h3 className='current-price primary-color font-bold text-[22px] tracking-[0.20000000298023224px]'>
                             ৳{' '}
                             {formatNumberToBangla(
-                              course?.price
-                                ? course?.price.toLocaleString('en-US')
-                                : '0'
+                              course?.discount_price && course?.offer_date
+                                ? course?.discount_price?.toLocaleString(
+                                    'en-US'
+                                  )
+                                : course?.price?.toLocaleString('en-US') || '0'
                             )}
                           </h3>
+                          {course?.discount_price && course?.offer_date ? (
+                            <span className='second-price text-gray-500 font-bold'>
+                              <del>
+                                {formatNumberToBangla(
+                                  course?.price
+                                    ? course?.price?.toLocaleString('en-US')
+                                    : '0'
+                                )}
+                              </del>
+                            </span>
+                          ) : null}
                         </div>
                         <div className='flex items-center gap-2'>
                           <FaWifi className='text-[#4AB2FD] w-5 h-5' />
