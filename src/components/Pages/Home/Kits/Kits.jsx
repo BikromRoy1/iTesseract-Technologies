@@ -9,6 +9,7 @@ import Services from '../Services/Services';
 import './Kits.css';
 
 import { apiUrl } from '../../../../config/config';
+import SkillCourse from '../SkillCourse/SkillCourse';
 
 const Kits = () => {
   const [data, setData] = useState([]);
@@ -240,6 +241,7 @@ const Kits = () => {
           )}
         </div>
       </div>
+      <SkillCourse></SkillCourse>
       <Services></Services>
     </section>
   );

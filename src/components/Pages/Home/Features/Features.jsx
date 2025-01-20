@@ -1,8 +1,9 @@
 import React from 'react';
+import FeaturesOne from '../../../../Images/Features.webp';
+import FeaturesVideoOne from '../../../../Images/home-video.mp4';
 import computer from '../../../../Images/icons/computer.png';
 import dimploma from '../../../../Images/icons/diploma.png';
 import web from '../../../../Images/icons/web-development.png';
-import image from '../../../../Images/img.PNG';
 
 const Features = () => {
   return (
@@ -11,12 +12,31 @@ const Features = () => {
         <div className='container mx-auto'>
           <div className='overflow-hidden bg-[#F7F9FF] py-8 md:py-8 md:px-14 px-4 lg:flex lg:w-full lg:items-center rounded-xl'>
             <div className='lg:w-1/2'>
-              <img
+              {/* <img
                 loading='lazy'
                 src={image}
                 alt=''
                 className='h-80 dark:bg-gray-500 aspect-video'
-              />
+              /> */}
+              <div className='flex items-stretch gap-4'>
+                <img
+                  loading='lazy'
+                  src={FeaturesOne}
+                  alt=''
+                  className='w-[200px] object-cover border-2 border-[#88B520] rounded-[115px] border-dashed'
+                />
+
+                <div>
+                  <video
+                    className='object-cover h-full border-2 border-[#E1A753] rounded-[20px] border-dashed'
+                    src={FeaturesVideoOne}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  ></video>
+                </div>
+              </div>
             </div>
 
             <div className='max-w-xl pl-0 lg:pl-4 py-12 lg:max-w-5xl lg:w-1/2'>
