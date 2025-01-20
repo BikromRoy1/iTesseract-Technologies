@@ -97,7 +97,7 @@ const SkillCourse = () => {
             </>
           ) : (
             courses
-              ?.filter((item) => item?.category?.name === 'প্রোগ্রামিং')
+              ?.filter((item) => item?.category?.name === 'স্কিল ডেভেলপমেন্ট')
               ?.slice(0, 3)
               ?.map((item) => (
                 <div key={item.id} className='single-card'>
