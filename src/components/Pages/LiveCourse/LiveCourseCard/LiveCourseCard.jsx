@@ -56,10 +56,10 @@ const UniSkills = () => {
     <section className='pb-14 pt-[40px]'>
       <div className='container p-6 mx-auto'>
         <div className='section-header'>
-          <h4>বিশ্ববিদ্যালয় কোর্স</h4>
           <h2>
             {' '}
-            কোর্স দক্ষতা <span className='title-gradient'>আপনি পাবেন</span>
+            আপনার সন্তানের জন্য সেরা{' '}
+            <span className='title-gradient'>কোর্স গুলো বেছে নিন</span>
           </h2>
           <p>
             অধ্যয়ন শুরু করার জন্য আপনার যা দরকার তা হল সঠিক মনের ফ্রেমে।
