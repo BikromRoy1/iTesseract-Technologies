@@ -1,9 +1,7 @@
 import axios from 'axios';
-import Lottie from 'lottie-react';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { apiUrl } from '../../../../config/config';
-import animationContact from '../../../../Images/home-contact.json';
 import animationImage from '../../../../Images/home-contact.png';
 import shapes04 from '../../../../Images/icons/shape-08.png';
 import shapes02 from '../../../../Images/icons/shape-09.png';
@@ -84,7 +82,8 @@ const HomeContact = () => {
               className='sm:w-full lg:w-[500px]'
               animationData={animationContact}
             ></Lottie> */}
-            <img src={animationImage} alt='contact' loading='lazy' />
+
+            <img src={animationImage} alt='' />
           </div>
 
           <div className='mt-8 lg:w-1/2 lg:mt-0'>
