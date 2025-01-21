@@ -114,130 +114,138 @@ const Kits = () => {
               </div>
             </>
           ) : (
-            courses?.slice(0, 6)?.map((item) => (
-              <div key={item.id} className='single-card'>
-                <div className='course-card'>
-                  <div className='course-card-img'>
-                    <Link to={`/course/${item?.slug}`}>
-                      <img
-                        src={`${apiUrl}/${item?.image}`}
-                        loading='lazy'
-                        alt={item?.course_name}
-                      />
-                    </Link>
-                    <div className='thumbnail-content'>
-                      {item?.discount > 0 && (
-                        <span className='bg-[#ffbb2c] text-white rounded-[2px] inline-block px-[12px] font-semibold text-[15px] leading-[26px] m-[5px]'>
-                          {item?.discount}% OFF
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                  <div className='course-card-body'>
-                    <div className='price-list flex items-center justify-between pb-[12px]'>
-                      <div className='flex items-center gap-2'>
-                        <h3 className='current-price primary-color font-bold text-[22px] tracking-[0.20000000298023224px]'>
-                          ৳{' '}
-                          {formatNumberToBangla(
-                            item?.discount_price && item?.offer_date
-                              ? item?.discount_price?.toLocaleString('en-US')
-                              : item?.price?.toLocaleString('en-US') || '0'
-                          )}
-                        </h3>
-                        {item?.discount_price && item?.offer_date ? (
-                          <span className='second-price text-gray-500 font-bold'>
-                            <del>
-                              {formatNumberToBangla(
-                                item?.price
-                                  ? item?.price?.toLocaleString('en-US')
-                                  : '0'
-                              )}
-                            </del>
-                          </span>
-                        ) : null}
-                      </div>
-                      <div className='flex items-center gap-2'>
-                        <FaWifi className='text-[#4AB2FD] w-5 h-5' />
-                        <h5 className='text-primary-color text-[17px] font-semibold'>
-                          {item?.type}
-                        </h5>
-                      </div>
-                    </div>
-                    <Link to={`/course/${item?.slug}`}>
-                      <h4 className='font-semibold text-[#124265] capitalize kits-title-2'>
-                        {item?.course_name}
-                      </h4>
-                    </Link>
-                    <div className='course-timing flex items-center gap-5 pb-4'>
-                      <div className='flex items-center gap-2'>
-                        <BsCommand className='text-[#1bb57b] w-5 h-5 font-bold' />
-                        <h4 className='font-semibold text-primary-color'>
-                          {zeroPad(item?.modules?.length)}-টি পাঠ
-                        </h4>
-                      </div>
-                      <div className='flex items-center gap-2'>
-                        <FiUsers className='text-[#4AB2FD] w-5 h-5' />
-                        <h4 className='font-semibold text-primary-color'>
-                          {item?.enroll_student !== undefined &&
-                          item?.enroll_student !== null
-                            ? item.enroll_student
-                            : 0}{' '}
-                          Students
-                        </h4>
-                      </div>
-                      <div className='flex items-center gap-2'>
-                        <IoDocumentTextOutline className='text-[#9333ea] w-5 h-5' />
-                        <h4 className='font-semibold text-primary-color'>
-                          {item?.project !== undefined && item?.project !== null
-                            ? item?.project
-                            : 0}{' '}
-                          Tests
-                        </h4>
-                      </div>
-                    </div>
-                    <div className='flex items-center justify-between'>
-                      <div className='flex items-center gap-2'>
+            courses
+              ?.filter(
+                (item) =>
+                  item?.category?.name === 'রোবটিক্স এবং প্রোগ্রামিং' ||
+                  item?.category?.name === 'প্রোগ্রামিং'
+              )
+              ?.slice(0, 6)
+              ?.map((item) => (
+                <div key={item.id} className='single-card'>
+                  <div className='course-card'>
+                    <div className='course-card-img'>
+                      <Link to={`/course/${item?.slug}`}>
                         <img
-                          src={`${apiUrl}/${item?.trainer?.image}`}
-                          className='rounded-full w-10 h-10'
+                          src={`${apiUrl}/${item?.image}`}
                           loading='lazy'
-                          alt={item?.trainer?.name}
+                          alt={item?.course_name}
                         />
-                        <div>
-                          <h2 className='font-semibold text-[17px] tracking-[0.20000000298023224px]'>
-                            {item?.trainer?.name}
-                          </h2>
+                      </Link>
+                      <div className='thumbnail-content'>
+                        {item?.discount > 0 && (
+                          <span className='bg-[#ffbb2c] text-white rounded-[2px] inline-block px-[12px] font-semibold text-[15px] leading-[26px] m-[5px]'>
+                            {item?.discount}% OFF
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <div className='course-card-body'>
+                      <div className='price-list flex items-center justify-between pb-[12px]'>
+                        <div className='flex items-center gap-2'>
+                          <h3 className='current-price primary-color font-bold text-[22px] tracking-[0.20000000298023224px]'>
+                            ৳{' '}
+                            {formatNumberToBangla(
+                              item?.discount_price && item?.offer_date
+                                ? item?.discount_price?.toLocaleString('en-US')
+                                : item?.price?.toLocaleString('en-US') || '0'
+                            )}
+                          </h3>
+                          {item?.discount_price && item?.offer_date ? (
+                            <span className='second-price text-gray-500 font-bold'>
+                              <del>
+                                {formatNumberToBangla(
+                                  item?.price
+                                    ? item?.price?.toLocaleString('en-US')
+                                    : '0'
+                                )}
+                              </del>
+                            </span>
+                          ) : null}
+                        </div>
+                        <div className='flex items-center gap-2'>
+                          <FaWifi className='text-[#4AB2FD] w-5 h-5' />
+                          <h5 className='text-primary-color text-[17px] font-semibold'>
+                            {item?.type}
+                          </h5>
                         </div>
                       </div>
-                      <div>
-                        <Link to={`/course/${item?.slug}`}>
-                          <button className='custom-button text-[15px] font-semibold px-[16px] py-[5px] text-white rounded-md flex items-center gap-1'>
-                            এখান থেকে শিখুন
-                            <svg
-                              stroke='currentColor'
-                              fill='currentColor'
-                              strokeWidth='0'
-                              viewBox='0 0 512 512'
-                              height='18'
-                              width='18'
-                              xmlns='http://www.w3.org/2000/svg'
-                            >
-                              <path
-                                fill='none'
-                                strokeLinecap='round'
-                                strokeLinejoin='round'
-                                strokeWidth='48'
-                                d='M268 112l144 144-144 144m124-144H100'
-                              ></path>
-                            </svg>
-                          </button>
-                        </Link>
+                      <Link to={`/course/${item?.slug}`}>
+                        <h4 className='font-semibold text-[#124265] capitalize kits-title-2'>
+                          {item?.course_name}
+                        </h4>
+                      </Link>
+                      <div className='course-timing flex items-center gap-5 pb-4'>
+                        <div className='flex items-center gap-2'>
+                          <BsCommand className='text-[#1bb57b] w-5 h-5 font-bold' />
+                          <h4 className='font-semibold text-primary-color'>
+                            {zeroPad(item?.modules?.length)}-টি পাঠ
+                          </h4>
+                        </div>
+                        <div className='flex items-center gap-2'>
+                          <FiUsers className='text-[#4AB2FD] w-5 h-5' />
+                          <h4 className='font-semibold text-primary-color'>
+                            {item?.enroll_student !== undefined &&
+                            item?.enroll_student !== null
+                              ? item.enroll_student
+                              : 0}{' '}
+                            Students
+                          </h4>
+                        </div>
+                        <div className='flex items-center gap-2'>
+                          <IoDocumentTextOutline className='text-[#9333ea] w-5 h-5' />
+                          <h4 className='font-semibold text-primary-color'>
+                            {item?.project !== undefined &&
+                            item?.project !== null
+                              ? item?.project
+                              : 0}{' '}
+                            Tests
+                          </h4>
+                        </div>
+                      </div>
+                      <div className='flex items-center justify-between'>
+                        <div className='flex items-center gap-2'>
+                          <img
+                            src={`${apiUrl}/${item?.trainer?.image}`}
+                            className='rounded-full w-10 h-10'
+                            loading='lazy'
+                            alt={item?.trainer?.name}
+                          />
+                          <div>
+                            <h2 className='font-semibold text-[17px] tracking-[0.20000000298023224px]'>
+                              {item?.trainer?.name}
+                            </h2>
+                          </div>
+                        </div>
+                        <div>
+                          <Link to={`/course/${item?.slug}`}>
+                            <button className='custom-button text-[15px] font-semibold px-[16px] py-[5px] text-white rounded-md flex items-center gap-1'>
+                              এখান থেকে শিখুন
+                              <svg
+                                stroke='currentColor'
+                                fill='currentColor'
+                                strokeWidth='0'
+                                viewBox='0 0 512 512'
+                                height='18'
+                                width='18'
+                                xmlns='http://www.w3.org/2000/svg'
+                              >
+                                <path
+                                  fill='none'
+                                  strokeLinecap='round'
+                                  strokeLinejoin='round'
+                                  strokeWidth='48'
+                                  d='M268 112l144 144-144 144m124-144H100'
+                                ></path>
+                              </svg>
+                            </button>
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))
+              ))
           )}
         </div>
       </div>

@@ -90,7 +90,7 @@ const CourseVidoes = ({ mainCourse }) => {
               </p>
             </div> */}
           </div>
-          <div className='w-full md:mb-10 md:max-w-[400px] mx-md:order-1 -mt-0 lg:-mt-[240px] z-20'>
+          <div className='w-full md:mb-10 md:max-w-[400px] mx-md:order-1 -mt-0 lg:-mt-[300px] z-20'>
             <PricePart mainCourse={mainCourse}></PricePart>
             <Material mainCourse={mainCourse}></Material>
             <TagLine mainCourse={mainCourse}></TagLine>
