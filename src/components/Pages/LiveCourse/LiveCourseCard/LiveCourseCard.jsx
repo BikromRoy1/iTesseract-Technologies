@@ -112,11 +112,13 @@ const UniSkills = () => {
                         />
                       </Link>
                       <div className='thumbnail-content'>
-                        {course?.discount > 0 && (
-                          <span className='bg-[#ffbb2c] text-white rounded-[2px] inline-block px-[12px] font-semibold text-[15px] leading-[26px] m-[5px]'>
-                            {course?.discount}% OFF
-                          </span>
-                        )}
+                        {course?.discount > 0 &&
+                          course?.offer_date &&
+                          new Date(course.offer_date) >= new Date() && (
+                            <span className='bg-[#ffbb2c] text-white rounded-[2px] inline-block px-[12px] font-semibold text-[15px] leading-[26px] m-[5px]'>
+                              {course?.discount}% OFF
+                            </span>
+                          )}
                       </div>
                     </div>
                     <div className='course-card-body'>
@@ -125,14 +127,18 @@ const UniSkills = () => {
                           <h3 className='current-price primary-color font-bold text-[22px] tracking-[0.20000000298023224px]'>
                             ৳{' '}
                             {formatNumberToBangla(
-                              course?.discount_price && course?.offer_date
+                              course?.discount_price &&
+                                course?.offer_date &&
+                                new Date(course.offer_date) >= new Date() // Check if offer_date is today or in the future
                                 ? course?.discount_price?.toLocaleString(
                                     'en-US'
                                   )
                                 : course?.price?.toLocaleString('en-US') || '0'
                             )}
                           </h3>
-                          {course?.discount_price && course?.offer_date ? (
+                          {course?.discount_price &&
+                          course?.offer_date &&
+                          new Date(course.offer_date) >= new Date() ? (
                             <span className='second-price text-gray-500 font-bold'>
                               <del>
                                 {formatNumberToBangla(

@@ -116,13 +116,17 @@ const PricePart = ({ mainCourse }) => {
             <h3 className='mb-0 main-price font-bold'>
               ৳{' '}
               {formatNumberToBangla(
-                discount_price && offerDate
+                discount_price &&
+                  offerDate &&
+                  new Date(offer_date) >= new Date()
                   ? discount_price?.toLocaleString('en-US')
                   : price?.toLocaleString('en-US') || '0'
               )}
             </h3>
 
-            {discount_price && offerDate ? (
+            {discount_price &&
+            offer_date &&
+            new Date(offer_date) >= new Date() ? (
               <span className='second-price text-gray-500 font-bold'>
                 <del>
                   {formatNumberToBangla(
@@ -131,11 +135,13 @@ const PricePart = ({ mainCourse }) => {
                 </del>
               </span>
             ) : null}
-            {discount > 0 && (
-              <span className='badge bg-[#FD7E14] border-none mb-0 font-semibold'>
-                {discount}% off
-              </span>
-            )}
+            {discount > 0 &&
+              offer_date &&
+              new Date(offer_date) >= new Date() && (
+                <span className='badge bg-[#FD7E14] border-none mb-0 font-semibold'>
+                  {discount}% off
+                </span>
+              )}
           </div>
           <div className='mb-0 flex items-center gap-1 md:gap-2 text-[#D83549]'>
             {discount > 0 && daysUntilOffer > 0 && (

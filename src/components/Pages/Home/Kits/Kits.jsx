@@ -133,11 +133,13 @@ const Kits = () => {
                         />
                       </Link>
                       <div className='thumbnail-content'>
-                        {item?.discount > 0 && (
-                          <span className='bg-[#ffbb2c] text-white rounded-[2px] inline-block px-[12px] font-semibold text-[15px] leading-[26px] m-[5px]'>
-                            {item?.discount}% OFF
-                          </span>
-                        )}
+                        {item?.discount > 0 &&
+                          item?.offer_date &&
+                          new Date(item.offer_date) >= new Date() && (
+                            <span className='bg-[#ffbb2c] text-white rounded-[2px] inline-block px-[12px] font-semibold text-[15px] leading-[26px] m-[5px]'>
+                              {item?.discount}% OFF
+                            </span>
+                          )}
                       </div>
                     </div>
                     <div className='course-card-body'>
@@ -146,12 +148,16 @@ const Kits = () => {
                           <h3 className='current-price primary-color font-bold text-[22px] tracking-[0.20000000298023224px]'>
                             ৳{' '}
                             {formatNumberToBangla(
-                              item?.discount_price && item?.offer_date
+                              item?.discount_price &&
+                                item?.offer_date &&
+                                new Date(item.offer_date) >= new Date() // Check if offer_date is today or in the future
                                 ? item?.discount_price?.toLocaleString('en-US')
                                 : item?.price?.toLocaleString('en-US') || '0'
                             )}
                           </h3>
-                          {item?.discount_price && item?.offer_date ? (
+                          {item?.discount_price &&
+                          item?.offer_date &&
+                          new Date(item.offer_date) >= new Date() ? (
                             <span className='second-price text-gray-500 font-bold'>
                               <del>
                                 {formatNumberToBangla(
