@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './MangTeam.css';
 
+import { Link } from 'react-router-dom';
 import { apiUrl } from '../../../../config/config';
 
 const MangTeam = () => {
@@ -22,7 +23,7 @@ const MangTeam = () => {
   const teamMembers = data.data;
 
   return (
-    <section className='bg-[#F5F5FE] py-16 '>
+    <section className='bg-[#F5F5FE] py-16'>
       <div className='container p-6 mx-auto'>
         <div className='section-header'>
           <h2>
@@ -269,15 +270,17 @@ const MangTeam = () => {
                   </span>
                 </div>
                 <div className='text-center'>
-                  <h1 className='text-[17px] font-bold hover:text-[#1bb57b] cursor-pointer'>
-                    {team?.name}
-                  </h1>
+                  <Link to='/teamDetails'>
+                    <h1 className='text-[17px] font-bold hover:text-[#1bb57b] cursor-pointer'>
+                      {team?.name}
+                    </h1>
+                  </Link>
                   <p className='text-gray-400 mb-5'>{team?.designation}</p>
 
-                  <div className='flex items-center justify-center gap-5'>
+                  <div className='flex items-center justify-center gap-3'>
                     <a
                       href='javascript:void(0)'
-                      className='text-[#C3C7D3] hover:text-[#1bb57b]'
+                      className='text-[#33354d] border border-[#d4d7e5] rounded-md flex justify-center items-center w-9 h-9 hover:text-white hover:bg-[#1877f2] hover:border-[#1877f2] hover:shadow-[0_0.375rem_1.125rem_-0.375rem_rgba(24,119,242,0.8)]'
                     >
                       <svg
                         width='18'
@@ -295,7 +298,7 @@ const MangTeam = () => {
                     </a>
                     <a
                       href='javascript:void(0)'
-                      className='text-[#C3C7D3] hover:text-[#1bb57b]'
+                      className='text-[#33354d] border border-[#d4d7e5] rounded-md flex justify-center items-center w-9 h-9 hover:text-white hover:bg-[#1da1f2] hover:border-[#1da1f2] hover:shadow-[0_0.375rem_1.125rem_-0.375rem_rgba(29,161,242,0.8)]'
                     >
                       <svg
                         width='18'
@@ -313,28 +316,17 @@ const MangTeam = () => {
                     </a>
                     <a
                       href='javascript:void(0)'
-                      className='text-[#C3C7D3] hover:text-[#1bb57b]'
+                      className='text-[#33354d] border border-[#d4d7e5] rounded-md flex justify-center items-center w-9 h-9 hover:text-white hover:bg-[#0077b5] hover:border-[#0077b5] hover:shadow-[0_0.375rem_1.125rem_-0.375rem_rgba(0,119,181,0.8)]'
                     >
                       <svg
+                        xmlns='http://www.w3.org/2000/svg'
                         width='18'
                         height='18'
-                        viewBox='0 0 18 18'
-                        fill='none'
-                        xmlns='http://www.w3.org/2000/svg'
-                        className='fill-current'
+                        fill='currentColor'
+                        className='bi bi-linkedin'
+                        viewBox='0 0 16 16'
                       >
-                        <path
-                          d='M9.02429 11.8066C10.5742 11.8066 11.8307 10.5501 11.8307 9.00018C11.8307 7.45022 10.5742 6.19373 9.02429 6.19373C7.47433 6.19373 6.21783 7.45022 6.21783 9.00018C6.21783 10.5501 7.47433 11.8066 9.02429 11.8066Z'
-                          fill=''
-                        ></path>
-                        <path
-                          d='M12.0726 1.5H5.92742C3.48387 1.5 1.5 3.48387 1.5 5.92742V12.0242C1.5 14.5161 3.48387 16.5 5.92742 16.5H12.0242C14.5161 16.5 16.5 14.5161 16.5 12.0726V5.92742C16.5 3.48387 14.5161 1.5 12.0726 1.5ZM9.02419 12.6774C6.96774 12.6774 5.34677 11.0081 5.34677 9C5.34677 6.99194 6.99194 5.32258 9.02419 5.32258C11.0323 5.32258 12.6774 6.99194 12.6774 9C12.6774 11.0081 11.0565 12.6774 9.02419 12.6774ZM14.1048 5.66129C13.8629 5.92742 13.5 6.07258 13.0887 6.07258C12.7258 6.07258 12.3629 5.92742 12.0726 5.66129C11.8065 5.39516 11.6613 5.05645 11.6613 4.64516C11.6613 4.23387 11.8065 3.91935 12.0726 3.62903C12.3387 3.33871 12.6774 3.19355 13.0887 3.19355C13.4516 3.19355 13.8387 3.33871 14.1048 3.60484C14.3468 3.91935 14.5161 4.28226 14.5161 4.66935C14.4919 5.05645 14.3468 5.39516 14.1048 5.66129Z'
-                          fill=''
-                        ></path>
-                        <path
-                          d='M13.1135 4.06433C12.799 4.06433 12.5329 4.33046 12.5329 4.64498C12.5329 4.95949 12.799 5.22562 13.1135 5.22562C13.428 5.22562 13.6942 4.95949 13.6942 4.64498C13.6942 4.33046 13.4522 4.06433 13.1135 4.06433Z'
-                          fill=''
-                        ></path>
+                        <path d='M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z' />
                       </svg>
                     </a>
                   </div>

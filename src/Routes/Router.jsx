@@ -31,6 +31,8 @@ import Checkout from '../components/checkout/Checkout.jsx';
 import { apiUrl } from '../config/config.js';
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes.js';
 import PaymentHistory from '../components/Dashboard/PaymentHistory/PaymentHistory.jsx';
+import TeamDetails from '../components/Pages/Team/Team/TeamDetails.jsx';
+import TeacherDetails from '../components/Pages/RecordedCourse/Teacher/TeacherDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -55,6 +57,10 @@ const router = createBrowserRouter([
         element: <Team></Team>,
       },
       {
+        path: '/teamDetails',
+        element: <TeamDetails></TeamDetails>,
+      },
+      {
         path: '/contact',
         element: <ContactUS></ContactUS>,
       },
@@ -76,7 +82,10 @@ const router = createBrowserRouter([
         path: '/live',
         element: <LiveCourse></LiveCourse>,
       },
-
+      {
+        path: '/teacherDetails',
+        element: <TeacherDetails></TeacherDetails>,
+      },
       {
         path: '/blogs',
         element: <Blogs></Blogs>,
