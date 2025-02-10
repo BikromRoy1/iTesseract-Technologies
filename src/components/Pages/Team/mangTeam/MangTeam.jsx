@@ -279,8 +279,9 @@ const MangTeam = () => {
 
                   <div className='flex items-center justify-center gap-3'>
                     <a
-                      href='javascript:void(0)'
-                      className='text-[#33354d] border border-[#d4d7e5] rounded-md flex justify-center items-center w-9 h-9 hover:text-white hover:bg-[#1877f2] hover:border-[#1877f2] hover:shadow-[0_0.375rem_1.125rem_-0.375rem_rgba(24,119,242,0.8)]'
+                      target='_blank'
+                      href={team?.facebook}
+                      className='text-[#33354d] border border-[#d4d7e5] rounded-md flex justify-center items-center w-9 h-9 hover:text-white hover:bg-[#1877f2] hover:border-[#1877f2] hover:shadow-[0_0.375rem_1.125rem_-0.375rem_rgba(24,119,242,0.8)] cursor-pointer'
                     >
                       <svg
                         width='18'
@@ -297,8 +298,9 @@ const MangTeam = () => {
                       </svg>
                     </a>
                     <a
-                      href='javascript:void(0)'
-                      className='text-[#33354d] border border-[#d4d7e5] rounded-md flex justify-center items-center w-9 h-9 hover:text-white hover:bg-[#1da1f2] hover:border-[#1da1f2] hover:shadow-[0_0.375rem_1.125rem_-0.375rem_rgba(29,161,242,0.8)]'
+                      target='_blank'
+                      href={team?.twitter}
+                      className='text-[#33354d] border border-[#d4d7e5] rounded-md flex justify-center items-center w-9 h-9 hover:text-white hover:bg-[#1da1f2] hover:border-[#1da1f2] hover:shadow-[0_0.375rem_1.125rem_-0.375rem_rgba(29,161,242,0.8)] cursor-pointer'
                     >
                       <svg
                         width='18'
@@ -315,8 +317,9 @@ const MangTeam = () => {
                       </svg>
                     </a>
                     <a
-                      href='javascript:void(0)'
-                      className='text-[#33354d] border border-[#d4d7e5] rounded-md flex justify-center items-center w-9 h-9 hover:text-white hover:bg-[#0077b5] hover:border-[#0077b5] hover:shadow-[0_0.375rem_1.125rem_-0.375rem_rgba(0,119,181,0.8)]'
+                      target='_blank'
+                      href={team?.linkedin}
+                      className='text-[#33354d] border border-[#d4d7e5] rounded-md flex justify-center items-center w-9 h-9 hover:text-white hover:bg-[#0077b5] hover:border-[#0077b5] hover:shadow-[0_0.375rem_1.125rem_-0.375rem_rgba(0,119,181,0.8)] cursor-pointer'
                     >
                       <svg
                         xmlns='http://www.w3.org/2000/svg'

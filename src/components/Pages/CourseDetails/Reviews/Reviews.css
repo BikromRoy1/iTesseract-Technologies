@@ -1,0 +1,16 @@
+.review-card {
+  box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+  padding: 25px 30px;
+  border-top: 2px solid #ffbb2c;
+  border-radius: 6px;
+}
+.review-card-border {
+  border-bottom: 1px solid #e0e5eb;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+.review-card-border:last-child {
+  border-bottom: none;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}

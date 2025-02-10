@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CourseDescription from '../CourseDescription/CourseDescription';
 import Material from '../Material/Material';
 import PricePart from '../PricePart/PricePart';
+import Reviews from '../Reviews/Reviews';
 import TagLine from '../TagLine/TagLine';
 import Videos from '../Videos/Videos';
 import './CourseVidoes.css';
@@ -52,7 +53,7 @@ const CourseVidoes = ({ mainCourse }) => {
                   কোর্সের পাঠ্যক্রম
                 </button>
               </a>
-              {/* <a
+              <a
                 onClick={(e) => {
                   e.preventDefault();
                   setOpenTab(3);
@@ -68,9 +69,9 @@ const CourseVidoes = ({ mainCourse }) => {
                       : 'text-[#6D6C80] bg-[#E6E9EF] font-semibold leading-[1] text-[16px] border-none rounded-[30px] py-[10px] px-[13px] sm:py-[10px] sm:px-[13px] md:py-[14px] md:px-[30px]'
                   }
                 >
-                  রিভিউ
+                  কোর্স রিভিউ
                 </button>
-              </a> */}
+              </a>
             </div>
 
             <div id='link1' className={openTab === 1 ? 'block' : 'hidden'}>
@@ -79,16 +80,9 @@ const CourseVidoes = ({ mainCourse }) => {
             <div id='link2' className={openTab === 2 ? 'block' : 'hidden'}>
               <Videos mainCourse={mainCourse}></Videos>
             </div>
-            {/* <div id='link3' className={openTab === 3 ? 'block' : 'hidden'}>
-              <p className='text-[16px] leading-[26px] text-gray-500 pb-4'>
-                হায়ার স্টাডি কিংবা ক্যারিয়ারের সাফল্যের জন্য ম্যাথ শেখাটা যতটা
-                জরুরি, ম্যাথ শেখাটা ঠিক ততোটাই বোরিং। অনেকের কাছে ম্যাথ তো
-                রীতিমতো আতঙ্কের নাম। অথচ ম্যাথকে বলা হয় মাদার অব সায়েন্স। অন্য
-                সাবজেক্টে ভালো করতেও ম্যাথের বেসিক পাকাপোক্ত করা আবশ্যক। শিশুদের
-                ব্রেইন ডেভেলপমেন্ট, চিন্তার দক্ষতা আর দ্রুত সমস্যা সমাধান করতে
-                শেখায় ম্যাথ। তাই ম্যাথ শেখার বিকল্প নেই।
-              </p>
-            </div> */}
+            <div id='link3' className={openTab === 3 ? 'block' : 'hidden'}>
+              <Reviews />
+            </div>
           </div>
           <div className='w-full md:mb-10 md:max-w-[400px] mx-md:order-1 -mt-0 lg:-mt-[300px] z-20'>
             <PricePart mainCourse={mainCourse}></PricePart>

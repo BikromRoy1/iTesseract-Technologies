@@ -94,7 +94,7 @@ const TeacherDetails = () => {
                 </p>
                 <p>
                   Comprehensive system scan, fault detection, detailed report,
-                  and conditionin recommended solutions Precision calibration
+                  and condition recommended solutions Precision calibration
                   services to ensure your air for conditioning system is
                   operating at its optimal settings for maximum comfort and
                   efficiency
