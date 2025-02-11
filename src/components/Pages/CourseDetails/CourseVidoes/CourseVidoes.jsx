@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import CourseDescription from '../CourseDescription/CourseDescription';
+import Instructors from '../Instructors/Instructors';
 import Material from '../Material/Material';
 import PricePart from '../PricePart/PricePart';
 import Reviews from '../Reviews/Reviews';
@@ -87,6 +88,7 @@ const CourseVidoes = ({ mainCourse }) => {
           <div className='w-full md:mb-10 md:max-w-[400px] mx-md:order-1 -mt-0 lg:-mt-[300px] z-20'>
             <PricePart mainCourse={mainCourse}></PricePart>
             <Material mainCourse={mainCourse}></Material>
+            <Instructors mainCourse={mainCourse}></Instructors>
             <TagLine mainCourse={mainCourse}></TagLine>
           </div>
         </div>

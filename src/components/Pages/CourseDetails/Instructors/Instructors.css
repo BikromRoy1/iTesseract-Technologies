@@ -1,0 +1,15 @@
+.Instructors-card {
+  background: #ffffff;
+  box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+  padding: 15px;
+  border-radius: 6px;
+  border-top: 2px solid #ffbb2c;
+}
+.Instructors-card h3 {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700;
+  letter-spacing: 0.20000000298023224px;
+  padding-bottom: 13px;
+  color: #124265;
+}
