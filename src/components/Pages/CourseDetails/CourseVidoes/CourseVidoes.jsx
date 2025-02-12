@@ -82,7 +82,7 @@ const CourseVidoes = ({ mainCourse }) => {
               <Videos mainCourse={mainCourse}></Videos>
             </div>
             <div id='link3' className={openTab === 3 ? 'block' : 'hidden'}>
-              <Reviews />
+              <Reviews mainCourse={mainCourse} />
             </div>
           </div>
           <div className='w-full md:mb-10 md:max-w-[400px] mx-md:order-1 -mt-0 lg:-mt-[300px] z-20'>

@@ -93,7 +93,7 @@ const SchoolTeacher = () => {
 
                   <div className='py-5 text-center'>
                     <Link
-                      to='/teacherDetails'
+                      to={`/trainer/${item?.slug}`}
                       className='block text-xl font-bold text-gray-800 '
                       tabIndex='0'
                       role='link'

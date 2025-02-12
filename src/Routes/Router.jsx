@@ -26,13 +26,13 @@ import RecordCourse from '../components/Pages/RecordedCourse/RecordCourse';
 import Team from '../components/Pages/Team/Team/Team';
 import UserRegistration from '../components/UserRegistration/UserRegistration.jsx';
 
+import PaymentHistory from '../components/Dashboard/PaymentHistory/PaymentHistory.jsx';
+import TeacherDetails from '../components/Pages/RecordedCourse/Teacher/TeacherDetails.jsx';
+import TeamDetails from '../components/Pages/Team/Team/TeamDetails.jsx';
 import PaymentFailed from '../components/PaymentFailed/PaymentFailed.jsx';
 import Checkout from '../components/checkout/Checkout.jsx';
 import { apiUrl } from '../config/config.js';
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes.js';
-import PaymentHistory from '../components/Dashboard/PaymentHistory/PaymentHistory.jsx';
-import TeamDetails from '../components/Pages/Team/Team/TeamDetails.jsx';
-import TeacherDetails from '../components/Pages/RecordedCourse/Teacher/TeacherDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -62,6 +62,12 @@ const router = createBrowserRouter([
         loader: ({ params }) => fetch(`${apiUrl}/api/v1/team/${params?.slug}`),
       },
       {
+        path: '/trainer/:slug',
+        element: <TeacherDetails></TeacherDetails>,
+        loader: ({ params }) =>
+          fetch(`${apiUrl}/api/v1/trainer/${params?.slug}`),
+      },
+      {
         path: '/contact',
         element: <ContactUS></ContactUS>,
       },
@@ -83,10 +89,7 @@ const router = createBrowserRouter([
         path: '/live',
         element: <LiveCourse></LiveCourse>,
       },
-      {
-        path: '/teacherDetails',
-        element: <TeacherDetails></TeacherDetails>,
-      },
+
       {
         path: '/blogs',
         element: <Blogs></Blogs>,

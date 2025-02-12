@@ -1,14 +1,18 @@
 import React from 'react';
-import Breadcrumb from '../../../Breadcrumb/Breadcrumb';
+import { useLoaderData } from 'react-router-dom';
 import team from '../../../../Images/team.jpeg';
+import Breadcrumb from '../../../Breadcrumb/Breadcrumb';
+import { apiUrl } from '../../../../config/config';
 
 const TeacherDetails = () => {
+  const trainers = useLoaderData();
+  const trainer = trainers?.data;
   return (
     <div>
       <Breadcrumb
-        title='Rizoan Kabir Akanda '
-        subTitle='Rizoan Kabir Akanda'
-        slgs='/team'
+        title={trainer?.name}
+        subTitle={trainer?.name}
+        slgs='/live'
         img={team}
       ></Breadcrumb>
       <section className='bg-[#F5F5FE] py-16'>
@@ -16,22 +20,23 @@ const TeacherDetails = () => {
           <div className='grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8 '>
             <div className='border border-[#E5E5E5] bg-white p-3 rounded-xl'>
               <img
-                alt=''
-                src='https://i.ibb.co.com/WWvHhCYW/trainer676f944eb2e9d2062-Untitled-design-5.jpg'
+                src={`${apiUrl}/` + trainer?.image}
                 className='aspect-square h-full w-full object-cover rounded-xl'
+                alt={trainer?.name}
               />
             </div>
             <div className=' lg:col-span-2 px-1'>
               <h2 className='text-[#17012C] capitalize lg:text-[34px] text-[22px] font-bold leading-6 tracking-[-0.4px] pt-3 mb-2'>
-                Rizoan Kabir Akanda
+                {trainer?.name}
               </h2>
               <p className='text-[#726B7D] text-[16px] capitalize font-medium mb-7'>
-                Business Development Officer
+                {trainer?.designation}
               </p>
               <div className='flex items-center gap-4 mb-10'>
                 <a
-                  href='javascript:void(0)'
-                  className='text-[#33354d] border border-[#d4d7e5] rounded-md flex justify-center items-center w-11 h-11 hover:text-white hover:bg-[#1877f2] hover:border-[#1877f2] hover:shadow-[0_0.375rem_1.125rem_-0.375rem_rgba(24,119,242,0.8)]'
+                  href={trainer?.facebook}
+                  target='_blank'
+                  className='text-[#33354d] border border-[#d4d7e5] rounded-md flex justify-center items-center w-11 h-11 hover:text-white hover:bg-[#1877f2] hover:border-[#1877f2] hover:shadow-[0_0.375rem_1.125rem_-0.375rem_rgba(24,119,242,0.8)] cursor-pointer'
                 >
                   <svg
                     width='18'
@@ -48,8 +53,9 @@ const TeacherDetails = () => {
                   </svg>
                 </a>
                 <a
-                  href='javascript:void(0)'
-                  className='text-[#33354d] border border-[#d4d7e5] rounded-md flex justify-center items-center w-11 h-11 hover:text-white hover:bg-[#1da1f2] hover:border-[#1da1f2] hover:shadow-[0_0.375rem_1.125rem_-0.375rem_rgba(29,161,242,0.8)]'
+                  href={trainer?.twitter}
+                  target='_blank'
+                  className='text-[#33354d] border border-[#d4d7e5] rounded-md flex justify-center items-center w-11 h-11 hover:text-white hover:bg-[#1da1f2] hover:border-[#1da1f2] hover:shadow-[0_0.375rem_1.125rem_-0.375rem_rgba(29,161,242,0.8)] cursor-pointer'
                 >
                   <svg
                     width='18'
@@ -66,8 +72,9 @@ const TeacherDetails = () => {
                   </svg>
                 </a>
                 <a
-                  href='javascript:void(0)'
-                  className='text-[#33354d] border border-[#d4d7e5] rounded-md flex justify-center items-center w-11 h-11 hover:text-white hover:bg-[#0077b5] hover:border-[#0077b5] hover:shadow-[0_0.375rem_1.125rem_-0.375rem_rgba(0,119,181,0.8)]'
+                  target='_blank'
+                  href={trainer.linkedin}
+                  className='text-[#33354d] border border-[#d4d7e5] rounded-md flex justify-center items-center w-11 h-11 hover:text-white hover:bg-[#0077b5] hover:border-[#0077b5] hover:shadow-[0_0.375rem_1.125rem_-0.375rem_rgba(0,119,181,0.8)] cursor-pointer'
                 >
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -83,34 +90,9 @@ const TeacherDetails = () => {
               </div>
               <div>
                 <h3 className='mb-6 font-semibold capitalize leading-5 text-[18px] lg:text-[28px]'>
-                  About Me
+                  About Me & skills
                 </h3>
-                <p className='mb-3'>
-                  Professional consultation services Site evaluation, load
-                  calculation, system recommendations, and detailed cost
-                  estimates Rapid response, on-site an diagnostics, immediate
-                  repairs, and follow-up check Fast and efficient is for
-                  installation of new air conditioning units
-                </p>
-                <p>
-                  Comprehensive system scan, fault detection, detailed report,
-                  and condition recommended solutions Precision calibration
-                  services to ensure your air for conditioning system is
-                  operating at its optimal settings for maximum comfort and
-                  efficiency
-                </p>
-              </div>
-              <div className='mt-11'>
-                <h3 className='mb-6 font-semibold capitalize leading-5 text-[18px] lg:text-[28px]'>
-                  professional skills
-                </h3>
-                <p className='mb-3'>
-                  Professional consultation services Site evaluation, load
-                  calculation, system recommendations, and detailed cost
-                  estimates Rapid response, on-site an diagnostics, immediate
-                  repairs, and follow-up check Fast and efficient is for
-                  installation of new air conditioning units
-                </p>
+                <p dangerouslySetInnerHTML={{ __html: trainer?.bio }}></p>
               </div>
             </div>
           </div>
