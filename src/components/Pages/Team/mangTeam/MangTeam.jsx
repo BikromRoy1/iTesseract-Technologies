@@ -270,7 +270,7 @@ const MangTeam = () => {
                   </span>
                 </div>
                 <div className='text-center'>
-                  <Link to='/teamDetails'>
+                  <Link to={`/team/${team?.slug}`}>
                     <h1 className='text-[17px] font-bold hover:text-[#1bb57b] cursor-pointer'>
                       {team?.name}
                     </h1>

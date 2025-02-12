@@ -57,8 +57,9 @@ const router = createBrowserRouter([
         element: <Team></Team>,
       },
       {
-        path: '/teamDetails',
+        path: '/team/:slug',
         element: <TeamDetails></TeamDetails>,
+        loader: ({ params }) => fetch(`${apiUrl}/api/v1/team/${params?.slug}`),
       },
       {
         path: '/contact',
